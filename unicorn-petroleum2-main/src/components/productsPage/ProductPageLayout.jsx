@@ -1,5 +1,4 @@
 import React from "react";
-import FloatingSidebar from "../../Common/FloatingSidebar";
 import { productsNavigationData } from "./productsNavigationData";
 
 export default function ProductPageLayout({ children }) {

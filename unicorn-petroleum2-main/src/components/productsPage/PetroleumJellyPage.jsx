@@ -6,7 +6,7 @@ import CardsSection from "../../Common/CardsSection";
 import QuoteFormSection from "../../Common/QuoteFormSection";
 import { petroleumJellyData } from "./productData/petroleumJellyData";
 import { productsNavigationData } from "./productsNavigationData";
-import { homeData } from "../../Data/homeData";
+import homeData from "../Home/homeData";
 
 export default function PetroleumJellyPage() {
   // Create applications data for CardsSection
