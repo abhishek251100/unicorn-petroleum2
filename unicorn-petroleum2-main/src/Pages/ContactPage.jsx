@@ -1,12 +1,8 @@
 import React from "react";
-import ContactPageIndex from "../components/contactPage/ContactPageIndex";
+import ComingSoon from "../Common/ComingSoon";
 
 const ContactPage = () => {
-  return (
-    <div>
-      <ContactPageIndex />
-    </div>
-  );
+  return <ComingSoon title="Contact" />;
 };
 
 export default ContactPage;

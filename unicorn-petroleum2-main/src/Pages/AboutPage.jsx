@@ -1,12 +1,8 @@
 import React from "react";
-import AboutIndex from "../components/aboutUs/AboutIndex";
+import ComingSoon from "../Common/ComingSoon";
 
 const AboutPage = () => {
-  return (
-    <div>
-      <AboutIndex />
-    </div>
-  );
+  return <ComingSoon title="About" />;
 };
 
 export default AboutPage;

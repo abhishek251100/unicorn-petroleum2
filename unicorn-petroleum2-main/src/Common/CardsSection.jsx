@@ -6,6 +6,15 @@ export default function CardsSection({ data }) {
     return null;
   }
 
+  const cardsCount = data.cards.length;
+  const gridClasses =
+    cardsCount <= 4
+      ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6"
+      : "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6";
+
+  const centerLastRow = Boolean(data.centerLastRow) && cardsCount > 4;
+  const showDescriptions = data.showDescriptions !== false;
+
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
@@ -16,45 +25,92 @@ export default function CardsSection({ data }) {
               {data.heading}
             </h2>
             {data.subheading && (
-              <p className="text-xl text-gray-600">
-                {data.subheading}
-              </p>
+              <p className="text-xl text-gray-600">{data.subheading}</p>
             )}
           </div>
         )}
 
-        {/* Cards Grid */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${data.cards.length > 4 ? '4' : data.cards.length} xl:grid-cols-${data.cards.length > 4 ? '7' : data.cards.length} gap-6`}>
-          {data.cards.map((card, index) => (
-            <div 
-              key={index} 
-              className="bg-white p-6 rounded-xl border border-orange-200 hover:shadow-xl hover:border-orange-400 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center"
-            >
-              {/* Icon */}
-              <div className="text-orange-500 text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                {card.icon}
-              </div>
-              
-              {/* Title/Label */}
-              <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-orange-600 transition-colors">
-                {card.title || card.label}
-              </h3>
-              
-              {/* Description (if exists) */}
-              {card.description && (
-                <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
-                  {card.description}
-                </p>
-              )}
+        {/* Cards */}
+        {centerLastRow && cardsCount % 4 === 3 ? (
+          <>
+            {/* First row: 4 items */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-6">
+              {data.cards.slice(0, 4).map((card, index) => (
+                <div key={index}>
+                  <div className="bg-white p-8 rounded-2xl border border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center h-full">
+                    <div className="text-[#EDA94E] text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                      {card.icon}
+                    </div>
+                    <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-[#E99322] transition-colors">
+                      {card.title || card.label || card.name}
+                    </h3>
+                    {showDescriptions && card.description && (
+                      <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
+                        {card.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+            {/* Second row: exactly 3 items centered */}
+            <div className="flex justify-center gap-6">
+              {data.cards.slice(4).map((card, index) => (
+                <div
+                  key={index}
+                  className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/4 max-w-[320px]"
+                >
+                  <div className="bg-white p-8 rounded-2xl border border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center h-full">
+                    <div className="text-[#EDA94E] text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                      {card.icon}
+                    </div>
+                    <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-[#E99322] transition-colors">
+                      {card.title || card.label || card.name}
+                    </h3>
+                    {showDescriptions && card.description && (
+                      <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
+                        {card.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        ) : (
+          <div className={gridClasses}>
+            {data.cards.map((card, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-2xl border border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center"
+              >
+                {/* Icon */}
+                <div className="text-[#EDA94E] text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {card.icon}
+                </div>
+
+                {/* Title/Label */}
+                <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-[#E99322] transition-colors">
+                  {card.title || card.label || card.name}
+                </h3>
+
+                {/* Description (if exists) */}
+                {showDescriptions && card.description && (
+                  <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
+                    {card.description}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Button (if exists) */}
         {data.buttonText && (
           <div className="text-center mt-8">
-            <button className="bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition-all duration-300 font-medium">
+            <button className="bg-[#EDA94E] text-white px-8 py-3 rounded-full hover:bg-[#E99322] transition-all duration-300 font-medium flex items-center gap-2 mx-auto">
               {data.buttonText}
+              <span className="text-lg">→</span>
             </button>
           </div>
         )}

@@ -22,7 +22,7 @@ const HomeIndex = () => {
       <ProductPortfolioSection data={homeData.products} />
 
       {/* Industries Section */}
-      <CardsSection data={homeData.industries} />
+      <CardsSection data={{ ...homeData.industries, centerLastRow: true }} />
 
       {/* Quality Standards Section */}
       <QualityStandardsSection data={homeData.qualityStandards} />

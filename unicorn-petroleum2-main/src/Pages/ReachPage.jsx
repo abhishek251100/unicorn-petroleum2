@@ -1,12 +1,8 @@
 import React from "react";
-import ReachPageIndex from "../components/reachPage/ReachPageIndex";
+import ComingSoon from "../Common/ComingSoon";
 
 const ReachPage = () => {
-  return (
-    <div>
-      <ReachPageIndex />
-    </div>
-  );
+  return <ComingSoon title="Global Reach" />;
 };
 
 export default ReachPage;

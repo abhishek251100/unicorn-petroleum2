@@ -1,12 +1,8 @@
 import React from "react";
-import ApplicationPageIndex from "../components/applicationPage/ApplicationPageIndex";
+import ComingSoon from "../Common/ComingSoon";
 
 const ApplicationPage = () => {
-  return (
-    <div>
-      <ApplicationPageIndex />
-    </div>
-  );
+  return <ComingSoon title="Applications" />;
 };
 
 export default ApplicationPage;

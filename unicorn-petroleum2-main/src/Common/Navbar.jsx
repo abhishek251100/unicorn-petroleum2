@@ -1,9 +1,17 @@
-import React, { useState } from "react";
-import { FiMenu, FiX, FiChevronDown, FiPhone, FiMail, FiSearch } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {
+  FiMenu,
+  FiX,
+  FiChevronDown,
+  FiPhone,
+  FiMail,
+  FiSearch,
+} from "react-icons/fi";
+import { Link, useLocation } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Navbar() {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
@@ -13,6 +21,12 @@ export default function Navbar() {
     setActiveDropdown(activeDropdown === index ? null : index);
   };
 
+  // Close menus on route change
+  useEffect(() => {
+    setActiveDropdown(null);
+    setIsOpen(false);
+  }, [location.pathname]);
+
   const menuItems = [
     {
       name: "About",
@@ -21,8 +35,8 @@ export default function Navbar() {
       dropdownItems: [
         { name: "Our Story", link: "/about" },
         { name: "Mission & Vision", link: "/about" },
-        { name: "Leadership", link: "/about" }
-      ]
+        { name: "Leadership", link: "/about" },
+      ],
     },
     {
       name: "Products",
@@ -38,8 +52,8 @@ export default function Navbar() {
         { name: "D-Panthenol", link: "/products" },
         { name: "Preservatives", link: "/products" },
         { name: "Surfactants", link: "/products" },
-        { name: "UV Filters", link: "/products" }
-      ]
+        { name: "UV Filters", link: "/products" },
+      ],
     },
     {
       name: "Applications",
@@ -49,12 +63,12 @@ export default function Navbar() {
         { name: "Pharmaceutical", link: "/applications" },
         { name: "Cosmetic", link: "/applications" },
         { name: "Personal Care", link: "/applications" },
-        { name: "Industrial", link: "/applications" }
-      ]
+        { name: "Industrial", link: "/applications" },
+      ],
     },
     { name: "Quality", link: "/quality", hasDropdown: false },
     { name: "Reach", link: "/reach", hasDropdown: false },
-    { name: "Contact", link: "/contact", hasDropdown: false }
+    { name: "Contact", link: "/contact", hasDropdown: false },
   ];
 
   return (
@@ -99,19 +113,26 @@ export default function Navbar() {
                         className="flex items-center space-x-1 text-black hover:text-orange-500 transition-colors"
                       >
                         <span>{item.name}</span>
-                        <FiChevronDown className={`text-sm transition-transform ${activeDropdown === index ? 'rotate-180' : ''}`} />
+                        <FiChevronDown
+                          className={`text-sm transition-transform ${
+                            activeDropdown === index ? "rotate-180" : ""
+                          }`}
+                        />
                       </button>
                       {activeDropdown === index && (
                         <div className="absolute top-full left-0 mt-2 w-56 bg-white shadow-lg rounded-md py-2 z-50">
-                          {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
-                            <Link
-                              key={dropdownIndex}
-                              to={dropdownItem.link}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500"
-                            >
-                              {dropdownItem.name}
-                            </Link>
-                          ))}
+                          {item.dropdownItems?.map(
+                            (dropdownItem, dropdownIndex) => (
+                              <Link
+                                key={dropdownIndex}
+                                to={dropdownItem.link}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500"
+                                onClick={() => setActiveDropdown(null)}
+                              >
+                                {dropdownItem.name}
+                              </Link>
+                            )
+                          )}
                         </div>
                       )}
                     </div>
@@ -139,7 +160,11 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button onClick={toggleMenu} className="text-black">
-                {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
+                {isOpen ? (
+                  <FiX className="text-2xl" />
+                ) : (
+                  <FiMenu className="text-2xl" />
+                )}
               </button>
             </div>
           </div>

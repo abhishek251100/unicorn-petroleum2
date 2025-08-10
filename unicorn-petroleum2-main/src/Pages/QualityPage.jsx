@@ -1,12 +1,8 @@
 import React from "react";
-import QualityPageIndex from "../components/qualityPage/QualityPageIndex";
+import ComingSoon from "../Common/ComingSoon";
 
 const QualityPage = () => {
-  return (
-    <div>
-      <QualityPageIndex />
-    </div>
-  );
+  return <ComingSoon title="Quality" />;
 };
 
 export default QualityPage;
