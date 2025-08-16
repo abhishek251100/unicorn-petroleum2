@@ -15,7 +15,17 @@ const Card = ({
       case 'strength':
         return (
           <div className="text-center">
-            <div className="text-5xl mb-4">{icon}</div>
+            <div className="text-5xl mb-4">
+              {icon && icon.startsWith('/') ? (
+                <img 
+                  src={icon} 
+                  alt={title} 
+                  className="w-20 h-16 mx-auto object-contain mb-20"
+                />
+              ) : (
+                icon
+              )}
+            </div>
             <h3 className="text-2xl font-semibold text-gray-900 mb-3">{title}</h3>
             <p className="text-gray-600 text-lg leading-relaxed">{description}</p>
           </div>

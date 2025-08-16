@@ -7,15 +7,15 @@ const FGridSection = ({ data }) => {
       <h2 className="text-4xl font-bold text-gray-900">{data.heading}</h2>
       <p className="text-3xl text-gray-800 mt-2 mb-8">{data.subheading}</p>
 
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-3 gap-4 ">
         {data.cards.map((card, index) => (
           <Card
             key={index}
             type="strength"
-            icon={card.icon}
+            icon={card.icon }
             title={card.title}
             description={card.description}
-            className="border border-[#EDA94E] rounded-xl p-6 flex flex-col items-center shadow-sm hover:shadow-md transition"
+            className="border border-[#EDA94E] rounded-xl p-6 py-18 flex flex-col items-center shadow-sm hover:shadow-md transition"
           />
         ))}
       </div>

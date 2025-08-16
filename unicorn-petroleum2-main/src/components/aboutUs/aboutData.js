@@ -61,21 +61,24 @@ export const aboutData = {
     members: [
       {
         name: "John Smith",
-        position: "CEO & Founder",
-        image: "/assets/team/ceo.jpg",
-        description: "Over 30 years of experience in petroleum industry"
+        position: "Chief Executive Officer",
+        image: "👨‍💼",
+        description: "Leading Unicorn Petroleum with over 25 years of industry experience",
+        experience: "25+ years"
       },
       {
-        name: "Sarah Johnson",
+        name: "Dr. Sarah Johnson",
         position: "Technical Director",
-        image: "/assets/team/technical-director.jpg",
-        description: "Expert in product development and quality control"
+        image: "👩‍🔬",
+        description: "PhD in Chemical Engineering with expertise in petroleum specialties",
+        experience: "20+ years"
       },
       {
-        name: "Mike Davis",
+        name: "Michael Chen",
         position: "Operations Manager",
-        image: "/assets/team/operations-manager.jpg",
-        description: "Specializes in manufacturing and supply chain"
+        image: "👨‍🏭",
+        description: "Expert in manufacturing operations and quality control",
+        experience: "18+ years"
       }
     ]
   },

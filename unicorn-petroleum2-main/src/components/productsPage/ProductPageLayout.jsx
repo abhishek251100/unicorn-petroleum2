@@ -6,7 +6,7 @@ export default function ProductPageLayout({
   children,
   title,
   subtitle,
-  bannerImage = "/assets/hero-bg.jpg",
+  bannerImage = "/assets/hero-bg-home.jpg",
 }) {
   const location = useLocation();
 

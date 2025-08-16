@@ -71,25 +71,25 @@ export const reachData = {
       {
         name: "Pharmaceutical",
         description: "Leading pharmaceutical companies worldwide",
-        image: "/assets/sectors/pharmaceutical.jpg",
+        image: "🏥",
         countries: ["USA", "Germany", "India", "Japan", "UK"]
       },
       {
         name: "Cosmetics",
         description: "Premium cosmetic and personal care brands",
-        image: "/assets/sectors/cosmetics.jpg",
+        image: "💄",
         countries: ["France", "USA", "Japan", "South Korea", "Italy"]
       },
       {
         name: "Food & Beverage",
         description: "Food processing and beverage companies",
-        image: "/assets/sectors/food-beverage.jpg",
+        image: "🍽️",
         countries: ["USA", "Germany", "Brazil", "Australia", "Canada"]
       },
       {
         name: "Industrial",
         description: "Diverse industrial applications",
-        image: "/assets/sectors/industrial.jpg",
+        image: "🏭",
         countries: ["China", "Germany", "USA", "Japan", "India"]
       }
     ]
@@ -105,21 +105,21 @@ export const reachData = {
         country: "Germany",
         industry: "Pharmaceutical",
         story: "Supplied custom petroleum jelly formulations for their new ointment line, resulting in 30% increase in production efficiency.",
-        image: "/assets/customers/pharma-company.jpg"
+        image: "🏥"
       },
       {
         company: "BeautyCare International",
         country: "France",
         industry: "Cosmetics",
         story: "Developed specialized white mineral oils for their premium skincare range, achieving 25% market growth.",
-        image: "/assets/customers/cosmetics-company.jpg"
+        image: "💄"
       },
       {
         company: "FoodTech Solutions",
         country: "USA",
         industry: "Food & Beverage",
         story: "Provided food-grade lubricants for their processing equipment, ensuring compliance with FDA standards.",
-        image: "/assets/customers/food-company.jpg"
+        image: "🍽️"
       }
     ]
   },

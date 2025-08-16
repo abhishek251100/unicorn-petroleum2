@@ -1,6 +1,7 @@
 import React from "react";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { FaLinkedin, FaFacebook } from "react-icons/fa";
+import { footerData } from "../Data/footerData";
 
 export default function Footer() {
   return (
@@ -21,54 +22,71 @@ export default function Footer() {
             {/* Company Branding & Socials */}
             <div>
               <div className="mb-4">
-                <h2 className="text-2xl font-bold text-orange-500">unicorn</h2>
-                <p className="text-sm text-gray-600">Innovating always</p>
+                <h2 className="text-2xl font-bold text-orange-500">{footerData.brand.logo}</h2>
+                <p className="text-sm text-gray-600">{footerData.brand.tagline}</p>
               </div>
               <p className="text-gray-600 mb-4">
-                Your trusted partner for specialty products and sourcing solutions from India
+                {footerData.brand.description}
               </p>
               <div>
-                <p className="text-sm text-gray-600 mb-2">Follow us on:</p>
+                <p className="text-sm text-gray-600 mb-2">{footerData.brand.socialMedia.title}</p>
                 <div className="flex space-x-3">
-                  <a href="#" className="text-orange-500 hover:text-orange-600 transition-colors">
-                    <FaLinkedin className="text-xl" />
-                  </a>
-                  <a href="#" className="text-orange-500 hover:text-orange-600 transition-colors">
-                    <FaFacebook className="text-xl" />
-                  </a>
+                  {footerData.brand.socialMedia.links.map((social, index) => (
+                    <a 
+                      key={index}
+                      href={social.url} 
+                      className="text-orange-500 hover:text-orange-600 transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {social.platform === "LinkedIn" ? (
+                        <FaLinkedin className="text-xl" />
+                      ) : social.platform === "Facebook" ? (
+                        <FaFacebook className="text-xl" />
+                      ) : null}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h3 className="font-semibold text-gray-800 mb-4">Quick Links</h3>
+              <h3 className="font-semibold text-gray-800 mb-4">{footerData.quickLinks.title}</h3>
               <ul className="space-y-2">
-                <li><a href="/about" className="text-gray-600 hover:text-orange-500 transition-colors">About Us</a></li>
-                <li><a href="/products" className="text-gray-600 hover:text-orange-500 transition-colors">Products</a></li>
-                <li><a href="/applications" className="text-gray-600 hover:text-orange-500 transition-colors">Applications</a></li>
-                <li><a href="/quality" className="text-gray-600 hover:text-orange-500 transition-colors">Quality</a></li>
-                <li><a href="/reach" className="text-gray-600 hover:text-orange-500 transition-colors">Global Reach</a></li>
-                <li><a href="/contact" className="text-gray-600 hover:text-orange-500 transition-colors">Contact Us</a></li>
+                {footerData.quickLinks.links.map((link, index) => (
+                  <li key={index}>
+                    <a 
+                      href={link.url} 
+                      className="text-gray-600 hover:text-orange-500 transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* Contact Information */}
             <div>
-              <h3 className="font-semibold text-gray-800 mb-4">Feel free to contact us on</h3>
+              <h3 className="font-semibold text-gray-800 mb-4">{footerData.contact.title}</h3>
               <div className="space-y-3">
                 <div className="flex items-center">
                   <FiPhone className="text-orange-500 mr-3" />
-                  <span className="text-gray-600 text-sm">+91 22 4232 4121 | +91 22 4232 4122</span>
+                  <span className="text-gray-600 text-sm">
+                    {footerData.contact.phone.primary} | {footerData.contact.phone.secondary}
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <FiMail className="text-orange-500 mr-3" />
-                  <span className="text-gray-600 text-sm">manan@unicompetro.co.in | info@unicornpetro.co.in</span>
+                  <span className="text-gray-600 text-sm">
+                    {footerData.contact.email.primary} | {footerData.contact.email.secondary}
+                  </span>
                 </div>
                 <div className="flex items-start">
                   <FiMapPin className="text-orange-500 mr-3 mt-1" />
                   <span className="text-gray-600 text-sm">
-                    Unit No. 1 'Ridhi Sidhi', Corporate Park, CST Road, Che Mumbai 400071, India
+                    {footerData.contact.address}
                   </span>
                 </div>
               </div>
@@ -87,15 +105,18 @@ export default function Footer() {
         <div className="bg-gray-800 py-4">
           <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
             <p className="text-white text-sm">
-              Copyright © 2020 Unicorn. All rights reserved.
+              {footerData.bottomBar.copyright}
             </p>
             <div className="flex space-x-4 mt-2 md:mt-0">
-              <a href="/privacy" className="text-white hover:text-orange-300 transition-colors text-sm">
-                Privacy Policy
-              </a>
-              <a href="/terms" className="text-white hover:text-orange-300 transition-colors text-sm">
-                Terms of Use
-              </a>
+              {footerData.bottomBar.legalLinks.map((link, index) => (
+                <a 
+                  key={index}
+                  href={link.url} 
+                  className="text-white hover:text-orange-300 transition-colors text-sm"
+                >
+                  {link.name}
+                </a>
+              ))}
             </div>
           </div>
         </div>

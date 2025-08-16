@@ -13,7 +13,7 @@ export const applicationsData = {
       id: "pharmaceutical",
       name: "Pharmaceutical",
       description: "High-quality excipients and formulations for pharmaceutical applications",
-      image: "/assets/industries/pharmaceutical.jpg",
+      image: "🏥",
       applications: [
         "Ointments and Creams",
         "Tablet Coatings",
@@ -27,7 +27,7 @@ export const applicationsData = {
       id: "cosmetics",
       name: "Cosmetics & Personal Care",
       description: "Premium ingredients for beauty and personal care products",
-      image: "/assets/industries/cosmetics.jpg",
+      image: "💄",
       applications: [
         "Skin Care Products",
         "Hair Care Formulations",
@@ -41,7 +41,7 @@ export const applicationsData = {
       id: "food-beverage",
       name: "Food & Beverage",
       description: "Food-grade lubricants and processing aids",
-      image: "/assets/industries/food-beverage.jpg",
+      image: "🍽️",
       applications: [
         "Food Processing Equipment",
         "Beverage Production",
@@ -55,7 +55,7 @@ export const applicationsData = {
       id: "industrial",
       name: "Industrial",
       description: "Specialized solutions for industrial applications",
-      image: "/assets/industries/industrial.jpg",
+      image: "🏭",
       applications: [
         "Lubricants",
         "Protective Coatings",
@@ -69,7 +69,7 @@ export const applicationsData = {
       id: "textile",
       name: "Textile",
       description: "Textile processing and finishing applications",
-      image: "/assets/industries/textile.jpg",
+      image: "🧵",
       applications: [
         "Fiber Processing",
         "Fabric Finishing",
@@ -83,7 +83,7 @@ export const applicationsData = {
       id: "automotive",
       name: "Automotive",
       description: "Automotive industry applications and solutions",
-      image: "/assets/industries/automotive.jpg",
+      image: "🚗",
       applications: [
         "Engine Lubricants",
         "Gear Oils",
@@ -97,7 +97,7 @@ export const applicationsData = {
       id: "electronics",
       name: "Electronics",
       description: "Electronics manufacturing and assembly",
-      image: "/assets/industries/electronics.jpg",
+      image: "💻",
       applications: [
         "Circuit Board Assembly",
         "Component Protection",

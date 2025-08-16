@@ -6,11 +6,10 @@ export const homeData = {
       "Your trusted partner for quality-assured ingredients for Pharma, Cosmetics, and Industry",
     primaryButton: "Explore Products →",
     secondaryButton: "Why Choose Us?",
-    backgroundImage: "/assets/hero-bg.jpg",
+    backgroundImage: "/assets/hero-bg-home.jpg",
     primaryButtonColor: "#E99322",
     secondaryButtonColor: "#E99322",
-    // For local images, use: backgroundImage: "/assets/hero-bg.jpg"
-    // For external images, use: backgroundImage: "https://images.unsplash.com/..."
+  
   },
 
   // Our Strengths Section
@@ -19,24 +18,24 @@ export const homeData = {
     subheading: "Excellence built on five decades of expertise and trust",
     cards: [
       {
-        icon: "🏆",
+        icon: "/assets/Trophy.png",
         title: "60+ Years of Expertise",
         description:
           "Pioneering quality ingredients for the cosmetic and pharmaceutical world since 1964",
         link: "/about", // Internal link
       },
       {
-        icon: "🧪",
+        icon: "/assets/Flask.png",
         title: "State-of-the-Art R&D & QA",
         description:
           "Innovating raw materials that power global cosmetic & pharma brands",
         link: "/quality", // Internal link
       },
       {
-        icon: "🤝",
+        icon: "/assets/handshake.png",
         title: "Customer-Centric Approach",
         description:
-          "Seamless procurement, personalized support — delivering quality raw materials from India to the world",
+          "Seamless procurement, personalized support delivering quality raw materials from India to the world",
         link: "/contact", // Internal link
       },
     ],
