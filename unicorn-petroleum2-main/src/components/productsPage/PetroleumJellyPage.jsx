@@ -44,7 +44,7 @@ export default function PetroleumJellyPage() {
       </div>
 
       {/* Section 2: Quality Standards Section - Full Width (Outside Grid) */}
-      <QualityStandardsSection data={homeData.qualityStandards} />
+      <QualityStandardsSection />
 
       {/* Quote Form Section - Common on all product pages */}
       <div id="quote-form-section">

@@ -3,65 +3,37 @@ import React from "react";
 const ProductKeyFeaturesSection = ({ data }) => {
   const { title, features } = data;
 
-  // Calculate how many cards should be in the last row
-  const cardsPerRow = 4; // 4 cards per row
-  const totalCards = features.length;
-  const fullRows = Math.floor(totalCards / cardsPerRow);
-  const cardsInLastRow = totalCards % cardsPerRow;
-  const isLastRowIncomplete = cardsInLastRow > 0;
-
   return (
     <section>
-      <h3 className="text-3xl font-bold text-gray-800 mb-8 tracking-tight">
+      <h3 className="text-2xl font-bold text-gray-800 mb-8 tracking-tight text-center">
         {title || "Key Features"}
       </h3>
-      
-      <div className="space-y-8">
-        {/* Full Rows */}
-        {Array.from({ length: fullRows }, (_, rowIndex) => (
-          <div key={`row-${rowIndex}`} className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            {features.slice(rowIndex * cardsPerRow, (rowIndex + 1) * cardsPerRow).map((feature, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300">
-                <h4 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
-                  <span className="text-orange-500 mr-3 text-2xl">{feature.icon}</span>
-                  {feature.title}
-                </h4>
-                <ul className="space-y-3">
-                  {feature.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start">
-                      <span className="text-orange-500 mr-3 text-lg">•</span>
-                      <span className="text-gray-600 text-lg">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {features.map((feature, index) => (
+          <div
+            key={index}
+            className="bg-white p-6 rounded-xl border border-orange-200 hover:shadow-lg transition-all duration-300 max-w-sm mx-auto w-full"
+          >
+            <div className="text-center mb-6">
+              <div className="w-12 h-12 mx-auto mb-3 bg-orange-50 rounded-full flex items-center justify-center">
+                <span className="text-orange-500 text-xl">{feature.icon}</span>
               </div>
-            ))}
+              <h4 className="text-lg font-semibold text-gray-800">
+                {feature.title}
+              </h4>
+            </div>
+
+            <ul className="space-y-2 pl-4">
+              {feature.items.map((item, itemIndex) => (
+                <li key={itemIndex} className="flex items-start">
+                  <span className="text-orange-500 mr-2 text-sm">•</span>
+                  <span className="text-gray-600 text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
-
-        {/* Last Row (if incomplete) - Centered */}
-        {isLastRowIncomplete && (
-          <div className="flex justify-center">
-            <div className={`grid grid-cols-1 lg:grid-cols-${cardsInLastRow} gap-8`}>
-              {features.slice(fullRows * cardsPerRow).map((feature, index) => (
-                <div key={index} className="bg-white p-8 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
-                    <span className="text-orange-500 mr-3 text-2xl">{feature.icon}</span>
-                    {feature.title}
-                  </h4>
-                  <ul className="space-y-3">
-                    {feature.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start">
-                        <span className="text-orange-500 mr-3 text-lg">•</span>
-                        <span className="text-gray-600 text-lg">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

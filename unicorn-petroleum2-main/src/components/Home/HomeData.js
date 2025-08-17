@@ -4,7 +4,7 @@ export const homeData = {
     title: "Pioneering Excellence in Petroleum Specialties for 6+ Decades",
     subtitle:
       "Your trusted partner for quality-assured ingredients for Pharma, Cosmetics, and Industry",
-    primaryButton: "Explore Products →",
+    primaryButton: "Explore Products ",
     secondaryButton: "Why Choose Us?",
     backgroundImage: "/assets/hero-bg-home.jpg",
     primaryButtonColor: "#E99322",

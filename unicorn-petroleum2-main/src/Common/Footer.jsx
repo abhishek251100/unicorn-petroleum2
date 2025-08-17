@@ -1,7 +1,6 @@
 import React from "react";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { FaLinkedin, FaFacebook } from "react-icons/fa";
-import { footerData } from "../Data/footerData";
 
 export default function Footer() {
   return (
@@ -18,84 +17,120 @@ export default function Footer() {
       {/* Main Footer */}
       <footer className="bg-orange-50">
         <div className="max-w-7xl mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Company Branding & Socials */}
             <div>
               <div className="mb-4">
-                <h2 className="text-2xl font-bold text-orange-500">{footerData.brand.logo}</h2>
-                <p className="text-sm text-gray-600">{footerData.brand.tagline}</p>
+                <h2 className="text-2xl font-bold text-orange-500">unicorn</h2>
+                <p className="text-sm text-gray-600">Innovating always...</p>
               </div>
               <p className="text-gray-600 mb-4">
-                {footerData.brand.description}
+                Your trusted partner for specialty products and sourcing
+                solutions from India.
               </p>
               <div>
-                <p className="text-sm text-gray-600 mb-2">{footerData.brand.socialMedia.title}</p>
+                <p className="text-sm text-gray-600 mb-2">Follow us on:</p>
                 <div className="flex space-x-3">
-                  {footerData.brand.socialMedia.links.map((social, index) => (
-                    <a 
-                      key={index}
-                      href={social.url} 
-                      className="text-orange-500 hover:text-orange-600 transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {social.platform === "LinkedIn" ? (
-                        <FaLinkedin className="text-xl" />
-                      ) : social.platform === "Facebook" ? (
-                        <FaFacebook className="text-xl" />
-                      ) : null}
-                    </a>
-                  ))}
+                  <a
+                    href="https://linkedin.com/company/unicorn-petroleum"
+                    className="text-orange-500 hover:text-orange-600 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedin className="text-xl" />
+                  </a>
+                  <a
+                    href="https://facebook.com/unicornpetroleum"
+                    className="text-orange-500 hover:text-orange-600 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaFacebook className="text-xl" />
+                  </a>
                 </div>
               </div>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h3 className="font-semibold text-gray-800 mb-4">{footerData.quickLinks.title}</h3>
+              <h3 className="font-semibold text-gray-800 mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                {footerData.quickLinks.links.map((link, index) => (
-                  <li key={index}>
-                    <a 
-                      href={link.url} 
-                      className="text-gray-600 hover:text-orange-500 transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
+                <li>
+                  <a
+                    href="/about"
+                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/products"
+                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                  >
+                    Products
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/applications"
+                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                  >
+                    Applications
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/quality"
+                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                  >
+                    Quality
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/reach"
+                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                  >
+                    Global Reach
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/contact"
+                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                  >
+                    Contact Us
+                  </a>
+                </li>
               </ul>
             </div>
 
             {/* Contact Information */}
             <div>
-              <h3 className="font-semibold text-gray-800 mb-4">{footerData.contact.title}</h3>
+              <h3 className="font-semibold text-gray-800 mb-4">
+                Feel free to contact us on
+              </h3>
               <div className="space-y-3">
                 <div className="flex items-center">
                   <FiPhone className="text-orange-500 mr-3" />
                   <span className="text-gray-600 text-sm">
-                    {footerData.contact.phone.primary} | {footerData.contact.phone.secondary}
+                    +91 22 4232 4121 | +91 22 4232 4122
                   </span>
                 </div>
                 <div className="flex items-center">
                   <FiMail className="text-orange-500 mr-3" />
                   <span className="text-gray-600 text-sm">
-                    {footerData.contact.email.primary} | {footerData.contact.email.secondary}
+                    manan@unicornpetro.co.in | info@unicornpetro.co.in
                   </span>
                 </div>
                 <div className="flex items-start">
                   <FiMapPin className="text-orange-500 mr-3 mt-1" />
                   <span className="text-gray-600 text-sm">
-                    {footerData.contact.address}
+                    Unit No. 1 'Ridhi Sidhi', Corporate Park, CST Road, Che
+                    Mumbai 400071, India
                   </span>
                 </div>
-              </div>
-            </div>
-
-            {/* Map Placeholder */}
-            <div>
-              <div className="bg-gray-200 rounded-lg h-48 flex items-center justify-center">
-                <span className="text-gray-500">Map Placeholder</span>
               </div>
             </div>
           </div>
@@ -105,18 +140,21 @@ export default function Footer() {
         <div className="bg-gray-800 py-4">
           <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
             <p className="text-white text-sm">
-              {footerData.bottomBar.copyright}
+              Copyright © 2020 Unicorn. All rights reserved.
             </p>
             <div className="flex space-x-4 mt-2 md:mt-0">
-              {footerData.bottomBar.legalLinks.map((link, index) => (
-                <a 
-                  key={index}
-                  href={link.url} 
-                  className="text-white hover:text-orange-300 transition-colors text-sm"
-                >
-                  {link.name}
-                </a>
-              ))}
+              <a
+                href="/privacy"
+                className="text-white hover:text-orange-300 transition-colors text-sm"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="/terms"
+                className="text-white hover:text-orange-300 transition-colors text-sm"
+              >
+                Terms of Use
+              </a>
             </div>
           </div>
         </div>

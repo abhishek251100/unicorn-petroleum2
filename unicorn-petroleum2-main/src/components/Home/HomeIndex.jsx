@@ -25,7 +25,7 @@ const HomeIndex = () => {
       <CardsSection data={{ ...homeData.industries, centerLastRow: true }} />
 
       {/* Quality Standards Section */}
-      <QualityStandardsSection data={homeData.qualityStandards} />
+      <QualityStandardsSection />
 
       {/* News Section */}
       <NewsSection data={homeData.news} />
