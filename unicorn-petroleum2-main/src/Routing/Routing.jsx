@@ -7,7 +7,7 @@ import ApplicationPage from "../Pages/ApplicationPage";
 import QualityPage from "../Pages/QualityPage";
 import ReachPage from "../Pages/ReachPage";
 import ContactPage from "../Pages/ContactPage";
-import PetroleumJellyPage from "../components/productsPage/PetroleumJellyPage";
+import PetroleumJellyPage from "../components/productsPage/petroleumJelly/PetroleumJellyPage";
 
 const router = createBrowserRouter([
   {

@@ -1,13 +1,15 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 function Layout() {
-  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Scroll to top on every route change
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div className="app-layout">

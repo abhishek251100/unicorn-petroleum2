@@ -1,37 +1,50 @@
 import React from "react";
 
 const ProductKeyFeaturesSection = ({ data }) => {
-  const { title, features } = data;
+  if (!data || !data.features) {
+    return null;
+  }
 
   return (
     <section>
       <h3 className="text-2xl font-bold text-gray-800 mb-8 tracking-tight text-center">
-        {title || "Key Features"}
+        {data.heading || "Key Features"}
       </h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        {features.map((feature, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-[756px] mx-auto">
+        {data.features.map((feature, index) => (
           <div
             key={index}
-            className="bg-white p-6 rounded-xl border border-orange-200 hover:shadow-lg transition-all duration-300 max-w-sm mx-auto w-full"
+            className="bg-white p-4 rounded-xl border border-orange-200 hover:shadow-lg transition-all duration-300 w-full h-[350px] max-w-[360px] mx-auto flex flex-col justify-center items-center"
           >
-            <div className="text-center mb-6">
+            <div className="text-center mb-4">
               <div className="w-12 h-12 mx-auto mb-3 bg-orange-50 rounded-full flex items-center justify-center">
-                <span className="text-orange-500 text-xl">{feature.icon}</span>
+                {feature.icon && typeof feature.icon === 'string' && feature.icon.startsWith('/') ? (
+                  <img
+                    src={feature.icon}
+                    alt={feature.title}
+                    className="w-8 h-8 object-contain"
+                  />
+                ) : (
+                  <span className="text-orange-500 text-xl">{feature.icon}</span>
+                )}
               </div>
-              <h4 className="text-lg font-semibold text-gray-800">
+              <h4 className="text-lg font-semibold text-gray-800 mb-2">
                 {feature.title}
               </h4>
             </div>
 
-            <ul className="space-y-2 pl-4">
-              {feature.items.map((item, itemIndex) => (
-                <li key={itemIndex} className="flex items-start">
-                  <span className="text-orange-500 mr-2 text-sm">•</span>
-                  <span className="text-gray-600 text-sm">{item}</span>
-                </li>
-              ))}
-            </ul>
+            {Array.isArray(feature.items) && feature.items.length > 0 ? (
+              <ul className="list-disc pl-5 space-y-1 text-sm text-gray-600">
+                {feature.items.map((item, itemIndex) => (
+                  <li key={itemIndex}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-600 text-sm text-center leading-relaxed">
+                {feature.description}
+              </p>
+            )}
           </div>
         ))}
       </div>

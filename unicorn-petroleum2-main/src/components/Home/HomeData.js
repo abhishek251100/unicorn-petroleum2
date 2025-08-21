@@ -1,5 +1,5 @@
 export const homeData = {
-  // Hero Section
+  // Hero
   hero: {
     title: "Pioneering Excellence in Petroleum Specialties for 6+ Decades",
     subtitle:
@@ -12,27 +12,27 @@ export const homeData = {
   
   },
 
-  // Our Strengths Section
+  // Our strengths
   strengths: {
     heading: "Our Strengths",
     subheading: "Excellence built on five decades of expertise and trust",
     cards: [
       {
-        icon: "/assets/Trophy.png",
+        icon: "/assets/Icons/Property 1=Trophy.png",
         title: "60+ Years of Expertise",
         description:
           "Pioneering quality ingredients for the cosmetic and pharmaceutical world since 1964",
         link: "/about", // Internal link
       },
       {
-        icon: "/assets/Flask.png",
+        icon: "/assets/Icons/Property 1=Flask.png",
         title: "State-of-the-Art R&D & QA",
         description:
           "Innovating raw materials that power global cosmetic & pharma brands",
         link: "/quality", // Internal link
       },
       {
-        icon: "/assets/handshake.png",
+        icon: "/assets/Icons/Property 1=Handshake.png",
         title: "Customer-Centric Approach",
         description:
           "Seamless procurement, personalized support delivering quality raw materials from India to the world",
@@ -43,7 +43,7 @@ export const homeData = {
     buttonLink: "/about", // Internal link
   },
 
-  // Product Portfolio Section
+  // Product portfolio
   products: {
     heading: "Our Core Product Portfolio",
     subheading: "Where Innovation Meets Quality - Since 1964",
@@ -89,43 +89,43 @@ export const homeData = {
     buttonLink: "/products", // Internal link
   },
 
-  // Industries Section
+  // Industries
   industries: {
     heading: "Catering to Diverse Industries Worldwide",
     subheading: "Shaping the Future of Cosmetic & Pharma Ingredients",
     cards: [
       {
-        icon: "🏥",
+        icon: "/assets/Icons/Property 1=pharma.png",
         label: "Pharmaceutical",
         link: "/applications#pharmaceutical", // Internal link with anchor
       },
       {
-        icon: "💄",
+        icon: "/assets/Icons/Property 1=cosmetic.png",
         label: "Cosmetic",
         link: "/applications#cosmetic", // Internal link with anchor
       },
       {
-        icon: "🧪",
+        icon: "/assets/Icons/Property 1=petro.png",
         label: "Bulk Chemicals",
         link: "/applications#bulk-chemicals", // Internal link with anchor
       },
       {
-        icon: "🧴",
+        icon: "/assets/Icons/Property 1=fmcg.png",
         label: "Personal Care",
         link: "/applications#personal-care", // Internal link with anchor
       },
       {
-        icon: "⚙️",
+        icon: "/assets/Icons/Property 1=lube.png",
         label: "Lubricants",
         link: "/applications#lubricants", // Internal link with anchor
       },
       {
-        icon: "🌱",
+        icon: "/assets/Icons/Property 1=agro.png",
         label: "Agrochemical",
         link: "/applications#agrochemical", // Internal link with anchor
       },
       {
-        icon: "🧵",
+        icon: "/assets/Icons/Property 1=Custom.png",
         label: "Textile",
         link: "/applications#textile", // Internal link with anchor
       },
@@ -135,7 +135,7 @@ export const homeData = {
     centerLastRow: true,
   },
 
-  // Quality Standards Section
+  // Quality standards
   qualityStandards: {
     heading: "Globally Recognized Quality & Safety Standards",
     subheading: "Driven by quality, trusted for generations.",
@@ -152,7 +152,7 @@ export const homeData = {
     linkUrl: "/quality", // Internal link
   },
 
-  // News Section
+  // News
   news: {
     heading: "Latest News & Company Updates",
     cards: [
@@ -203,7 +203,7 @@ export const homeData = {
     buttonLink: "/news", // Internal link
   },
 
-  // Company Statement
+  // Company statement
   statement: {
     heading: "Unicorn Petroleum Industries Pvt. Ltd.",
     subheading: "60+ Years of Excellence, Innovation, and Trust",
@@ -212,7 +212,7 @@ export const homeData = {
     linkUrl: "/about", // Internal link
   },
 
-  // Call to Action Section
+  // Call to action
   cta: {
     heading: "Ready to Partner with Unicorn Petroleum?",
     subtitle:

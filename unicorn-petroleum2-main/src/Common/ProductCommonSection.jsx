@@ -17,7 +17,7 @@ const ProductPageCommonSection = ({ data }) => {
   };
 
   return (
-    <section className="py-12 px-6 md:px-8 lg:px-12">
+    <section className="py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">
           {data.title || "Product Title"}

@@ -1,30 +1,29 @@
-import React from 'react';
+import React from "react";
 
-const CallToAction = ({ data }) => {
+export default function CallToAction({ data }) {
   return (
-    <section className="py-16 px-6 md:px-8 lg:px-12 bg-gray-50">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6">
+    <section className="py-16 bg-gray-50">
+      <div className="w-full text-center px-4">
+        <h2 className="text-4xl font-bold text-gray-800 mb-4 tracking-tight">
           {data.heading}
         </h2>
-        
-        <p className="text-xl text-gray-600 mb-8">
-          {data.subtitle}
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="bg-orange-500 text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-orange-600 transition-colors flex items-center space-x-2">
-            <span>{data.primaryButton}</span>
-            <span className="text-xl">→</span>
-          </button>
-          
-          <button className="bg-white text-gray-800 px-8 py-4 rounded-full font-medium text-lg border-2 border-orange-300 hover:bg-orange-50 transition-colors">
+        <p className="text-xl text-gray-600 mb-8">{data.subtitle}</p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={data.primaryButtonLink}
+            className="bg-[#E99322] text-white px-8 py-3 rounded-full hover:bg-[#EDA94E] transition-all duration-300 font-medium flex items-center gap-2 justify-center"
+          >
+            {data.primaryButton}
+            <span className="text-lg">→</span>
+          </a>
+          <a
+            href={data.secondaryButtonLink}
+            className="border-2 border-[#E99322] text-[#E99322] px-8 py-3 rounded-full hover:bg-[#E99322] hover:text-white transition-all duration-300 font-medium flex items-center gap-2 justify-center"
+          >
             {data.secondaryButton}
-          </button>
+          </a>
         </div>
       </div>
     </section>
   );
-};
-
-export default CallToAction; 
+} 

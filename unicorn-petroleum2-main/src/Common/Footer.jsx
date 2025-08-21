@@ -6,13 +6,11 @@ export default function Footer() {
   return (
     <>
       {/* Company Tagline */}
-      <div className="bg-white py-8">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h3 className="text-2xl font-bold text-gray-800">
+      <div className="text-center">
+          <p className="text-2xl md:text-3xl font-bold text-gray-600 pb-10">
             Global Ingredients. Indian Expertise. Trusted Worldwide
-          </h3>
+          </p>
         </div>
-      </div>
 
       {/* Main Footer */}
       <footer className="bg-orange-50">

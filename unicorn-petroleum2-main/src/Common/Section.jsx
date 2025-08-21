@@ -165,7 +165,7 @@ const Section = ({
   };
 
   return (
-    <section className={`py-16 px-6 md:px-8 lg:px-12 ${className}`}>
+    <section className={`py-16 px-4 ${className}`}>
       <div className="max-w-7xl mx-auto">
         {renderSectionContent()}
       </div>

@@ -12,7 +12,7 @@ const FGridSection = ({ data }) => {
           <Card
             key={index}
             type="strength"
-            icon={card.icon }
+            icon={card.icon}
             title={card.title}
             description={card.description}
             className="border border-[#EDA94E] rounded-xl p-6 py-18 flex flex-col items-center shadow-sm hover:shadow-md transition"
