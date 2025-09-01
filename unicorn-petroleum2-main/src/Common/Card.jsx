@@ -97,6 +97,27 @@ const Card = ({
           </div>
         );
       
+      case 'manufacturing':
+        return (
+          <div className="text-center">
+            <div className="mb-6">
+              {icon && icon.startsWith('/') ? (
+                <img 
+                  src={icon} 
+                  alt={title} 
+                  className="w-full h-48 object-cover rounded-lg mx-auto"
+                />
+              ) : (
+                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+                  <span className="text-gray-500 text-4xl">{icon}</span>
+                </div>
+              )}
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">{title}</h3>
+            <p className="text-gray-600 text-base leading-relaxed">{description}</p>
+          </div>
+        );
+      
       default:
         return (
           <div className="text-center">

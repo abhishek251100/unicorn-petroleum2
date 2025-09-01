@@ -6,22 +6,21 @@ export default function ProductPortfolioSection({ data }) {
   }
 
   return (
-    <section className="py-16 ">
-      <div className="max-w-7xl mx-auto px-4 ">
-        <div className="text-center mb-12 ">
+    <section className="py-12 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-gray-800 mb-4 tracking-tight">
             {data.heading}
           </h2>
           <p className="text-xl text-gray-600">{data.subheading}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {data.cards.map((card, index) => (
             <div
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer border border-[#EDA94E]"
             >
-              {/* Image */}
               <div className="h-48 overflow-hidden">
                 <img
                   src={card.image}
@@ -30,7 +29,6 @@ export default function ProductPortfolioSection({ data }) {
                 />
               </div>
 
-              {/* Content */}
               <div className="p-6">
                 <h3 className="font-semibold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors">
                   {card.title}

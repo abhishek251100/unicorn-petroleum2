@@ -1,8 +1,8 @@
 import React from "react";
-import ComingSoon from "../Common/ComingSoon";
+import CorporateProfilePage from "../components/aboutUs/corporateProfile/CorporateProfilePage";
 
 const AboutPage = () => {
-  return <ComingSoon title="About" />;
+  return <CorporateProfilePage />;
 };
 
 export default AboutPage;

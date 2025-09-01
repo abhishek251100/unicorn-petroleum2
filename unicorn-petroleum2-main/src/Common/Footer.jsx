@@ -19,8 +19,9 @@ export default function Footer() {
             {/* Company Branding & Socials */}
             <div>
               <div className="mb-4">
-                <h2 className="text-2xl font-bold text-orange-500">unicorn</h2>
-                <p className="text-sm text-gray-600">Innovating always...</p>
+                <a href="/" className="inline-flex items-center">
+                  <img src="/assets/logo 1.png" alt="Unicorn logo" className="h-10 w-auto" />
+                </a>
               </div>
               <p className="text-gray-600 mb-4">
                 Your trusted partner for specialty products and sourcing
@@ -55,7 +56,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="/about"
+                    href="/about/profile"
                     className="text-gray-600 hover:text-orange-500 transition-colors"
                   >
                     About Us

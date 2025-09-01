@@ -1,7 +1,7 @@
 export const aboutData = {
   // Hero Section
   hero: {
-    title: "About Unicorn Petroleum",
+    title: "Corporate profile",
     subtitle: "Pioneering Excellence in Petroleum Specialties for 6+ Decades",
     backgroundImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=800&fit=crop",
     description: "Your trusted partner for quality-assured ingredients for Pharma, Cosmetics, and Industry"

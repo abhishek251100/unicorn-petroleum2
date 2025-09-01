@@ -25,8 +25,8 @@ export default function ProductPageLayout({
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Banner with shared image and centered black text */}
-      <div className="relative w-full h-96 md:h-[500px] overflow-hidden">
+      {/* Banner with shared image and centered black text - Now overlapping navbar */}
+      <div className="relative w-full h-96 md:h-[500px] overflow-hidden -mt-16 pt-16">
         <div
           className="absolute inset-0"
           style={{

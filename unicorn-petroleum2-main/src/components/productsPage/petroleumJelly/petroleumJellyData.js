@@ -10,29 +10,37 @@ export const petroleumJellyData = {
     brochureUrl: "/brochures/petroleum-jelly-brochure.pdf"
   },
 
-  // Applications data
-  applications: [
-    {
-      icon: "/assets/Icons/Property 1=cosmetic.png",
-      title: "Cosmetics & Personal Care",
-      description: "Skincare products, lip balms, moisturizers"
-    },
-    {
-      icon: "/assets/Icons/Property 1=pharma.png",
-      title: "Pharmaceutical",
-      description: "Ointments, medical formulations, wound care"
-    },
-    {
-      icon: "/assets/Icons/Property 1=agro.png",
-      title: "Industrial",
-      description: "Lubrication, rust prevention, machinery protection"
-    },
-    {
-      icon: "/assets/Icons/Property 1=fmcg.png",
-      title: "FMCG",
-      description: "Consumer goods, household products"
-    }
-  ],
+  // New Applications section structure
+  applicationsSection: {
+    productName: "petroleum jelly",
+    applications: "From the lipstick in your makeup bag to the protective coating on your car, microcrystalline wax is the versatile ingredient that makes everyday products better. Our premium-grade wax enhances texture, extends shelf life, and provides superior protection across industries – transforming ordinary formulations into exceptional products that perform when it matters most.",
+    finalProductUtilization: [
+      "Ointments",
+      "Pain balms", 
+      "Gauze dressings",
+      "Skin protectants",
+      "Dental adhesive",
+      "Lip care",
+      "Foot care",
+      "Creams"
+    ]
+  },
+
+  // Packaged responsibly section
+  packagedResponsibly: {
+    packagingOptions: [
+      {
+        icon: "bag",
+        type: "Bags",
+        weight: "25kg/35kg"
+      },
+      {
+        icon: "box", 
+        type: "Cartons",
+        weight: "25kg/35kg"
+      }
+    ]
+  },
 
   // Key features data
   keyFeatures: {
@@ -59,6 +67,24 @@ export const petroleumJellyData = {
           "TSE/BSE free",
           "Halal & Kosher"
         ]
+      }
+    ]
+  },
+
+  // Related products section - Now using actual product images
+  relatedProducts: {
+    relatedProducts: [
+      {
+        name: "Mineral Oil",
+        image: "/assets/RELATED PROD IMG/Mineral Oil.png"
+      },
+      {
+        name: "Microcrystalline Wax",
+        image: "/assets/RELATED PROD IMG/Microcrystalline.png"
+      },
+      {
+        name: "Paraffin Wax",
+        image: "/assets/RELATED PROD IMG/Paraffin Wax.png"
       }
     ]
   }

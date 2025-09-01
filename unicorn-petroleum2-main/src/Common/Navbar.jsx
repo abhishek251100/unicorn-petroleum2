@@ -6,6 +6,8 @@ import { FaWhatsapp } from "react-icons/fa";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [mobileDropdowns, setMobileDropdowns] = useState({});
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -13,53 +15,54 @@ export default function Navbar() {
     setActiveDropdown(activeDropdown === index ? null : index);
   };
 
-  // Close dropdown when clicking outside
+  const toggleMobileDropdown = (index) => {
+    setMobileDropdowns(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Check if click is outside any dropdown
       const dropdowns = document.querySelectorAll('.dropdown-container');
       let clickedOutside = true;
-      
       dropdowns.forEach(dropdown => {
-        if (dropdown.contains(event.target)) {
-          clickedOutside = false;
-        }
+        if (dropdown.contains(event.target)) clickedOutside = false;
       });
-      
-      if (clickedOutside) {
-        setActiveDropdown(null);
-      }
+      if (clickedOutside) setActiveDropdown(null);
     };
-
     document.addEventListener('click', handleClickOutside, true);
-    return () => {
-      document.removeEventListener('click', handleClickOutside, true);
-    };
+    return () => document.removeEventListener('click', handleClickOutside, true);
   }, []);
 
-  // Close dropdown when pressing Escape key
   useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === 'Escape') {
         setActiveDropdown(null);
+        setMobileDropdowns({});
       }
     };
-
     document.addEventListener('keydown', handleEscape);
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-    };
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 0);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   const menuItems = [
     {
       name: "About",
-      link: "/about",
+      link: "/about/profile",
       hasDropdown: true,
       dropdownItems: [
-        { name: "Our Story", link: "/about" },
-        { name: "Mission & Vision", link: "/about" },
-        { name: "Leadership", link: "/about" }
+        { name: "Corporate profile", link: "/about/profile" },
+        { name: "Values", link: "/about/values" },
+        { name: "Vision - Mission", link: "/about/vision-mission" },
+        { name: "Certifications", link: "/about/certifications" }
       ]
     },
     {
@@ -68,7 +71,7 @@ export default function Navbar() {
       hasDropdown: true,
       dropdownItems: [
         { name: "Petroleum Jelly", link: "/products/petroleum-jelly" },
-        { name: "White Mineral Oils", link: "/products" },
+        { name: "White Mineral Oils", link: "/products/white-mineral-oils" },
         { name: "Microcrystalline Wax", link: "/products" },
         { name: "Paraffin Wax", link: "/products" },
         { name: "Natural Beeswax", link: "/products" },
@@ -81,13 +84,16 @@ export default function Navbar() {
     },
     {
       name: "Applications",
-      link: "/applications",
+      link: "/applications/pharmaceutical",
       hasDropdown: true,
       dropdownItems: [
-        { name: "Pharmaceutical", link: "/applications" },
-        { name: "Cosmetic", link: "/applications" },
-        { name: "Personal Care", link: "/applications" },
-        { name: "Industrial", link: "/applications" }
+        { name: "Pharmaceutical", link: "/applications/pharmaceutical" },
+        { name: "Cosmetics", link: "/applications/cosmetics" },
+        { name: "Bulk Chemical", link: "/applications/bulk-chemical" },
+        { name: "Personal Care", link: "/applications/personal-care" },
+        { name: "Lubricants", link: "/applications/lubricants" },
+        { name: "Agrochemical", link: "/applications/agrochemical" },
+        { name: "Textile", link: "/applications/textile" }
       ]
     },
     { name: "Quality", link: "/quality", hasDropdown: false },
@@ -96,7 +102,7 @@ export default function Navbar() {
   ];
 
   return (
-    <>
+    <header className={`sticky top-0 z-50 ${isScrolled ? 'shadow-2xl' : 'shadow-none'}`}>
       {/* Top Contact Bar */}
       <div className="bg-[#F5CD99] py-2 px-4">
         <div className="max-w-7xl mx-auto px-4 flex justify-end items-center text-sm">
@@ -114,16 +120,14 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Main Navigation Bar */}
-      <nav className="bg-[#c68127]/45 backdrop-blur-xl shadow-2xl sticky top-0 z-50 border-b border-[#F5CD99]/20 py-2">
+      <nav className="bg-transparent backdrop-blur-xl py-2">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-full">
             {/* Logo */}
             <div className="flex items-center space-x-4">
-              <div>
-                <h1 className="text-2xl font-bold text-orange-500">unicorn</h1>
-                <p className="text-xs text-gray-600">Innovating always...</p>
-              </div>
+              <Link to="/" className="flex items-center">
+                <img src="/assets/logo 1.png" alt="Unicorn logo" className="h-9 w-auto" />
+              </Link>
             </div>
 
             {/* Desktop Menu */}
@@ -134,11 +138,11 @@ export default function Navbar() {
                     <div>
                       <button
                         onClick={() => toggleDropdown(index)}
-                        className="flex items-center space-x-1 text-black transition-colors relative group"
+                        className="flex items-center space-x-1 text-gray-800 transition-colors relative group"
                       >
                         <span className="relative">
                           {item.name}
-                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
                         </span>
                         <FiChevronDown className={`text-sm transition-transform ${activeDropdown === index ? 'rotate-180' : ''}`} />
                       </button>
@@ -151,7 +155,6 @@ export default function Navbar() {
                               className="block px-6 py-4 text-base font-semibold text-black hover:bg-[#EDA94E]/10 border-b border-gray-200 last:border-b-0 flex items-center justify-between"
                               onClick={() => {
                                 setActiveDropdown(null);
-                                // Scroll to top when navigating
                                 window.scrollTo(0, 0);
                               }}
                             >
@@ -165,15 +168,12 @@ export default function Navbar() {
                   ) : (
                     <Link
                       to={item.link}
-                      className="text-black transition-colors relative group"
-                      onClick={() => {
-                        // Scroll to top when navigating
-                        window.scrollTo(0, 0);
-                      }}
+                      className="text-gray-800 transition-colors relative group"
+                      onClick={() => { window.scrollTo(0, 0); }}
                     >
                       <span className="relative">
                         {item.name}
-                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
                       </span>
                     </Link>
                   )}
@@ -183,7 +183,7 @@ export default function Navbar() {
 
             {/* Search Icon and WhatsApp Button */}
             <div className="hidden md:flex items-center space-x-4">
-              <FiSearch className="text-black text-xl cursor-pointer hover:text-orange-500 transition-colors" />
+              <FiSearch className="text-gray-800 text-xl cursor-pointer hover:text-orange-500 transition-colors" />
               <button className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm hover:bg-orange-600 transition-colors">
                 WhatsApp Us
               </button>
@@ -191,7 +191,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
-              <button onClick={toggleMenu} className="text-black">
+              <button onClick={toggleMenu} className="text-gray-800">
                 {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
               </button>
             </div>
@@ -199,26 +199,55 @@ export default function Navbar() {
 
           {/* Mobile Menu */}
           {isOpen && (
-            <div className="md:hidden py-4 border-t border-white/20">
+            <div className="md:hidden py-4 border-t border-gray-300/30 bg-black/10 backdrop-blur-sm rounded-b-lg">
               {menuItems.map((item, index) => (
-                <div key={index} className="py-2">
-                  <Link
-                    to={item.link}
-                    className="block text-black hover:text-orange-500"
-                    onClick={() => {
-                      setIsOpen(false);
-                      // Scroll to top when navigating
-                      window.scrollTo(0, 0);
-                    }}
-                  >
-                    {item.name}
-                  </Link>
+                <div key={index} className="border-b border-gray-300/30 last:border-b-0">
+                  {item.hasDropdown ? (
+                    <div>
+                      <button
+                        onClick={() => toggleMobileDropdown(index)}
+                        className="w-full text-left px-4 py-3 text-gray-800 hover:text-orange-300 flex items-center justify-between"
+                      >
+                        <span className="font-semibold">{item.name}</span>
+                        <FiChevronDown className={`text-sm transition-transform ${mobileDropdowns[index] ? 'rotate-180' : ''}`} />
+                      </button>
+                      {mobileDropdowns[index] && (
+                        <div className="bg-black/20 backdrop-blur-sm border-t border-gray-300/30">
+                          {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
+                            <Link
+                              key={dropdownIndex}
+                              to={dropdownItem.link}
+                              className="block px-8 py-3 text-sm text-gray-800 hover:text-orange-300 hover:bg-black/20 border-b border-gray-300/30 last:border-b-0"
+                              onClick={() => { setIsOpen(false); setMobileDropdowns({}); window.scrollTo(0, 0); }}
+                            >
+                              {dropdownItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.link}
+                      className="block px-4 py-3 text-gray-800 hover:text-orange-300 font-semibold"
+                      onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </div>
               ))}
+
+              <div className="px-4 py-3 border-t border-gray-300/30 mt-4">
+                <button className="w-full bg-orange-500 text-white px-4 py-2 rounded-full text-sm hover:bg-orange-600 transition-colors flex items-center justify-center gap-2">
+                  <FaWhatsapp className="text-lg" />
+                  WhatsApp Us
+                </button>
+              </div>
             </div>
           )}
         </div>
       </nav>
-    </>
+    </header>
   );
 }

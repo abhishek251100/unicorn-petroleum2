@@ -1,17 +1,19 @@
 import React from "react";
 import Card from "./Card";
 
-const FGridSection = ({ data }) => {
+const FGridSection = ({ data, cardType = "strength", customPadding = "py-12" }) => {
   return (
-    <section className="pt-12 px-6 md:px-[180px] text-center">
-      <h2 className="text-4xl font-bold text-gray-900">{data.heading}</h2>
-      <p className="text-3xl text-gray-800 mt-2 mb-8">{data.subheading}</p>
+    <section className={`${customPadding} text-center`}>
+      <div className="mb-8">
+        <h2 className="text-4xl font-bold text-gray-900 mb-4">{data.heading}</h2>
+        <p className="text-3xl text-gray-800">{data.subheading}</p>
+      </div>
 
-      <div className="grid md:grid-cols-3 gap-4 ">
+      <div className="grid md:grid-cols-3 gap-4 px-2">
         {data.cards.map((card, index) => (
           <Card
             key={index}
-            type="strength"
+            type={cardType}
             icon={card.icon}
             title={card.title}
             description={card.description}

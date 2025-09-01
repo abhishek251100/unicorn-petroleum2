@@ -1,52 +1,54 @@
 import React from "react";
 import ProductPageLayout from "../ProductPageLayout";
 import FloatingSidebar from "../../../Common/FloatingSidebar";
-import ProductPageCommonSection from "../../../Common/ProductPageCommonSection";
-import ProductKeyFeaturesSection from "../../../Common/ProductKeyFeaturesSection";
+import ProductPageCommonSection from "../../../Common/products/ProductPageCommonSection";
+import ProductKeyFeaturesSection from "../../../Common/products/ProductKeyFeaturesSection";
 import QualityStandardsSection from "../../../Common/QualityStandardsSection";
-import CardsSection from "../../../Common/CardsSection";
+import ApplicationsSection from "../../../Common/ApplicationsSection";
+import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySection";
+import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import QuoteFormSection from "../../../Common/QuoteFormSection";
 import { petroleumJellyData } from "./petroleumJellyData";
 import { productsNavigationData } from "../productsNavigationData";
 import homeData from "../../Home/homeData";
 
 export default function PetroleumJellyPage() {
-  // Create applications data for CardsSection
-  const applicationsData = {
-    heading: "Applications of Petroleum Jelly",
-    cards: petroleumJellyData.applications,
-    showDescriptions: false,
-  };
-
   return (
     <ProductPageLayout
       title={petroleumJellyData.name}
       subtitle={petroleumJellyData.description}
     >
-      {/* Section 1: Common Section + Applications + Features (with sidebar) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
-        {/* Floating Sidebar */}
+      {/* Desktop Layout */}
+      <div className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8">
         <div className="lg:col-span-3">
           <FloatingSidebar navigationData={productsNavigationData} />
         </div>
 
-        {/* Main Content */}
-        <div className="lg:col-span-9 space-y-12">
-          {/* Product Page Common Section - First section sharing space with sidebar */}
+        <div className="lg:col-span-9 space-y-8">
           <ProductPageCommonSection data={petroleumJellyData.commonSection} />
-
-          {/* Applications Section - Uses CardsSection */}
-          <CardsSection data={applicationsData} />
-
-          {/* Key Features Section - Uses ProductKeyFeaturesSection */}
+          <ApplicationsSection data={petroleumJellyData.applicationsSection} />
+          <PackagedResponsiblySection data={petroleumJellyData.packagedResponsibly} />
           <ProductKeyFeaturesSection data={petroleumJellyData.keyFeatures} />
         </div>
       </div>
 
-      {/* Section 2: Quality Standards Section - Full Width (Outside Grid) */}
+      {/* Mobile Layout */}
+      <div className="lg:hidden space-y-8 mb-8">
+        <ProductPageCommonSection data={petroleumJellyData.commonSection} />
+        <ApplicationsSection data={petroleumJellyData.applicationsSection} />
+        <PackagedResponsiblySection data={petroleumJellyData.packagedResponsibly} />
+        <ProductKeyFeaturesSection data={petroleumJellyData.keyFeatures} />
+      </div>
+
       <QualityStandardsSection />
 
-      {/* Quote Form Section - Common on all product pages */}
+      <RelatedProductsSection data={petroleumJellyData.relatedProducts} />
+
+      {/* Mobile Floating Sidebar - positioned before footer */}
+      <div className="lg:hidden mb-8">
+        <FloatingSidebar navigationData={productsNavigationData} />
+      </div>
+
       <div id="quote-form-section">
         <QuoteFormSection data={homeData.cta} />
       </div>
