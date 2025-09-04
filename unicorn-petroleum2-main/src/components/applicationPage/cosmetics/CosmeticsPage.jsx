@@ -1,33 +1,34 @@
 import React from 'react';
 import FloatingSidebar from '../../../Common/FloatingSidebar';
 import FGridSection from '../../../Common/FGridSection';
+import BannerWithNavigation from '../../../Common/BannerWithNavigation';
+import { getNavigationData } from '../../../Data/navigationData';
 import { applicationsNavigationData } from '../applicationsNavigationData';
 import { cosmeticsData } from './cosmeticsData';
 
 export default function CosmeticsPage() {
+  const applicationsNavData = getNavigationData('applications');
+  const breadcrumbs = [
+    { text: 'Home', link: '/' },
+    { text: 'Applications', link: '/applications' },
+    { text: 'Cosmetics' }
+  ];
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      {/* Breadcrumb */}
-      <div className="text-sm text-gray-600 mb-6">
-        Home > Applications > Cosmetics
-      </div>
+    <div className="min-h-screen bg-gray-50">
+      <BannerWithNavigation
+        title={cosmeticsData.hero.title}
+        subtitle={cosmeticsData.hero.description}
+        navigationData={applicationsNavData}
+        currentPath="/applications/cosmetics"
+        breadcrumbs={breadcrumbs}
+      />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="relative max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-3">
-          <FloatingSidebar navigationData={applicationsNavigationData} />
+          <FloatingSidebar navigationData={applicationsNavData} />
         </div>
         
         <div className="lg:col-span-9 space-y-12">
-          {/* Hero Section */}
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              {cosmeticsData.hero.title}
-            </h1>
-            <p className="text-xl text-gray-600">
-              {cosmeticsData.hero.description}
-            </p>
-          </div>
-
           {/* Overview Section */}
           <section>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">

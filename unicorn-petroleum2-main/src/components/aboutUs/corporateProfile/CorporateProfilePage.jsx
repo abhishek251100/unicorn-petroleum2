@@ -81,10 +81,11 @@ export default function CorporateProfilePage() {
                         className="w-full h-full object-cover rounded-t-lg"
                         onError={(e) => {
                           e.target.style.display = 'none';
-                          e.target.nextSibling.style.display = 'flex';
+                          const fallback = e.target.nextSibling;
+                          if (fallback) fallback.classList.remove('hidden');
                         }}
                       />
-                      <div className="hidden w-full h-full bg-gray-200 rounded-t-lg flex items-center justify-center">
+                      <div className="w-full h-full bg-gray-200 rounded-t-lg items-center justify-center hidden">
                         <span className="text-gray-500 font-semibold">{facility.title}</span>
                       </div>
                     </div>

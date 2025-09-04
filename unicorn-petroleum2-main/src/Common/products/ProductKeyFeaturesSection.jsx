@@ -5,6 +5,8 @@ const ProductKeyFeaturesSection = ({ data }) => {
     return null;
   }
 
+  const isSingleCard = Array.isArray(data.features) && data.features.length === 1;
+
   return (
     <section className="py-12 px-4">
       <div className="max-w-7xl mx-auto">
@@ -14,7 +16,7 @@ const ProductKeyFeaturesSection = ({ data }) => {
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[756px] mx-auto">
+        <div className={`grid ${isSingleCard ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'} gap-6 max-w-[756px] mx-auto justify-items-center`}>
           {data.features.map((feature, index) => (
             <div
               key={index}

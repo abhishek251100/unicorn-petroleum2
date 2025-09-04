@@ -10,10 +10,10 @@ import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import QuoteFormSection from "../../../Common/QuoteFormSection";
 import { productsNavigationData } from "../productsNavigationData";
 import homeData from "../../Home/homeData";
-import { naturalBeeswaxData } from "./naturalBeeswaxData";
+import { emulsifyingWaxData } from "./emulsifyingWaxData";
 
-export default function NaturalBeeswaxPage() {
-  const data = naturalBeeswaxData;
+export default function EmulsifyingWaxPage() {
+  const data = emulsifyingWaxData;
   return (
     <ProductPageLayout title={data.name} subtitle={data.description}>
       <div className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8">
@@ -50,3 +50,5 @@ export default function NaturalBeeswaxPage() {
     </ProductPageLayout>
   );
 }
+
+

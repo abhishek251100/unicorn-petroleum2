@@ -16,7 +16,10 @@ const HomeIndex = () => {
       <HeroSection data={homeData.hero} />
 
       {/* Our Strengths Section */}
-      <FGridSection data={homeData.strengths} />
+      <FGridSection
+        data={homeData.strengths}
+        customPadding="py-12 px-6 md:px-10 lg:px-16 xl:px-24"
+      />
 
       {/* Product Portfolio Section */}
       <ProductPortfolioSection data={homeData.products} />

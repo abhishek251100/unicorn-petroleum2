@@ -14,20 +14,20 @@ const Card = ({
     switch (type) {
       case 'strength':
         return (
-          <div className="text-center">
-            <div className="text-5xl mb-4">
+          <div className="flex flex-col h-full text-center">
+            <div className="mb-4">
               {icon && icon.startsWith('/') ? (
-                <img 
-                  src={icon} 
-                  alt={title} 
-                  className="w-20 h-16 mx-auto object-contain mb-20"
+                <img
+                  src={icon}
+                  alt={title}
+                  className="w-16 h-16 mx-auto object-contain"
                 />
               ) : (
-                icon
+                <div className="text-4xl">{icon}</div>
               )}
             </div>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-3">{title}</h3>
-            <p className="text-gray-600 text-lg leading-relaxed">{description}</p>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+            <p className="text-gray-700 text-base leading-relaxed flex-1">{description}</p>
           </div>
         );
       
@@ -129,8 +129,8 @@ const Card = ({
   };
 
   return (
-    <div 
-      className={`bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow ${className}`}
+    <div
+      className={`bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow h-full flex ${className}`}
       onClick={onClick}
     >
       {renderCardContent()}

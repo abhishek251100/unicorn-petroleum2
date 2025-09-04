@@ -24,7 +24,7 @@ export default function BannerWithNavigation({
   }, [navigationData, currentPath, location.pathname]);
 
   return (
-    <div className="relative w-full h-80 md:h-[420px] overflow-hidden -mt-16 pt-20">
+    <div className="relative w-full h-80 md:h-[420px] overflow-hidden -mt-16 pt-28">
       <div
         className="absolute inset-0"
         style={{
@@ -33,10 +33,8 @@ export default function BannerWithNavigation({
           backgroundPosition: "center",
         }}
       />
-      {/* Subtle overlay for readability */}
       <div className="absolute inset-0 bg-white/25" />
 
-      {/* Navigation buttons */}
       {prevItem && (
         <Link
           aria-label="Previous page"
@@ -56,7 +54,6 @@ export default function BannerWithNavigation({
         </Link>
       )}
 
-      {/* Banner Content */}
       <div className="relative z-10 flex items-center justify-center h-full">
         <div className="text-center text-black max-w-4xl mx-auto px-4">
           {title && (
@@ -73,9 +70,8 @@ export default function BannerWithNavigation({
         </div>
       </div>
 
-      {/* Breadcrumbs at top center */}
       {breadcrumbs && (
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20">
+        <div className="absolute top-24 left-1/2 -translate-x-1/2 z-20">
           <nav className="text-black font-semibold text-sm md:text-base">
             <ol className="flex items-center space-x-2">
               {breadcrumbs.map((crumb, index) => (

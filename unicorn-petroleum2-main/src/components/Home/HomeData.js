@@ -15,18 +15,18 @@ export const homeData = {
   // Our strengths
   strengths: {
     heading: "Our Strengths",
-    subheading: "Excellence built on five decades of expertise and trust",
+    subheading: "Excellence built on six decades of expertise and trust",
     cards: [
       {
         icon: "/assets/Icons/Property 1=Trophy.png",
-        title: "60+ Years of Expertise",
+        title: "Six Decades Expertise and trust",
         description:
           "Pioneering quality ingredients for the cosmetic and pharmaceutical world since 1964",
         link: "/about", // Internal link
       },
       {
         icon: "/assets/Icons/Property 1=Flask.png",
-        title: "State-of-the-Art R&D & QA",
+        title: "Custom tailored formulationsEXACT KNOWLEDGE",
         description:
           "Innovating raw materials that power global cosmetic & pharma brands",
         link: "/quality", // Internal link

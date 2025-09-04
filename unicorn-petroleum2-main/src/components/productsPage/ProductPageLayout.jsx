@@ -73,7 +73,7 @@ export default function ProductPageLayout({
         </div>
 
         {/* Breadcrumbs at top center */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20">
+        <div className="absolute top-24 left-1/2 -translate-x-1/2 z-20">
           <nav className="text-black font-semibold text-base md:text-lg">
             <ol className="flex items-center space-x-2">
               <li>

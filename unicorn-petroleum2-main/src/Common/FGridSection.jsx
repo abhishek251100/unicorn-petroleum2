@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 
-const FGridSection = ({ data, cardType = "strength", customPadding = "py-12" }) => {
+const FGridSection = ({ data, cardType = "strength", customPadding = "py-12 px-4" }) => {
   return (
     <section className={`${customPadding} text-center`}>
       <div className="mb-8">
@@ -9,7 +9,7 @@ const FGridSection = ({ data, cardType = "strength", customPadding = "py-12" }) 
         <p className="text-3xl text-gray-800">{data.subheading}</p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4 px-2">
+      <div className="grid md:grid-cols-3 gap-6">
         {data.cards.map((card, index) => (
           <Card
             key={index}

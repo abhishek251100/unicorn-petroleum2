@@ -2,7 +2,11 @@ import React from "react";
 import ComingSoon from "../Common/ComingSoon";
 
 const QualityPage = () => {
-  return <ComingSoon title="Quality" />;
+  const breadcrumbs = [
+    { text: "Home", link: "/" },
+    { text: "Quality" }
+  ];
+  return <ComingSoon title="Quality" breadcrumbs={breadcrumbs} />;
 };
 
 export default QualityPage;
