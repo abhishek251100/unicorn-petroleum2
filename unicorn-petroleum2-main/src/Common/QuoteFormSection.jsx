@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 
-export default function QuoteFormSection() {
+export default function QuoteFormSection({ mode = "quote", title }) {
   const [formData, setFormData] = useState({
     fullName: "",
     companyName: "",
@@ -9,6 +9,7 @@ export default function QuoteFormSection() {
     mobileNumber: "",
     countryName: "",
     gradeQuality: "",
+    subject: "",
     message: ""
   });
 
@@ -30,7 +31,7 @@ export default function QuoteFormSection() {
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4 tracking-tight">
-            Request a Quote or Sample
+            {title || (mode === "contact" ? "Send us a message" : "Request a Quote or Sample")}
           </h2>
         </div>
 
@@ -101,18 +102,35 @@ export default function QuoteFormSection() {
               />
             </div>
 
-            {/* Grade/Quality Needed */}
-            <div>
-              <input
-                type="text"
-                name="gradeQuality"
-                placeholder="Enter Grade/Quality Needed"
-                value={formData.gradeQuality}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
-                required
-              />
-            </div>
+            {/* Grade/Quality or Subject depending on mode */}
+            {mode === "contact" ? (
+              <div>
+                <select
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                  required
+                >
+                  <option value="">Select Subject</option>
+                  <option>General enquiry</option>
+                  <option>Sales</option>
+                  <option>Support</option>
+                </select>
+              </div>
+            ) : (
+              <div>
+                <input
+                  type="text"
+                  name="gradeQuality"
+                  placeholder="Enter Grade/Quality Needed"
+                  value={formData.gradeQuality}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                  required
+                />
+              </div>
+            )}
           </div>
 
           {/* Message */}
@@ -134,7 +152,7 @@ export default function QuoteFormSection() {
               type="submit"
               className="bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl flex items-center justify-center mx-auto"
             >
-              Submit Enquiry
+              {mode === "contact" ? "Send Message" : "Submit Enquiry"}
               <FiArrowRight className="ml-2" />
             </button>
           </div>

@@ -26,19 +26,19 @@ export const productsData = {
       features: ["Food Grade", "Pharmaceutical Grade", "Technical Grade"]
     },
     {
-      id: "paraffin-waxes",
-      name: "Paraffin Waxes",
+      id: "paraffin-wax",
+      name: "Paraffin Wax",
       description: "Specialized paraffin waxes for candle making, packaging, and industrial applications",
       image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=300&fit=crop",
-      link: "/products/paraffin-waxes",
+      link: "/products/paraffin-wax",
       features: ["Candle Making", "Packaging", "Industrial Use"]
     },
     {
-      id: "microcrystalline-waxes",
-      name: "Microcrystalline Waxes",
+      id: "microcrystalline-wax",
+      name: "Microcrystalline Wax",
       description: "High-performance microcrystalline waxes for specialized applications",
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-      link: "/products/microcrystalline-waxes",
+      link: "/products/microcrystalline-wax",
       features: ["Adhesives", "Coatings", "Specialized Applications"]
     }
   ],

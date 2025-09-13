@@ -1,20 +1,20 @@
 export const emulsifyingWaxData = {
   name: "Emulsifying Wax",
-  description:
-    "Reliable O/W emulsifier for creams, lotions and personal care products",
+  description: "",
 
   commonSection: {
     title: "Emulsifying wax",
     description:
-      "Helps stabilize and create smooth, uniform oil-in-water emulsions.",
-    additionalInfo: "Replace with exact Figma copy.",
+      "Essential for creating smooth, stable emulsions, Emulsifying wax helps blend water and oil into luxurious, long-lasting formulations. It’s widely used in lotions, creams, and ointments where texture and absorption truly matter.\n\nWe take pride in crafting Emulsifying waxes that deliver reliable performance across every formulation. Using pharmaceutical‑grade processes and ISO‑certified systems, we ensure uniformity, mildness, and ease of integration — so your end products feel as good as they look.",
+    additionalInfo: "",
     brochureUrl: "#",
   },
 
   applicationsSection: {
     productName: "emulsifying wax",
-    applications: "Placeholder until Figma text is pasted.",
-    finalProductUtilization: ["Creams", "Lotions", "Conditioners"],
+    applications:
+      "From the lipstick in your makeup bag to the protective coating on your car, Microcrystalline wax is the versatile ingredient that makes everyday products better. Our premium‑grade wax enhances texture, extends shelf life, and provides superior protection across industries – transforming ordinary formulations into exceptional products that perform when it matters most.",
+    finalProductUtilization: ["Ointments", "Lotions", "Creams"],
   },
 
   packagedResponsibly: {
@@ -24,27 +24,13 @@ export const emulsifyingWaxData = {
     ],
   },
 
-  keyFeatures: {
-    heading: "Key Features of Emulsifying Wax from Unicorn",
-    features: [
-      {
-        icon: "/assets/Icons/Property 1=Compliance.png",
-        title: "Stable Emulsions",
-        items: ["Smooth texture", "Good stability", "Easy processing"],
-      },
-      {
-        icon: "/assets/Icons/Property 1=Compliance.png",
-        title: "Quality",
-        items: ["Consistent quality", "Reliable supply"],
-      },
-    ],
-  },
+  // No Key Features section for this page
 
   relatedProducts: {
     relatedProducts: [
-      { name: "Paraffin Wax", image: "/assets/RELATED PROD IMG/Paraffin Wax.png" },
-      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/Petroleum jelly.png" },
       { name: "Mineral Oil", image: "/assets/RELATED PROD IMG/Mineral Oil.png" },
+      { name: "Beeswax", image: "/assets/RELATED PROD IMG/Beeswax.png" },
+      { name: "D-Panthenol", image: "/assets/RELATED PROD IMG/D-Panthenol.png" },
     ],
   },
 };
