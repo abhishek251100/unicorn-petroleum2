@@ -7,7 +7,7 @@ import QualityStandardsSection from "../../Common/QualityStandardsSection";
 import NewsSection from "../../Common/NewsSection";
 import CallToAction from "../../Common/CallToAction";
 import CompanyStatement from "../../Common/CompanyStatement";
-import homeData from "./homeData";
+import homeData from "./HomeData";
 
 const HomeIndex = () => {
   return (
