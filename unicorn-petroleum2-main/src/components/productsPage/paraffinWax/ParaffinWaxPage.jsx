@@ -8,7 +8,7 @@ import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySecti
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import QuoteFormSection from "../../../Common/QuoteFormSection";
 import { productsNavigationData } from "../productsNavigationData";
-import homeData from "../../Home/homeData";
+import homeData from "../../Home/HomeData";
 import { paraffinWaxData } from "./paraffinWaxData";
 
 export default function ParaffinWaxPage() {

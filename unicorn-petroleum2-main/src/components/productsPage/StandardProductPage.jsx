@@ -9,7 +9,7 @@ import PackagedResponsiblySection from "../../Common/PackagedResponsiblySection"
 import RelatedProductsSection from "../../Common/RelatedProductsSection";
 import QuoteFormSection from "../../Common/QuoteFormSection";
 import { productsNavigationData } from "./productsNavigationData";
-import homeData from "../Home/homeData";
+import homeData from "../Home/HomeData";
 import { buildStandardProductData } from "./standardProductData";
 
 export default function StandardProductPage({ title, description }) {

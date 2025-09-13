@@ -10,7 +10,7 @@ import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import QuoteFormSection from "../../../Common/QuoteFormSection";
 import { whiteMineralOilsData } from "./whiteMineralOilsData";
 import { productsNavigationData } from "../productsNavigationData";
-import homeData from "../../Home/homeData";
+import homeData from "../../Home/HomeData";
 
 export default function WhiteMineralOilsPage() {
   return (
