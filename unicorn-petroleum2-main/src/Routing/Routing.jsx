@@ -25,6 +25,9 @@ import CertificationsPage from "../components/aboutUs/certifications/Certificati
 import PharmaceuticalPage from "../components/applicationPage/pharmaceutical/PharmaceuticalPage";
 import CosmeticsPage from "../components/applicationPage/cosmetics/CosmeticsPage";
 
+// Coming Soon pages
+import ComingSoon from "../Common/ComingSoon";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -63,6 +66,8 @@ const router = createBrowserRouter([
       { path: "/quality", element: <QualityPage /> },
       { path: "/reach", element: <ReachPage /> },
       { path: "/contact", element: <ContactPage /> },
+      { path: "/privacy", element: <ComingSoon title="Privacy Policy" breadcrumbs={[{ text: "Home", link: "/" }, { text: "Privacy Policy" }]} /> },
+      { path: "/terms", element: <ComingSoon title="Terms of Use" breadcrumbs={[{ text: "Home", link: "/" }, { text: "Terms of Use" }]} /> },
     ],
   },
 ]);

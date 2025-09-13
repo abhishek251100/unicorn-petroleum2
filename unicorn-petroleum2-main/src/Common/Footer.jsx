@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { FaLinkedin, FaFacebook } from "react-icons/fa";
 
@@ -19,9 +20,9 @@ export default function Footer() {
             {/* Company Branding & Socials */}
             <div>
               <div className="mb-4">
-                <a href="/" className="inline-flex items-center">
+                <Link to="/" className="inline-flex items-center">
                   <img src="/assets/logo 1.png" alt="Unicorn logo" className="h-10 w-auto" />
-                </a>
+                </Link>
               </div>
               <p className="text-gray-600 mb-4">
                 Your trusted partner for specialty products and sourcing
@@ -55,52 +56,52 @@ export default function Footer() {
               <h3 className="font-semibold text-gray-800 mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="/about/profile"
+                  <Link
+                    to="/about"
                     className="text-gray-600 hover:text-orange-500 transition-colors"
                   >
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/products"
+                  <Link
+                    to="/products"
                     className="text-gray-600 hover:text-orange-500 transition-colors"
                   >
                     Products
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/applications"
+                  <Link
+                    to="/applications"
                     className="text-gray-600 hover:text-orange-500 transition-colors"
                   >
                     Applications
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/quality"
+                  <Link
+                    to="/quality"
                     className="text-gray-600 hover:text-orange-500 transition-colors"
                   >
                     Quality
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/reach"
+                  <Link
+                    to="/reach"
                     className="text-gray-600 hover:text-orange-500 transition-colors"
                   >
                     Global Reach
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/contact"
+                  <Link
+                    to="/contact"
                     className="text-gray-600 hover:text-orange-500 transition-colors"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -142,18 +143,18 @@ export default function Footer() {
               Copyright © 2020 Unicorn. All rights reserved.
             </p>
             <div className="flex space-x-4 mt-2 md:mt-0">
-              <a
-                href="/privacy"
+              <Link
+                to="/privacy"
                 className="text-white hover:text-orange-300 transition-colors text-sm"
               >
                 Privacy Policy
-              </a>
-              <a
-                href="/terms"
+              </Link>
+              <Link
+                to="/terms"
                 className="text-white hover:text-orange-300 transition-colors text-sm"
               >
                 Terms of Use
-              </a>
+              </Link>
             </div>
           </div>
         </div>

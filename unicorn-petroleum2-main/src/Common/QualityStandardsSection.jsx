@@ -3,37 +3,37 @@ import React from "react";
 export default function QualityStandardsSection({ title, subtitle, showLink = true }) {
   const certifications = [
     {
-      code: "FDA",
+      code: "",
       full: "",
       logo: "/assets/Quality Standards Certificates/Frame 449.png",
     },
     {
-      code: "WHO-GMP",
+      code: "",
       full: "",
       logo: "/assets/Quality Standards Certificates/Frame 450.png",
     },
     {
-      code: "ISO 9001:2015",
+      code: "",
       full: "",
       logo: "/assets/Quality Standards Certificates/Frame 451.png",
     },
     {
-      code: "HALAL",
+      code: "",
       full: "",
       logo: "/assets/Quality Standards Certificates/Frame 452.png",
     },
     {
-      code: "REACH",
+      code: "",
       full: "",
       logo: "/assets/Quality Standards Certificates/Frame 453.png",
     },
     {
-      code: "PHARMEXCIL",
+      code: "",
       full: "",
       logo: "/assets/Quality Standards Certificates/Frame 454.png",
     },
     {
-      code: "POLLUTION CONTROL BOARD",
+      code: "",
       full: "",
       logo: "/assets/Quality Standards Certificates/Frame 455.png",
     },
