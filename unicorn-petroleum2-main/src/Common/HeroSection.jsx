@@ -22,12 +22,12 @@ const HeroSection = ({ data }) => {
 
       {/* Content Overlay */}
       <div className="relative z-10 max-w-4xl mx-auto px-6">
-        <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 md:p-12 shadow-xl border border-white/20">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight text-left">
+        <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-xl border border-white/20">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-6 leading-tight text-left">
             {data.title}
           </h1>
           
-          <p className="text-lg md:text-xl text-black mb-8 max-w-3xl text-left">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-black mb-8 max-w-3xl text-left">
             {data.subtitle}
           </p>
 
@@ -35,17 +35,17 @@ const HeroSection = ({ data }) => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               {hasPrimary && (
                 <button 
-                  className="text-white px-8 py-4 rounded-full font-medium text-lg hover:opacity-90 transition-colors flex items-center space-x-2"
+                  className="text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base md:text-lg hover:opacity-90 transition-colors flex items-center space-x-2"
                   style={{ backgroundColor: data.primaryButtonColor || '#E99322' }}
                 >
                   <span>{data.primaryButton}</span>
-                  <span className="text-xl">→</span>
+                  <span className="text-lg sm:text-xl">→</span>
                 </button>
               )}
               
               {hasSecondary && (
                 <button 
-                  className="bg-white px-8 py-4 rounded-full font-medium text-lg border-2 hover:bg-gray-50 transition-colors"
+                  className="bg-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base md:text-lg border-2 hover:bg-gray-50 transition-colors"
                   style={{ 
                     color: data.secondaryButtonColor || '#E99322',
                     borderColor: data.secondaryButtonColor || '#E99322'

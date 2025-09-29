@@ -105,16 +105,16 @@ export default function Navbar() {
     <header className={`sticky top-0 z-50 ${isScrolled ? 'shadow-2xl' : 'shadow-none'}`}>
       {/* Top Contact Bar */}
       <div className="bg-[#F5CD99] py-2 px-4">
-        <div className="max-w-7xl mx-auto px-4 flex justify-end items-center text-sm">
-          <div className="flex items-center space-x-4">
-            <span className="text-black font-bold">Contact us on :</span>
+        <div className="max-w-7xl mx-auto px-4 text-xs sm:text-sm">
+          <div className="w-full flex items-center justify-between sm:justify-end sm:gap-4">
+            <span className="text-black font-bold hidden sm:inline">Contact us on :</span>
             <div className="flex items-center space-x-2">
-              <FiPhone className="text-black" />
-              <span className="text-black">+91 22 4232 4121</span>
+              <FiPhone className="text-black text-sm" />
+              <span className="text-black text-xs sm:text-sm">+91 22 4232 4121</span>
             </div>
             <div className="flex items-center space-x-2">
-              <FiMail className="text-black" />
-              <span className="text-black">info@unicornpetro.co.in</span>
+              <FiMail className="text-black text-sm" />
+              <h3 className="text-black text-xs sm:text-sm">info@unicornpetro.co.in</h3>
             </div>
           </div>
         </div>
@@ -152,7 +152,7 @@ export default function Navbar() {
                             <Link
                               key={dropdownIndex}
                               to={dropdownItem.link}
-                              className="block px-6 py-4 text-base font-semibold text-black hover:bg-[#EDA94E]/10 border-b border-gray-200 last:border-b-0 flex items-center justify-between"
+                              className="flex px-6 py-4 text-base font-semibold text-black hover:bg-[#EDA94E]/10 border-b border-gray-200 last:border-b-0 items-center justify-between"
                               onClick={() => {
                                 setActiveDropdown(null);
                                 window.scrollTo(0, 0);

@@ -24,7 +24,7 @@ export default function BannerWithNavigation({
   }, [navigationData, currentPath, location.pathname]);
 
   return (
-    <div className="relative w-full h-80 md:h-[420px] overflow-hidden -mt-16 pt-28">
+    <div className="relative w-full h-80 sm:h-96 md:h-[420px] overflow-hidden -mt-16 pt-28">
       <div
         className="absolute inset-0"
         style={{
@@ -57,12 +57,12 @@ export default function BannerWithNavigation({
       <div className="relative z-10 flex items-center justify-center h-full">
         <div className="text-center text-black max-w-4xl mx-auto px-4">
           {title && (
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 tracking-tight">
               {title}
             </h1>
           )}
           {subtitle && (
-            <p className="text-lg md:text-xl font-medium">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium">
               {subtitle}
             </p>
           )}
@@ -71,9 +71,9 @@ export default function BannerWithNavigation({
       </div>
 
       {breadcrumbs && (
-        <div className="absolute top-24 left-1/2 -translate-x-1/2 z-20">
-          <nav className="text-black font-semibold text-sm md:text-base">
-            <ol className="flex items-center space-x-2">
+        <div className="absolute top-20 sm:top-24 left-1/2 -translate-x-1/2 z-20">
+          <nav className="text-black font-semibold text-xs sm:text-sm md:text-base">
+            <ol className="flex items-center space-x-1 sm:space-x-2">
               {breadcrumbs.map((crumb, index) => (
                 <React.Fragment key={index}>
                   <li>

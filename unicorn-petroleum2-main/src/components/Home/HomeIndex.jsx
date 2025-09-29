@@ -1,5 +1,6 @@
 import React from "react";
 import HeroSection from "../../Common/HeroSection";
+import IconRoadHero from "../../Common/IconRoadHero";
 import FGridSection from "../../Common/FGridSection";
 import ProductPortfolioSection from "../../Common/ProductPortfolioSection";
 import CardsSection from "../../Common/CardsSection";
@@ -15,11 +16,8 @@ const HomeIndex = () => {
       {/* Hero Section */}
       <HeroSection data={homeData.hero} />
 
-      {/* Our Strengths Section */}
-      <FGridSection
-        data={homeData.strengths}
-        customPadding="py-12 px-6 md:px-10 lg:px-16 xl:px-24"
-      />
+         {/* Icon Road Hero (first section) */}
+         <IconRoadHero data={homeData.iconRoadHero} />
 
       {/* Product Portfolio Section */}
       <ProductPortfolioSection data={homeData.products} />

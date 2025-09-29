@@ -8,15 +8,15 @@ export default function Footer() {
     <>
       {/* Company Tagline */}
       <div className="text-center">
-          <p className="text-2xl md:text-3xl font-bold text-gray-600 pb-10">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 pb-6 sm:pb-8 md:pb-10 px-4">
             Global Ingredients. Indian Expertise. Trusted Worldwide
           </p>
         </div>
 
       {/* Main Footer */}
       <footer className="bg-orange-50">
-        <div className="max-w-7xl mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-4 py-8 sm:py-10 md:py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Company Branding & Socials */}
             <div>
               <div className="mb-4">
@@ -24,7 +24,7 @@ export default function Footer() {
                   <img src="/assets/logo 1.png" alt="Unicorn logo" className="h-10 w-auto" />
                 </Link>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 text-sm sm:text-base">
                 Your trusted partner for specialty products and sourcing
                 solutions from India.
               </p>
@@ -125,8 +125,8 @@ export default function Footer() {
                   </span>
                 </div>
                 <div className="flex items-start">
-                  <FiMapPin className="text-orange-500 mr-3 mt-1" />
-                  <span className="text-gray-600 text-sm">
+                  <FiMapPin className="text-orange-500 mr-3 mt-1 flex-shrink-0" />
+                  <span className="text-gray-600 text-xs sm:text-sm">
                     Unit No. 1 'Ridhi Sidhi', Corporate Park, CST Road, Che
                     Mumbai 400071, India
                   </span>
@@ -139,19 +139,19 @@ export default function Footer() {
         {/* Copyright Bar */}
         <div className="bg-gray-800 py-4">
           <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white text-sm">
+            <p className="text-white text-xs sm:text-sm text-center md:text-left">
               Copyright © 2020 Unicorn. All rights reserved.
             </p>
-            <div className="flex space-x-4 mt-2 md:mt-0">
+            <div className="flex space-x-3 sm:space-x-4 mt-2 md:mt-0">
               <Link
                 to="/privacy"
-                className="text-white hover:text-orange-300 transition-colors text-sm"
+                className="text-white hover:text-orange-300 transition-colors text-xs sm:text-sm"
               >
                 Privacy Policy
               </Link>
               <Link
                 to="/terms"
-                className="text-white hover:text-orange-300 transition-colors text-sm"
+                className="text-white hover:text-orange-300 transition-colors text-xs sm:text-sm"
               >
                 Terms of Use
               </Link>

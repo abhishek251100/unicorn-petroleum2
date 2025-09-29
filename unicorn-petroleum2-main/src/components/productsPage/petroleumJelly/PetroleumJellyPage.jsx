@@ -49,9 +49,6 @@ export default function PetroleumJellyPage() {
         <FloatingSidebar navigationData={productsNavigationData} />
       </div>
 
-      <div id="quote-form-section">
-        <QuoteFormSection data={homeData.cta} />
-      </div>
     </ProductPageLayout>
   );
 }

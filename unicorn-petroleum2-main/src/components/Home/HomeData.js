@@ -1,4 +1,34 @@
 export const homeData = {
+  // Icon Road Hero (new)
+  iconRoadHero: {
+    heading: "Our strengths",
+    subheading: "Excellence built on six decades of expertise and trust",
+    centerLogo: "",
+    ctaText: "Request info",
+    items: [
+      {
+        icon: "/assets/Icons/Property 1=Trophy.png",
+        title: "Six decades of expertise",
+        description:
+          "Pioneering quality ingredients for the cosmetic and pharmaceutical world since 1964",
+        image: "/assets/about/Manifacturing img1.png"
+      },
+      {
+        icon: "/assets/Icons/Property 1=Flask.png",
+        title: "Custom tailored formulations",
+        description:
+          "Seamless procurement, personalized support — delivering quality raw materials from India to the world",
+        image: "/assets/RELATED PROD IMG/Paraffin Wax.png"
+      },
+      {
+        icon: "/assets/Icons/Property 1=Thermal.png",
+        title: "Petrochemical specialties",
+        description:
+          "High-performance petrochemicals and specialties refined to meet the needs of various industries",
+        image: "/assets/RELATED PROD IMG/Mineral Oil.png"
+      }
+    ]
+  },
   // Hero
   hero: {
     title: "Pioneering Excellence in Petroleum Specialties for 6+ Decades",
@@ -93,6 +123,7 @@ export const homeData = {
   industries: {
     heading: "Catering to Diverse Industries Worldwide",
     subheading: "Shaping the Future of Cosmetic & Pharma Ingredients",
+    mobileTwoCols: true,
     cards: [
       {
         icon: "/assets/Icons/Property 1=pharma.png",
