@@ -14,7 +14,7 @@ export default function Footer() {
         </div>
 
       {/* Main Footer */}
-      <footer className="bg-orange-50">
+      <footer className="bg-[#F8DEBA]">
         <div className="max-w-7xl mx-auto px-4 py-8 sm:py-10 md:py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Company Branding & Socials */}

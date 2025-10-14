@@ -72,14 +72,14 @@ export default function Navbar() {
       dropdownItems: [
         { name: "Petroleum Jelly", link: "/products/petroleum-jelly" },
         { name: "White Mineral Oils", link: "/products/white-mineral-oils" },
-        { name: "Microcrystalline Wax", link: "/products" },
-        { name: "Paraffin Wax", link: "/products" },
-        { name: "Natural Beeswax", link: "/products" },
-        { name: "Emulsifying Wax", link: "/products" },
-        { name: "D-Panthenol", link: "/products" },
-        { name: "Preservatives", link: "/products" },
-        { name: "Surfactants", link: "/products" },
-        { name: "UV Filters", link: "/products" }
+        { name: "Microcrystalline Wax", link: "/products/microcrystalline-wax" },
+        { name: "Paraffin Wax", link: "/products/paraffin-wax" },
+        { name: "Natural Beeswax", link: "/products/natural-beeswax" },
+        { name: "Emulsifying Wax", link: "/products/emulsifying-wax" },
+        { name: "D-Panthenol", link: "/products/d-panthenol" },
+        { name: "Preservatives", link: "/products/preservatives" },
+        { name: "Surfactants", link: "/products/surfactants" },
+        { name: "UV Filters", link: "/products/uv-filters" }
       ]
     },
     {

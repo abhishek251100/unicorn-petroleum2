@@ -15,15 +15,27 @@ export default function ProductPageLayout({
 
   const { prevItem, nextItem, currentItem } = useMemo(() => {
     const items = productsNavigationData?.categories ?? [];
-    const index = items.findIndex((c) => c.link === location.pathname);
-    const safeIndex = index >= 0 ? index : 0;
-    const prev = items[(safeIndex - 1 + items.length) % items.length];
-    const next = items[(safeIndex + 1) % items.length];
-    const current = items[safeIndex];
+    if (items.length === 0) return { prevItem: null, nextItem: null, currentItem: null };
+
+    // Find direct match first
+    let idx = items.findIndex((c) => c.link === location.pathname);
+    // If not found, try match by subItems containing current path
+    if (idx === -1) {
+      idx = items.findIndex((c) => Array.isArray(c.subItems) && c.subItems.some((s) => s.link === location.pathname));
+    }
+
+    if (idx === -1) {
+      // Unknown product slug: do not default to first; disable prev/next
+      return { prevItem: null, nextItem: null, currentItem: null };
+    }
+
+    const prev = items[(idx - 1 + items.length) % items.length];
+    const next = items[(idx + 1) % items.length];
+    const current = items[idx];
     return { prevItem: prev, nextItem: next, currentItem: current };
   }, [location.pathname]);
 
-  const resolvedTitle = title || currentItem?.name || "Product";
+  const resolvedTitle = title || currentItem?.name || (location.pathname === "/products" ? "Products" : "Product");
   const resolvedSubtitle = ""; // remove subtext on banner as requested
 
   const handleTouchStart = (e) => {

@@ -10,10 +10,15 @@ import ContactPage from "../Pages/ContactPage";
 import PetroleumJellyPage from "../components/productsPage/petroleumJelly/PetroleumJellyPage";
 import WhiteMineralOilsPage from "../components/productsPage/whiteMineralOils/WhiteMineralOilsPage";
 import StandardProductPage from "../components/productsPage/StandardProductPage";
+// removed dynamic product fallback to avoid confusion and ensure explicit pages per product
+import DPanthenolPage from "../components/productsPage/dPanthenol/DPanthenolPage";
 import MicrocrystallineWaxPage from "../components/productsPage/microcrystallineWax/MicrocrystallineWaxPage";
 import ParaffinWaxPage from "../components/productsPage/paraffinWax/ParaffinWaxPage";
 import EmulsifyingWaxPage from "../components/productsPage/emulsifyingWax/EmulsifyingWaxPage";
 import NaturalBeeswaxPage from "../components/productsPage/naturalBeeswax/NaturalBeeswaxPage";
+import PreservativesPage from "../components/productsPage/preservatives/PreservativesPage";
+import SurfactantsPage from "../components/productsPage/surfactants/SurfactantsPage";
+import UVFiltersPage from "../components/productsPage/uvFilters/UVFiltersPage";
 
 // About pages
 import CorporateProfilePage from "../components/aboutUs/corporateProfile/CorporateProfilePage";
@@ -50,16 +55,17 @@ const router = createBrowserRouter([
       { path: "/products/hard-paraffin", element: <StandardProductPage title="Hard Paraffin" description="" /> },
       { path: "/products/natural-beeswax", element: <NaturalBeeswaxPage /> },
       { path: "/products/emulsifying-wax", element: <EmulsifyingWaxPage /> },
-      { path: "/products/d-panthenol", element: <StandardProductPage title="D-Panthenol" description="" /> },
-      { path: "/products/preservatives", element: <StandardProductPage title="Preservatives" description="" /> },
+      { path: "/products/d-panthenol", element: <DPanthenolPage /> },
+      { path: "/products/preservatives", element: <PreservativesPage /> },
       { path: "/products/parabens", element: <StandardProductPage title="Parabens" description="" /> },
       { path: "/products/phenoxyethanol", element: <StandardProductPage title="Phenoxyethanol" description="" /> },
-      { path: "/products/surfactants", element: <StandardProductPage title="Surfactants" description="" /> },
+      { path: "/products/surfactants", element: <SurfactantsPage /> },
       { path: "/products/anionic", element: <StandardProductPage title="Anionic Surfactants" description="" /> },
       { path: "/products/nonionic", element: <StandardProductPage title="Nonionic Surfactants" description="" /> },
-      { path: "/products/uv-filters", element: <StandardProductPage title="UV Filters" description="" /> },
+      { path: "/products/uv-filters", element: <UVFiltersPage /> },
       { path: "/products/organic-filters", element: <StandardProductPage title="Organic UV Filters" description="" /> },
       { path: "/products/inorganic-filters", element: <StandardProductPage title="Inorganic UV Filters" description="" /> },
+      // Dynamic fallback removed: add explicit pages only
       { path: "/applications", element: <ApplicationPage /> },
       { path: "/applications/pharmaceutical", element: <PharmaceuticalPage /> },
       { path: "/applications/cosmetics", element: <CosmeticsPage /> },

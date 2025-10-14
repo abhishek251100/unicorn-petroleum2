@@ -80,7 +80,7 @@ export const homeData = {
     cards: [
       {
         image:
-          "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
+          "/assets/HomePageImg/P2_Home.png",
         title: "Petroleum Jelly",
         description:
           "High-purity, pharma and cosmetic-grade jelly with consistent texture, ideal for skincare and medical formulations",
@@ -89,7 +89,7 @@ export const homeData = {
       },
       {
         image:
-          "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop",
+          "/assets/HomePageImg/P1_Home.png",
         title: "White Mineral Oils",
         description:
           "Colorless, odorless oil refined for food, pharma, and cosmetic applications; available in light and heavy grades.",
@@ -98,7 +98,7 @@ export const homeData = {
       },
       {
         image:
-          "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=300&fit=crop",
+          "/assets/HomePageImg/P3_Home.png",
         title: "Preservatives",
         description:
           "Effective antimicrobial preservatives widely used in personal care, pharmaceutical, and cosmetic formulations",
@@ -107,7 +107,7 @@ export const homeData = {
       },
       {
         image:
-          "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+          "/assets/HomePageImg/P4_Home.png",
         title: "Natural Beeswax",
         description:
           "Natural wax with excellent binding and emulsifying properties, ideal for skincare, balms, and topical applications",
@@ -122,7 +122,7 @@ export const homeData = {
   // Industries
   industries: {
     heading: "Catering to Diverse Industries Worldwide",
-    subheading: "Shaping the Future of Cosmetic & Pharma Ingredients",
+    subheading: "Shaping the future of cosmetic & pharmaceutical ingredients",
     mobileTwoCols: true,
     cards: [
       {
@@ -207,28 +207,28 @@ export const homeData = {
         linkText: "Read More →",
         linkUrl: "/news/ophthalmic-jelly-launch", // Internal link
       },
-      {
-        date: "20/06/25",
-        image:
-          "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=300&fit=crop",
-        title:
-          "Inside Our Labs: Innovations in High-Purity Petroleum Jelly Grades",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        linkText: "Read More →",
-        linkUrl: "/news/lab-innovations", // Internal link
-      },
-      {
-        date: "20/06/25",
-        image:
-          "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-        title:
-          "Sustainability in Petrochemicals: Our Roadmap to Greener Practices",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        linkText: "Read More →",
-        linkUrl: "/news/sustainability-roadmap", // Internal link
-      },
+      // {
+      //   date: "20/06/25",
+      //   image:
+      //     "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=300&fit=crop",
+      //   title:
+      //     "Inside Our Labs: Innovations in High-Purity Petroleum Jelly Grades",
+      //   description:
+      //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      //   linkText: "Read More →",
+      //   linkUrl: "/news/lab-innovations", // Internal link
+      // },
+      // {
+      //   date: "20/06/25",
+      //   image:
+      //     "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      //   title:
+      //     "Sustainability in Petrochemicals: Our Roadmap to Greener Practices",
+      //   description:
+      //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      //   linkText: "Read More →",
+      //   linkUrl: "/news/sustainability-roadmap", // Internal link
+      // },
     ],
     buttonText: "View All News →",
     buttonLink: "/news", // Internal link

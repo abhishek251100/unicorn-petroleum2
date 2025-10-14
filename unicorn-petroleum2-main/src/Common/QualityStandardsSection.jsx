@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function QualityStandardsSection({ title, subtitle, showLink = true }) {
   const certifications = [
@@ -69,9 +70,9 @@ export default function QualityStandardsSection({ title, subtitle, showLink = tr
 
         {showLink && (
           <div className="text-center">
-            <a href="/quality" className="text-[#101301] font-medium hover:underline transition-colors text-sm sm:text-base">
+            <Link to="/quality" className="text-[#101301] font-medium hover:underline transition-colors text-sm sm:text-base">
               View All Certifications →
-            </a>
+            </Link>
           </div>
         )}
       </div>

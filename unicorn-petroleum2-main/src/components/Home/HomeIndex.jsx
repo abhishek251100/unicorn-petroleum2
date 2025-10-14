@@ -32,7 +32,7 @@ const HomeIndex = () => {
       <NewsSection data={homeData.news} />
 
       {/* Company Statement */}
-      <CompanyStatement data={homeData.statement} />
+      {/* <CompanyStatement data={homeData.statement} /> */}
 
       {/* Call to Action Section */}
       <CallToAction data={homeData.cta} />
