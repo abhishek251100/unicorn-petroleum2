@@ -132,16 +132,16 @@ export default function IconRoadHero({ data = {} }) {
                           </div>
                         </div>
                       </div>
-                      <div className="px-1 md:px-6 mt-8 md:mt-0">
+                      <div className="px-1 md:px-6 mt-8 md:mt-0 text-center md:text-left">
                         <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">{item.title}</h3>
-                        <p className="text-gray-700 text-sm sm:text-base max-w-[520px]">{item.description}</p>
+                        <p className="text-gray-700 text-sm sm:text-base max-w-[520px] mx-auto md:mx-0">{item.description}</p>
                       </div>
                     </>
                   ) : (
                     <>
-                      <div className="px-1 md:px-6 order-2 md:order-1 mt-8 md:mt-0">
+                      <div className="px-1 md:px-6 order-2 md:order-1 mt-8 md:mt-0 text-center md:text-left">
                         <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2">{item.title}</h3>
-                        <p className="text-gray-700 text-sm sm:text-base max-w-[520px]">{item.description}</p>
+                        <p className="text-gray-700 text-sm sm:text-base max-w-[520px] mx-auto md:mx-0">{item.description}</p>
                       </div>
                       <div className="order-1 md:order-2 pl-0 md:pl-6 relative">
                         {/* Mobile (bottom fade) */}

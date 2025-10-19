@@ -20,13 +20,13 @@ export default function Footer() {
             {/* Company Branding & Socials */}
             <div>
               <div className="mb-4">
-                <Link to="/" className="inline-flex items-center">
+                <Link to="/" className="inline-flex items-center gap-1.5">
                   <img src="/assets/logo 1.png" alt="Unicorn logo" className="h-10 w-auto" />
+                  <img src="/assets/logo 2.png" alt="Unicorn logo" className="h-11 w-24 pt-1" />
                 </Link>
               </div>
               <p className="text-gray-600 mb-4 text-sm sm:text-base">
-                Your trusted partner for specialty products and sourcing
-                solutions from India.
+              Your trusted partner for specialty products and sourcing solutions from India
               </p>
               <div>
                 <p className="text-sm text-gray-600 mb-2">Follow us on:</p>
@@ -52,7 +52,7 @@ export default function Footer() {
             </div>
 
             {/* Quick Links */}
-            <div>
+            <div className="ml-12">
               <h3 className="font-semibold text-gray-800 mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>

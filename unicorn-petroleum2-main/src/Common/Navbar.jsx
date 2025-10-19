@@ -108,7 +108,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 text-xs sm:text-sm">
           <div className="w-full flex items-center justify-between sm:justify-end sm:gap-4">
             <span className="text-black font-bold hidden sm:inline">Contact us on :</span>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2"> 
               <FiPhone className="text-black text-sm" />
               <span className="text-black text-xs sm:text-sm">+91 22 4232 4121</span>
             </div>

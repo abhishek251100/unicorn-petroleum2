@@ -19,7 +19,7 @@ export default function ProductPortfolioSection({ data }) {
           {data.cards.map((card, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer border border-[#EDA94E]"
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer border border-[#EDA94E] flex flex-col"
             >
               <div className="h-40 sm:h-44 md:h-48 overflow-hidden">
                 <img
@@ -29,16 +29,16 @@ export default function ProductPortfolioSection({ data }) {
                 />
               </div>
 
-              <div className="p-4 sm:p-5 md:p-6">
+              <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-grow text-center sm:text-left">
                 <h3 className="font-semibold text-gray-800 mb-2 sm:mb-3 group-hover:text-orange-600 transition-colors text-sm sm:text-base">
                   {card.title}
                 </h3>
 
-                <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
+                <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3 flex-grow">
                   {card.description}
                 </p>
 
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm transition-all duration-300 hover:shadow-lg">
+                <button className="bg-orange-500 hover:bg-orange-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm transition-all duration-300 hover:shadow-lg mt-auto mx-auto sm:mx-0">
                   {card.buttonText}
                 </button>
               </div>
