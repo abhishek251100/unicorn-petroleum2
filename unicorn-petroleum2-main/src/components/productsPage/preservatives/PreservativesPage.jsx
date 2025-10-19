@@ -5,6 +5,7 @@ import ProductPageCommonSection from "../../../Common/products/ProductPageCommon
 import QualityStandardsSection from "../../../Common/QualityStandardsSection";
 import ApplicationsSection from "../../../Common/ApplicationsSection";
 import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySection";
+import PreservativeProductsSection from "../../../Common/PreservativeProductsSection";
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import { productsNavigationData } from "../productsNavigationData";
 import { preservativesData } from "./preservativesData";
@@ -20,6 +21,7 @@ export default function PreservativesPage() {
 
         <div className="lg:col-span-9 space-y-8">
           <ProductPageCommonSection data={data.commonSection} />
+          <PreservativeProductsSection data={data.preservativeProducts} />
           <ApplicationsSection data={data.applicationsSection} />
           <PackagedResponsiblySection data={data.packagedResponsibly} />
         </div>
@@ -27,6 +29,7 @@ export default function PreservativesPage() {
 
       <div className="lg:hidden space-y-8 mb-8">
         <ProductPageCommonSection data={data.commonSection} />
+        <PreservativeProductsSection data={data.preservativeProducts} />
         <ApplicationsSection data={data.applicationsSection} />
         <PackagedResponsiblySection data={data.packagedResponsibly} />
       </div>

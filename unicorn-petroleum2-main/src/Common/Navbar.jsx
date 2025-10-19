@@ -54,17 +54,7 @@ export default function Navbar() {
   }, []);
 
   const menuItems = [
-    {
-      name: "About",
-      link: "/about/profile",
-      hasDropdown: true,
-      dropdownItems: [
-        { name: "Corporate profile", link: "/about/profile" },
-        { name: "Values", link: "/about/values" },
-        { name: "Vision - Mission", link: "/about/vision-mission" },
-        { name: "Certifications", link: "/about/certifications" }
-      ]
-    },
+    { name: "About", link: "/about", hasDropdown: false },
     {
       name: "Products",
       link: "/products",
@@ -183,8 +173,8 @@ export default function Navbar() {
 
             {/* Search Icon and WhatsApp Button */}
             <div className="hidden md:flex items-center space-x-4">
-              <FiSearch className="text-gray-800 text-xl cursor-pointer hover:text-orange-500 transition-colors" />
-              <button className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm hover:bg-orange-600 transition-colors">
+              <FiSearch className="text-gray-800 text-xl cursor-pointer hover:text-[#E99322] transition-colors" />
+              <button className="bg-[#E99322] text-white px-4 py-2 rounded-full text-sm hover:bg-[#E99322]/90 transition-colors">
                 WhatsApp Us
               </button>
             </div>
@@ -206,7 +196,7 @@ export default function Navbar() {
                     <div>
                       <button
                         onClick={() => toggleMobileDropdown(index)}
-                        className="w-full text-left px-4 py-3 text-gray-800 hover:text-orange-300 flex items-center justify-between"
+                        className="w-full text-left px-4 py-3 text-gray-800 hover:text-[#E99322]/80 flex items-center justify-between"
                       >
                         <span className="font-semibold">{item.name}</span>
                         <FiChevronDown className={`text-sm transition-transform ${mobileDropdowns[index] ? 'rotate-180' : ''}`} />
@@ -217,7 +207,7 @@ export default function Navbar() {
                             <Link
                               key={dropdownIndex}
                               to={dropdownItem.link}
-                              className="block px-8 py-3 text-sm text-gray-800 hover:text-orange-300 hover:bg-black/20 border-b border-gray-300/30 last:border-b-0"
+                              className="block px-8 py-3 text-sm text-gray-800 hover:text-[#E99322]/80 hover:bg-black/20 border-b border-gray-300/30 last:border-b-0"
                               onClick={() => { setIsOpen(false); setMobileDropdowns({}); window.scrollTo(0, 0); }}
                             >
                               {dropdownItem.name}
@@ -229,7 +219,7 @@ export default function Navbar() {
                   ) : (
                     <Link
                       to={item.link}
-                      className="block px-4 py-3 text-gray-800 hover:text-orange-300 font-semibold"
+                      className="block px-4 py-3 text-gray-800 hover:text-[#E99322]/80 font-semibold"
                       onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }}
                     >
                       {item.name}
@@ -239,7 +229,7 @@ export default function Navbar() {
               ))}
 
               <div className="px-4 py-3 border-t border-gray-300/30 mt-4">
-                <button className="w-full bg-orange-500 text-white px-4 py-2 rounded-full text-sm hover:bg-orange-600 transition-colors flex items-center justify-center gap-2">
+                <button className="w-full bg-[#E99322] text-white px-4 py-2 rounded-full text-sm hover:bg-[#E99322]/90 transition-colors flex items-center justify-center gap-2">
                   <FaWhatsapp className="text-lg" />
                   WhatsApp Us
                 </button>

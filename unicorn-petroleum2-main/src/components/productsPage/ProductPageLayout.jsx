@@ -36,7 +36,7 @@ export default function ProductPageLayout({
   }, [location.pathname]);
 
   const resolvedTitle = title || currentItem?.name || (location.pathname === "/products" ? "Products" : "Product");
-  const resolvedSubtitle = ""; // remove subtext on banner as requested
+  const resolvedSubtitle = subtitle || ""; // Use the subtitle prop if provided
 
   const handleTouchStart = (e) => {
     if (!e.touches || e.touches.length === 0) return;
@@ -103,7 +103,11 @@ export default function ProductPageLayout({
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 tracking-tight">
               {resolvedTitle}
             </h1>
-            {/* subtitle intentionally hidden per request */}
+            {resolvedSubtitle && (
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-800 font-medium">
+                {resolvedSubtitle}
+              </p>
+            )}
           </div>
         </div>
 

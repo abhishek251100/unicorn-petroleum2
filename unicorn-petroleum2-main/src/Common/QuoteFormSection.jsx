@@ -27,7 +27,7 @@ export default function QuoteFormSection({ mode = "quote", title }) {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="pt-8 pb-16 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4 tracking-tight">
@@ -45,7 +45,7 @@ export default function QuoteFormSection({ mode = "quote", title }) {
                 placeholder="Enter Full Name"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E99322] focus:border-transparent transition-all duration-300"
                 required
               />
             </div>
@@ -58,7 +58,7 @@ export default function QuoteFormSection({ mode = "quote", title }) {
                 placeholder="Enter Company Name"
                 value={formData.companyName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E99322] focus:border-transparent transition-all duration-300"
                 required
               />
             </div>
@@ -71,7 +71,7 @@ export default function QuoteFormSection({ mode = "quote", title }) {
                 placeholder="Enter Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E99322] focus:border-transparent transition-all duration-300"
                 required
               />
             </div>
@@ -84,7 +84,7 @@ export default function QuoteFormSection({ mode = "quote", title }) {
                 placeholder="Enter Mobile Number"
                 value={formData.mobileNumber}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E99322] focus:border-transparent transition-all duration-300"
                 required
               />
             </div>
@@ -97,7 +97,7 @@ export default function QuoteFormSection({ mode = "quote", title }) {
                 placeholder="Enter Country Name"
                 value={formData.countryName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E99322] focus:border-transparent transition-all duration-300"
                 required
               />
             </div>
@@ -109,7 +109,7 @@ export default function QuoteFormSection({ mode = "quote", title }) {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E99322] focus:border-transparent transition-all duration-300"
                   required
                 >
                   <option value="">Select Subject</option>
@@ -126,7 +126,7 @@ export default function QuoteFormSection({ mode = "quote", title }) {
                   placeholder="Enter Grade/Quality Needed"
                   value={formData.gradeQuality}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E99322] focus:border-transparent transition-all duration-300"
                   required
                 />
               </div>
@@ -141,7 +141,7 @@ export default function QuoteFormSection({ mode = "quote", title }) {
               value={formData.message}
               onChange={handleChange}
               rows="4"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E99322] focus:border-transparent transition-all duration-300 resize-none"
               required
             />
           </div>
@@ -150,7 +150,7 @@ export default function QuoteFormSection({ mode = "quote", title }) {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl flex items-center justify-center mx-auto"
+              className="bg-[#E99322] text-white px-8 py-4 rounded-lg hover:bg-[#E99322]/90 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl flex items-center justify-center mx-auto"
             >
               {mode === "contact" ? "Send Message" : "Submit Enquiry"}
               <FiArrowRight className="ml-2" />

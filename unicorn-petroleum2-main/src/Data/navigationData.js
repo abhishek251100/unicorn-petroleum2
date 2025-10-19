@@ -2,12 +2,7 @@
 export const navigationData = {
   about: {
     title: "About Us",
-    categories: [
-      { id: 'about-profile', name: 'Corporate profile', link: '/about/profile' },
-      { id: 'about-values', name: 'Values', link: '/about/values' },
-      { id: 'about-vision', name: 'Vision - Mission', link: '/about/vision-mission' },
-      { id: 'about-certs', name: 'Certifications', link: '/about/certifications' }
-    ]
+    link: "/about"
   },
   applications: {
     title: "Applications",

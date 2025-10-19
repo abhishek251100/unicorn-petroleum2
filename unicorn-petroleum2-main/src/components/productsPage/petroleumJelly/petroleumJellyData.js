@@ -13,34 +13,36 @@ export const petroleumJellyData = {
   // New Applications section structure
   applicationsSection: {
     productName: "petroleum jelly",
-    applications: "From the lipstick in your makeup bag to the protective coating on your car, microcrystalline wax is the versatile ingredient that makes everyday products better. Our premium-grade wax enhances texture, extends shelf life, and provides superior protection across industries – transforming ordinary formulations into exceptional products that perform when it matters most.",
+    applications: "White/Yellow petroleum jelly find varied applications as an excipient in cosmetic and pharmaceutical formulations; such as the following:",
     finalProductUtilization: [
       "Ointments",
       "Pain balms", 
+      "Cosmetic creams",
+      "Foot care creams",
+      "Hair food formulations",
+      "Eye applicaps",
       "Gauze dressings",
       "Skin protectants",
       "Dental adhesive",
-      "Lip care",
-      "Foot care",
-      "Creams"
+      "General-purpose lubricant"
     ]
   },
 
-  // Packaged responsibly section
-  packagedResponsibly: {
-    packagingOptions: [
-      {
-        icon: "bag",
-        type: "Bags",
-        weight: "25kg/35kg"
-      },
-      {
-        icon: "box", 
-        type: "Cartons",
-        weight: "25kg/35kg"
-      }
-    ]
-  },
+  // // Packaged responsibly section
+  // packagedResponsibly: {
+  //   packagingOptions: [
+  //     {
+  //       icon: "bag",
+  //       type: "Bags",
+  //       weight: "25kg/35kg"
+  //     },
+  //     {
+  //       icon: "box", 
+  //       type: "Cartons",
+  //       weight: "25kg/35kg"
+  //     }
+  //   ]
+  // },
 
   // Key features data
   keyFeatures: {
@@ -76,7 +78,7 @@ export const petroleumJellyData = {
     relatedProducts: [
       {
         name: "Mineral Oil",
-        image: "/assets/RELATED PROD IMG/Mineral Oil.png"
+        image: "/assets/HomePageImg/P1_Home.png"
       },
       {
         name: "Microcrystalline Wax",
@@ -84,7 +86,7 @@ export const petroleumJellyData = {
       },
       {
         name: "Paraffin Wax",
-        image: "/assets/RELATED PROD IMG/Paraffin Wax.png"
+        image: "/assets/RELATED PROD IMG/Paraffin Wax (2  ).png"
       }
     ]
   }

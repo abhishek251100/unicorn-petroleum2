@@ -7,9 +7,7 @@ import QualityStandardsSection from "../../../Common/QualityStandardsSection";
 import ApplicationsSection from "../../../Common/ApplicationsSection";
 import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySection";
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
-import QuoteFormSection from "../../../Common/QuoteFormSection";
 import { productsNavigationData } from "../productsNavigationData";
-import homeData from "../../Home/HomeData";
 import { dPanthenolData } from "./dPanthenolData";
 
 export default function DPanthenolPage() {
@@ -44,9 +42,6 @@ export default function DPanthenolPage() {
         <FloatingSidebar navigationData={productsNavigationData} />
       </div>
 
-      <div id="quote-form-section">
-        <QuoteFormSection data={homeData.cta} />
-      </div>
     </ProductPageLayout>
   );
 }

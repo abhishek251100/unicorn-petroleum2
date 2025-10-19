@@ -1,36 +1,50 @@
 export const emulsifyingWaxData = {
   name: "Emulsifying Wax",
-  description: "",
+  description: "Purity for every application.",
 
   commonSection: {
     title: "Emulsifying wax",
     description:
-      "Essential for creating smooth, stable emulsions, Emulsifying wax helps blend water and oil into luxurious, long-lasting formulations. It’s widely used in lotions, creams, and ointments where texture and absorption truly matter.\n\nWe take pride in crafting Emulsifying waxes that deliver reliable performance across every formulation. Using pharmaceutical‑grade processes and ISO‑certified systems, we ensure uniformity, mildness, and ease of integration — so your end products feel as good as they look.",
-    additionalInfo: "",
+      "Emulsifying wax serves the very purpose it indicates — emulsifying the water and oil phases together into smooth, stable formulations. With both anionic and non-ionic grades, emulsifying waxes from Unicorn aim to cater to many diverse needs of the industry as they come for both water-in-oil emulsions and oil-in-water emulsions.",
+    additionalInfo: "Widely used in the manufacturing of lotions, creams, ointments and other beauty products, it ensures the end products feel as good as they look.",
     brochureUrl: "#",
   },
 
   applicationsSection: {
     productName: "emulsifying wax",
     applications:
-      "From the lipstick in your makeup bag to the protective coating on your car, Microcrystalline wax is the versatile ingredient that makes everyday products better. Our premium‑grade wax enhances texture, extends shelf life, and provides superior protection across industries – transforming ordinary formulations into exceptional products that perform when it matters most.",
-    finalProductUtilization: ["Ointments", "Lotions", "Creams"],
-  },
-
-  packagedResponsibly: {
-    packagingOptions: [
-      { icon: "bag", type: "Bags", weight: "25kg" },
-      { icon: "box", type: "Cartons", weight: "25kg" },
+      " ",
+    applicationPoints: [
+      "Emulsifying Wax is widely used in the Pharmaceutical / Cosmetic industry as a part of creams and lotion formulations.",
+      "Ionic / Anionic Emulsifying Wax are most suitable for water in oil type of emulsion Non-Ionic Grade is most suitable for oil in water type of emulsion"
+    ],
+    finalProductUtilization: [
+      "Ointment",
+      "Lotions",
+      "Creams",
+      "Conditioners",
+      "Hair masks",
+      "Sunscreens",
+      "Body butters",
+      "Balms",
+      "Lip care products"
     ],
   },
+
+  // packagedResponsibly: {
+  //   packagingOptions: [
+  //     { icon: "bag", type: "Bags", weight: "25kg" },
+  //     { icon: "box", type: "Cartons", weight: "25kg" },
+  //   ],
+  // },
 
   // No Key Features section for this page
 
   relatedProducts: {
     relatedProducts: [
-      { name: "Mineral Oil", image: "/assets/RELATED PROD IMG/Mineral Oil.png" },
-      { name: "Beeswax", image: "/assets/RELATED PROD IMG/Beeswax.png" },
-      { name: "D-Panthenol", image: "/assets/RELATED PROD IMG/D-Panthenol.png" },
+      { name: "Mineral Oil", image: "/assets/HomePageImg/P1_Home.png" },
+      { name: "Beeswax", image: "/assets/RELATED PROD IMG/Beeswax2 (1).png" },
+      { name: "D-Panthenol", image: "/assets/RELATED PROD IMG/Beeswax2 (2).png" },
     ],
   },
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { FiPackage, FiBox } from "react-icons/fi";
+import { FiPackage, FiBox, FiDroplet } from "react-icons/fi";
 
 const PackagedResponsiblySection = ({ data }) => {
   if (!data || !data.packagingOptions || data.packagingOptions.length === 0) {
@@ -7,7 +7,7 @@ const PackagedResponsiblySection = ({ data }) => {
   }
 
   return (
-    <section className="py-12 px-4">
+    <section className="pt-6 pb-12 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -19,10 +19,16 @@ const PackagedResponsiblySection = ({ data }) => {
           {data.packagingOptions.map((option, index) => (
             <div
               key={index}
-              className="bg-white p-10 rounded-2xl border-2 border-[#EDA94E] hover:shadow-lg transition-all duration-300 text-center w-48 h-56 flex flex-col items-center justify-center mx-auto sm:mx-0"
+              className="bg-white p-8 rounded-2xl border-2 border-[#EDA94E] hover:shadow-lg transition-all duration-300 text-center w-56 h-56 flex flex-col items-center justify-center mx-auto sm:mx-0"
             >
               <div className="text-5xl text-[#EDA94E] mb-6">
-                {option.icon === 'bag' ? <FiPackage /> : <FiBox />}
+                {option.icon && option.icon.startsWith('/') ? (
+                  <img src={option.icon} alt={option.type} className="w-16 h-16 object-contain" />
+                ) : (
+                  option.icon === 'bag' ? <FiPackage /> : 
+                  option.icon === 'bottle' ? <FiDroplet /> : 
+                  <FiBox />
+                )}
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 {option.type}

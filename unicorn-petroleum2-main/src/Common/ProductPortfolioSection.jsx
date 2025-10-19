@@ -30,7 +30,7 @@ export default function ProductPortfolioSection({ data }) {
               </div>
 
               <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-grow text-center sm:text-left">
-                <h3 className="font-semibold text-gray-800 mb-2 sm:mb-3 group-hover:text-orange-600 transition-colors text-sm sm:text-base">
+                <h3 className="font-semibold text-gray-800 mb-2 sm:mb-3 group-hover:text-[#E99322] transition-colors text-sm sm:text-base">
                   {card.title}
                 </h3>
 
@@ -38,7 +38,7 @@ export default function ProductPortfolioSection({ data }) {
                   {card.description}
                 </p>
 
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm transition-all duration-300 hover:shadow-lg mt-auto mx-auto sm:mx-0">
+                <button className="bg-[#E99322] hover:bg-[#E99322]/90 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm transition-all duration-300 hover:shadow-lg mt-auto mx-auto sm:mx-0">
                   {card.buttonText}
                 </button>
               </div>

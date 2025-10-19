@@ -35,7 +35,7 @@ export default function NewsSection({ data }) {
                 {/* Content */}
                 <div className="flex flex-col flex-1 min-w-0">
                   <div className="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-2 text-xs">
-                    <span className="font-medium text-orange-600 bg-orange-50 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs">
+                    <span className="font-medium text-[#E99322] bg-[#E99322]/10 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs">
                       NEWS
                     </span>
                     <span className="text-gray-500 text-xs">{card.date}</span>
@@ -51,7 +51,7 @@ export default function NewsSection({ data }) {
 
                   <a
                     href="#"
-                    className="text-orange-600 hover:text-orange-700 font-medium text-xs sm:text-sm mt-2 sm:mt-3 self-end"
+                    className="text-[#E99322] hover:text-[#E99322]/80 font-medium text-xs sm:text-sm mt-2 sm:mt-3 self-end"
                   >
                     {card.linkText}
                   </a>

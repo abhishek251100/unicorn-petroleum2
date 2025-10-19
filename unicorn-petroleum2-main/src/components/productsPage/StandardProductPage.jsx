@@ -7,9 +7,7 @@ import QualityStandardsSection from "../../Common/QualityStandardsSection";
 import ApplicationsSection from "../../Common/ApplicationsSection";
 import PackagedResponsiblySection from "../../Common/PackagedResponsiblySection";
 import RelatedProductsSection from "../../Common/RelatedProductsSection";
-import QuoteFormSection from "../../Common/QuoteFormSection";
 import { productsNavigationData } from "./productsNavigationData";
-import homeData from "../Home/HomeData";
 import { buildStandardProductData } from "./standardProductData";
 
 export default function StandardProductPage({ title, description }) {
@@ -45,9 +43,6 @@ export default function StandardProductPage({ title, description }) {
         <FloatingSidebar navigationData={productsNavigationData} />
       </div>
 
-      <div id="quote-form-section">
-        <QuoteFormSection data={homeData.cta} />
-      </div>
     </ProductPageLayout>
   );
 }

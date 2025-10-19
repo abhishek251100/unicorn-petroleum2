@@ -1,6 +1,6 @@
 export const paraffinWaxData = {
   name: "Paraffin Wax",
-  description: "",
+  description: "Purity for every application.",
 
   commonSection: {
     title: "Paraffin wax",
@@ -13,7 +13,7 @@ export const paraffinWaxData = {
   applicationsSection: {
     productName: "paraffin wax",
     applications:
-      "From the lipstick in your makeup bag to the protective coating on your car, microcrystalline wax is the versatile ingredient that makes everyday products better. Our premium-grade wax enhances texture, extends shelf life, and provides superior protection across industries – transforming ordinary formulations into exceptional products that perform when it matters most.",
+      "Paraffin Wax is ideally suitable for use in formulations and manufacturing of the following:",
     finalProductUtilization: [
       "Creams",
       "Ointments",
@@ -21,13 +21,14 @@ export const paraffinWaxData = {
       "Lip care",
       "Foot care",
       "Petroleum jelly",
+      "Candles"
     ],
   },
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "bag", type: "Bags", weight: "25kg/35kg" },
-      { icon: "box", type: "Cartons", weight: "25kg/35kg" },
+      { icon: "bag", type: "Bags", weight: "25kg/50kg" },
+      { icon: "box", type: "Cartons", weight: "25kg/50kg" },
     ],
   },
 
@@ -35,8 +36,8 @@ export const paraffinWaxData = {
 
   relatedProducts: {
     relatedProducts: [
-      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/Petroleum jelly.png" },
-      { name: "Mineral Oil", image: "/assets/RELATED PROD IMG/Mineral Oil.png" },
+      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/Petroleum Jelly (2).png" },
+      { name: "Mineral Oil", image: "/assets/HomePageImg/P1_Home.png" },
       { name: "Microcrystalline Wax", image: "/assets/RELATED PROD IMG/Microcrystalline.png" },
     ],
   },

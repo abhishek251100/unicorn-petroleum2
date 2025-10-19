@@ -7,10 +7,8 @@ import QualityStandardsSection from "../../../Common/QualityStandardsSection";
 import ApplicationsSection from "../../../Common/ApplicationsSection";
 import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySection";
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
-import QuoteFormSection from "../../../Common/QuoteFormSection";
 import { whiteMineralOilsData } from "./whiteMineralOilsData";
 import { productsNavigationData } from "../productsNavigationData";
-import homeData from "../../Home/HomeData";
 
 export default function WhiteMineralOilsPage() {
   return (
@@ -49,9 +47,6 @@ export default function WhiteMineralOilsPage() {
         <FloatingSidebar navigationData={productsNavigationData} />
       </div>
 
-      <div id="quote-form-section">
-        <QuoteFormSection data={homeData.cta} />
-      </div>
     </ProductPageLayout>
   );
 }

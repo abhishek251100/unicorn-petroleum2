@@ -6,6 +6,7 @@ import QualityStandardsSection from "../../../Common/QualityStandardsSection";
 import ApplicationsSection from "../../../Common/ApplicationsSection";
 import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySection";
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
+import UVFilterProductsSection from "../../../Common/UVFilterProductsSection";
 import { productsNavigationData } from "../productsNavigationData";
 import { uvFiltersData } from "./uvFiltersData";
 
@@ -20,6 +21,7 @@ export default function UVFiltersPage() {
 
         <div className="lg:col-span-9 space-y-8">
           <ProductPageCommonSection data={data.commonSection} />
+          <UVFilterProductsSection data={data.uvFilterProducts} />
           <ApplicationsSection data={data.applicationsSection} />
           <PackagedResponsiblySection data={data.packagedResponsibly} />
         </div>
@@ -27,6 +29,7 @@ export default function UVFiltersPage() {
 
       <div className="lg:hidden space-y-8 mb-8">
         <ProductPageCommonSection data={data.commonSection} />
+        <UVFilterProductsSection data={data.uvFilterProducts} />
         <ApplicationsSection data={data.applicationsSection} />
         <PackagedResponsiblySection data={data.packagedResponsibly} />
       </div>

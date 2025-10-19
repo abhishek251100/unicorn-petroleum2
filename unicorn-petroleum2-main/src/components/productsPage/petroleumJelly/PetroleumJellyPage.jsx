@@ -7,10 +7,8 @@ import QualityStandardsSection from "../../../Common/QualityStandardsSection";
 import ApplicationsSection from "../../../Common/ApplicationsSection";
 import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySection";
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
-import QuoteFormSection from "../../../Common/QuoteFormSection";
 import { petroleumJellyData } from "./petroleumJellyData";
 import { productsNavigationData } from "../productsNavigationData";
-import homeData from "../../Home/HomeData";
 
 export default function PetroleumJellyPage() {
   return (

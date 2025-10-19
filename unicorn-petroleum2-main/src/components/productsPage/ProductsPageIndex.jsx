@@ -18,7 +18,7 @@ export default function ProductsPageIndex() {
             <Link key={cat.id} to={cat.link} className="block border rounded-xl p-6 hover:shadow-lg transition">
               <h4 className="text-xl font-semibold text-gray-800 mb-2">{cat.name}</h4>
               <p className="text-gray-600 mb-2">{cat.description}</p>
-              <div className="text-sm text-orange-600">View →</div>
+              <div className="text-sm text-[#E99322]">View →</div>
             </Link>
           ))}
         </div>

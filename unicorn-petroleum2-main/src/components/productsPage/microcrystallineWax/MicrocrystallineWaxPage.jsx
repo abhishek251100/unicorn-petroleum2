@@ -6,9 +6,7 @@ import QualityStandardsSection from "../../../Common/QualityStandardsSection";
 import ApplicationsSection from "../../../Common/ApplicationsSection";
 import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySection";
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
-import QuoteFormSection from "../../../Common/QuoteFormSection";
 import { productsNavigationData } from "../productsNavigationData";
-import homeData from "../../Home/HomeData";
 import { microcrystallineWaxData } from "./microcrystallineWaxData";
 
 export default function MicrocrystallineWaxPage() {
@@ -41,9 +39,6 @@ export default function MicrocrystallineWaxPage() {
         <FloatingSidebar navigationData={productsNavigationData} />
       </div>
 
-      <div id="quote-form-section">
-        <QuoteFormSection data={homeData.cta} />
-      </div>
     </ProductPageLayout>
   );
 }

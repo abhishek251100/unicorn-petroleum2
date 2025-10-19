@@ -169,7 +169,7 @@ export default function IconRoadHero({ data = {} }) {
         {/* CTA (optional) */}
         {data.ctaText && (
           <div className="text-center mt-12">
-            <button className="bg-[#EDA94E] hover:bg-[#E99322] text-white px-6 py-3 rounded-full transition-colors inline-flex items-center gap-2">
+            <button className="bg-[#E99322] hover:bg-[#E99322]/90 text-white px-6 py-3 rounded-full transition-colors inline-flex items-center gap-2">
               <span>{data.ctaText}</span>
               <span>→</span>
             </button>

@@ -33,7 +33,7 @@ export default function Footer() {
                 <div className="flex space-x-3">
                   <a
                     href="https://linkedin.com/company/unicorn-petroleum"
-                    className="text-orange-500 hover:text-orange-600 transition-colors"
+                    className="text-[#E99322] hover:text-[#E99322]/80 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -41,7 +41,7 @@ export default function Footer() {
                   </a>
                   <a
                     href="https://facebook.com/unicornpetroleum"
-                    className="text-orange-500 hover:text-orange-600 transition-colors"
+                    className="text-[#E99322] hover:text-[#E99322]/80 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -52,13 +52,13 @@ export default function Footer() {
             </div>
 
             {/* Quick Links */}
-            <div className="ml-12">
+            <div className="md:ml-12">
               <h3 className="font-semibold text-gray-800 mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
                     to="/about"
-                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                    className="text-gray-600 hover:text-[#E99322] transition-colors"
                   >
                     About Us
                   </Link>
@@ -66,7 +66,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/products"
-                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                    className="text-gray-600 hover:text-[#E99322] transition-colors"
                   >
                     Products
                   </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/applications"
-                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                    className="text-gray-600 hover:text-[#E99322] transition-colors"
                   >
                     Applications
                   </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/quality"
-                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                    className="text-gray-600 hover:text-[#E99322] transition-colors"
                   >
                     Quality
                   </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/reach"
-                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                    className="text-gray-600 hover:text-[#E99322] transition-colors"
                   >
                     Global Reach
                   </Link>
@@ -98,7 +98,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/contact"
-                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                    className="text-gray-600 hover:text-[#E99322] transition-colors"
                   >
                     Contact Us
                   </Link>
@@ -113,19 +113,19 @@ export default function Footer() {
               </h3>
               <div className="space-y-3">
                 <div className="flex items-center">
-                  <FiPhone className="text-orange-500 mr-3" />
+                  <FiPhone className="text-[#E99322] mr-3" />
                   <span className="text-gray-600 text-sm">
                     +91 22 4232 4121 | +91 22 4232 4122
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <FiMail className="text-orange-500 mr-3" />
+                  <FiMail className="text-[#E99322] mr-3" />
                   <span className="text-gray-600 text-sm">
                     manan@unicornpetro.co.in | info@unicornpetro.co.in
                   </span>
                 </div>
                 <div className="flex items-start">
-                  <FiMapPin className="text-orange-500 mr-3 mt-1 flex-shrink-0" />
+                  <FiMapPin className="text-[#E99322] mr-3 mt-1 flex-shrink-0" />
                   <span className="text-gray-600 text-xs sm:text-sm">
                     Unit No. 1 'Ridhi Sidhi', Corporate Park, CST Road, Che
                     Mumbai 400071, India
@@ -145,13 +145,13 @@ export default function Footer() {
             <div className="flex space-x-3 sm:space-x-4 mt-2 md:mt-0">
               <Link
                 to="/privacy"
-                className="text-white hover:text-orange-300 transition-colors text-xs sm:text-sm"
+                className="text-white hover:text-[#E99322]/80 transition-colors text-xs sm:text-sm"
               >
                 Privacy Policy
               </Link>
               <Link
                 to="/terms"
-                className="text-white hover:text-orange-300 transition-colors text-xs sm:text-sm"
+                className="text-white hover:text-[#E99322]/80 transition-colors text-xs sm:text-sm"
               >
                 Terms of Use
               </Link>

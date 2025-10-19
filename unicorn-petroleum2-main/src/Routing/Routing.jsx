@@ -20,11 +20,7 @@ import PreservativesPage from "../components/productsPage/preservatives/Preserva
 import SurfactantsPage from "../components/productsPage/surfactants/SurfactantsPage";
 import UVFiltersPage from "../components/productsPage/uvFilters/UVFiltersPage";
 
-// About pages
-import CorporateProfilePage from "../components/aboutUs/corporateProfile/CorporateProfilePage";
-import ValuesPage from "../components/aboutUs/values/ValuesPage";
-import VisionMissionPage from "../components/aboutUs/visionMission/VisionMissionPage";
-import CertificationsPage from "../components/aboutUs/certifications/CertificationsPage";
+// About pages - consolidated into single page
 
 // Applications pages
 import PharmaceuticalPage from "../components/applicationPage/pharmaceutical/PharmaceuticalPage";
@@ -40,10 +36,6 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <HomeIndex /> },
       { path: "/about", element: <AboutPage /> },
-      { path: "/about/profile", element: <CorporateProfilePage /> },
-      { path: "/about/values", element: <ValuesPage /> },
-      { path: "/about/vision-mission", element: <VisionMissionPage /> },
-      { path: "/about/certifications", element: <CertificationsPage /> },
       { path: "/products", element: <ProductPage /> },
       { path: "/products/petroleum-jelly", element: <PetroleumJellyPage /> },
       { path: "/products/white-mineral-oils", element: <WhiteMineralOilsPage /> },

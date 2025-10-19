@@ -1,35 +1,49 @@
 export const microcrystallineWaxData = {
   name: "Microcrystalline Wax",
   description:
-    "A soft, pliable wax known for its exceptional oil retention, adhesive strength, and flexibility — a staple in cosmetics, pharmaceuticals, and food-safe packaging applications.",
+    "Purity for every application.",
 
   commonSection: {
     title: "Microcrystalline wax",
     description:
-      "A soft, pliable wax known for its exceptional oil retention, adhesive strength, and flexibility, microcrystalline wax is a staple in cosmetics, pharmaceuticals, and food-safe packaging applications. Whether it's locking in moisture or improving texture and stability, this wax is formulated to perform.",
-    additionalInfo:
-      "At Unicorn, we manufacture microcrystalline wax with uncompromising attention to quality. Our process ensures precise control over melting point, hardness, and viscosity — delivering waxes that are consistent, pure, and ready for global compliance. Each batch is rigorously tested to meet industry-specific standards so you can formulate with confidence.",
+      "Known for its crystal finesse, microcrystalline waxes are produced by de-oiling petrolatum, as part of the petroleum refining process. With an affinity for paraffin wax and mineral oil, it is widely used in oil-based formulations in the cosmetic / pharmaceutical industry, adding structural strength and lustre to the final product. Whether it's locking in moisture or improving texture and stability, our waxes are formulated to perform.",
+    // additionalInfo:
+    //   "At Unicorn, we manufacture microcrystalline wax with uncompromising attention to quality. Our process ensures precise control over melting point, hardness, and viscosity — delivering waxes that are consistent, pure, and ready for global compliance. Each batch is rigorously tested to meet industry-specific standards so you can formulate with confidence.",
     brochureUrl: "#",
   },
 
   applicationsSection: {
     productName: "microcrystalline wax",
     applications:
-      "From the lipstick in your makeup bag to the protective coating on your car, microcrystalline wax is the versatile ingredient that makes everyday products better. Our premium-grade wax enhances texture, extends shelf life, and provides superior protection across industries — transforming ordinary formulations into exceptional products that perform when it matters most.",
+      "Microcrystalline waxes find ideal application towards final product utilization of:",
     finalProductUtilization: [
-      "Adhesive",
+      "Cosmetic creams",
+      "Lotions",
+      "Pharmaceutical ointments",
+      "Petroleum jelly",
+      "Lipsticks",
+      "Balms",
+      "Pain rubs",
+      "Gloss",
+      "Chewing gums",
+      "Adhesives",
       "Cables",
       "Candles",
-      "Corrosion Protection",
+      "Chemical industry",
+      "Corrosion protection",
       "Crayons",
       "Packaging",
+      "Pipe wrap tape",
+      "Plastic and polymers",
+      "Industrial products",
+      "Personal care industry"
     ],
   },
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "bag", type: "Bags", weight: "25kg/35kg" },
-      { icon: "box", type: "Cartons", weight: "25kg/35kg" },
+      { icon: "bag", type: "Bags", weight: "25kg/30kg" },
+      { icon: "box", type: "Cartons", weight: "25kg/30kg" },
     ],
   },
 
@@ -51,9 +65,9 @@ export const microcrystallineWaxData = {
 
   relatedProducts: {
     relatedProducts: [
-      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/Petroleum jelly.png" },
-      { name: "Mineral Oil", image: "/assets/RELATED PROD IMG/Mineral Oil.png" },
-      { name: "Paraffin Wax", image: "/assets/RELATED PROD IMG/Paraffin Wax.png" },
+      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/Petroleum Jelly (2).png" },
+      { name: "Mineral Oil", image: "/assets/HomePageImg/P1_Home.png" },
+      { name: "Paraffin Wax", image: "/assets/RELATED PROD IMG/Paraffin Wax (2).png" },
     ],
   },
 };

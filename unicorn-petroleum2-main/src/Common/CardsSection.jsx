@@ -201,7 +201,7 @@ export default function CardsSection({ data }) {
 
         {data.buttonText && (
           <div className="text-center mt-4 sm:mt-6">
-            <button className="bg-[#EDA94E] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-[#E99322] transition-all duration-300 font-medium flex items-center gap-2 mx-auto text-sm sm:text-base">
+            <button className="bg-[#E99322] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-[#E99322]/90 transition-all duration-300 font-medium flex items-center gap-2 mx-auto text-sm sm:text-base">
               {data.buttonText}
               <span className="text-base sm:text-lg">→</span>
             </button>

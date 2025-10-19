@@ -1,21 +1,21 @@
 export const naturalBeeswaxData = {
   name: "Natural Beeswax",
   description:
-    "Natural wax with excellent binding and emulsifying properties, ideal for skincare, balms, and topical applications",
+    "Purity for every application.",
 
   commonSection: {
     title: "Natural beeswax",
     description:
       "Beeswax is a natural wax produced in the beehive of honeybees of the genus Apis. It is mainly esters of fatty acids and various long chain alcohols. Our cosmetic / pharmaceutical grade Beeswax is pale yellow, smooth, highly refined wax with emollient, soothing and softening properties.",
     additionalInfo:
-      "Our Beeswax is a 100% natural product purified for use in pharmaceutical, cosmetic and personal-care formulations. Being a natural product, the quality of our refined beeswax is highly moderated by us to comply with international regulatory requirements.",
+      "Our Beeswax is a 100 % natural product purified for use in pharmaceutical, cosmetic and personal-care formulations. Being a natural product, the quality of our refined beeswax is highly moderated by us to comply with international regulatory requirements.",
     brochureUrl: "#",
   },
 
   applicationsSection: {
     productName: "natural beeswax",
     applications:
-      "From the lipstick in your makeup bag to the protective coating on your car, microcrystalline wax is the versatile ingredient that makes everyday products better. Our premium-grade wax enhances texture, extends shelf life, and provides superior protection across industries – transforming ordinary formulations into exceptional products that perform when it matters most.",
+      "We provide different levels of viscosity which permit a wide range of use in:",
     finalProductUtilization: [
       "Ointments",
       "Balms",
@@ -23,16 +23,33 @@ export const naturalBeeswaxData = {
       "Creams",
       "Lip jellies",
       "Pomades",
-      "Lipstick",
+      "Lipsticks",
+      "Haircare",
+      "Foot care",
+      "Ayurvedic and herbal care products",
+      "Pharmaceutical sutures",
+      "Car-care cleaning products",
+      "Candles",
+      "Plastics",
+      "Furniture polish",
+      "Moulds",
+      "Casts",
+      "Processed food industry",
+      "Coatings",
+      "Leather industry",
+      "Textile industry",
+      "Wood and paper finishes",
+      "Lubricants",
+      "Specialty chemicals"
     ],
   },
 
-  packagedResponsibly: {
-    packagingOptions: [
-      { icon: "bag", type: "Bags", weight: "25kg" },
-      { icon: "box", type: "Cartons", weight: "25kg" },
-    ],
-  },
+  // packagedResponsibly: {
+  //   packagingOptions: [
+  //     { icon: "bag", type: "Bags", weight: "25kg" },
+  //     { icon: "box", type: "Cartons", weight: "25kg" },
+  //   ],
+  // },
 
   keyFeatures: {
     heading: "Key feature of all beeswax from us",
@@ -52,9 +69,9 @@ export const naturalBeeswaxData = {
 
   relatedProducts: {
     relatedProducts: [
-      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/Petroleum jelly.png" },
+      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/Petroleum Jelly (2).png" },
       { name: "Microcrystalline Wax", image: "/assets/RELATED PROD IMG/Microcrystalline.png" },
-      { name: "Emulsifying Wax", image: "/assets/RELATED PROD IMG/Emmulsifying wax.png" },
+      { name: "Emulsifying Wax", image: "/assets/RELATED PROD IMG/Emulsifying wax2.png" },
     ],
   },
 };
