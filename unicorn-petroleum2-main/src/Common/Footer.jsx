@@ -127,8 +127,7 @@ export default function Footer() {
                 <div className="flex items-start">
                   <FiMapPin className="text-[#E99322] mr-3 mt-1 flex-shrink-0" />
                   <span className="text-gray-600 text-xs sm:text-sm">
-                    Unit No. 1 'Ridhi Sidhi', Corporate Park, CST Road, Che
-                    Mumbai 400071, India
+                  Unit No. 1 'Riddhi Siddhi', Corporate Park, VN Purav Marg, Chembur, Mumbai, 400071, India.
                   </span>
                 </div>
               </div>

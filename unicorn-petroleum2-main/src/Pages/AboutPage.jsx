@@ -1,6 +1,4 @@
 import React from "react";
-import { FiUsers, FiTarget, FiFlag, FiHeart, FiShield, FiClock, FiCheckCircle, FiAward, FiHome, FiTrendingUp } from "react-icons/fi";
-import IconRoadHero from "../Common/IconRoadHero";
 import QualityStandardsSection from "../Common/QualityStandardsSection";
 
 const AboutPage = () => {
@@ -22,9 +20,9 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4">
           <nav className="text-sm">
             <span className="text-gray-500">Home</span>
-            <span className="mx-2 text-gray-400">></span>
+            <span className="mx-2 text-gray-400">&gt;</span>
             <span className="text-gray-500">About Us</span>
-            <span className="mx-2 text-gray-400">></span>
+            <span className="mx-2 text-gray-400">&gt;</span>
             <span className="text-[#E99322] font-medium">Profile</span>
           </nav>
         </div>
@@ -48,10 +46,14 @@ const AboutPage = () => {
 
       {/* Our Belief */}
       <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center">
-              <FiHome className="text-white text-2xl" />
+            <div className="w-16 h-16 flex items-center justify-center">
+              <img
+                src="/assets/about/Icon.png"
+                alt="Our belief icon"
+                className="w-12 h-12 md:w-14 md:h-14 object-contain"
+              />
             </div>
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Our belief</h2>
@@ -65,8 +67,12 @@ const AboutPage = () => {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center">
-              <FiFlag className="text-white text-2xl" />
+            <div className="w-16 h-16 rounded-full flex items-center justify-center">
+              <img
+                src="/assets/about/Icon (1).png"
+                alt="Icon placeholder"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain"
+              />
             </div>
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Our vision</h2>
@@ -80,8 +86,12 @@ const AboutPage = () => {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center">
-              <FiTarget className="text-white text-2xl" />
+            <div className="w-16 h-16 flex items-center justify-center">
+              <img
+                src="/assets/about/Icon (2).png"
+                alt="Our mission icon"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain"
+              />
             </div>
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Our mission</h2>
@@ -105,8 +115,12 @@ const AboutPage = () => {
             <div className="md:hidden space-y-8">
               {/* Commitment to customers */}
               <div className="text-center">
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-lg">
-                  <FiUsers className="text-white text-xl" />
+                <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <img
+                    src="/assets/about/Icons2.png"
+                    alt="Commitment icon"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                  />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Commitment to customers</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -116,8 +130,12 @@ const AboutPage = () => {
 
               {/* Pledge to quality */}
               <div className="text-center">
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-lg">
-                  <FiCheckCircle className="text-white text-xl" />
+                <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <img
+                    src="/assets/about/Icons2 (1).png"
+                    alt="Quality icon"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                  />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Pledge to quality</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -127,8 +145,12 @@ const AboutPage = () => {
 
               {/* Ethical and fair business */}
               <div className="text-center">
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-lg">
-                  <FiUsers className="text-white text-xl" />
+                <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <img
+                    src="/assets/about/Icons2 (2).png"
+                    alt="Ethical icon"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                  />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Ethical and fair business</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -138,8 +160,12 @@ const AboutPage = () => {
 
               {/* Integrity and adherence to law */}
               <div className="text-center">
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-lg">
-                  <FiShield className="text-white text-xl" />
+                <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <img
+                    src="/assets/about/Icons2 (3).png"
+                    alt="Integrity icon"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                  />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Integrity and adherence to law</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -149,8 +175,12 @@ const AboutPage = () => {
 
               {/* Safety, health and environment consciousness */}
               <div className="text-center">
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-lg">
-                  <FiHeart className="text-white text-xl" />
+                <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <img
+                    src="/assets/about/Icons2 (4).png"
+                    alt="Safety icon"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                  />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Safety, health and environment consciousness</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -169,8 +199,12 @@ const AboutPage = () => {
                     We pride ourselves in being a customer-oriented organization, committed to exceeding the expectations and aspirations of our esteemed customers. We always strive to achieve <strong>Customer Delight</strong> by offering perfect solutions to their needs and rendering efficient services and quality products always.
                   </p>
                 </div>
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center border-4 border-white shadow-lg z-10">
-                  <FiUsers className="text-white text-xl" />
+                <div className="w-16 h-16 flex items-center justify-center z-10">
+                  <img
+                    src="/assets/about/Icons2.png"
+                    alt="Commitment icon"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                  />
                 </div>
                 <div className="w-1/2 pl-8"></div>
               </div>
@@ -178,8 +212,12 @@ const AboutPage = () => {
               {/* Pledge to quality */}
               <div className="flex items-center">
                 <div className="w-1/2 pr-8"></div>
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center border-4 border-white shadow-lg z-10">
-                  <FiCheckCircle className="text-white text-xl" />
+                <div className="w-16 h-16 flex items-center justify-center z-10">
+                  <img
+                    src="/assets/about/Icons2 (1).png"
+                    alt="Quality icon"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                  />
                 </div>
                 <div className="w-1/2 pl-8 text-left">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Pledge to quality</h3>
@@ -197,8 +235,12 @@ const AboutPage = () => {
                     Considering our industry mix, wherein malpractices are rampant, we always adhere to ethical practices and carry out all commercial transactions in a very <strong>transparent, professional</strong> manner.
                   </p>
                 </div>
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center border-4 border-white shadow-lg z-10">
-                  <FiUsers className="text-white text-xl" />
+                <div className="w-16 h-16 flex items-center justify-center z-10">
+                  <img
+                    src="/assets/about/Icons2 (2).png"
+                    alt="Ethical icon"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                  />
                 </div>
                 <div className="w-1/2 pl-8"></div>
               </div>
@@ -206,8 +248,12 @@ const AboutPage = () => {
               {/* Integrity and adherence to law */}
               <div className="flex items-center">
                 <div className="w-1/2 pr-8"></div>
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center border-4 border-white shadow-lg z-10">
-                  <FiShield className="text-white text-xl" />
+                <div className="w-16 h-16 flex items-center justify-center z-10">
+                  <img
+                    src="/assets/about/Icons2 (3).png"
+                    alt="Integrity icon"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                  />
                 </div>
                 <div className="w-1/2 pl-8 text-left">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Integrity and adherence to law</h3>
@@ -225,8 +271,12 @@ const AboutPage = () => {
                     The company continuously implements and reviews systems, plant and operation efficiencies, designed for <strong>maximizing employee safety, health and well-being</strong>, while maintaining responsibility towards the environment by minimizing pollutant and effluent discharge levels.
                   </p>
                 </div>
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center border-4 border-white shadow-lg z-10">
-                  <FiHeart className="text-white text-xl" />
+                <div className="w-16 h-16 flex items-center justify-center z-10">
+                  <img
+                    src="/assets/about/Icons2 (4).png"
+                    alt="Safety icon"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                  />
                 </div>
                 <div className="w-1/2 pl-8"></div>
               </div>
@@ -244,7 +294,11 @@ const AboutPage = () => {
             {/* Advance production units */}
             <div className="bg-white rounded-2xl border-2 border-[#E99322] overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <FiHome className="text-gray-400 text-6xl" />
+                <img
+                  src="/assets/about/Frame 531 (16).png"
+                  alt="Advance production units"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Advance production units</h3>
@@ -255,7 +309,11 @@ const AboutPage = () => {
             {/* In-house R&D & QA lab */}
             <div className="bg-white rounded-2xl border-2 border-[#E99322] overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <FiTrendingUp className="text-gray-400 text-6xl" />
+                <img
+                  src="/assets/about/Frame 531 (17).png"
+                  alt="In-house R&D & QA lab"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">In-house R&D & QA lab</h3>
@@ -266,7 +324,11 @@ const AboutPage = () => {
             {/* Flexible packaging options */}
             <div className="bg-white rounded-2xl border-2 border-[#E99322] overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <FiAward className="text-gray-400 text-6xl" />
+                <img
+                  src="/assets/about/Frame 531 (18).png"
+                  alt="Flexible packaging options"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Flexible packaging options</h3>
@@ -301,8 +363,16 @@ const AboutPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12">
               {/* Regulatory compliance */}
               <div className="text-center relative">
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg">
-                  <FiShield className="text-white text-xl" />
+                <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
+                <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
+                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg relative z-10">
+                  <img
+                    src="/assets/about/Icons2 (5).png"
+                    alt="Icon placeholder"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                    width={32}
+                    height={32}
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Regulatory compliance</h3>
                 <p className="text-gray-700">Ensure consistent batch production in state-of-art manufacturing and testing facilities as required by regulatory markets.</p>
@@ -310,8 +380,16 @@ const AboutPage = () => {
 
               {/* Environment consciousness */}
               <div className="text-center relative">
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg">
-                  <FiShield className="text-white text-xl" />
+                <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
+                <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
+                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg relative z-10">
+                  <img
+                   src="/assets/about/Icons2 (7).png"
+                   alt="Icon placeholder"
+                   className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                   width={32}
+                   height={32}
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Environment consciousness</h3>
                 <p className="text-gray-700">Always striving for operational responsibility towards the environment by minimizing pollutant and effluent discharge levels.</p>
@@ -319,8 +397,16 @@ const AboutPage = () => {
 
               {/* Ethical operations */}
               <div className="text-center relative">
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg">
-                  <FiUsers className="text-white text-xl" />
+                <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
+                <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
+                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg relative z-10">
+                  <img
+                    src="/assets/about/Icons2 (2).png"
+                    alt="Icon placeholder"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                    width={32}
+                    height={32}
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Ethical operations</h3>
                 <p className="text-gray-700">Maintaining the highest standards of integrity, value and business ethics with transparency and professionalism in all commercial transactions.</p>
@@ -332,8 +418,16 @@ const AboutPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl">
                 {/* Timely delivery */}
                 <div className="text-center relative">
-                  <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg">
-                    <FiClock className="text-white text-xl" />
+                  <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
+                  <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
+                  <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg relative z-10">
+                    <img
+                       src="/assets/about/Icons2 (6).png"
+                       alt="Icon placeholder"
+                       className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                       width={32}
+                       height={32}
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Timely delivery</h3>
                   <p className="text-gray-700">On a quest for excellence in services with strict adherence to delivery schedules of our prestigious customers.</p>
@@ -341,8 +435,16 @@ const AboutPage = () => {
 
                 {/* Quality assurance */}
                 <div className="text-center relative">
-                  <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg">
-                    <FiCheckCircle className="text-white text-xl" />
+                  <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
+                  <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
+                  <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg relative z-10">
+                    <img
+                      src="/assets/about/Icons2 (1).png"
+                      alt="Icon placeholder"
+                      className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                      width={32}
+                      height={32}
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Quality assurance</h3>
                   <p className="text-gray-700">Renowned for our quality consistence, amongst majority of the world's most recognisable pharmaceutical, cosmetic & FMCG companies.</p>
