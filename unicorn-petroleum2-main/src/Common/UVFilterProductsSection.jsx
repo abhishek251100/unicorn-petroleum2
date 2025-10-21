@@ -18,7 +18,7 @@ const UVFilterProductsSection = ({ data }) => {
           {data.products.map((product, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl border-2 border-[#E99322] hover:shadow-lg transition-all duration-300 overflow-hidden h-48"
+              className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden h-48"
             >
               <div className="grid h-full" style={{ gridTemplateColumns: '40% 60%' }}>
                 <div className="h-full w-full">

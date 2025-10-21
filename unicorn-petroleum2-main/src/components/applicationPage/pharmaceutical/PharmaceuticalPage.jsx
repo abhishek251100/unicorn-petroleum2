@@ -93,7 +93,7 @@ export default function PharmaceuticalPage() {
                   <button
                     onClick={() => scrollToSlide('left')}
                     disabled={currentSlide === 0}
-                    className="w-10 h-10 rounded-full bg-[#EDA94E] text-white hover:bg-[#EDA94E]/90 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center transition-colors"
+                    className="w-10 h-10 rounded-full bg-[#E99322] text-white hover:bg-[#E99322]/90 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center transition-colors"
                   >
                     ‹
                   </button>
@@ -101,7 +101,7 @@ export default function PharmaceuticalPage() {
                   <button
                     onClick={() => scrollToSlide('right')}
                     disabled={currentSlide === products.length - 1}
-                    className="w-10 h-10 rounded-full bg-[#EDA94E] text-white hover:bg-[#EDA94E]/90 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center transition-colors"
+                    className="w-10 h-10 rounded-full bg-[#E99322] text-white hover:bg-[#E99322]/90 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center transition-colors"
                   >
                     ›
                   </button>
@@ -113,7 +113,7 @@ export default function PharmaceuticalPage() {
                   className="flex space-x-6 overflow-x-auto pb-4 scrollbar-hide"
                 >
                   {products.map((product, index) => (
-                    <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg border border-[#EDA94E] hover:shadow-lg transition-shadow flex flex-col">
+                    <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-shadow flex flex-col">
                       <div className="h-48 bg-gray-100 rounded-t-lg flex items-center justify-center">
                         <img 
                           src={product.image} 
@@ -133,7 +133,7 @@ export default function PharmaceuticalPage() {
                           <h3 className="text-xl font-semibold text-gray-800 mb-3">{product.name}</h3>
                           <p className="text-gray-600 mb-4">{product.description}</p>
                         </div>
-                        <button className="w-full bg-[#EDA94E] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#EDA94E]/90 transition-colors flex items-center justify-center">
+                        <button className="w-full bg-[#E99322] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#E99322]/90 transition-colors flex items-center justify-center">
                           View Details →
                         </button>
                       </div>

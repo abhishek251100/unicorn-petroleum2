@@ -15,6 +15,7 @@ export default function WhiteMineralOilsPage() {
     <ProductPageLayout
       title={whiteMineralOilsData.name}
       subtitle={whiteMineralOilsData.description}
+      bannerImage={whiteMineralOilsData.bannerImage}
     >
       {/* Desktop Layout */}
       <div className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8">
@@ -22,7 +23,7 @@ export default function WhiteMineralOilsPage() {
           <FloatingSidebar navigationData={productsNavigationData} />
         </div>
 
-        <div className="lg:col-span-9 space-y-8">
+        <div className="lg:col-span-9 space-y-4">
           <ProductPageCommonSection data={whiteMineralOilsData.commonSection} />
           <ApplicationsSection data={whiteMineralOilsData.applicationsSection} />
           <PackagedResponsiblySection data={whiteMineralOilsData.packagedResponsibly} />
@@ -31,7 +32,7 @@ export default function WhiteMineralOilsPage() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="lg:hidden space-y-8 mb-8">
+      <div className="lg:hidden space-y-4 mb-4">
         <ProductPageCommonSection data={whiteMineralOilsData.commonSection} />
         <ApplicationsSection data={whiteMineralOilsData.applicationsSection} />
         <PackagedResponsiblySection data={whiteMineralOilsData.packagedResponsibly} />

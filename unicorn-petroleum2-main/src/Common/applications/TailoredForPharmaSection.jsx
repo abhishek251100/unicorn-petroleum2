@@ -12,9 +12,9 @@ export default function TailoredForPharmaSection({ data }) {
         {data.features.map((feature, index) => (
           <div
             key={index}
-            className="bg-white p-8 rounded-2xl border border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 text-center"
+            className="bg-white p-8 rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 text-center"
           >
-            <div className="flex items-center justify-center text-[#EDA94E] text-5xl mb-6">
+            <div className="flex items-center justify-center text-[#E99322] text-5xl mb-6">
               {feature.icon && feature.icon.startsWith('/') ? (
                 <img 
                   src={feature.icon} 

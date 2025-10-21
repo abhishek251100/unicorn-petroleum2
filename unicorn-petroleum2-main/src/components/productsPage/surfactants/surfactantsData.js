@@ -1,6 +1,7 @@
 export const surfactantsData = {
   name: "Surfactants",
   description: "Anionic and nonionic surfactants for cleansing and emulsification",
+  bannerImage: "/assets/hero-bg-home.jpg", // Add your surfactants banner image path here
 
   commonSection: {
     title: "Surfactants",

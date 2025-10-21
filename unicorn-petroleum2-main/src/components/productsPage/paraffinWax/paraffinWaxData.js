@@ -1,6 +1,7 @@
 export const paraffinWaxData = {
   name: "Paraffin Wax",
   description: "Purity for every application.",
+  bannerImage: "/assets/hero-bg-home.jpg", // Add your paraffin wax banner image path here
 
   commonSection: {
     title: "Paraffin wax",

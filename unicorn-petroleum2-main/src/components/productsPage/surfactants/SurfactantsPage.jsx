@@ -13,13 +13,13 @@ import { surfactantsData } from "./surfactantsData";
 export default function SurfactantsPage() {
   const data = surfactantsData;
   return (
-    <ProductPageLayout title={data.name} subtitle={data.description}>
+    <ProductPageLayout title={data.name} subtitle={data.description} bannerImage={data.bannerImage}>
       <div className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8">
         <div className="lg:col-span-3">
           <FloatingSidebar navigationData={productsNavigationData} />
         </div>
 
-        <div className="lg:col-span-9 space-y-8">
+        <div className="lg:col-span-9 space-y-4">
           <ProductPageCommonSection data={data.commonSection} />
           <SurfactantProductsSection data={data.surfactantProducts} />
           <ApplicationsSection data={data.applicationsSection} />
@@ -27,7 +27,7 @@ export default function SurfactantsPage() {
         </div>
       </div>
 
-      <div className="lg:hidden space-y-8 mb-8">
+      <div className="lg:hidden space-y-4 mb-4">
         <ProductPageCommonSection data={data.commonSection} />
         <SurfactantProductsSection data={data.surfactantProducts} />
         <ApplicationsSection data={data.applicationsSection} />

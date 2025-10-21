@@ -22,7 +22,7 @@ const HeroSection = ({ data }) => {
 
       {/* Content Overlay */}
       <div className="relative z-10 max-w-4xl mx-auto px-6">
-        <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-xl border border-white/20">
+        <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-xl border-[1.5px] border-[#EDA94E] animate-fade-in-scale">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-6 leading-tight text-left">
             {data.title}
           </h1>

@@ -84,7 +84,7 @@ export const homeData = {
         title: "Petroleum Jelly",
         description:
           "Pharma and cosmetic-grade jelly, ideal for skincare and topical formulations.",
-        buttonText: "Explore More →",
+        buttonText: "View Details →",
         link: "/products/petroleum-jelly", // Internal link
       },
       {
@@ -93,7 +93,7 @@ export const homeData = {
         title: "White Mineral Oils",
         description:
           "Ideal blending base and lubricant oil utilised across various industry applications",
-        buttonText: "Explore More →",
+        buttonText: "View Details →",
         link: "/products/white-mineral-oils", // Internal link
       },
       {
@@ -102,7 +102,7 @@ export const homeData = {
         title: "Surfactants",
         description:
           "Versatile foaming and wetting agent across wide range of cleaning and personal care products",
-        buttonText: "Explore More →",
+        buttonText: "View Details →",
         link: "/products/surfactants", // Internal link
       },
       {
@@ -111,7 +111,7 @@ export const homeData = {
         title: "Preservatives",
         description:
           "Effective antimicrobial substances crucial for extending shelf life of items in the food, pharmaceutical and cosmetics industry",
-        buttonText: "Explore More →",
+        buttonText: "View Details →",
         link: "/products/preservatives", // Internal link
       },
     ],

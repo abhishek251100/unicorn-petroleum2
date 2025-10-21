@@ -20,7 +20,7 @@ export default function NewsSection({ data }) {
           {data.cards.map((card, index) => (
             <div
               key={index}
-              className="bg-white border border-[#EDA94E] rounded-2xl overflow-hidden hover:shadow-md transition-all duration-300"
+              className="bg-white border-[1.5px] border-[#EDA94E] rounded-2xl overflow-hidden hover:shadow-md transition-all duration-300"
             >
               <div className="flex items-stretch gap-3 sm:gap-4 p-3 sm:p-4">
                 {/* Image */}

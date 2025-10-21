@@ -1,6 +1,7 @@
 export const petroleumJellyData = {
   name: "Petroleum Jelly",
   description: "Purity for every application",
+  bannerImage: "/assets/hero-bg-home.jpg", // Add your petroleum jelly banner image path here
   
   // Common section data
   commonSection: {
@@ -86,7 +87,7 @@ export const petroleumJellyData = {
       },
       {
         name: "Paraffin Wax",
-        image: "/assets/RELATED PROD IMG/Paraffin Wax (2  ).png"
+        image: "/assets/RELATED PROD IMG/Paraffin Wax (2).png"
       }
     ]
   }

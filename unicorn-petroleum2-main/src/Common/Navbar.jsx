@@ -137,12 +137,12 @@ export default function Navbar() {
                         <FiChevronDown className={`text-sm transition-transform ${activeDropdown === index ? 'rotate-180' : ''}`} />
                       </button>
                       {activeDropdown === index && (
-                        <div className="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-md py-2 z-50 border border-gray-300">
+                        <div className="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-md py-2 z-50 border border-gray-400">
                           {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
                             <Link
                               key={dropdownIndex}
                               to={dropdownItem.link}
-                              className="flex px-6 py-4 text-base font-semibold text-black hover:bg-[#EDA94E]/10 border-b border-gray-200 last:border-b-0 items-center justify-between"
+                              className="flex px-6 py-4 text-base font-semibold text-black hover:bg-[#E99322]/10 border-b border-gray-400 last:border-b-0 items-center justify-between"
                               onClick={() => {
                                 setActiveDropdown(null);
                                 window.scrollTo(0, 0);

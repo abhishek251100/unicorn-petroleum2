@@ -10,16 +10,16 @@ export default function FloatingSidebar({ navigationData }) {
 
   return (
     <div className="lg:sticky lg:top-8 lg:self-start">
-             <div className="bg-white shadow-xl rounded-sm border-2 border-gray-300">
+             <div className="bg-white shadow-xl rounded-sm border border-gray-400">
          <div className="space-y-0">
           {navigationData.categories.map((item, index) => (
-            <div key={item.id} className="border-b border-gray-200 last:border-b-0">
+            <div key={item.id} className="border-b border-gray-400 last:border-b-0">
               <Link
                 to={item.link}
                 className={`block px-6 py-4 transition-all duration-300 ${
                   isActive(item.link)
-                    ? 'bg-[#EDA94E] text-white'
-                    : 'text-black hover:bg-[#EDA94E]/10'
+                    ? 'bg-[#E99322] text-white'
+                    : 'text-black hover:bg-[#E99322]/10'
                 }`}
               >
                 <div className="flex items-center justify-between">

@@ -35,9 +35,9 @@ export default function CardsSection({ data }) {
               {data.cards.slice(0, Math.max(0, cardsCount - 1)).map((card, index) => (
                 <div
                   key={`m-${index}`}
-                  className="bg-white p-4 rounded-2xl border border-[#EDA94E] transition-all duration-300 text-center h-[150px] flex flex-col justify-center"
+                  className="bg-white p-4 rounded-2xl border-[1.5px] border-[#EDA94E] transition-all duration-300 text-center h-[150px] flex flex-col justify-center"
                 >
-                  <div className="text-[#EDA94E] mb-2 flex justify-center">
+                  <div className="text-[#E99322] mb-2 flex justify-center">
                     {card.icon && card.icon.startsWith('/') ? (
                       <img src={card.icon} alt={card.title || card.label || card.name} className="w-10 h-10 object-contain" />
                     ) : (
@@ -53,8 +53,8 @@ export default function CardsSection({ data }) {
             {cardsCount > 0 && (
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="col-span-2 justify-self-center w-[calc(50%-0.5rem)]">
-                  <div className="bg-white p-4 rounded-2xl border border-[#EDA94E] text-center h-[150px] flex flex-col justify-center">
-                    <div className="text-[#EDA94E] mb-2 flex justify-center">
+                  <div className="bg-white p-4 rounded-2xl border-[1.5px] border-[#EDA94E] text-center h-[150px] flex flex-col justify-center">
+                    <div className="text-[#E99322] mb-2 flex justify-center">
                       {data.cards[cardsCount - 1].icon && data.cards[cardsCount - 1].icon.startsWith('/') ? (
                         <img src={data.cards[cardsCount - 1].icon} alt={data.cards[cardsCount - 1].title || data.cards[cardsCount - 1].label || data.cards[cardsCount - 1].name} className="w-10 h-10 object-contain" />
                       ) : (
@@ -77,9 +77,9 @@ export default function CardsSection({ data }) {
               {data.cards.slice(0, 4).map((card, index) => (
                 <div
                   key={index}
-                  className="bg-white p-4 sm:p-6 rounded-2xl border border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center flex flex-col h-[220px] sm:h-[240px] md:h-[260px]"
+                  className="bg-white p-4 sm:p-6 rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center flex flex-col h-[220px] sm:h-[240px] md:h-[260px]"
                 >
-                  <div className="flex-1 flex items-center justify-center text-[#EDA94E] text-3xl sm:text-4xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex-1 flex items-center justify-center text-[#E99322] text-3xl sm:text-4xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
                     {card.icon && card.icon.startsWith('/') ? (
                       <img 
                         src={card.icon} 
@@ -107,9 +107,9 @@ export default function CardsSection({ data }) {
               {data.cards.slice(4).map((card, index) => (
                 <div
                   key={index + 4}
-                  className="bg-white p-6 rounded-2xl border border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center h-[260px] flex flex-col"
+                  className="bg-white p-6 rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center h-[260px] flex flex-col"
                 >
-                  <div className="flex-1 flex items-center justify-center text-[#EDA94E] text-3xl sm:text-4xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex-1 flex items-center justify-center text-[#E99322] text-3xl sm:text-4xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
                     {card.icon && card.icon.startsWith('/') ? (
                       <img 
                         src={card.icon} 
@@ -139,8 +139,8 @@ export default function CardsSection({ data }) {
                   key={index + 4}
                   className="w-[240px]"
                 >
-                  <div className="bg-white p-6 rounded-2xl border border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center h-[260px] flex flex-col">
-                    <div className="flex-1 flex items-center justify-center text-[#EDA94E] text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-white p-6 rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center h-[260px] flex flex-col">
+                    <div className="flex-1 flex items-center justify-center text-[#E99322] text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
                       {card.icon && card.icon.startsWith('/') ? (
                         <img 
                           src={card.icon} 
@@ -171,9 +171,9 @@ export default function CardsSection({ data }) {
             {data.cards.map((card, index) => (
                 <div
                   key={index}
-                  className="bg-white p-4 sm:p-6 rounded-2xl border border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center flex flex-col h-[220px] sm:h-[240px] md:h-[260px]"
+                  className="bg-white p-4 sm:p-6 rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center flex flex-col h-[220px] sm:h-[240px] md:h-[260px]"
                 >
-                <div className="flex-1 flex items-center justify-center text-[#EDA94E] text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                <div className="flex-1 flex items-center justify-center text-[#E99322] text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
                   {card.icon && card.icon.startsWith('/') ? (
                     <img 
                       src={card.icon} 

@@ -19,7 +19,7 @@ export default function ProductPortfolioSection({ data }) {
           {data.cards.map((card, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer border border-[#EDA94E] flex flex-col"
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer border-[1.5px] border-[#EDA94E] flex flex-col"
             >
               <div className="h-40 sm:h-44 md:h-48 overflow-hidden">
                 <img

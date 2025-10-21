@@ -17,13 +17,13 @@ const FGridSection = ({ data, cardType = "strength", customPadding = "py-12 px-4
             icon={card.icon}
             title={card.title}
             description={card.description}
-            className="border border-[#EDA94E] rounded-xl p-4 sm:p-6 py-12 sm:py-18 flex flex-col items-center shadow-sm hover:shadow-md transition"
+            className="border-[1.5px] border-[#EDA94E] rounded-xl p-4 sm:p-6 py-12 sm:py-18 flex flex-col items-center shadow-sm hover:shadow-md transition"
           />
         ))}
       </div>
 
       <div className="mt-6 sm:mt-8 flex justify-center">
-        <button className="bg-[#EDA94E] hover:bg-[#EDA94E] text-white font-medium rounded-3xl px-6 sm:px-8 py-2 sm:py-3 normal-case flex items-center gap-2 text-sm sm:text-base">
+        <button className="bg-[#E99322] hover:bg-[#E99322] text-white font-medium rounded-3xl px-6 sm:px-8 py-2 sm:py-3 normal-case flex items-center gap-2 text-sm sm:text-base">
           {data.buttonText} <span className="text-base sm:text-lg ml-1">→</span>
         </button>
       </div>

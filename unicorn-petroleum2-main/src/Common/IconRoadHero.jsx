@@ -59,7 +59,7 @@ export default function IconRoadHero({ data = {} }) {
     <section className="relative w-full min-h-[80vh] pt-28 pb-16 -mt-16" ref={containerRef}>
       {/* Center vertical line (desktop only) */}
       <div
-        className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[2px] bg-[#E7A54F] hidden md:block"
+        className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[2px] bg-[#E99322] hidden md:block"
         style={lineStyle}
       />
 
@@ -104,7 +104,7 @@ export default function IconRoadHero({ data = {} }) {
               <div key={index} className="relative" data-observe="true" data-idx={index}>
                 {/* Node icon at the center for this row (desktop) */}
                 <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" ref={(el)=> (nodeRefs.current[index] = el)}>
-                  <div className="w-16 h-16 rounded-full bg-white border-[2px] border-[#E7A54F] shadow-md flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-white border-[2px] border-[#EDA94E] shadow-md flex items-center justify-center">
                     {item.icon && item.icon.startsWith("/") ? (
                       <img src={item.icon} alt="icon" className="w-7 h-7 object-contain" />
                     ) : (
@@ -123,7 +123,7 @@ export default function IconRoadHero({ data = {} }) {
                         {/* Desktop (side fade) */}
                         <img src={item.image} alt={item.title} className="hidden md:block w-full md:h-72 object-cover rounded-xl shadow" style={leftMask} />
                         <div className="md:hidden absolute -bottom-6 left-1/2 -translate-x-1/2 z-10">
-                          <div className="w-16 h-16 rounded-full bg-white border-[2px] border-[#E7A54F] shadow-md flex items-center justify-center">
+                          <div className="w-16 h-16 rounded-full bg-white border-[2px] border-[#EDA94E] shadow-md flex items-center justify-center">
                             {item.icon && item.icon.startsWith("/") ? (
                               <img src={item.icon} alt="icon" className="w-7 h-7 object-contain" />
                             ) : (
@@ -149,7 +149,7 @@ export default function IconRoadHero({ data = {} }) {
                         {/* Desktop (side fade) */}
                         <img src={item.image} alt={item.title} className="hidden md:block w-full md:h-72 object-cover rounded-xl shadow" style={rightMask} />
                         <div className="md:hidden absolute -bottom-6 left-1/2 -translate-x-1/2 z-10">
-                          <div className="w-16 h-16 rounded-full bg-white border-[2px] border-[#E7A54F] shadow-md flex items-center justify-center">
+                          <div className="w-16 h-16 rounded-full bg-white border-[2px] border-[#EDA94E] shadow-md flex items-center justify-center">
                             {item.icon && item.icon.startsWith("/") ? (
                               <img src={item.icon} alt="icon" className="w-7 h-7 object-contain" />
                             ) : (

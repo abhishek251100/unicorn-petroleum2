@@ -11,14 +11,14 @@ export default function CallToAction({ data }) {
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <a
             href={data.primaryButtonLink}
-            className="bg-[#E99322] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-[#EDA94E] transition-all duration-300 font-medium flex items-center gap-2 justify-center text-sm sm:text-base"
+            className="bg-[#E99322] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-[#E99322]/90 transition-all duration-300 font-medium flex items-center gap-2 justify-center text-sm sm:text-base"
           >
             {data.primaryButton}
             <span className="text-base sm:text-lg">→</span>
           </a>
           <a
             href={data.secondaryButtonLink}
-            className="border-2 border-[#E99322] text-[#E99322] px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-[#E99322] hover:text-white transition-all duration-300 font-medium flex items-center gap-2 justify-center text-sm sm:text-base"
+            className="border-[1.5px] border-[#EDA94E] text-[#E99322] px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-[#E99322] hover:text-white transition-all duration-300 font-medium flex items-center gap-2 justify-center text-sm sm:text-base"
           >
             {data.secondaryButton}
           </a>

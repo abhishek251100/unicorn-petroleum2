@@ -1,14 +1,20 @@
 import React from "react";
 import QualityStandardsSection from "../Common/QualityStandardsSection";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const AboutPage = () => {
+  const coreValuesRef = useScrollAnimation();
+  const keyDiffRef = useScrollAnimation();
+  const manufacturingRef = useScrollAnimation();
+  const heroRef = useScrollAnimation();
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-96 bg-gradient-to-r from-gray-900 to-gray-700">
+      <section className="relative h-96 bg-gradient-to-r from-gray-900 to-gray-700" ref={heroRef}>
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="text-center text-white">
+          <div className="text-center text-white scroll-animate">
             <h1 className="text-5xl font-bold mb-2">Unicorn Petroleum Industries Pvt. Ltd.</h1>
             <p className="text-xl">A legacy of excellence</p>
           </div>
@@ -101,25 +107,25 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Our Core Values */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-16">Our core values</h2>
+        {/* Our Core Values */}
+        <section className="py-16 px-4" ref={coreValuesRef}>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 text-center mb-16 scroll-animate">Our core values</h2>
           
           {/* Timeline-style layout */}
           <div className="relative">
             {/* Center vertical line - simple fixed positioning */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] bg-[#E99322] hidden md:block" style={{top: '10%', height: '83%'}}></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] bg-[#E99322] hidden md:block animate-draw-line" style={{top: '10%', height: '83%'}}></div>
             
             {/* Mobile Layout */}
             <div className="md:hidden space-y-8">
               {/* Commitment to customers */}
-              <div className="text-center">
+              <div className="text-center scroll-animate-left">
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img
                     src="/assets/about/Icons2.png"
                     alt="Commitment icon"
-                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain animate-icon-float"
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Commitment to customers</h3>
@@ -129,12 +135,12 @@ const AboutPage = () => {
               </div>
 
               {/* Pledge to quality */}
-              <div className="text-center">
+              <div className="text-center scroll-animate-right">
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img
                     src="/assets/about/Icons2 (1).png"
                     alt="Quality icon"
-                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain animate-icon-float"
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Pledge to quality</h3>
@@ -144,12 +150,12 @@ const AboutPage = () => {
               </div>
 
               {/* Ethical and fair business */}
-              <div className="text-center">
+              <div className="text-center scroll-animate-left">
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img
                     src="/assets/about/Icons2 (2).png"
                     alt="Ethical icon"
-                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain animate-icon-float"
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Ethical and fair business</h3>
@@ -159,12 +165,12 @@ const AboutPage = () => {
               </div>
 
               {/* Integrity and adherence to law */}
-              <div className="text-center">
+              <div className="text-center scroll-animate-right">
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img
                     src="/assets/about/Icons2 (3).png"
                     alt="Integrity icon"
-                    className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain animate-icon-float"
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Integrity and adherence to law</h3>
@@ -285,14 +291,14 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Manufacturing Facilities */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Manufacturing facilities</h2>
+        {/* Manufacturing Facilities */}
+        <section className="py-16 px-4 bg-gray-50" ref={manufacturingRef}>
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 text-center mb-12 scroll-animate">Manufacturing facilities</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Advance production units */}
-            <div className="bg-white rounded-2xl border-2 border-[#E99322] overflow-hidden hover:shadow-lg transition-all duration-300">
+            <div className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] overflow-hidden hover:shadow-lg transition-all duration-300 scroll-animate-left">
               <div className="h-48 bg-gray-200 flex items-center justify-center">
                 <img
                   src="/assets/about/Frame 531 (16).png"
@@ -307,7 +313,7 @@ const AboutPage = () => {
             </div>
 
             {/* In-house R&D & QA lab */}
-            <div className="bg-white rounded-2xl border-2 border-[#E99322] overflow-hidden hover:shadow-lg transition-all duration-300">
+            <div className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] overflow-hidden hover:shadow-lg transition-all duration-300 scroll-animate">
               <div className="h-48 bg-gray-200 flex items-center justify-center">
                 <img
                   src="/assets/about/Frame 531 (17).png"
@@ -322,7 +328,7 @@ const AboutPage = () => {
             </div>
 
             {/* Flexible packaging options */}
-            <div className="bg-white rounded-2xl border-2 border-[#E99322] overflow-hidden hover:shadow-lg transition-all duration-300">
+            <div className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] overflow-hidden hover:shadow-lg transition-all duration-300 scroll-animate-right">
               <div className="h-48 bg-gray-200 flex items-center justify-center">
                 <img
                   src="/assets/about/Frame 531 (18).png"
@@ -339,15 +345,15 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Key Differentiators */}
-      <section className="py-16">
-        {/* Full-width header bar with faded background */}
-        <div className="relative w-full mb-12">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#E99322]/20 via-[#E99322] to-[#E99322]/20"></div>
-          <div className="relative py-8">
-            <h2 className="text-4xl font-bold text-white text-center">Key differentiators</h2>
+        {/* Key Differentiators */}
+        <section className="py-16" ref={keyDiffRef}>
+          {/* Full-width header bar with faded background */}
+          <div className="relative w-full mb-12">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#E99322]/20 via-[#E99322] to-[#E99322]/20"></div>
+            <div className="relative py-8">
+              <h2 className="text-4xl font-bold text-white text-center scroll-animate">Key differentiators</h2>
+            </div>
           </div>
-        </div>
         
         <div className="max-w-7xl mx-auto px-4">
           {/* Differentiators with vertical lines */}
@@ -362,10 +368,10 @@ const AboutPage = () => {
             {/* Top row - 3 items */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12">
               {/* Regulatory compliance */}
-              <div className="text-center relative">
-                <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
-                <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg relative z-10">
+              <div className="text-center relative scroll-animate-scale">
+                <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)] animate-draw-horizontal-left"></div>
+                <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)] animate-draw-horizontal-right"></div>
+                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg relative z-10 animate-icon-pulse">
                   <img
                     src="/assets/about/Icons2 (5).png"
                     alt="Icon placeholder"
@@ -379,10 +385,10 @@ const AboutPage = () => {
               </div>
 
               {/* Environment consciousness */}
-              <div className="text-center relative">
-                <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
-                <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
-                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg relative z-10">
+              <div className="text-center relative scroll-animate-scale">
+                <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)] animate-draw-horizontal-left"></div>
+                <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)] animate-draw-horizontal-right"></div>
+                <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg relative z-10 animate-icon-pulse">
                   <img
                    src="/assets/about/Icons2 (7).png"
                    alt="Icon placeholder"
@@ -418,8 +424,8 @@ const AboutPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl">
                 {/* Timely delivery */}
                 <div className="text-center relative">
-                  <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
-                  <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
+                  <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)] animate-draw-horizontal-left"></div>
+                  <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)] animate-draw-horizontal-right"></div>
                   <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg relative z-10">
                     <img
                        src="/assets/about/Icons2 (6).png"
@@ -433,10 +439,10 @@ const AboutPage = () => {
                   <p className="text-gray-700">On a quest for excellence in services with strict adherence to delivery schedules of our prestigious customers.</p>
                 </div>
 
-                {/* Quality assurance */}
-                <div className="text-center relative">
-                  <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
-                  <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)]"></div>
+              {/* Quality assurance */}
+              <div className="text-center relative">
+                <div className="absolute top-8 left-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)] animate-draw-horizontal-left"></div>
+                <div className="absolute top-8 right-0 h-[2px] bg-[#E99322]/30 md:hidden w-[calc(50%-40px)] animate-draw-horizontal-right"></div>
                   <div className="w-16 h-16 bg-[#E99322] rounded-full flex items-center justify-center mx-auto mb-2 border-4 border-white shadow-lg relative z-10">
                     <img
                       src="/assets/about/Icons2 (1).png"

@@ -9,12 +9,19 @@ import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySecti
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import { petroleumJellyData } from "./petroleumJellyData";
 import { productsNavigationData } from "../productsNavigationData";
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 export default function PetroleumJellyPage() {
+  const commonSectionRef = useScrollAnimation();
+  const applicationsRef = useScrollAnimation();
+  const packagingRef = useScrollAnimation();
+  const featuresRef = useScrollAnimation();
+
   return (
     <ProductPageLayout
       title={petroleumJellyData.name}
       subtitle={petroleumJellyData.description}
+      bannerImage={petroleumJellyData.bannerImage}
     >
       {/* Desktop Layout */}
       <div className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8">
@@ -22,16 +29,24 @@ export default function PetroleumJellyPage() {
           <FloatingSidebar navigationData={productsNavigationData} />
         </div>
 
-        <div className="lg:col-span-9 space-y-8">
-          <ProductPageCommonSection data={petroleumJellyData.commonSection} />
-          <ApplicationsSection data={petroleumJellyData.applicationsSection} />
-          <PackagedResponsiblySection data={petroleumJellyData.packagedResponsibly} />
-          <ProductKeyFeaturesSection data={petroleumJellyData.keyFeatures} />
+        <div className="lg:col-span-9 space-y-4">
+          <div ref={commonSectionRef} className="scroll-animate">
+            <ProductPageCommonSection data={petroleumJellyData.commonSection} />
+          </div>
+          <div ref={applicationsRef} className="scroll-animate-left">
+            <ApplicationsSection data={petroleumJellyData.applicationsSection} />
+          </div>
+          <div ref={packagingRef} className="scroll-animate-right">
+            <PackagedResponsiblySection data={petroleumJellyData.packagedResponsibly} />
+          </div>
+          <div ref={featuresRef} className="scroll-animate">
+            <ProductKeyFeaturesSection data={petroleumJellyData.keyFeatures} />
+          </div>
         </div>
       </div>
 
       {/* Mobile Layout */}
-      <div className="lg:hidden space-y-8 mb-8">
+      <div className="lg:hidden space-y-4 mb-4">
         <ProductPageCommonSection data={petroleumJellyData.commonSection} />
         <ApplicationsSection data={petroleumJellyData.applicationsSection} />
         <PackagedResponsiblySection data={petroleumJellyData.packagedResponsibly} />

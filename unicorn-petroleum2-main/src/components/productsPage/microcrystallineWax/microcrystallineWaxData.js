@@ -2,6 +2,7 @@ export const microcrystallineWaxData = {
   name: "Microcrystalline Wax",
   description:
     "Purity for every application.",
+  bannerImage: "/assets/hero-bg-home.jpg", // Add your microcrystalline wax banner image path here
 
   commonSection: {
     title: "Microcrystalline wax",

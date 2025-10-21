@@ -50,7 +50,7 @@ export default function CosmeticsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {cosmeticsData.compliance.items.map((item, index) => (
                 <div key={index} className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#EDA94E] rounded-full"></div>
+                  <div className="w-2 h-2 bg-[#E99322] rounded-full"></div>
                   <span className="text-gray-700">{item}</span>
                 </div>
               ))}

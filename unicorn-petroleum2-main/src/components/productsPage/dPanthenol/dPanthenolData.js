@@ -1,6 +1,7 @@
   export const dPanthenolData = {
     name: "D-Panthenol",
     description: "Provitamin B5 for moisturization and skin barrier support",
+    bannerImage: "/assets/hero-bg-home.jpg", // Add your D-Panthenol banner image path here
 
     commonSection: {
       title: "D-Panthenol",

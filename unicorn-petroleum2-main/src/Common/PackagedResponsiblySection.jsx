@@ -19,9 +19,9 @@ const PackagedResponsiblySection = ({ data }) => {
           {data.packagingOptions.map((option, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-2xl border-2 border-[#EDA94E] hover:shadow-lg transition-all duration-300 text-center w-56 h-56 flex flex-col items-center justify-center mx-auto sm:mx-0"
+              className="bg-white p-8 rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 text-center w-56 h-56 flex flex-col items-center justify-center mx-auto sm:mx-0"
             >
-              <div className="text-5xl text-[#EDA94E] mb-6">
+              <div className="text-5xl text-[#E99322] mb-6">
                 {option.icon && option.icon.startsWith('/') ? (
                   <img src={option.icon} alt={option.type} className="w-16 h-16 object-contain" />
                 ) : (

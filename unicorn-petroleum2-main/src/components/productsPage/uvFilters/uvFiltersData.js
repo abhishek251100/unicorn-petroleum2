@@ -1,6 +1,7 @@
 export const uvFiltersData = {
   name: "UV Filters",
   description: "Organic and inorganic UV filters for broad-spectrum protection",
+  bannerImage: "/assets/hero-bg-home.jpg", // Add your UV filters banner image path here
 
   commonSection: {
     title: "UV Filters",

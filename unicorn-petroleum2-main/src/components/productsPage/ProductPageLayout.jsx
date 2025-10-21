@@ -134,7 +134,7 @@ export default function ProductPageLayout({
       </div>
 
       {/* Main Content Area - After Banner */}
-      <div className="relative max-w-7xl mx-auto px-4 py-12">{children}</div>
+      <div className="relative max-w-7xl mx-auto px-4 py-6">{children}</div>
     </div>
   );
 }

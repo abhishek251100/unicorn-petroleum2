@@ -2,6 +2,7 @@ export const whiteMineralOilsData = {
   name: "White Mineral Oils",
   description:
     "Purity for every application.",
+  bannerImage: "/assets/hero-bg-home.jpg", // Add your white mineral oils banner image path here
 
   // Common section data
   commonSection: {

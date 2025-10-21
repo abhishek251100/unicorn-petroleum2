@@ -1,6 +1,7 @@
 export const preservativesData = {
   name: "Preservatives",
   description: "Effective antimicrobial systems for personal care and pharma",
+  bannerImage: "/assets/hero-bg-home.jpg", // Add your preservatives banner image path here
 
   commonSection: {
     title: "Preservatives",

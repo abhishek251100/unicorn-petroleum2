@@ -2,6 +2,7 @@ export const naturalBeeswaxData = {
   name: "Natural Beeswax",
   description:
     "Purity for every application.",
+  bannerImage: "/assets/hero-bg-home.jpg", // Add your natural beeswax banner image path here
 
   commonSection: {
     title: "Natural beeswax",
