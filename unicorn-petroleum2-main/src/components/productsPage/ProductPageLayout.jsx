@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef, useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { productsNavigationData } from "./productsNavigationData";
 
@@ -12,6 +12,36 @@ export default function ProductPageLayout({
   const navigate = useNavigate();
   const swipeStartX = useRef(null);
   const [isSwiping, setIsSwiping] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [animationDirection, setAnimationDirection] = useState('right');
+  const contentRef = useRef(null);
+
+  // Track previous location for animation direction
+  const prevLocationRef = useRef(location.pathname);
+
+  useEffect(() => {
+    if (prevLocationRef.current !== location.pathname) {
+      setIsTransitioning(true);
+      
+      // Determine animation direction based on navigation order
+      const items = productsNavigationData?.categories ?? [];
+      const prevIdx = items.findIndex(item => item.link === prevLocationRef.current);
+      const currentIdx = items.findIndex(item => item.link === location.pathname);
+      
+      if (prevIdx !== -1 && currentIdx !== -1) {
+        setAnimationDirection(currentIdx > prevIdx ? 'right' : 'left');
+      }
+      
+      // Reset transition after animation
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 600);
+      
+      prevLocationRef.current = location.pathname;
+      
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname]);
 
   const { prevItem, nextItem, currentItem } = useMemo(() => {
     const items = productsNavigationData?.categories ?? [];
@@ -38,6 +68,18 @@ export default function ProductPageLayout({
   const resolvedTitle = title || currentItem?.name || (location.pathname === "/products" ? "Products" : "Product");
   const resolvedSubtitle = subtitle || ""; // Use the subtitle prop if provided
 
+  const handleNavigation = (link, direction) => {
+    if (isTransitioning) return;
+    
+    setAnimationDirection(direction);
+    setIsTransitioning(true);
+    
+    // Navigate after a brief delay to allow exit animation
+    setTimeout(() => {
+      navigate(link);
+    }, 200);
+  };
+
   const handleTouchStart = (e) => {
     if (!e.touches || e.touches.length === 0) return;
     swipeStartX.current = e.touches[0].clientX;
@@ -45,7 +87,7 @@ export default function ProductPageLayout({
   };
 
   const handleTouchEnd = (e) => {
-    if (!isSwiping) return;
+    if (!isSwiping || isTransitioning) return;
     const endX = e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : null;
     if (endX == null || swipeStartX.current == null) {
       setIsSwiping(false);
@@ -54,9 +96,9 @@ export default function ProductPageLayout({
     const dx = endX - swipeStartX.current;
     const threshold = 50; // px
     if (dx > threshold && prevItem?.link) {
-      navigate(prevItem.link);
+      handleNavigation(prevItem.link, 'left');
     } else if (dx < -threshold && nextItem?.link) {
-      navigate(nextItem.link);
+      handleNavigation(nextItem.link, 'right');
     }
     setIsSwiping(false);
     swipeStartX.current = null;
@@ -79,22 +121,24 @@ export default function ProductPageLayout({
 
         {/* Carousel buttons */}
         {prevItem && (
-          <Link
+          <button
             aria-label="Previous product"
-            to={prevItem.link}
-            className="absolute left-3 top-[58%] md:top-1/2 -translate-y-1/2 z-30 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/60 md:bg-white/70 hover:bg-white/90 shadow-sm flex items-center justify-center backdrop-blur-sm"
+            onClick={() => handleNavigation(prevItem.link, 'left')}
+            disabled={isTransitioning}
+            className="absolute left-3 top-[58%] md:top-1/2 -translate-y-1/2 z-30 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/60 md:bg-white/70 hover:bg-white/90 shadow-sm flex items-center justify-center backdrop-blur-sm transition-all duration-200 disabled:opacity-50"
           >
             <span className="text-lg md:text-xl">‹</span>
-          </Link>
+          </button>
         )}
         {nextItem && (
-          <Link
+          <button
             aria-label="Next product"
-            to={nextItem.link}
-            className="absolute right-3 top-[58%] md:top-1/2 -translate-y-1/2 z-30 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/60 md:bg-white/70 hover:bg-white/90 shadow-sm flex items-center justify-center backdrop-blur-sm"
+            onClick={() => handleNavigation(nextItem.link, 'right')}
+            disabled={isTransitioning}
+            className="absolute right-3 top-[58%] md:top-1/2 -translate-y-1/2 z-30 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/60 md:bg-white/70 hover:bg-white/90 shadow-sm flex items-center justify-center backdrop-blur-sm transition-all duration-200 disabled:opacity-50"
           >
             <span className="text-lg md:text-xl">›</span>
-          </Link>
+          </button>
         )}
 
         {/* Banner Content (centered title/subtitle) */}
@@ -134,7 +178,18 @@ export default function ProductPageLayout({
       </div>
 
       {/* Main Content Area - After Banner */}
-      <div className="relative max-w-7xl mx-auto px-4 py-6">{children}</div>
+      <div className="relative max-w-7xl mx-auto px-4 py-6">
+        <div 
+          ref={contentRef}
+          className={`page-transition-content ${
+            isTransitioning 
+              ? `animate-slide-out-${animationDirection}` 
+              : `animate-slide-in-${animationDirection}`
+          }`}
+        >
+          {children}
+        </div>
+      </div>
     </div>
   );
 }
