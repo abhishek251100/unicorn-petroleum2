@@ -4,9 +4,9 @@ import HomeIndex from "../components/Home/HomeIndex";
 import AboutPage from "../Pages/AboutPage";
 import ProductPage from "../Pages/ProductPage";
 import ApplicationPage from "../Pages/ApplicationPage";
-import QualityPage from "../Pages/QualityPage";
 import ReachPage from "../Pages/ReachPage";
 import ContactPage from "../Pages/ContactPage";
+import NotFoundPage from "../Pages/NotFoundPage";
 import PetroleumJellyPage from "../components/productsPage/petroleumJelly/PetroleumJellyPage";
 import WhiteMineralOilsPage from "../components/productsPage/whiteMineralOils/WhiteMineralOilsPage";
 import StandardProductPage from "../components/productsPage/StandardProductPage";
@@ -61,11 +61,12 @@ const router = createBrowserRouter([
       { path: "/applications", element: <ApplicationPage /> },
       { path: "/applications/pharmaceutical", element: <PharmaceuticalPage /> },
       { path: "/applications/cosmetics", element: <CosmeticsPage /> },
-      { path: "/quality", element: <QualityPage /> },
       { path: "/reach", element: <ReachPage /> },
       { path: "/contact", element: <ContactPage /> },
       { path: "/privacy", element: <ComingSoon title="Privacy Policy" breadcrumbs={[{ text: "Home", link: "/" }, { text: "Privacy Policy" }]} /> },
       { path: "/terms", element: <ComingSoon title="Terms of Use" breadcrumbs={[{ text: "Home", link: "/" }, { text: "Terms of Use" }]} /> },
+      // 404 catch-all route
+      { path: "*", element: <NotFoundPage /> },
     ],
   },
 ]);

@@ -86,7 +86,6 @@ export default function Navbar() {
         { name: "Textile", link: "/applications/textile" }
       ]
     },
-    { name: "Quality", link: "/quality", hasDropdown: false },
     { name: "Reach", link: "/reach", hasDropdown: false },
     { name: "Contact", link: "/contact", hasDropdown: false }
   ];

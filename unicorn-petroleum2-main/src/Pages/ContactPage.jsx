@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BannerWithNavigation from "../Common/BannerWithNavigation";
 import QualityStandardsSection from "../Common/QualityStandardsSection";
 import QuoteFormSection from "../Common/QuoteFormSection";
 
 const ContactPage = () => {
   const breadcrumbs = [{ text: "Home", link: "/" }, { text: "Contact" }];
+
+  useEffect(() => {
+    // Update meta tags for Contact page
+    document.title = "Contact Us | Unicorn Petroleum Industries";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Get in touch with Unicorn Petroleum Industries. Contact us for inquiries about petroleum jelly, mineral oils, waxes, and specialty chemicals. Located in Mumbai, India.');
+    }
+  }, []);
 
   return (
     <div className="min-h-screen">

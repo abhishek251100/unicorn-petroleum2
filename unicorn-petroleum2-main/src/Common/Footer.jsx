@@ -81,14 +81,6 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/quality"
-                    className="text-gray-600 hover:text-[#E99322] transition-colors"
-                  >
-                    Quality
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     to="/reach"
                     className="text-gray-600 hover:text-[#E99322] transition-colors"
                   >
