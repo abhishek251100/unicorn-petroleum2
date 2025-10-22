@@ -109,7 +109,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <nav className="bg-transparent backdrop-blur-xl py-2">
+      <nav className="bg-white/5 backdrop-blur-3xl py-2 border-b border-white/10 shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-full">
             {/* Logo */}

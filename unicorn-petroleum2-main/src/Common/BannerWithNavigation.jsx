@@ -24,7 +24,7 @@ export default function BannerWithNavigation({
   }, [navigationData, currentPath, location.pathname]);
 
   return (
-    <div className="relative w-full h-80 sm:h-96 md:h-[420px] overflow-hidden -mt-16 pt-28">
+    <div className="relative w-full h-80 sm:h-96 md:h-[420px] overflow-hidden -mt-16 pt-8">
       <div
         className="absolute inset-0"
         style={{

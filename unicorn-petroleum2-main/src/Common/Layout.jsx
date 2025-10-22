@@ -9,12 +9,12 @@ function Layout() {
 
   const pathname = location.pathname;
 
-  const HomePathName = pathname !== "/"; 
+  const isHomePage = pathname === "/"; 
 
   // Scroll to top on every route change
  useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [HomePathName]);
+  }, [pathname]);
 
   return (
     <div className="app-layout">
@@ -23,7 +23,7 @@ function Layout() {
         <Outlet />
       </main>
 
-      {HomePathName ? <QuoteFormSection /> : null}
+      {isHomePage ? <QuoteFormSection /> : null}
       <Footer />
     </div>
   );

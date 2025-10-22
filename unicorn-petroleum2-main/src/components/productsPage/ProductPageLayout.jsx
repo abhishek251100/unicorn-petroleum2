@@ -105,9 +105,9 @@ export default function ProductPageLayout({
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Banner with shared image and centered black text - Now overlapping navbar */}
-      <div className="relative w-full h-80 sm:h-96 md:h-[500px] overflow-hidden -mt-16 pt-16" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+      <div className="relative w-full h-80 sm:h-96 md:h-[500px] overflow-hidden -mt-16 pt-16" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} style={{ marginTop: '-80px', paddingTop: '80px' }}>
         <div
           className="absolute inset-0"
           style={{
@@ -178,7 +178,7 @@ export default function ProductPageLayout({
       </div>
 
       {/* Main Content Area - After Banner */}
-      <div className="relative max-w-7xl mx-auto px-4 py-6">
+      <div className="relative max-w-7xl mx-auto px-4 py-6 overflow-x-hidden">
         <div 
           ref={contentRef}
           className={`page-transition-content ${
