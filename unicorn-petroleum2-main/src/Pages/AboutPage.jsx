@@ -107,9 +107,9 @@ const AboutPage = () => {
       </section>
 
         {/* Our Core Values */}
-        <section className="py-16 px-4" ref={coreValuesRef}>
+        <section className="py-8 px-4" ref={coreValuesRef}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 text-center mb-16 scroll-animate">Our core values</h2>
+            <h2 className="text-4xl font-bold text-gray-900 text-center mb-8 scroll-animate">Our core values</h2>
           
           {/* Timeline-style layout */}
           <div className="relative">
@@ -291,61 +291,10 @@ const AboutPage = () => {
       </section>
 
         {/* Manufacturing Facilities */}
-        <section className="py-16 px-4 bg-gray-50" ref={manufacturingRef}>
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 text-center mb-12 scroll-animate">Manufacturing facilities</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Advance production units */}
-            <div className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] overflow-hidden hover:shadow-lg transition-all duration-300 scroll-animate-left">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <img
-                  src="/assets/about/Frame 531 (16).png"
-                  alt="Advance production units"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Advance production units</h3>
-                <p className="text-gray-700">Two fully-equipped plants around Mumbai with state-of-art manufacturing, testing and storage facilities</p>
-              </div>
-            </div>
-
-            {/* In-house R&D & QA lab */}
-            <div className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] overflow-hidden hover:shadow-lg transition-all duration-300 scroll-animate">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <img
-                  src="/assets/about/Frame 531 (17).png"
-                  alt="In-house R&D & QA lab"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">In-house R&D & QA lab</h3>
-                <p className="text-gray-700">On-site laboratory for product innovation, testing, and batch-wise quality assurance.</p>
-              </div>
-            </div>
-
-            {/* Flexible packaging options */}
-            <div className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] overflow-hidden hover:shadow-lg transition-all duration-300 scroll-animate-right">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <img
-                  src="/assets/about/Frame 531 (18).png"
-                  alt="Flexible packaging options"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Flexible packaging options</h3>
-                <p className="text-gray-700">Customizable pack sizes from small batches to bulk drums</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
           {/* Key Differentiators */}
-          <section className="py-16">
+          <section className="py-8">
             {/* Full-width header bar with faded background */}
             <div className="relative w-full mb-12">
               <div className="absolute inset-0 bg-gradient-to-r from-[#E99322]/20 via-[#E99322] to-[#E99322]/20"></div>

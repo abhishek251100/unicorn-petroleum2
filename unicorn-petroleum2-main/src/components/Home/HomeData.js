@@ -161,7 +161,7 @@ export const homeData = {
         link: "/applications#textile", // Internal link with anchor
       },
     ],
-    buttonText: "View All Applications →",
+    buttonText: "View All Applications",
     buttonLink: "/applications", // Internal link
     centerLastRow: true,
   },
