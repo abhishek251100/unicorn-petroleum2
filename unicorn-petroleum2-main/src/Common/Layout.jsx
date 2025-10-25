@@ -17,9 +17,9 @@ function Layout() {
   }, [pathname]);
 
   return (
-    <div className="app-layout">
+    <div className="app-layout w-full overflow-x-hidden">
       <Navbar />
-      <main className="">
+      <main className="w-full overflow-x-hidden mobile-main-margin">
         <Outlet />
       </main>
 

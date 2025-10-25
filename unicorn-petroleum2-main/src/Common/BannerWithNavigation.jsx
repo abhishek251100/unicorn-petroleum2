@@ -71,7 +71,7 @@ export default function BannerWithNavigation({
       </div>
 
       {breadcrumbs && (
-        <div className="absolute top-16 sm:top-20 md:top-24 lg:top-28 left-1/2 -translate-x-1/2 z-20">
+        <div className="absolute top-16 sm:top-20 md:top-24 lg:top-28 left-1/2 -translate-x-1/2 z-20 breadcrumbs-container">
           <nav className="text-black font-semibold text-sm sm:text-base md:text-lg lg:text-xl">
             <ol className="flex items-center space-x-1 sm:space-x-2">
               {breadcrumbs.map((crumb, index) => (

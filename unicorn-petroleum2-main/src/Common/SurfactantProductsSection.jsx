@@ -20,7 +20,7 @@ const SurfactantProductsSection = ({ data }) => {
               key={index}
               className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden h-48"
             >
-              <div className="grid h-full" style={{ gridTemplateColumns: '40% 60%' }}>
+              <div className="grid h-full" style={{ gridTemplateColumns: '50% 50%' }}>
                 <div className="h-full w-full">
                   <img
                     src={product.image}

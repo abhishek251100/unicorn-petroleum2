@@ -21,9 +21,31 @@ const RelatedProductsSection = ({ data }) => {
           {data.relatedProducts.map((product, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden h-36"
+              className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden"
             >
-              <div className="grid h-full" style={{ gridTemplateColumns: '40% 60%' }}>
+              {/* Mobile: Image on top, text below */}
+              <div className="md:hidden">
+                <div className="w-full h-48">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <div className="p-6 text-center">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4 leading-tight">
+                    {product.name}
+                  </h3>
+                  <button className="bg-[#E99322] text-white px-5 py-2 rounded-full font-medium hover:bg-[#E99322] transition-all duration-300 inline-flex items-center gap-2 whitespace-nowrap min-w-[150px] justify-center">
+                    View Details
+                    <span className="text-lg">→</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Desktop: Side-by-side layout */}
+              <div className="hidden md:grid h-36" style={{ gridTemplateColumns: '40% 60%' }}>
                 <div className="h-full w-full">
                   <img
                     src={product.image}

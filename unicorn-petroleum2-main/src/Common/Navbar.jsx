@@ -109,7 +109,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <nav className="py-2 border-b border-white/20 shadow-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(24px)' }}>
+      <nav className="py-2 border-b border-white/20 shadow-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(20px)' }}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-full">
             {/* Logo */}
@@ -188,7 +188,7 @@ export default function Navbar() {
 
           {/* Mobile Menu */}
           {isOpen && (
-            <div className="md:hidden py-4 border-t border-gray-300/30 rounded-b-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(24px)' }}>
+            <div className="md:hidden py-4 border-t border-gray-300/30 rounded-b-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(20px)' }}>
               {menuItems.map((item, index) => (
                 <div key={index} className="border-b border-gray-300/30 last:border-b-0">
                   {item.hasDropdown ? (
@@ -201,7 +201,7 @@ export default function Navbar() {
                         <FiChevronDown className={`text-sm transition-transform ${mobileDropdowns[index] ? 'rotate-180' : ''}`} />
                       </button>
                       {mobileDropdowns[index] && (
-                        <div className="border-t border-gray-300/30" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(24px)' }}>
+                        <div className="border-t border-gray-300/30" style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(20px)' }}>
                           {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
                             <Link
                               key={dropdownIndex}
