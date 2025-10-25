@@ -24,9 +24,11 @@ export default function PetroleumJellyPage() {
       bannerImage={petroleumJellyData.bannerImage}
     >
       {/* Desktop Layout */}
-      <div className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8">
+      <div className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8 min-h-screen">
         <div className="lg:col-span-3">
-          <FloatingSidebar navigationData={productsNavigationData} />
+          <div className="sticky top-28 self-start z-10 mt-[40%]">
+            <FloatingSidebar navigationData={productsNavigationData} />
+          </div>
         </div>
 
         <div className="lg:col-span-9 space-y-4">

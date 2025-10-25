@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function FloatingSidebar({ navigationData }) {
   const location = useLocation();
   const [expandedItems, setExpandedItems] = useState({});
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    // Add entrance animation
-    const timer = setTimeout(() => setIsVisible(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
 
   const isActive = (itemLink) => {
     return location.pathname === itemLink;
@@ -28,10 +21,8 @@ export default function FloatingSidebar({ navigationData }) {
   };
 
   return (
-    <div className={`lg:sticky lg:top-8 lg:self-start transition-all duration-500 ${
-      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-    }`}>
-      <div className="bg-white shadow-xl rounded-sm border border-gray-400 animate-fade-in-up">
+    <div className={`lg:self-start`} style={{ alignSelf: 'flex-start' }}>
+      <div className="bg-white shadow-xl rounded-sm border border-gray-400">
         <div className="space-y-0">
           {navigationData.categories.map((item, index) => {
             const hasSubItems = item.subItems && item.subItems.length > 0;
@@ -42,7 +33,7 @@ export default function FloatingSidebar({ navigationData }) {
               <div key={item.id} className="border-b border-gray-400 last:border-b-0">
                 <Link
                   to={item.link}
-                  className={`block px-6 py-4 transition-all duration-300 ${
+                  className={`block px-6 py-4 ${
                     isItemActive
                       ? 'bg-[#E99322] text-white'
                       : 'text-black hover:bg-[#E99322]/10'
@@ -58,9 +49,9 @@ export default function FloatingSidebar({ navigationData }) {
                           e.preventDefault();
                           toggleExpanded(item.id);
                         }}
-                        className={`font-bold text-lg ml-6 transition-transform duration-200 ${
+                        className={`font-bold text-lg ml-6 ${
                           isItemActive ? 'text-white' : 'text-black'
-                        } ${isExpanded ? 'rotate-90' : ''}`}
+                        }`}
                       >
                         ⌄
                       </button>
@@ -73,15 +64,13 @@ export default function FloatingSidebar({ navigationData }) {
                 </Link>
                 
                 {/* Sub-items */}
-                {hasSubItems && (
-                  <div className={`overflow-hidden transition-all duration-300 ${
-                    isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  }`}>
+                {hasSubItems && isExpanded && (
+                  <div>
                     {item.subItems.map((subItem, subIndex) => (
                       <Link
                         key={subItem.id}
                         to={subItem.link}
-                        className={`block px-8 py-3 text-sm transition-all duration-300 border-l-2 ${
+                        className={`block px-8 py-3 text-sm border-l-2 ${
                           isActive(subItem.link)
                             ? 'bg-[#E99322]/20 text-[#E99322] border-[#E99322]'
                             : 'text-gray-600 hover:bg-gray-50 border-transparent hover:border-gray-300'

@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 export default function QualityStandardsSection({ title, subtitle, showLink = true }) {
   const certifications = [
@@ -52,7 +57,73 @@ export default function QualityStandardsSection({ title, subtitle, showLink = tr
           )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 md:gap-6 mb-6 md:mb-8">
+        {/* Mobile Swiper Carousel */}
+        <div className="block md:hidden">
+          <style jsx>{`
+            .certifications-swiper .swiper-pagination {
+              position: relative !important;
+              margin-top: 30px !important;
+              bottom: auto !important;
+            }
+            .certifications-swiper .swiper-pagination-bullet {
+              width: 8px;
+              height: 8px;
+              background: #d1d5db;
+              opacity: 1;
+              margin: 0 4px;
+            }
+            .certifications-swiper .swiper-pagination-bullet-active {
+              background: #E99322;
+            }
+            @media (min-width: 768px) {
+              .certifications-swiper {
+                pointer-events: none !important;
+              }
+            }
+          `}</style>
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={20}
+            slidesPerView={3}
+            centeredSlides={true}
+            loop={true}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: false,
+            }}
+            allowTouchMove={true}
+            simulateTouch={false}
+            touchStartPreventDefault={false}
+            touchMoveStopPropagation={false}
+            touchRatio={1}
+            touchAngle={45}
+            threshold={5}
+            className="certifications-swiper"
+          >
+            {certifications.map((cert, idx) => (
+              <SwiperSlide key={idx}>
+                <div className="flex items-center justify-center py-4">
+                  <img 
+                    src={cert.logo} 
+                    alt={cert.code} 
+                    className="w-24 h-24 object-contain" 
+                    style={{
+                      transform: 'scale(1)',
+                      transition: 'transform 0.3s ease'
+                    }}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 md:gap-6 mb-6 md:mb-8">
           {certifications.map((cert, idx) => (
             <div key={idx} className="text-center">
               <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-24 md:h-24 mx-auto mb-2 sm:mb-3 flex items-center justify-center">

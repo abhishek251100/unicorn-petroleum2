@@ -131,7 +131,7 @@ const ContactPage = () => {
               <div className="hidden md:block md:col-span-3 space-y-4">
                 <div className="flex items-start">
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm leading-relaxed break-words text-gray-800">Unit No. 1 'Riddhi Siddhi', Corporate Park, VN Purav Marg, Chembur, Mumbai, 400071, India.</p>
+                    <p className="text-sm leading-relaxed text-gray-800 whitespace-nowrap">Unit No. 1 'Riddhi Siddhi', Corporate Park, VN Purav Marg, Chembur, Mumbai, 400071, India.</p>
                   </div>
                 </div>
                 

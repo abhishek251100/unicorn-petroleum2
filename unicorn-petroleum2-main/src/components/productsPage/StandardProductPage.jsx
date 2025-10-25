@@ -15,9 +15,12 @@ export default function StandardProductPage({ title, description }) {
 
   return (
     <ProductPageLayout title={data.name} subtitle={data.description}>
-      <div className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8">
+      {/* Content area with floating sidebar - stops before certifications */}
+      <div className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8 min-h-screen">
         <div className="lg:col-span-3">
-          <FloatingSidebar navigationData={productsNavigationData} />
+          <div className="sticky top-28 self-start z-10 mt-[40%]">
+            <FloatingSidebar navigationData={productsNavigationData} />
+          </div>
         </div>
 
         <div className="lg:col-span-9 space-y-8">
@@ -35,6 +38,7 @@ export default function StandardProductPage({ title, description }) {
         <ProductKeyFeaturesSection data={data.keyFeatures} />
       </div>
 
+      {/* Certifications and beyond - sidebar stops floating here */}
       <QualityStandardsSection />
 
       <RelatedProductsSection data={data.relatedProducts} />

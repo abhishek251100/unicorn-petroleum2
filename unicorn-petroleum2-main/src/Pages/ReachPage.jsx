@@ -124,11 +124,7 @@ const ReachPage = () => {
             </div>
             
             {/* Concluding Tagline */}
-            <div className="text-center mt-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Global ingredients. Indian expertise. Trusted worldwide.
-              </h2>
-            </div>
+           
           </div>
         </div>
       </section>

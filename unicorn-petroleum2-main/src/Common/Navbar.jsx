@@ -109,7 +109,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <nav className="bg-white/5 backdrop-blur-3xl py-2 border-b border-white/10 shadow-lg">
+      <nav className="py-2 border-b border-white/20 shadow-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(24px)' }}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-full">
             {/* Logo */}
@@ -188,7 +188,7 @@ export default function Navbar() {
 
           {/* Mobile Menu */}
           {isOpen && (
-            <div className="md:hidden py-4 border-t border-gray-300/30 bg-black/10 backdrop-blur-sm rounded-b-lg">
+            <div className="md:hidden py-4 border-t border-gray-300/30 rounded-b-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(24px)' }}>
               {menuItems.map((item, index) => (
                 <div key={index} className="border-b border-gray-300/30 last:border-b-0">
                   {item.hasDropdown ? (
@@ -201,12 +201,12 @@ export default function Navbar() {
                         <FiChevronDown className={`text-sm transition-transform ${mobileDropdowns[index] ? 'rotate-180' : ''}`} />
                       </button>
                       {mobileDropdowns[index] && (
-                        <div className="bg-black/20 backdrop-blur-sm border-t border-gray-300/30">
+                        <div className="border-t border-gray-300/30" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(24px)' }}>
                           {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
                             <Link
                               key={dropdownIndex}
                               to={dropdownItem.link}
-                              className="block px-8 py-3 text-sm text-gray-800 hover:text-[#E99322]/80 hover:bg-black/20 border-b border-gray-300/30 last:border-b-0"
+                              className="block px-8 py-3 text-sm text-gray-800 hover:text-[#E99322]/80 hover:bg-white/20 border-b border-gray-300/30 last:border-b-0"
                               onClick={() => { setIsOpen(false); setMobileDropdowns({}); window.scrollTo(0, 0); }}
                             >
                               {dropdownItem.name}

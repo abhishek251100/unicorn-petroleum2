@@ -105,9 +105,9 @@ export default function ProductPageLayout({
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden" style={{ marginTop: '-3%' }}>
       {/* Banner with shared image and centered black text - Now overlapping navbar */}
-      <div className="relative w-full h-80 sm:h-96 md:h-[500px] overflow-hidden -mt-16 pt-16" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} style={{ marginTop: '-80px', paddingTop: '80px' }}>
+      <div className="relative w-full h-[500px] sm:h-[600px] md:h-[700px] overflow-hidden -mt-16 pt-8" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         <div
           className="absolute inset-0"
           style={{
@@ -156,7 +156,7 @@ export default function ProductPageLayout({
         </div>
 
         {/* Breadcrumbs at top center */}
-        <div className="absolute top-20 sm:top-24 left-1/2 -translate-x-1/2 z-20">
+        <div className="absolute top-20 sm:top-24 md:top-28 lg:top-32 left-1/2 -translate-x-1/2 z-20">
           <nav className="text-black font-semibold text-xs sm:text-sm md:text-base lg:text-lg">
             <ol className="flex items-center space-x-1 sm:space-x-2">
               <li>
@@ -179,14 +179,7 @@ export default function ProductPageLayout({
 
       {/* Main Content Area - After Banner */}
       <div className="relative max-w-7xl mx-auto px-4 py-6 overflow-x-hidden">
-        <div 
-          ref={contentRef}
-          className={`page-transition-content ${
-            isTransitioning 
-              ? `animate-slide-out-${animationDirection}` 
-              : `animate-slide-in-${animationDirection}`
-          }`}
-        >
+        <div ref={contentRef} className="page-transition-content">
           {children}
         </div>
       </div>
