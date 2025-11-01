@@ -1,4 +1,5 @@
 import React from "react";
+import { getProductHoverImage, UNIVERSAL_HOVER_IMAGE } from "../Data/productHoverImages";
 
 const PreservativeProductsSection = ({ data }) => {
   if (!data || !data.products || data.products.length === 0) {
@@ -12,14 +13,23 @@ const PreservativeProductsSection = ({ data }) => {
           {data.products.map((product, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden h-36"
+              className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden h-36 group"
             >
               <div className="grid h-full" style={{ gridTemplateColumns: '40% 60%' }}>
-                <div className="h-full w-full">
+                <div className="h-full w-full relative">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover"
+                  />
+                  <img
+                    src={product.hoverImage || getProductHoverImage(product.name)}
+                    alt={`${product.name} hover`}
+                    className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.src = UNIVERSAL_HOVER_IMAGE;
+                    }}
                   />
                 </div>
                 

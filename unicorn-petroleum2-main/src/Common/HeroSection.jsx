@@ -6,7 +6,7 @@ const HeroSection = ({ data }) => {
   const showCtas = hasPrimary || hasSecondary;
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center -mt-16 pt-8">
+    <section className="relative w-full min-h-screen flex items-center justify-center md:-mt-16 pt-4 md:pt-8">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img

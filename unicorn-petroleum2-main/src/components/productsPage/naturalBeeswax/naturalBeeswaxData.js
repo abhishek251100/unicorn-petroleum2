@@ -3,6 +3,19 @@ export const naturalBeeswaxData = {
   description:
     "Purity for every application.",
   bannerImage: "/assets/hero-bg-home.jpg", // Add your natural beeswax banner image path here
+  // Slider configuration - Add multiple slides here
+  slider: [
+    {
+      title: "Natural Beeswax",
+      subtitle: "Purity for every application",
+      image: "/assets/hero-bg-home.jpg"
+    },
+    {
+      title: "100% Natural Product",
+      subtitle: "Refined for pharmaceutical and cosmetic use",
+      image: "/assets/hero-bg-home.jpg"
+    }
+  ],
 
   commonSection: {
     title: "Natural beeswax",

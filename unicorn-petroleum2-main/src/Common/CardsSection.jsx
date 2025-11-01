@@ -92,14 +92,11 @@ export default function CardsSection({ data }) {
                   </div>
 
                   <h3 className="font-semibold text-gray-800 mb-1 sm:mb-2 group-hover:text-[#E99322] transition-colors text-sm sm:text-base">
-                    {card.title || card.label || card.name}
+                    <span className="block group-hover:hidden">{card.title || card.label || card.name}</span>
+                    {showDescriptions && (card.hoverDescription || card.description) && (
+                      <span className="hidden group-hover:block text-gray-700">{card.hoverDescription || card.description}</span>
+                    )}
                   </h3>
-
-                  {showDescriptions && card.description && (
-                    <p className="text-gray-600 text-xs sm:text-sm group-hover:text-gray-700 transition-colors">
-                      {card.description}
-                    </p>
-                  )}
                 </div>
               ))}
             </div>
@@ -122,14 +119,11 @@ export default function CardsSection({ data }) {
                   </div>
 
                   <h3 className="font-semibold text-gray-800 mb-1 sm:mb-2 group-hover:text-[#E99322] transition-colors text-sm sm:text-base">
-                    {card.title || card.label || card.name}
+                    <span className="block group-hover:hidden">{card.title || card.label || card.name}</span>
+                    {showDescriptions && (card.hoverDescription || card.description) && (
+                      <span className="hidden group-hover:block text-gray-700">{card.hoverDescription || card.description}</span>
+                    )}
                   </h3>
-
-                  {showDescriptions && card.description && (
-                    <p className="text-gray-600 text-xs sm:text-sm group-hover:text-gray-700 transition-colors">
-                      {card.description}
-                    </p>
-                  )}
                 </div>
               ))}
             </div>
@@ -153,14 +147,11 @@ export default function CardsSection({ data }) {
                     </div>
 
                     <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-[#E99322] transition-colors">
-                      {card.title || card.label || card.name}
+                      <span className="block group-hover:hidden">{card.title || card.label || card.name}</span>
+                      {showDescriptions && (card.hoverDescription || card.description) && (
+                        <span className="hidden group-hover:block text-gray-700">{card.hoverDescription || card.description}</span>
+                      )}
                     </h3>
-
-                    {showDescriptions && card.description && (
-                      <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
-                        {card.description}
-                      </p>
-                    )}
                   </div>
                 </div>
               ))}
@@ -186,14 +177,11 @@ export default function CardsSection({ data }) {
                 </div>
 
                 <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-[#E99322] transition-colors">
-                  {card.title || card.label || card.name}
+                  <span className="block group-hover:hidden">{card.title || card.label || card.name}</span>
+                  {showDescriptions && (card.hoverDescription || card.description) && (
+                    <span className="hidden group-hover:block text-gray-700">{card.hoverDescription || card.description}</span>
+                  )}
                 </h3>
-
-                {showDescriptions && card.description && (
-                  <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
-                    {card.description}
-                  </p>
-                )}
               </div>
             ))}
           </div>

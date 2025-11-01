@@ -3,6 +3,15 @@ export const pharmaceuticalData = {
     title: "Pharmaceutical Applications",
     description: "High-purity ingredients for life-saving medicines"
   },
+  // Slider configuration - Add multiple slides here
+  slider: [
+    {
+      title: "Pharmaceutical Applications",
+      subtitle: "High-purity ingredients for life-saving medicines",
+      image: "/assets/BannerImages/applications desktop.jpg",
+      mobileImage: "/assets/BannerImages/applications mobile.jpg"
+    }
+  ],
   overview: {
     title: "Pharmaceutical Excellence",
     description: "Our pharmaceutical-grade ingredients meet the most stringent quality standards required by global pharmacopoeias. We supply critical raw materials that form the foundation of life-saving medications and therapeutic formulations."

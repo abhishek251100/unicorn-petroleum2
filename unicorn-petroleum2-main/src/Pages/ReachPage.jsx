@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import BannerWithNavigation from "../Common/BannerWithNavigation";
+import SliderHero from "../Common/SliderHero";
 
 const ReachPage = () => {
-  const [count, setCount] = useState(0);
+  const [counts, setCounts] = useState({ years: 0, countries: 0, companies: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const counterRef = useRef(null);
 
@@ -17,7 +17,7 @@ const ReachPage = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !isVisible) {
             setIsVisible(true);
-            startCounter();
+            startCounters();
           }
         });
       },
@@ -35,97 +35,148 @@ const ReachPage = () => {
     };
   }, [isVisible]);
 
-  const startCounter = () => {
-    let currentCount = 0;
-    const targetCount = 60;
-    const duration = 2000; // 2 seconds
-    const increment = targetCount / (duration / 16); // 60fps
+  const startCounters = () => {
+    const targets = { years: 60, countries: 60, companies: 750 };
+    const duration = 2000;
+    const increment = 16;
+    let currentTime = 0;
 
     const timer = setInterval(() => {
-      currentCount += increment;
-      if (currentCount >= targetCount) {
-        setCount(targetCount);
+      currentTime += increment;
+      const progress = Math.min(currentTime / duration, 1);
+      
+      setCounts({
+        years: Math.floor(targets.years * progress),
+        countries: Math.floor(targets.countries * progress),
+        companies: Math.floor(targets.companies * progress)
+      });
+
+      if (progress >= 1) {
+        setCounts(targets);
         clearInterval(timer);
-      } else {
-        setCount(Math.floor(currentCount));
       }
-    }, 16);
+    }, increment);
   };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Banner Section */}
-      <BannerWithNavigation
-        title="Global Reach"
-        subtitle="Delivering Quality Beyond Borders"
-        bannerImage="/assets/hero-bg-home.jpg"
-        breadcrumbs={breadcrumbs}
-      />
+      {/* Banner Section with Stats Circles */}
+      <div className="relative h-[340px] sm:h-[480px] md:h-[600px] lg:h-[650px] overflow-visible md:-mt-8 pt-20 md:pt-16 mb-8 md:mb-32">
+        {/* Banner Image Background */}
+        <div className="absolute inset-0">
+          <img 
+            src="/assets/hero-bg-home.jpg" 
+            alt="Banner background" 
+            className="w-full h-full object-cover"
+          />
+          {/* Subtle dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/30"></div>
+        </div>
 
-      {/* Main Content */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Background World Map Graphic */}
-          <div className="relative mb-16">
-            <div className="absolute inset-0 opacity-20">
-              {/* Simplified world map representation with dashed lines */}
-              <svg viewBox="0 0 800 400" className="w-full h-64">
-                {/* World map outline */}
-                <path
-                  d="M100,200 Q200,150 300,200 Q400,180 500,200 Q600,190 700,200"
-                  stroke="#E99322"
-                  strokeWidth="2"
-                  fill="none"
-                  strokeDasharray="5,5"
-                  opacity="0.6"
-                />
-                {/* Connection lines */}
-                <line x1="150" y1="180" x2="200" y2="160" stroke="#E99322" strokeWidth="1" strokeDasharray="3,3" opacity="0.4" />
-                <line x1="250" y1="190" x2="300" y2="170" stroke="#E99322" strokeWidth="1" strokeDasharray="3,3" opacity="0.4" />
-                <line x1="350" y1="185" x2="400" y2="165" stroke="#E99322" strokeWidth="1" strokeDasharray="3,3" opacity="0.4" />
-                <line x1="450" y1="195" x2="500" y2="175" stroke="#E99322" strokeWidth="1" strokeDasharray="3,3" opacity="0.4" />
-                <line x1="550" y1="188" x2="600" y2="168" stroke="#E99322" strokeWidth="1" strokeDasharray="3,3" opacity="0.4" />
-                <line x1="650" y1="192" x2="700" y2="172" stroke="#E99322" strokeWidth="1" strokeDasharray="3,3" opacity="0.4" />
-              </svg>
-            </div>
-            
-            {/* Main Title */}
-            <div className="relative z-10 text-center">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-                Global reach
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-700 mb-12">
-                Delivering quality across
-              </p>
-              
-              {/* Animated Counter */}
-              <div ref={counterRef} className="mb-4">
-                <span className="text-6xl md:text-8xl font-bold text-[#E99322]">
-                  {count}+
-                </span>
+        {/* Breadcrumbs */}
+        <div className="absolute top-28 sm:top-28 md:top-28 lg:top-32 left-1/2 -translate-x-1/2 z-20">
+          <nav className="text-black font-semibold text-xs sm:text-sm md:text-base lg:text-lg">
+            <ol className="flex items-center space-x-1 sm:space-x-2">
+              {breadcrumbs.map((crumb, index) => (
+                <React.Fragment key={index}>
+                  <li>
+                    {crumb.link ? (
+                      <a href={crumb.link} className="hover:text-gray-700 transition-colors">
+                        {crumb.text}
+                      </a>
+                    ) : (
+                      <span className="text-gray-900">{crumb.text}</span>
+                    )}
+                  </li>
+                  {index < breadcrumbs.length - 1 && <li>›</li>}
+                </React.Fragment>
+              ))}
+            </ol>
+          </nav>
+        </div>
+
+        {/* Stats Circles - overlay on md+ only */}
+        <div className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-5xl px-4 z-10 pointer-events-none">
+          <div ref={counterRef} className="grid grid-cols-3 gap-6">
+            {/* Years */}
+            <div className="rounded-full aspect-square flex flex-col items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#E99322] mb-1">
+                {counts.years}+
               </div>
-              
-              <p className="text-4xl md:text-5xl font-bold text-[#E99322] mb-12">
-                countries
-              </p>
+              <div className="text-sm sm:text-base md:text-lg font-medium text-[#E99322]">years</div>
             </div>
+
+            {/* Countries */}
+            <div className="rounded-full aspect-square flex flex-col items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#E99322] mb-1">
+                {counts.countries}+
+              </div>
+              <div className="text-sm sm:text-base md:text-lg font-medium text-[#E99322]">countries</div>
+            </div>
+
+            {/* Companies */}
+            <div className="rounded-full aspect-square flex flex-col items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#E99322] mb-1">
+                {counts.companies}+
+              </div>
+              <div className="text-sm sm:text-base md:text-lg font-medium text-[#E99322]">companies</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Mobile Circles Section (stacked) */}
+      <section ref={counterRef} className="block md:hidden px-4 pt-0 pb-6 bg-white">
+        <div className="max-w-md mx-auto grid grid-cols-2 gap-5">
+          {/* Years */}
+          <div className="w-40 h-40 bg-white rounded-full flex flex-col items-center justify-center p-4 shadow-xl mx-auto">
+            <div className="text-2xl font-bold text-[#E99322] mb-0.5">{counts.years}+</div>
+            <div className="text-sm font-medium text-[#E99322]">years</div>
           </div>
 
-          {/* Content Paragraphs */}
-          <div className="w-full">
-            <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Given our impeccable quality adherence, over past six decades, we enjoy the patronage of majority of the world's most recognisable top notch pharmaceutical, cosmetic & FMCG companies, whose loyalty is a testament of our time tested, product quality.
-              </p>
-              
-              <p className="text-lg text-gray-700 leading-relaxed">
-                With exports to more than 60 countries, we specialize in providing consistent quality products, which meets the most stringent quality requirements of various pharmacopoeias.
-              </p>
-            </div>
-            
-            {/* Concluding Tagline */}
-           
+          {/* Countries */}
+          <div className="w-40 h-40 bg-white rounded-full flex flex-col items-center justify-center p-4 shadow-xl mx-auto">
+            <div className="text-2xl font-bold text-[#E99322] mb-0.5">{counts.countries}+</div>
+            <div className="text-sm font-medium text-[#E99322]">countries</div>
           </div>
+
+          {/* Companies - center on its own row */}
+          <div className="col-span-2 place-self-center w-40 h-40 bg-white rounded-full flex flex-col items-center justify-center p-4 shadow-xl">
+            <div className="text-2xl font-bold text-[#E99322] mb-0.5">{counts.companies}+</div>
+            <div className="text-sm font-medium text-[#E99322]">companies</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-16 px-4 bg-white mt-8 md:mt-48">
+        {/* Title Section - After the banner */}
+        <div className="max-w-6xl mx-auto mb-8 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Global reach
+          </h1>
+          <p className="text-lg sm:text-xl md:text-xl text-gray-700">
+            Delivering quality beyond borders
+          </p>
+        </div>
+        <div className="max-w-6xl mx-auto space-y-6 text-center">
+          <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+            Given our impeccable quality adherence, over past six decades, we enjoy the patronage of majority of the world's most recognisable top notch pharmaceutical, cosmetic & FMCG companies, whose loyalty is a testament of our time tested, product quality.
+          </p>
+          
+          <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+            With exports to more than 60 countries, we specialize in providing consistent quality products, which meets the most stringent quality requirements of various pharmacopoeias.
+          </p>
+        </div>
+      </section>
+
+      {/* Concluding Tagline */}
+      <section className="py-12 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+            Global Ingredients. Indian Expertise. Trusted Worldwide.
+          </h2>
         </div>
       </section>
     </div>

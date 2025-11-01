@@ -2,7 +2,20 @@ export const whiteMineralOilsData = {
   name: "White Mineral Oils",
   description:
     "Purity for every application.",
-  bannerImage: "/assets/hero-bg-home.jpg", // Add your white mineral oils banner image path here
+  bannerImage: "/assets/hero-bg-home.jpg", // Fallback for single banner
+  // Slider configuration - Add multiple slides here
+  slider: [
+    {
+      title: "White Mineral Oils",
+      subtitle: "Purity for every application",
+      image: "/assets/hero-bg-home.jpg"
+    },
+    {
+      title: "High Quality Standards",
+      subtitle: "Pharmaceutical and cosmetic grade",
+      image: "/assets/hero-bg-home.jpg"
+    }
+  ],
 
   // Common section data
   commonSection: {

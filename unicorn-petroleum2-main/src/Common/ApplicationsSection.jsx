@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const ApplicationsSection = ({ data }) => {
   const scrollContainerRef = useRef(null);
+  const sectionRef = useRef(null);
+  const autoRef = useRef(null);
+  const timeoutRef = useRef(null);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -16,12 +19,104 @@ const ApplicationsSection = ({ data }) => {
     }
   };
 
+  useEffect(() => {
+    const el = scrollContainerRef.current;
+    const sectionEl = sectionRef.current;
+    if (!el || !sectionEl) return;
+
+    const advance = () => {
+      const atEnd = Math.ceil(el.scrollLeft + el.clientWidth) >= el.scrollWidth;
+      if (atEnd) {
+        el.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        el.scrollBy({ left: 220, behavior: 'smooth' });
+      }
+    };
+
+    const startInterval = () => {
+      if (autoRef.current) return;
+      // Do the first move immediately after the 3s delay
+      advance();
+      autoRef.current = setInterval(() => {
+        advance();
+      }, 2500);
+    };
+
+    const startAutoDelayed = () => {
+      if (timeoutRef.current || autoRef.current) return;
+      timeoutRef.current = setTimeout(() => {
+        timeoutRef.current = null;
+        startInterval();
+      }, 2500);
+    };
+
+    const stopAuto = () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+      if (autoRef.current) {
+        clearInterval(autoRef.current);
+        autoRef.current = null;
+      }
+    };
+
+    const maybeStartIfVisible = () => {
+      const rect = sectionEl.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const visibleHeight = Math.min(rect.bottom, vh) - Math.max(rect.top, 0);
+      const ratio = Math.max(0, Math.min(visibleHeight / Math.max(1, rect.height), 1));
+      if (ratio >= 0.4) startAutoDelayed();
+    };
+
+    let observer;
+    if ('IntersectionObserver' in window) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              startAutoDelayed();
+            } else {
+              stopAuto();
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      observer.observe(sectionEl);
+      // If already visible on mount, kick it off immediately
+      maybeStartIfVisible();
+    } else {
+      // Fallback: start after delay on mount
+      startAutoDelayed();
+    }
+
+    const onEnter = () => stopAuto();
+    const onLeave = () => startAutoDelayed();
+    el.addEventListener('mouseenter', onEnter);
+    el.addEventListener('mouseleave', onLeave);
+    // Mobile touch: pause on touch and resume after release
+    el.addEventListener('touchstart', onEnter, { passive: true });
+    el.addEventListener('touchend', onLeave, { passive: true });
+    el.addEventListener('touchcancel', onLeave, { passive: true });
+
+    return () => {
+      stopAuto();
+      if (observer) observer.disconnect();
+      el.removeEventListener('mouseenter', onEnter);
+      el.removeEventListener('mouseleave', onLeave);
+      el.removeEventListener('touchstart', onEnter);
+      el.removeEventListener('touchend', onLeave);
+      el.removeEventListener('touchcancel', onLeave);
+    };
+  }, []);
+
   if (!data || !data.applications || !data.finalProductUtilization) {
     return null;
   }
 
   return (
-    <section className="pt-6 px-4">
+    <section ref={sectionRef} className="pt-6 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">

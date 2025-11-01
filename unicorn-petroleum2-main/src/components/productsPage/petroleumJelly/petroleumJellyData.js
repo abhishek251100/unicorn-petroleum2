@@ -1,7 +1,22 @@
 export const petroleumJellyData = {
   name: "Petroleum Jelly",
   description: "Purity for every application",
-  bannerImage: "/assets/hero-bg-home.jpg", // Add your petroleum jelly banner image path here
+  bannerImage: "/assets/BannerImages/PetroleumJellyDesktop.jpg", // Fallback for single banner
+  // Slider configuration - Add multiple slides here
+  slider: [
+    {
+      title: "Petroleum Jelly",
+      subtitle: "Purity for every application",
+      image: "/assets/BannerImages/PetroleumJellyDesktop.jpg",
+      mobileImage: "/assets/BannerImages/petoleumJellyMobile.jpg"
+    },
+    {
+      title: "Pharmaceutical Grade Quality",
+      subtitle: "USP/BP/IP compliant formulations",
+      image: "/assets/BannerImages/PetroleumJellyDesktop.jpg",
+      mobileImage: "/assets/BannerImages/petoleumJellyMobile.jpg"
+    }
+  ],
   
   // Common section data
   commonSection: {

@@ -1,6 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { getProductPath } from "../Data/productLinks";
+import { getProductHoverImage, UNIVERSAL_HOVER_IMAGE } from "../Data/productHoverImages";
 
-const RelatedProductsSection = ({ data }) => {
+const RelatedProductsSection = ({ data, onlyFirstCardHover = false }) => {
   if (!data || !data.relatedProducts || data.relatedProducts.length === 0) {
     return null;
   }
@@ -18,40 +21,71 @@ const RelatedProductsSection = ({ data }) => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {data.relatedProducts.map((product, index) => (
+          {data.relatedProducts.map((product, index) => {
+            const shouldShowHover = !onlyFirstCardHover || index === 0;
+            return (
             <div
               key={index}
-              className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden"
+              className={`bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden ${shouldShowHover ? 'group' : ''}`}
             >
               {/* Mobile: Image on top, text below */}
               <div className="md:hidden">
-                <div className="w-full h-48">
+                <div className="w-full h-48 relative">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover"
+                    onError={(e)=>{ e.target.style.display='none'; const fallback=e.target.nextSibling; if(fallback && fallback.dataset.fallback==='1'){ fallback.style.display='flex'; } }}
                   />
+                  <div data-fallback="1" className="hidden absolute inset-0 bg-gray-200 items-center justify-center">
+                    <span className="text-gray-600 font-semibold">{product.name}</span>
+                  </div>
+                  {shouldShowHover && (
+                    <img
+                      src={product.hoverImage || getProductHoverImage(product.name)}
+                      alt={`${product.name} hover`}
+                      className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.src = UNIVERSAL_HOVER_IMAGE;
+                      }}
+                    />
+                  )}
                 </div>
                 
                 <div className="p-6 text-center">
                   <h3 className="text-lg font-semibold text-gray-800 mb-4 leading-tight">
                     {product.name}
                   </h3>
-                  <button className="bg-[#E99322] text-white px-5 py-2 rounded-full font-medium hover:bg-[#E99322] transition-all duration-300 inline-flex items-center gap-2 whitespace-nowrap min-w-[150px] justify-center">
+                  <Link to={product.link || getProductPath(product.name)} className="bg-[#E99322] text-white px-5 py-2 rounded-full font-medium hover:bg-[#E99322] transition-all duration-300 inline-flex items-center whitespace-nowrap min-w-[150px] justify-center">
                     View Details
-                    <span className="text-lg">→</span>
-                  </button>
+                  </Link>
                 </div>
               </div>
 
               {/* Desktop: Side-by-side layout */}
               <div className="hidden md:grid h-36" style={{ gridTemplateColumns: '40% 60%' }}>
-                <div className="h-full w-full">
+                <div className="h-full w-full relative">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover"
+                    onError={(e)=>{ e.target.style.display='none'; const fallback=e.target.nextSibling; if(fallback && fallback.dataset.fallback==='1'){ fallback.style.display='flex'; } }}
                   />
+                  <div data-fallback="1" className="hidden absolute inset-0 bg-gray-200 items-center justify-center">
+                    <span className="text-gray-600 font-semibold">{product.name}</span>
+                  </div>
+                  {shouldShowHover && (
+                    <img
+                      src={product.hoverImage || getProductHoverImage(product.name)}
+                      alt={`${product.name} hover`}
+                      className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.src = UNIVERSAL_HOVER_IMAGE;
+                      }}
+                    />
+                  )}
                 </div>
                 
                 <div className="h-full">
@@ -60,16 +94,16 @@ const RelatedProductsSection = ({ data }) => {
                       {product.name}
                     </h3>
                     <div className="mt-auto w-full flex justify-center">
-                      <button className="bg-[#E99322] text-white px-5 py-2 rounded-full font-medium hover:bg-[#E99322] transition-all duration-300 inline-flex items-center gap-2 whitespace-nowrap min-w-[150px] justify-center">
+                      <Link to={product.link || getProductPath(product.name)} className="bg-[#E99322] text-white px-5 py-2 rounded-full font-medium hover:bg-[#E99322] transition-all duration-300 inline-flex items-center whitespace-nowrap min-w-[150px] justify-center">
                         View Details
-                        <span className="text-lg">→</span>
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

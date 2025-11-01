@@ -3,9 +3,18 @@ export const cosmeticsData = {
     title: "Cosmetics Applications",
     description: "Beauty ingredients that meet global standards"
   },
+  // Slider configuration - Add multiple slides here
+  slider: [
+    {
+      title: "Cosmetics Applications",
+      subtitle: "Beauty ingredients that meet global standards",
+      image: "/assets/BannerImages/applications desktop.jpg",
+      mobileImage: "/assets/BannerImages/applications mobile.jpg"
+    }
+  ],
   overview: {
-    title: "Cosmetic Excellence",
-    description: "Our cosmetic-grade ingredients are formulated to meet the exacting standards of the beauty industry. From skincare to makeup, we provide the foundation for products that enhance natural beauty."
+    title: "Tailored for cosmetic products",
+    description: "In the cosmetics industry, safety and sensory appeal go hand in hand. Our high-purity oils, waxes, and emollients are carefully formulated to deliver smooth texture, stability, and long-lasting performance in skincare, haircare, and personal grooming products."
   },
   // Using FGridSection structure for applications
   applications: {

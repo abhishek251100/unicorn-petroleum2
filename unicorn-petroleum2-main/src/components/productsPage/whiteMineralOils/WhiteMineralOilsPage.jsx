@@ -16,6 +16,7 @@ export default function WhiteMineralOilsPage() {
       title={whiteMineralOilsData.name}
       subtitle={whiteMineralOilsData.description}
       bannerImage={whiteMineralOilsData.bannerImage}
+      slider={whiteMineralOilsData.slider}
     >
       {/* Desktop Layout */}
       <div className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8">

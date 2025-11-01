@@ -21,17 +21,8 @@ html, body {
     position: sticky !important;
   }
   
-  /* Apply -10% margin to main on mobile */
-  .mobile-main-margin {
-    margin-top: -10% !important;
-  }
-  
-  /* Ensure banners overlap navbar on mobile */
-  section[class*="-mt-16"], 
-  div[class*="-mt-16"] {
-    margin-top: -4rem !important;
-    padding-top: 2rem !important;
-  }
+  /* Remove forced negative margins on mobile to allow full banners */
+  .mobile-main-margin { margin-top: 0 !important; }
   
   /* Adjust breadcrumbs to prevent cutoff */
   .breadcrumbs-container {

@@ -2,6 +2,19 @@ export const uvFiltersData = {
   name: "UV Filters",
   description: "Organic and inorganic UV filters for broad-spectrum protection",
   bannerImage: "/assets/hero-bg-home.jpg", // Add your UV filters banner image path here
+  // Slider configuration - Add multiple slides here
+  slider: [
+    {
+      title: "UV Filters",
+      subtitle: "Organic and inorganic UV filters for broad-spectrum protection",
+      image: "/assets/hero-bg-home.jpg"
+    },
+    {
+      title: "Broad-Spectrum Protection",
+      subtitle: "Shield against UVA and UVB radiation",
+      image: "/assets/hero-bg-home.jpg"
+    }
+  ],
 
   commonSection: {
     title: "UV Filters",

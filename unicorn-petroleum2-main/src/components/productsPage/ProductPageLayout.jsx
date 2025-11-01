@@ -1,12 +1,14 @@
 import React, { useMemo, useRef, useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { productsNavigationData } from "./productsNavigationData";
+import SliderHero from "../../Common/SliderHero";
 
 export default function ProductPageLayout({
   children,
   title,
   subtitle,
   bannerImage = "/assets/hero-bg-home.jpg",
+  slider = [],
 }) {
   const location = useLocation();
   const navigate = useNavigate();
@@ -104,78 +106,25 @@ export default function ProductPageLayout({
     swipeStartX.current = null;
   };
 
+  // Breadcrumbs for the banner
+  const breadcrumbs = [
+    { text: "Home", link: "/" },
+    { text: "Products", link: "/products" },
+    { text: resolvedTitle }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden" style={{ marginTop: '-3%' }}>
-      {/* Banner with shared image and centered black text - Now overlapping navbar */}
-      <div className="relative w-full h-[500px] sm:h-[600px] md:h-[700px] overflow-hidden -mt-16 pt-8" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url(${bannerImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        {/* subtle overlay for readability */}
-        <div className="absolute inset-0 bg-white/30 pointer-events-none" />
-
-        {/* Carousel buttons */}
-        {prevItem && (
-          <button
-            aria-label="Previous product"
-            onClick={() => handleNavigation(prevItem.link, 'left')}
-            disabled={isTransitioning}
-            className="absolute left-3 top-[58%] md:top-1/2 -translate-y-1/2 z-30 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/60 md:bg-white/70 hover:bg-white/90 shadow-sm flex items-center justify-center backdrop-blur-sm transition-all duration-200 disabled:opacity-50"
-          >
-            <span className="text-lg md:text-xl">‹</span>
-          </button>
-        )}
-        {nextItem && (
-          <button
-            aria-label="Next product"
-            onClick={() => handleNavigation(nextItem.link, 'right')}
-            disabled={isTransitioning}
-            className="absolute right-3 top-[58%] md:top-1/2 -translate-y-1/2 z-30 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/60 md:bg-white/70 hover:bg-white/90 shadow-sm flex items-center justify-center backdrop-blur-sm transition-all duration-200 disabled:opacity-50"
-          >
-            <span className="text-lg md:text-xl">›</span>
-          </button>
-        )}
-
-        {/* Banner Content (centered title/subtitle) */}
-        <div className="relative z-10 flex items-center justify-center h-full">
-          <div className="text-center text-black max-w-4xl mx-auto px-4 z-20">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 tracking-tight">
-              {resolvedTitle}
-            </h1>
-            {resolvedSubtitle && (
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-800 font-medium">
-                {resolvedSubtitle}
-              </p>
-            )}
-          </div>
-        </div>
-
-        {/* Breadcrumbs at top center */}
-        <div className="absolute top-20 sm:top-24 md:top-28 lg:top-32 left-1/2 -translate-x-1/2 z-20 breadcrumbs-container">
-          <nav className="text-black font-semibold text-xs sm:text-sm md:text-base lg:text-lg">
-            <ol className="flex items-center space-x-1 sm:space-x-2">
-              <li>
-                <Link to="/" className="hover:text-gray-700">
-                  Home
-                </Link>
-              </li>
-              <li>›</li>
-              <li>
-                <Link to="/products" className="hover:text-gray-700">
-                  Products
-                </Link>
-              </li>
-              <li>›</li>
-              <li className="text-gray-900 truncate max-w-[120px] sm:max-w-none">{resolvedTitle}</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
+      {/* Slider Hero Banner */}
+      <SliderHero
+        title={title || resolvedTitle}
+        subtitle={subtitle || resolvedSubtitle}
+        bannerImage={bannerImage}
+        slides={slider}
+        breadcrumbs={breadcrumbs}
+        breadcrumbsTopClass="top-16 sm:top-20 md:top-28 lg:top-36"
+        breadcrumbsNavClass="text-black font-semibold text-[10px] sm:text-xs md:text-sm lg:text-base px-2 sm:px-4 -mt-[21%] md:mt-2 lg:mt-4"
+      />
 
       {/* Main Content Area - After Banner */}
       <div className="relative max-w-7xl mx-auto px-4 py-6 overflow-x-hidden">

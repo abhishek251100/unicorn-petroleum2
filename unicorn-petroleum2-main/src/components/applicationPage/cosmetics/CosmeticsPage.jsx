@@ -1,63 +1,27 @@
 import React from 'react';
-import FloatingSidebar from '../../../Common/FloatingSidebar';
-import FGridSection from '../../../Common/FGridSection';
-import BannerWithNavigation from '../../../Common/BannerWithNavigation';
-import { getNavigationData } from '../../../Data/navigationData';
-import { applicationsNavigationData } from '../applicationsNavigationData';
+import ApplicationTemplate from '../ApplicationTemplate';
 import { cosmeticsData } from './cosmeticsData';
 
 export default function CosmeticsPage() {
-  const applicationsNavData = getNavigationData('applications');
-  const breadcrumbs = [
-    { text: 'Home', link: '/' },
-    { text: 'Applications', link: '/applications' },
-    { text: 'Cosmetics' }
-  ];
   return (
-    <div className="min-h-screen bg-gray-50">
-      <BannerWithNavigation
-        title={cosmeticsData.hero.title}
-        subtitle={cosmeticsData.hero.description}
-        navigationData={applicationsNavData}
-        currentPath="/applications/cosmetics"
-        breadcrumbs={breadcrumbs}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <div className="lg:col-span-3">
-          <FloatingSidebar navigationData={applicationsNavData} />
-        </div>
-        
-        <div className="lg:col-span-9 space-y-12">
-          {/* Overview Section */}
-          <section>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              {cosmeticsData.overview.title}
-            </h2>
-            <p className="text-gray-700 leading-relaxed">
-              {cosmeticsData.overview.description}
-            </p>
-          </section>
-
-          {/* Applications Grid - Using FGridSection */}
-          <FGridSection data={cosmeticsData.applications} />
-
-          {/* Compliance Section */}
-          <section>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              {cosmeticsData.compliance.title}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {cosmeticsData.compliance.items.map((item, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-[#E99322] rounded-full"></div>
-                  <span className="text-gray-700">{item}</span>
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
+    <ApplicationTemplate
+      title="Cosmetics"
+      breadcrumbsTitle="Cosmetics"
+      data={{
+        ...cosmeticsData,
+        relatedProducts: [
+          { name: 'Petroleum Jelly', image: '/assets/RELATED PROD IMG/Petroleum jelly.png', description: 'Healing ointments, skin protectants, and excipients in topical medicines.' },
+          { name: 'White Mineral Oils', image: '/assets/RELATED PROD IMG/Mineral Oil.png', description: 'Used as a laxative, tablet coating, ointment base, and in topical formulations.' },
+          { name: 'Microcrystalline Wax', image: '/assets/RELATED PROD IMG/Microcrystalline.png', description: 'Used in manufacturing ointments and balms.' },
+          { name: 'Natural Beeswax', image: '/assets/RELATED PROD IMG/Beeswax2 (2).png', description: 'Used in ointments, tablet coatings, slow-release formulations, and as a binding agent.' },
+          { name: 'Emulsifying Wax', image: '/assets/RELATED PROD IMG/Emulsifying wax2.png', description: 'Used in emulsified medicinal creams.' },
+          { name: 'D-Panthenol', image: '/assets/RELATED PROD IMG/Frame 531 (1).png', description: 'Provitamin of B5 supporting skin regeneration and hydration.' },
+          { name: 'Preservatives', image: '/assets/RELATED PROD IMG/Frame 531 (4).png', description: 'Prevent microbial growth in syrups, eye drops, ointments, and injectables.' },
+          { name: 'Surfactants', image: '/assets/RELATED PROD IMG/sodium-salphate.png', description: 'Solubilizers, emulsifiers, wetting agents in syrups, suspensions, and topical formulations.' },
+          { name: 'UV Filters', image: '/assets/RELATED PROD IMG/ExtraUV/Frame 531 (12).png', description: 'Used in dermatological formulations to protect against UV-induced damage.' },
+          { name: 'UV Filters', image: '/assets/RELATED PROD IMG/ExtraUV/Frame 531 (11).png', description: 'Prevent UV damage by adding into makeup and skincare with SPF' },
+        ],
+      }}
+    />
   );
 }

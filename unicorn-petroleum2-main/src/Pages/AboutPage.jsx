@@ -10,7 +10,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-96 bg-gradient-to-r from-gray-900 to-gray-700" ref={heroRef}>
+      <section className="relative h-[360px] sm:h-[420px] md:h-[520px] lg:h-[600px] bg-gradient-to-r from-gray-900 to-gray-700" ref={heroRef}>
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center text-white scroll-animate">
@@ -34,7 +34,7 @@ const AboutPage = () => {
       </section>
 
       {/* Company Introduction */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 border-b-0">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Unicorn Petroleum Industries Pvt. Ltd.</h2>
           <h3 className="text-3xl font-bold text-gray-800 mb-8">A legacy of excellence</h3>
@@ -48,9 +48,15 @@ const AboutPage = () => {
           </p>
         </div>
       </section>
+      {/* Divider */}
+      <div className="w-full px-4">
+        <div className="max-w-xs md:max-w-2xl mx-auto">
+          <div className="h-[2px] bg-[#EDA94E]"></div>
+        </div>
+      </div>
 
       {/* Our Belief */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-gray-50 border-b-0">
           <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 flex items-center justify-center">
@@ -69,7 +75,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Vision */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 border-b-0">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 rounded-full flex items-center justify-center">
@@ -88,7 +94,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Mission */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-gray-50 border-b-0">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 flex items-center justify-center">
@@ -105,21 +111,27 @@ const AboutPage = () => {
           </p>
         </div>
       </section>
+      {/* Divider */}
+      <div className="w-full px-4">
+        <div className="max-w-xs md:max-w-2xl mx-auto">
+          <div className="h-[2px] bg-[#EDA94E]"></div>
+        </div>
+      </div>
 
-        {/* Our Core Values */}
-        <section className="py-8 px-4" ref={coreValuesRef}>
+        {/* Our Values */}
+        <section className="pt-20 pb-20 md:pb-24 px-4 bg-white" ref={coreValuesRef}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 text-center mb-8 scroll-animate">Our core values</h2>
+            <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Our Values</h2>
           
           {/* Timeline-style layout */}
-          <div className="relative">
+          <div className="relative overflow-visible">
             {/* Center vertical line - simple fixed positioning */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] bg-[#E99322] hidden md:block animate-draw-line" style={{top: '10%', height: '83%'}}></div>
             
             {/* Mobile Layout */}
-            <div className="md:hidden space-y-8">
+            <div className="md:hidden space-y-10 pb-8">
               {/* Commitment to customers */}
-              <div className="text-center scroll-animate-left">
+              <div className="text-center opacity-100">
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img
                     src="/assets/about/Icons2.png"
@@ -134,7 +146,7 @@ const AboutPage = () => {
               </div>
 
               {/* Pledge to quality */}
-              <div className="text-center scroll-animate-right">
+              <div className="text-center opacity-100">
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img
                     src="/assets/about/Icons2 (1).png"
@@ -149,7 +161,7 @@ const AboutPage = () => {
               </div>
 
               {/* Ethical and fair business */}
-              <div className="text-center scroll-animate-left">
+              <div className="text-center opacity-100">
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img
                     src="/assets/about/Icons2 (2).png"
@@ -164,7 +176,7 @@ const AboutPage = () => {
               </div>
 
               {/* Integrity and adherence to law */}
-              <div className="text-center scroll-animate-right">
+              <div className="text-center opacity-100">
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img
                     src="/assets/about/Icons2 (3).png"
@@ -179,7 +191,7 @@ const AboutPage = () => {
               </div>
 
               {/* Safety, health and environment consciousness */}
-              <div className="text-center">
+              <div className="text-center opacity-100">
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img
                     src="/assets/about/Icons2 (4).png"
@@ -195,7 +207,7 @@ const AboutPage = () => {
             </div>
 
             {/* Desktop Layout */}
-            <div className="hidden md:block space-y-16">
+            <div className="hidden md:block space-y-16 pb-8 min-h-[600px]">
               {/* Commitment to customers */}
               <div className="flex items-center">
                 <div className="w-1/2 pr-8 text-right">
@@ -289,9 +301,87 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+      {/* Divider */}
+      <div className="w-full px-4">
+        <div className="max-w-xs md:max-w-2xl mx-auto">
+          <div className="h-[2px] bg-[#EDA94E]"></div>
+        </div>
+      </div>
 
         {/* Manufacturing Facilities */}
-      
+        <section className="py-16 px-4 bg-white" ref={manufacturingRef}>
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Manufacturing facilities</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Advance production units */}
+              <div className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] text-center overflow-hidden">
+                <div className="w-full">
+                  <img
+                    src="/assets/about/Manifacturing img1.png"
+                    alt="Advance production units"
+                    className="w-full h-64 object-cover"
+                    onError={(e) => {
+                      e.target.src = "/assets/about/Artboard 1.jpg";
+                    }}
+                  />
+                </div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Advance production units</h3>
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    Two fully-equipped plants around Mumbai with state-of-art manufacturing, testing and storage facilities
+                  </p>
+                </div>
+              </div>
+
+              {/* In-house R&D & QA lab */}
+              <div className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] text-center overflow-hidden">
+                <div className="w-full">
+                  <img
+                    src="/assets/about/Artboard 2.jpg"
+                    alt="In-house R&D & QA lab"
+                    className="w-full h-64 object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                </div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">In-house R&D & QA lab</h3>
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    On-site laboratory for product innovation, testing, and batch-wise quality assurance.
+                  </p>
+                </div>
+              </div>
+
+              {/* Flexible packaging options */}
+              <div className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] text-center overflow-hidden">
+                <div className="w-full">
+                  <img
+                    src="/assets/about/Artboard 3.jpg"
+                    alt="Flexible packaging options"
+                    className="w-full h-64 object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                </div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Flexible packaging options</h3>
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    Customizable pack sizes from small batches to bulk drums
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      {/* Divider */}
+      <div className="w-full px-4">
+        <div className="max-w-xs md:max-w-2xl mx-auto">
+          <div className="h-[2px] bg-[#EDA94E]"></div>
+        </div>
+      </div>
 
           {/* Key Differentiators */}
           <section className="py-8">
@@ -408,6 +498,12 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+      {/* Divider */}
+      <div className="w-full px-4">
+        <div className="max-w-xs md:max-w-2xl mx-auto">
+          <div className="h-[2px] bg-[#EDA94E]"></div>
+        </div>
+      </div>
 
       {/* Certifications */}
       <QualityStandardsSection title="Certifications" subtitle="" />

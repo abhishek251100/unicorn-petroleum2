@@ -2,6 +2,19 @@
     name: "D-Panthenol",
     description: "Provitamin B5 for moisturization and skin barrier support",
     bannerImage: "/assets/hero-bg-home.jpg", // Add your D-Panthenol banner image path here
+    // Slider configuration - Add multiple slides here
+    slider: [
+      {
+        title: "D-Panthenol",
+        subtitle: "Provitamin B5 for moisturization and skin barrier support",
+        image: "/assets/hero-bg-home.jpg"
+      },
+      {
+        title: "Hydrating & Regenerative",
+        subtitle: "Deeply moisturizing and barrier repair properties",
+        image: "/assets/hero-bg-home.jpg"
+      }
+    ],
 
     commonSection: {
       title: "D-Panthenol",

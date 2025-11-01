@@ -2,6 +2,19 @@ export const preservativesData = {
   name: "Preservatives",
   description: "Effective antimicrobial systems for personal care and pharma",
   bannerImage: "/assets/hero-bg-home.jpg", // Add your preservatives banner image path here
+  // Slider configuration - Add multiple slides here
+  slider: [
+    {
+      title: "Preservatives",
+      subtitle: "Effective antimicrobial systems for personal care and pharma",
+      image: "/assets/hero-bg-home.jpg"
+    },
+    {
+      title: "Extended Shelf Life",
+      subtitle: "Prevent microbial growth and product deterioration",
+      image: "/assets/hero-bg-home.jpg"
+    }
+  ],
 
   commonSection: {
     title: "Preservatives",

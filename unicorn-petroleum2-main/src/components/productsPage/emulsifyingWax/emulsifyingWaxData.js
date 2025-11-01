@@ -1,7 +1,20 @@
 export const emulsifyingWaxData = {
   name: "Emulsifying Wax",
   description: "Purity for every application.",
-  bannerImage: "/assets/hero-bg-home.jpg", // Add your emulsifying wax banner image path here
+  bannerImage: "/assets/hero-bg-home.jpg", // Fallback for single banner
+  // Slider configuration - Add multiple slides here
+  slider: [
+    {
+      title: "Emulsifying Wax",
+      subtitle: "Purity for every application",
+      image: "/assets/hero-bg-home.jpg"
+    },
+    {
+      title: "Stable Emulsions",
+      subtitle: "Water-in-oil and oil-in-water formulations",
+      image: "/assets/hero-bg-home.jpg"
+    }
+  ],
 
   commonSection: {
     title: "Emulsifying wax",

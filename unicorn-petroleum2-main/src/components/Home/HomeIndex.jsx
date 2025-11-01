@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSection from "../../Common/HeroSection";
+import SliderHero from "../../Common/SliderHero";
 import IconRoadHero from "../../Common/IconRoadHero";
 import FGridSection from "../../Common/FGridSection";
 import ProductPortfolioSection from "../../Common/ProductPortfolioSection";
@@ -13,8 +13,20 @@ import homeData from "./HomeData";
 const HomeIndex = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <HeroSection data={homeData.hero} />
+      {/* Hero Section with Slider */}
+      <SliderHero
+        title={homeData.hero.title}
+        subtitle={homeData.hero.subtitle}
+        slides={homeData.hero.slider}
+        bannerImage={homeData.hero.backgroundImage}
+        autoPlayInterval={5000}
+        primaryButton={homeData.hero.primaryButton}
+        secondaryButton={homeData.hero.secondaryButton}
+        primaryButtonColor={homeData.hero.primaryButtonColor}
+        secondaryButtonColor={homeData.hero.secondaryButtonColor}
+        overlapClass="md:-mt-4"
+        paddingTopClass="pt-12 md:pt-20"
+      />
 
          {/* Icon Road Hero (first section) */}
          <IconRoadHero data={homeData.iconRoadHero} />

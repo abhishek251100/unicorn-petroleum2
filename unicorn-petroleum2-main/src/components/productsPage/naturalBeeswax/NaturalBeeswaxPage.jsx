@@ -13,7 +13,7 @@ import { naturalBeeswaxData } from "./naturalBeeswaxData";
 export default function NaturalBeeswaxPage() {
   const data = naturalBeeswaxData;
   return (
-    <ProductPageLayout title={data.name} subtitle={data.description} bannerImage={data.bannerImage}>
+    <ProductPageLayout title={data.name} subtitle={data.description} bannerImage={data.bannerImage} slider={data.slider}>
       <div className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8">
         <div className="lg:col-span-3">
           <FloatingSidebar navigationData={productsNavigationData} />

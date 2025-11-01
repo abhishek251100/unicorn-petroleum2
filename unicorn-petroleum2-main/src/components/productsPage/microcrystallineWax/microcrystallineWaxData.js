@@ -3,6 +3,19 @@ export const microcrystallineWaxData = {
   description:
     "Purity for every application.",
   bannerImage: "/assets/hero-bg-home.jpg", // Add your microcrystalline wax banner image path here
+  // Slider configuration - Add multiple slides here
+  slider: [
+    {
+      title: "Microcrystalline Wax",
+      subtitle: "Purity for every application",
+      image: "/assets/hero-bg-home.jpg"
+    },
+    {
+      title: "Crystal Finesse",
+      subtitle: "Structural strength and lustre for your formulations",
+      image: "/assets/hero-bg-home.jpg"
+    }
+  ],
 
   commonSection: {
     title: "Microcrystalline wax",

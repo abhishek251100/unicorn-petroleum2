@@ -39,7 +39,21 @@ export const homeData = {
     backgroundImage: "/assets/hero-bg-home.jpg",
     primaryButtonColor: "#E99322",
     secondaryButtonColor: "#E99322",
-  
+    // Slider configuration for multiple banners
+    slider: [
+      {
+        title: "Pioneering Excellence in Petroleum Specialties for 6+ Decades",
+        subtitle: "Your trusted partner for quality-assured ingredients for Pharma, Cosmetics, and Industry",
+        image: "/assets/hero-bg-home.jpg",
+        mobileImage: "/assets/hero-bg-home.jpg"
+      },
+      {
+        title: "",
+        subtitle: "",
+        image: "/assets/BannerImages/HomeBannerDesktop2.jpg",
+        mobileImage: "/assets/BannerImages/HomeBannerMobile2.jpg"
+      }
+    ]
   },
 
   // Our strengths
@@ -114,6 +128,30 @@ export const homeData = {
         buttonText: "View Details →",
         link: "/products/preservatives", // Internal link
       },
+      {
+        image: "/assets/RELATED PROD IMG/ExtraUV/Frame 531 (11).png",
+        title: "UV Filters",
+        description:
+          "Used in personal care products, shielding skin against UVA and UVB rays and their harmful effects",
+        buttonText: "View Details →",
+        link: "/products/uv-filters",
+      },
+      {
+        image: "/assets/RELATED PROD IMG/Beeswax2 (2).png",
+        title: "Waxes",
+        description:
+          "Range of waxes, from paraffin and microcrystalline to natural beeswax and emulsifying wax, tailored for custom product needs",
+        buttonText: "View Details →",
+        link: "/products",
+      },
+      {
+        image: "/assets/RELATED PROD IMG/sodium-salphate.png",
+        title: "Specialty Chemicals",
+        description:
+          "Substances refined for special usecases across niche industries, including panthenol",
+        buttonText: "View Details →",
+        link: "/products",
+      },
     ],
     buttonText: "View All Products →",
     buttonLink: "/products", // Internal link
@@ -128,36 +166,43 @@ export const homeData = {
       {
         icon: "/assets/Icons/Property 1=pharma.png",
         label: "Pharmaceutical",
+        hoverDescription: "Petroleum jellies, mineral oil, waxes and specialty chemicals",
         link: "/applications#pharmaceutical", // Internal link with anchor
       },
       {
         icon: "/assets/Icons/Property 1=cosmetic.png",
         label: "Cosmetic",
+        hoverDescription: "Petroleum jellies, mineral oil, waxes, UV filters and specialty chemicals",
         link: "/applications#cosmetic", // Internal link with anchor
       },
       {
         icon: "/assets/Icons/Bulk.png",
         label: "Bulk Chemicals",
+        hoverDescription: "Oils, waxes, preservatives and specialty chemicals",
         link: "/applications#bulk-chemicals", // Internal link with anchor
       },
       {
         icon: "/assets/Icons/Property 1=herbal.png",
         label: "Personal Care",
+        hoverDescription: "Petroleum jellies, mineral oil, waxes, emulsifiers and specialty chemicals",
         link: "/applications#personal-care", // Internal link with anchor
       },
       {
         icon: "/assets/Icons/Property 1=lube.png",
         label: "Lubricants",
+        hoverDescription: "Oils, waxes and protective coatings",
         link: "/applications#lubricants", // Internal link with anchor
       },
       {
         icon: "/assets/Icons/Property 1=agro.png",
         label: "Agrochemical",
+        hoverDescription: "Carrier oils, coating and formulation agents",
         link: "/applications#agrochemical", // Internal link with anchor
       },
       {
         icon: "/assets/Icons/Property 1=petro.png",
         label: "Textile",
+        hoverDescription: "Lubricants, protective coatings and specialty chemicals",
         link: "/applications#textile", // Internal link with anchor
       },
     ],

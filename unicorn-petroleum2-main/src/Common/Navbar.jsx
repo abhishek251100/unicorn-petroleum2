@@ -8,11 +8,22 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileDropdowns, setMobileDropdowns] = useState({});
   const [isScrolled, setIsScrolled] = useState(false);
+  const hoverTimeoutRef = useRef(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const toggleDropdown = (index) => {
     setActiveDropdown(activeDropdown === index ? null : index);
+  };
+
+  const openDropdown = (index) => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    setActiveDropdown(index);
+  };
+
+  const closeDropdownWithDelay = () => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    hoverTimeoutRef.current = setTimeout(() => setActiveDropdown(null), 180);
   };
 
   const toggleMobileDropdown = (index) => {
@@ -91,9 +102,9 @@ export default function Navbar() {
   ];
 
   return (
-    <header className={`sticky top-0 z-50 ${isScrolled ? 'shadow-2xl' : 'shadow-none'}`}>
+    <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top Contact Bar */}
-      <div className="bg-[#F5CD99] py-2 px-4">
+      <div className="bg-[#F5CD99] py-2 px-4 relative z-30">
         <div className="max-w-7xl mx-auto px-4 text-xs sm:text-sm">
           <div className="w-full flex items-center justify-between sm:justify-end sm:gap-4">
             <span className="text-black font-bold hidden sm:inline">Contact us on :</span>
@@ -109,7 +120,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <nav className="py-2 border-b border-white/20 shadow-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(20px)' }}>
+      <nav className="py-2 border-b border-white/20 shadow-lg relative z-30 bg-white/60 backdrop-blur-lg">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-full">
             {/* Logo */}
@@ -122,7 +133,7 @@ export default function Navbar() {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               {menuItems.map((item, index) => (
-                <div key={index} className="relative dropdown-container">
+                <div key={index} className="relative dropdown-container" onMouseEnter={() => openDropdown(index)} onMouseLeave={closeDropdownWithDelay}>
                   {item.hasDropdown ? (
                     <div>
                       <button
@@ -136,21 +147,23 @@ export default function Navbar() {
                         <FiChevronDown className={`text-sm transition-transform ${activeDropdown === index ? 'rotate-180' : ''}`} />
                       </button>
                       {activeDropdown === index && (
-                        <div className="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-md py-2 z-50 border border-gray-400">
-                          {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
-                            <Link
-                              key={dropdownIndex}
-                              to={dropdownItem.link}
-                              className="flex px-6 py-4 text-base font-semibold text-black hover:bg-[#E99322]/10 border-b border-gray-400 last:border-b-0 items-center justify-between"
-                              onClick={() => {
-                                setActiveDropdown(null);
-                                window.scrollTo(0, 0);
-                              }}
-                            >
-                              <span className="flex-1">{dropdownItem.name}</span>
-                              <span className="text-black font-bold ml-6">&gt;</span>
-                            </Link>
-                          ))}
+                        <div className="absolute top-full left-0 pt-2 z-50" onMouseEnter={() => openDropdown(index)} onMouseLeave={closeDropdownWithDelay}>
+                          <div className="w-56 bg-white/90 backdrop-blur-md shadow-xl rounded-md py-2 border border-gray-400">
+                            {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
+                              <Link
+                                key={dropdownIndex}
+                                to={dropdownItem.link}
+                                className="flex px-6 py-4 text-base font-semibold text-black hover:bg-[#E99322]/10 border-b border-gray-400 last:border-b-0 items-center justify-between"
+                                onClick={() => {
+                                  setActiveDropdown(null);
+                                  window.scrollTo(0, 0);
+                                }}
+                              >
+                                <span className="flex-1">{dropdownItem.name}</span>
+                                <span className="text-black font-bold ml-6">&gt;</span>
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       )}
                     </div>
@@ -188,7 +201,7 @@ export default function Navbar() {
 
           {/* Mobile Menu */}
           {isOpen && (
-            <div className="md:hidden py-4 border-t border-gray-300/30 rounded-b-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(20px)' }}>
+            <div className="md:hidden py-4 border-t border-gray-300/30 rounded-b-lg bg-white/10 backdrop-blur-lg">
               {menuItems.map((item, index) => (
                 <div key={index} className="border-b border-gray-300/30 last:border-b-0">
                   {item.hasDropdown ? (
@@ -201,7 +214,7 @@ export default function Navbar() {
                         <FiChevronDown className={`text-sm transition-transform ${mobileDropdowns[index] ? 'rotate-180' : ''}`} />
                       </button>
                       {mobileDropdowns[index] && (
-                        <div className="border-t border-gray-300/30" style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(20px)' }}>
+                        <div className="border-t border-gray-300/30 bg-white/10 backdrop-blur-lg">
                           {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
                             <Link
                               key={dropdownIndex}

@@ -22,6 +22,7 @@ export default function PetroleumJellyPage() {
       title={petroleumJellyData.name}
       subtitle={petroleumJellyData.description}
       bannerImage={petroleumJellyData.bannerImage}
+      slider={petroleumJellyData.slider}
     >
       {/* Desktop Layout */}
       <div className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8 min-h-screen">
@@ -57,7 +58,7 @@ export default function PetroleumJellyPage() {
 
       <QualityStandardsSection />
 
-      <RelatedProductsSection data={petroleumJellyData.relatedProducts} />
+      <RelatedProductsSection data={petroleumJellyData.relatedProducts} onlyFirstCardHover={true} />
 
       {/* Mobile Floating Sidebar - positioned before footer */}
       <div className="lg:hidden mb-8">

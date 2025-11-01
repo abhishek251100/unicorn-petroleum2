@@ -2,6 +2,19 @@ export const surfactantsData = {
   name: "Surfactants",
   description: "Anionic and nonionic surfactants for cleansing and emulsification",
   bannerImage: "/assets/hero-bg-home.jpg", // Add your surfactants banner image path here
+  // Slider configuration - Add multiple slides here
+  slider: [
+    {
+      title: "Surfactants",
+      subtitle: "Anionic and nonionic surfactants for cleansing and emulsification",
+      image: "/assets/hero-bg-home.jpg"
+    },
+    {
+      title: "Versatile Cleaning Solutions",
+      subtitle: "From personal care to industrial applications",
+      image: "/assets/hero-bg-home.jpg"
+    }
+  ],
 
   commonSection: {
     title: "Surfactants",

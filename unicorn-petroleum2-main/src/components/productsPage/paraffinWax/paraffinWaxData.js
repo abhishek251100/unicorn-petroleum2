@@ -1,7 +1,20 @@
 export const paraffinWaxData = {
   name: "Paraffin Wax",
   description: "Purity for every application.",
-  bannerImage: "/assets/hero-bg-home.jpg", // Add your paraffin wax banner image path here
+  bannerImage: "/assets/hero-bg-home.jpg", // Fallback for single banner
+  // Slider configuration - Add multiple slides here
+  slider: [
+    {
+      title: "Paraffin Wax",
+      subtitle: "Purity for every application",
+      image: "/assets/hero-bg-home.jpg"
+    },
+    {
+      title: "Versatile Applications",
+      subtitle: "From cosmetics to industrial uses",
+      image: "/assets/hero-bg-home.jpg"
+    }
+  ],
 
   commonSection: {
     title: "Paraffin wax",
