@@ -21,8 +21,8 @@ export default function FloatingSidebar({ navigationData }) {
   };
 
   return (
-    <div className={`lg:self-start`} style={{ alignSelf: 'flex-start' }}>
-      <div className="bg-white shadow-xl rounded-sm border border-gray-400">
+    <div className={`lg:self-start w-full`} style={{ alignSelf: 'flex-start', width: '100%' }}>
+      <div className="bg-white shadow-xl rounded-sm border border-gray-400 w-full">
         <div className="space-y-0">
           {navigationData.categories.map((item, index) => {
             const hasSubItems = item.subItems && item.subItems.length > 0;

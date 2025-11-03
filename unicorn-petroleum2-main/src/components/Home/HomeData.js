@@ -35,7 +35,9 @@ export const homeData = {
     subtitle:
       "Your trusted partner for quality-assured ingredients for Pharma, Cosmetics, and Industry",
     primaryButton: "Explore Products ",
+    primaryButtonLink: "/products",
     secondaryButton: "Why Choose Us?",
+    secondaryButtonLink: "/about",
     backgroundImage: "/assets/hero-bg-home.jpg",
     primaryButtonColor: "#E99322",
     secondaryButtonColor: "#E99322",
@@ -225,7 +227,7 @@ export const homeData = {
       { name: "POLLUTION CONTROL BOARD", fullName: "POLLUTION CONTROL BOARD" },
     ],
     linkText: "View All Certifications →",
-    linkUrl: "/quality", // Internal link
+    linkUrl: "/about", // Internal link
   },
 
   // News

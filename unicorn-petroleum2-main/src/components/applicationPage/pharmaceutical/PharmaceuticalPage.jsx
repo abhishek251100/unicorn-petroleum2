@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getProductPath } from '../../../Data/productLinks';
 import { getProductHoverImage, UNIVERSAL_HOVER_IMAGE } from '../../../Data/productHoverImages';
@@ -13,7 +13,76 @@ export default function PharmaceuticalPage() {
   // Get navigation data for applications section
   const applicationsNavData = getNavigationData('applications');
   const sliderRef = useRef(null);
+  const sidebarRef = useRef(null);
+  const sidebarColumnRef = useRef(null);
+  const certificationsRef = useRef(null);
+  const contentWrapperRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [sidebarStyle, setSidebarStyle] = useState({ position: 'sticky', top: '140px' });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sidebarRef.current || !certificationsRef.current || !contentWrapperRef.current || !sidebarColumnRef.current) {
+        return;
+      }
+
+      const sidebar = sidebarRef.current;
+      const sidebarColumn = sidebarColumnRef.current;
+      const certifications = certificationsRef.current;
+      const wrapper = contentWrapperRef.current;
+
+      const certificationsTop = certifications.getBoundingClientRect().top + window.scrollY;
+      const wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY;
+      const currentScroll = window.scrollY;
+      const topOffset = 140; // Initial position offset in pixels
+      const sidebarHeight = sidebar.offsetHeight;
+      const sidebarColumnWidth = sidebarColumn.offsetWidth;
+      
+      // Calculate when sidebar should stop scrolling (when its bottom would hit certifications top)
+      const stopScrollPosition = certificationsTop - sidebarHeight - topOffset - 20;
+      
+      // If we haven't reached the stop point, use sticky to let it scroll naturally
+      if (currentScroll < stopScrollPosition) {
+        setSidebarStyle({ 
+          position: 'sticky', 
+          top: `${topOffset}px`,
+          width: `${sidebarColumnWidth}px`,
+          left: '0px',
+          right: 'auto'
+        });
+      } else {
+        // We've reached the stop point - lock sidebar in place using absolute positioning
+        const maxScrollDistance = stopScrollPosition - wrapperTop;
+        setSidebarStyle({ 
+          position: 'absolute',
+          top: `${maxScrollDistance}px`,
+          width: `${sidebarColumnWidth}px`,
+          left: '0px',
+          right: 'auto'
+        });
+      }
+    };
+
+    // Use requestAnimationFrame for smooth updates
+    let rafId = null;
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        handleScroll();
+        rafId = null;
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, []);
 
   const breadcrumbs = [
     { text: "Home", link: "/" },
@@ -92,7 +161,8 @@ export default function PharmaceuticalPage() {
       <SliderHero
         title={pharmaceuticalData.hero.title}
         subtitle={pharmaceuticalData.hero.description}
-        slides={pharmaceuticalData.slider}
+        slides={undefined}
+        bannerImage="/assets/hero-bg-home.jpg"
         breadcrumbs={breadcrumbs}
       />
 
@@ -103,11 +173,13 @@ export default function PharmaceuticalPage() {
         </h1>
       </div>
 
-      {/* Main Content Area with Sidebar */}
-      <div className="relative max-w-7xl mx-auto px-4 py-8">
+      {/* Main Content Area with Sidebar - Content area with floating sidebar - stops before certifications */}
+      <div ref={contentWrapperRef} className="relative max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div className="lg:col-span-3">
+          <div ref={sidebarColumnRef} className="lg:col-span-3 relative">
+            <div ref={sidebarRef} className="self-start z-10 w-full" style={sidebarStyle}>
             <FloatingSidebar navigationData={applicationsNavData} />
+            </div>
           </div>
           
           <div className="lg:col-span-9">
@@ -162,15 +234,15 @@ export default function PharmaceuticalPage() {
                         <div className="hidden w-full h-full bg-gray-200 rounded-t-lg items-center justify-center">
                           <span className="text-gray-500 font-semibold">{product.name}</span>
                         </div>
-                        <img
-                          src={product.hoverImage || getProductHoverImage(product.name)}
-                          alt={`${product.name} hover`}
-                          className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"
-                          loading="lazy"
+                          <img
+                            src={product.hoverImage || getProductHoverImage(product.name)}
+                            alt={`${product.name} hover`}
+                            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"
+                            loading="lazy"
                           onError={(e) => {
                             e.target.src = UNIVERSAL_HOVER_IMAGE;
                           }}
-                        />
+                          />
                       </div>
                       <div className="p-6 text-center flex-1 flex flex-col justify-between">
                         <div>
@@ -190,11 +262,16 @@ export default function PharmaceuticalPage() {
         </div>
       </div>
 
-      {/* Existing Quality Standards Section */}
+      {/* Certifications and beyond - sidebar stops floating here - Full width sections */}
+      <div ref={certificationsRef} className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
       <QualityStandardsSection />
+      </div>
 
       {/* Existing Quote Form Section */}
+      <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
       <QuoteFormSection />
+      </div>
     </div>
   );
 }
+

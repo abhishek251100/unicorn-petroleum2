@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getProductPath } from "../../Data/productLinks";
 import SliderHero from "../../Common/SliderHero";
@@ -11,7 +11,76 @@ import { getProductHoverImage, UNIVERSAL_HOVER_IMAGE } from "../../Data/productH
 export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
   const applicationsNavData = getNavigationData("applications");
   const sliderRef = useRef(null);
+  const sidebarRef = useRef(null);
+  const sidebarColumnRef = useRef(null);
+  const certificationsRef = useRef(null);
+  const contentWrapperRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [sidebarStyle, setSidebarStyle] = useState({ position: 'sticky', top: '140px' });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sidebarRef.current || !certificationsRef.current || !contentWrapperRef.current || !sidebarColumnRef.current) {
+        return;
+      }
+
+      const sidebar = sidebarRef.current;
+      const sidebarColumn = sidebarColumnRef.current;
+      const certifications = certificationsRef.current;
+      const wrapper = contentWrapperRef.current;
+
+      const certificationsTop = certifications.getBoundingClientRect().top + window.scrollY;
+      const wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY;
+      const currentScroll = window.scrollY;
+      const topOffset = 140; // Initial position offset in pixels
+      const sidebarHeight = sidebar.offsetHeight;
+      const sidebarColumnWidth = sidebarColumn.offsetWidth;
+      
+      // Calculate when sidebar should stop scrolling (when its bottom would hit certifications top)
+      const stopScrollPosition = certificationsTop - sidebarHeight - topOffset - 20;
+      
+      // If we haven't reached the stop point, use sticky to let it scroll naturally
+      if (currentScroll < stopScrollPosition) {
+        setSidebarStyle({ 
+          position: 'sticky', 
+          top: `${topOffset}px`,
+          width: `${sidebarColumnWidth}px`,
+          left: '0px',
+          right: 'auto'
+        });
+      } else {
+        // We've reached the stop point - lock sidebar in place using absolute positioning
+        const maxScrollDistance = stopScrollPosition - wrapperTop;
+        setSidebarStyle({ 
+          position: 'absolute',
+          top: `${maxScrollDistance}px`,
+          width: `${sidebarColumnWidth}px`,
+          left: '0px',
+          right: 'auto'
+        });
+      }
+    };
+
+    // Use requestAnimationFrame for smooth updates
+    let rafId = null;
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        handleScroll();
+        rafId = null;
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, []);
 
   const products = data.relatedProducts || [];
 
@@ -42,7 +111,8 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
       <SliderHero
         title={data?.hero?.title || title}
         subtitle={data?.hero?.description || data?.overview?.title}
-        slides={data?.slider}
+        slides={undefined}
+        bannerImage="/assets/hero-bg-home.jpg"
         breadcrumbs={breadcrumbs}
       />
 
@@ -52,10 +122,13 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
         </h1>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 py-8">
+      {/* Content area with floating sidebar - stops before certifications */}
+      <div ref={contentWrapperRef} className="relative max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div className="lg:col-span-3">
-            <FloatingSidebar navigationData={applicationsNavData} />
+          <div ref={sidebarColumnRef} className="lg:col-span-3 relative">
+            <div ref={sidebarRef} className="self-start z-10 w-full" style={sidebarStyle}>
+              <FloatingSidebar navigationData={applicationsNavData} />
+            </div>
           </div>
 
           <div className="lg:col-span-9">
@@ -136,10 +209,16 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
         </div>
       </div>
 
-      <QualityStandardsSection />
-      <QuoteFormSection />
+      {/* Certifications and beyond - sidebar stops floating here - Full width sections */}
+      <div ref={certificationsRef} className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        <QualityStandardsSection />
+      </div>
+      <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        <QuoteFormSection />
+      </div>
     </div>
   );
 }
+
 
 

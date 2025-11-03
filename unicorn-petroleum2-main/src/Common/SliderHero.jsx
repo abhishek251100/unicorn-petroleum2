@@ -11,7 +11,9 @@ export default function SliderHero({
   autoPlayInterval = 5000,
   // Optional buttons for hero-style banner
   primaryButton,
+  primaryButtonLink,
   secondaryButton,
+  secondaryButtonLink,
   primaryButtonColor = "#E99322",
   secondaryButtonColor = "#E99322",
   breadcrumbsTopClass = "top-16 sm:top-20 md:top-24 lg:top-32",
@@ -80,12 +82,19 @@ export default function SliderHero({
   };
 
   // Get current slide data
-  const currentSlideData = hasMultipleSlides
-    ? slides[currentSlide]
+  const currentSlideData = hasMultipleSlides && slides[currentSlide]
+    ? {
+        ...slides[currentSlide],
+        image: slides[currentSlide]?.image || bannerImage || "/assets/hero-bg-home.jpg",
+        title: slides[currentSlide]?.title || title || "",
+        subtitle: slides[currentSlide]?.subtitle || subtitle || "",
+        mobileImage: slides[currentSlide]?.mobileImage || slides[currentSlide]?.image || bannerImage || "/assets/hero-bg-home.jpg",
+      }
     : {
         title: title || "",
         subtitle: subtitle || "",
-        image: bannerImage,
+        image: bannerImage || "/assets/hero-bg-home.jpg",
+        mobileImage: bannerImage || "/assets/hero-bg-home.jpg",
       };
 
   return (
@@ -97,14 +106,15 @@ export default function SliderHero({
       {/* Slide Container */}
       <div className="relative w-full h-full">
         {/* Background Images */}
-        <div className="absolute inset-0 transition-opacity duration-500">
+        <div className="absolute inset-0 z-0 transition-opacity duration-500 bg-gray-200">
           {/* Desktop Image */}
           <div
             className="hidden md:block absolute inset-0 transition-opacity duration-500"
             style={{
-              backgroundImage: `url(${currentSlideData.image})`,
+              backgroundImage: `url(${currentSlideData.image || bannerImage || "/assets/hero-bg-home.jpg"})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
+              backgroundColor: "#e5e7eb",
               opacity: isSliding ? 0.7 : 1,
             }}
           />
@@ -112,15 +122,16 @@ export default function SliderHero({
           <div
             className="md:hidden absolute inset-0 transition-opacity duration-500"
             style={{
-              backgroundImage: `url(${currentSlideData.mobileImage || currentSlideData.image})`,
+              backgroundImage: `url(${currentSlideData.mobileImage || currentSlideData.image || bannerImage || "/assets/hero-bg-home.jpg"})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
+              backgroundColor: "#e5e7eb",
               opacity: isSliding ? 0.7 : 1,
             }}
           />
           {/* Overlay for better text readability - only show if there's text */}
           {((currentSlideData.title && currentSlideData.title.trim() !== "") || (currentSlideData.subtitle && currentSlideData.subtitle.trim() !== "")) && (
-            <div className="absolute inset-0 bg-white/25 pointer-events-none" />
+            <div className="absolute inset-0 bg-white/25 pointer-events-none z-10" />
           )}
         </div>
 
@@ -167,7 +178,7 @@ export default function SliderHero({
 
         {/* Content - only show if there's a title or subtitle in the current slide */}
         {((currentSlideData.title && currentSlideData.title.trim() !== "") || (currentSlideData.subtitle && currentSlideData.subtitle.trim() !== "")) && (
-          <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="relative z-20 flex items-center justify-center h-full">
             <div className={`${primaryButton || secondaryButton ? 'max-w-4xl' : 'text-center text-black max-w-4xl'} mx-auto px-4 sm:px-6`}>
               {/* Blurred patch for text */}
               <div className={`${primaryButton || secondaryButton ? 'bg-white/10 backdrop-blur-xl rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-xl border-[1.5px] border-[#EDA94E]' : ''} animate-fade-in`}>
@@ -192,17 +203,19 @@ export default function SliderHero({
                 {((currentSlideData.title && currentSlideData.title.trim() !== "") && (primaryButton || secondaryButton)) && (
                   <div className="hidden sm:flex flex-row gap-4 justify-center items-center">
                     {primaryButton && (
-                      <button 
+                      <Link 
+                        to={primaryButtonLink || "/products"}
                         className="text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base md:text-lg hover:opacity-90 transition-colors flex items-center space-x-2"
                         style={{ backgroundColor: primaryButtonColor }}
                       >
                         <span>{primaryButton}</span>
                         <span className="text-lg sm:text-xl">→</span>
-                      </button>
+                      </Link>
                     )}
                     
                     {secondaryButton && (
-                      <button 
+                      <Link 
+                        to={secondaryButtonLink || "/about"}
                         className="bg-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base md:text-lg border-2 hover:bg-gray-50 transition-colors"
                         style={{ 
                           color: secondaryButtonColor,
@@ -210,7 +223,7 @@ export default function SliderHero({
                         }}
                       >
                         {secondaryButton}
-                      </button>
+                      </Link>
                     )}
                   </div>
                 )}

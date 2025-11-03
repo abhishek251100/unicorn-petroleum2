@@ -4,7 +4,8 @@ import SliderHero from "../Common/SliderHero";
 const ReachPage = () => {
   const [counts, setCounts] = useState({ years: 0, countries: 0, companies: 0 });
   const [isVisible, setIsVisible] = useState(false);
-  const counterRef = useRef(null);
+  const desktopCounterRef = useRef(null);
+  const mobileCounterRef = useRef(null);
 
   const breadcrumbs = [
     { text: "Home", link: "/" }, 
@@ -12,51 +13,87 @@ const ReachPage = () => {
   ];
 
   useEffect(() => {
+    if (isVisible) return; // Already started
+
+    const startCounters = () => {
+      setIsVisible(true);
+      
+      const targets = { years: 60, countries: 60, companies: 750 };
+      const duration = 2000;
+      const increment = 16;
+      let currentTime = 0;
+
+      const timer = setInterval(() => {
+        currentTime += increment;
+        const progress = Math.min(currentTime / duration, 1);
+        
+        setCounts({
+          years: Math.floor(targets.years * progress),
+          countries: Math.floor(targets.countries * progress),
+          companies: Math.floor(targets.companies * progress)
+        });
+
+        if (progress >= 1) {
+          setCounts(targets);
+          clearInterval(timer);
+        }
+      }, increment);
+    };
+
+    const checkAndStart = () => {
+      // Check if desktop section is visible
+      if (desktopCounterRef.current) {
+        const rect = desktopCounterRef.current.getBoundingClientRect();
+        const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+        if (isInViewport) {
+          startCounters();
+          return;
+        }
+      }
+      // Check if mobile section is visible
+      if (mobileCounterRef.current) {
+        const rect = mobileCounterRef.current.getBoundingClientRect();
+        const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+        if (isInViewport) {
+          startCounters();
+        }
+      }
+    };
+
+    // Check immediately on mount (with a small delay to ensure DOM is ready)
+    const timeoutId = setTimeout(() => {
+      checkAndStart();
+    }, 100);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !isVisible) {
-            setIsVisible(true);
+          if (entry.isIntersecting) {
             startCounters();
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+    // Observe both desktop and mobile sections
+    if (desktopCounterRef.current) {
+      observer.observe(desktopCounterRef.current);
+    }
+    if (mobileCounterRef.current) {
+      observer.observe(mobileCounterRef.current);
     }
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
+      clearTimeout(timeoutId);
+      if (desktopCounterRef.current) {
+        observer.unobserve(desktopCounterRef.current);
+      }
+      if (mobileCounterRef.current) {
+        observer.unobserve(mobileCounterRef.current);
       }
     };
   }, [isVisible]);
-
-  const startCounters = () => {
-    const targets = { years: 60, countries: 60, companies: 750 };
-    const duration = 2000;
-    const increment = 16;
-    let currentTime = 0;
-
-    const timer = setInterval(() => {
-      currentTime += increment;
-      const progress = Math.min(currentTime / duration, 1);
-      
-      setCounts({
-        years: Math.floor(targets.years * progress),
-        countries: Math.floor(targets.countries * progress),
-        companies: Math.floor(targets.companies * progress)
-      });
-
-      if (progress >= 1) {
-        setCounts(targets);
-        clearInterval(timer);
-      }
-    }, increment);
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -97,7 +134,7 @@ const ReachPage = () => {
 
         {/* Stats Circles - overlay on md+ only */}
         <div className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-5xl px-4 z-10 pointer-events-none">
-          <div ref={counterRef} className="grid grid-cols-3 gap-6">
+          <div ref={desktopCounterRef} className="grid grid-cols-3 gap-14">
             {/* Years */}
             <div className="rounded-full aspect-square flex flex-col items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
               <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#E99322] mb-1">
@@ -127,7 +164,7 @@ const ReachPage = () => {
       </div>
 
       {/* Mobile Circles Section (stacked) */}
-      <section ref={counterRef} className="block md:hidden px-4 pt-0 pb-6 bg-white">
+      <section ref={mobileCounterRef} className="block md:hidden px-4 pt-0 pb-6 bg-white">
         <div className="max-w-md mx-auto grid grid-cols-2 gap-5">
           {/* Years */}
           <div className="w-40 h-40 bg-white rounded-full flex flex-col items-center justify-center p-4 shadow-xl mx-auto">
@@ -168,15 +205,6 @@ const ReachPage = () => {
           <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
             With exports to more than 60 countries, we specialize in providing consistent quality products, which meets the most stringent quality requirements of various pharmacopoeias.
           </p>
-        </div>
-      </section>
-
-      {/* Concluding Tagline */}
-      <section className="py-12 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-            Global Ingredients. Indian Expertise. Trusted Worldwide.
-          </h2>
         </div>
       </section>
     </div>

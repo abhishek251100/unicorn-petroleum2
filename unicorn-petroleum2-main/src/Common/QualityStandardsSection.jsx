@@ -141,7 +141,7 @@ export default function QualityStandardsSection({ title, subtitle, showLink = tr
 
         {showLink && (
           <div className="text-center">
-            <Link to="/quality" className="text-[#101301] font-medium hover:underline transition-colors text-sm sm:text-base">
+            <Link to="/about" className="text-[#101301] font-medium hover:underline transition-colors text-sm sm:text-base">
               View All Certifications →
             </Link>
           </div>

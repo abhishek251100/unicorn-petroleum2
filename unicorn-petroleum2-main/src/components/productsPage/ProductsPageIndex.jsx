@@ -14,28 +14,16 @@ export default function ProductsPageIndex() {
     }
   }, []);
 
-  // Flatten all products including sub-items for comprehensive display
+  // Show only main category products (no sub-items)
   const getAllProducts = () => {
     const allProducts = [];
     productsNavigationData.categories.forEach(category => {
-      // Add main category
+      // Add only main category (no sub-items)
       allProducts.push({
         ...category,
         isMainCategory: true,
         description: getCategoryDescription(category.id)
       });
-      
-      // Add sub-items if they exist
-      if (category.subItems) {
-        category.subItems.forEach(subItem => {
-          allProducts.push({
-            ...subItem,
-            isMainCategory: false,
-            parentCategory: category.name,
-            description: getSubItemDescription(subItem.id)
-          });
-        });
-      }
     });
     return allProducts;
   };
@@ -99,20 +87,15 @@ export default function ProductsPageIndex() {
                 to={product.link} 
                 className={`group block border-[1.5px] border-[#EDA94E] rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-stagger-in animate-stagger-${(index % 6) + 1}`}
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <h4 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-[#E99322] transition-colors">
-                      {product.name}
-                    </h4>
-                    {product.parentCategory && (
-                      <p className="text-sm text-[#E99322] font-medium mb-2">
-                        {product.parentCategory}
-                      </p>
-                    )}
-                  </div>
-                  <div className="text-[#E99322] text-2xl group-hover:translate-x-1 transition-transform">
-                    →
-                  </div>
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-[#E99322] transition-colors">
+                    {product.name}
+                  </h4>
+                  {product.parentCategory && (
+                    <p className="text-sm text-[#E99322] font-medium mb-2">
+                      {product.parentCategory}
+                    </p>
+                  )}
                 </div>
                 
                 <p className="text-gray-600 mb-4 leading-relaxed">
@@ -122,44 +105,6 @@ export default function ProductsPageIndex() {
                 <div className="flex items-center justify-between">
                   <div className="text-sm font-medium text-[#E99322] group-hover:text-[#E99322]/80">
                     {product.isMainCategory ? 'View Category' : 'View Product'}
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-[#E99322]/10 group-hover:bg-[#E99322]/20 flex items-center justify-center transition-colors">
-                    <span className="text-[#E99322] text-sm">→</span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Categories Overview */}
-        <section className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-            Product Categories
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {productsData.categories.map((cat, index) => (
-              <Link 
-                key={cat.id} 
-                to={cat.link} 
-                className={`group block border-[1.5px] border-[#EDA94E] rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-stagger-in animate-stagger-${(index % 6) + 1}`}
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <h4 className="text-xl font-semibold text-gray-800 group-hover:text-[#E99322] transition-colors">
-                    {cat.name}
-                  </h4>
-                  <div className="text-[#E99322] text-2xl group-hover:translate-x-1 transition-transform">
-                    →
-                  </div>
-                </div>
-                
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {cat.description}
-                </p>
-                
-                <div className="flex items-center justify-between">
-                  <div className="text-sm font-medium text-[#E99322] group-hover:text-[#E99322]/80">
-                    Explore Category
                   </div>
                   <div className="w-8 h-8 rounded-full bg-[#E99322]/10 group-hover:bg-[#E99322]/20 flex items-center justify-center transition-colors">
                     <span className="text-[#E99322] text-sm">→</span>

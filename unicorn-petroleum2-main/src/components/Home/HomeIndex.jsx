@@ -21,7 +21,9 @@ const HomeIndex = () => {
         bannerImage={homeData.hero.backgroundImage}
         autoPlayInterval={5000}
         primaryButton={homeData.hero.primaryButton}
+        primaryButtonLink={homeData.hero.primaryButtonLink}
         secondaryButton={homeData.hero.secondaryButton}
+        secondaryButtonLink={homeData.hero.secondaryButtonLink}
         primaryButtonColor={homeData.hero.primaryButtonColor}
         secondaryButtonColor={homeData.hero.secondaryButtonColor}
         overlapClass="md:-mt-4"

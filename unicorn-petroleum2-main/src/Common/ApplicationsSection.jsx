@@ -24,7 +24,14 @@ const ApplicationsSection = ({ data }) => {
     const sectionEl = sectionRef.current;
     if (!el || !sectionEl) return;
 
+    // Check if scrolling is needed (content width > container width)
+    const canScroll = () => {
+      if (!el) return false;
+      return el.scrollWidth > el.clientWidth;
+    };
+
     const advance = () => {
+      if (!el || !canScroll()) return;
       const atEnd = Math.ceil(el.scrollLeft + el.clientWidth) >= el.scrollWidth;
       if (atEnd) {
         el.scrollTo({ left: 0, behavior: 'smooth' });
@@ -34,16 +41,20 @@ const ApplicationsSection = ({ data }) => {
     };
 
     const startInterval = () => {
-      if (autoRef.current) return;
-      // Do the first move immediately after the 3s delay
+      if (autoRef.current || !canScroll()) return;
+      // Do the first move immediately after the delay
       advance();
       autoRef.current = setInterval(() => {
+        if (!canScroll()) {
+          stopAuto();
+          return;
+        }
         advance();
       }, 2500);
     };
 
     const startAutoDelayed = () => {
-      if (timeoutRef.current || autoRef.current) return;
+      if (timeoutRef.current || autoRef.current || !canScroll()) return;
       timeoutRef.current = setTimeout(() => {
         timeoutRef.current = null;
         startInterval();
@@ -62,6 +73,7 @@ const ApplicationsSection = ({ data }) => {
     };
 
     const maybeStartIfVisible = () => {
+      if (!sectionEl || !canScroll()) return;
       const rect = sectionEl.getBoundingClientRect();
       const vh = window.innerHeight || document.documentElement.clientHeight;
       const visibleHeight = Math.min(rect.bottom, vh) - Math.max(rect.top, 0);
@@ -69,47 +81,60 @@ const ApplicationsSection = ({ data }) => {
       if (ratio >= 0.4) startAutoDelayed();
     };
 
+    // Initialize after a short delay to ensure DOM is ready
     let observer;
-    if ('IntersectionObserver' in window) {
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              startAutoDelayed();
-            } else {
-              stopAuto();
-            }
-          });
-        },
-        { threshold: 0.4 }
-      );
-      observer.observe(sectionEl);
-      // If already visible on mount, kick it off immediately
-      maybeStartIfVisible();
-    } else {
-      // Fallback: start after delay on mount
-      startAutoDelayed();
-    }
-
     const onEnter = () => stopAuto();
-    const onLeave = () => startAutoDelayed();
-    el.addEventListener('mouseenter', onEnter);
-    el.addEventListener('mouseleave', onLeave);
-    // Mobile touch: pause on touch and resume after release
-    el.addEventListener('touchstart', onEnter, { passive: true });
-    el.addEventListener('touchend', onLeave, { passive: true });
-    el.addEventListener('touchcancel', onLeave, { passive: true });
+    const onLeave = () => {
+      if (canScroll()) {
+        startAutoDelayed();
+      }
+    };
+
+    const initTimeout = setTimeout(() => {
+      if ('IntersectionObserver' in window) {
+        observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && canScroll()) {
+                startAutoDelayed();
+              } else {
+                stopAuto();
+              }
+            });
+          },
+          { threshold: 0.4 }
+        );
+        observer.observe(sectionEl);
+        // If already visible on mount, kick it off immediately
+        maybeStartIfVisible();
+      } else {
+        // Fallback: start after delay on mount
+        startAutoDelayed();
+      }
+
+      if (el) {
+        el.addEventListener('mouseenter', onEnter);
+        el.addEventListener('mouseleave', onLeave);
+        // Mobile touch: pause on touch and resume after release
+        el.addEventListener('touchstart', onEnter, { passive: true });
+        el.addEventListener('touchend', onLeave, { passive: true });
+        el.addEventListener('touchcancel', onLeave, { passive: true });
+      }
+    }, 100);
 
     return () => {
+      clearTimeout(initTimeout);
       stopAuto();
       if (observer) observer.disconnect();
-      el.removeEventListener('mouseenter', onEnter);
-      el.removeEventListener('mouseleave', onLeave);
-      el.removeEventListener('touchstart', onEnter);
-      el.removeEventListener('touchend', onLeave);
-      el.removeEventListener('touchcancel', onLeave);
+      if (el) {
+        el.removeEventListener('mouseenter', onEnter);
+        el.removeEventListener('mouseleave', onLeave);
+        el.removeEventListener('touchstart', onEnter);
+        el.removeEventListener('touchend', onLeave);
+        el.removeEventListener('touchcancel', onLeave);
+      }
     };
-  }, []);
+  }, [data]);
 
   if (!data || !data.applications || !data.finalProductUtilization) {
     return null;
@@ -178,7 +203,7 @@ const ApplicationsSection = ({ data }) => {
               {data.finalProductUtilization.map((item, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 px-6 py-3 bg-white border-[1.5px] border-[#EDA94E] rounded-full text-gray-700 font-medium hover:border-[#EDA94E] hover:text-[#E99322] transition-all duration-200 cursor-pointer"
+                  className="flex-shrink-0 px-6 py-3 bg-white border-[1.5px] border-[#EDA94E] rounded-full text-gray-700 font-medium"
                 >
                   {item}
                 </div>
