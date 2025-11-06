@@ -86,8 +86,13 @@ export default function SliderHero({
     ? {
         ...slides[currentSlide],
         image: slides[currentSlide]?.image || bannerImage || "/assets/hero-bg-home.jpg",
-        title: slides[currentSlide]?.title || title || "",
-        subtitle: slides[currentSlide]?.subtitle || subtitle || "",
+        // Use slide's title/subtitle if explicitly defined (even if empty string), otherwise fall back to props
+        title: slides[currentSlide].title !== undefined 
+          ? slides[currentSlide].title 
+          : (title || ""),
+        subtitle: slides[currentSlide].subtitle !== undefined 
+          ? slides[currentSlide].subtitle 
+          : (subtitle || ""),
         mobileImage: slides[currentSlide]?.mobileImage || slides[currentSlide]?.image || bannerImage || "/assets/hero-bg-home.jpg",
       }
     : {
