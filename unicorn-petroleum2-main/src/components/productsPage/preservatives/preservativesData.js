@@ -1,18 +1,20 @@
 export const preservativesData = {
   name: "Preservatives",
   description: "Effective antimicrobial systems for personal care and pharma",
-  bannerImage: "/assets/hero-bg-home.jpg", // Add your preservatives banner image path here
-  // Slider configuration - Add multiple slides here
+  bannerImage: "/assets/BannerImages/productsPage/preseravtives%201.jpg", // Fallback for single banner (note: typo in filename)
+  // Slider configuration - Desktop banners only
   slider: [
     {
       title: "Preservatives",
       subtitle: "Effective antimicrobial systems for personal care and pharma",
-      image: "/assets/hero-bg-home.jpg"
+      image: "/assets/BannerImages/productsPage/preseravtives%201.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-preservatives%201.jpg"
     },
     {
-      title: "Extended Shelf Life",
-      subtitle: "Prevent microbial growth and product deterioration",
-      image: "/assets/hero-bg-home.jpg"
+      title: "",
+      subtitle: "",
+      image: "/assets/BannerImages/productsPage/preservatives%202.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-preservatives%202.jpg"
     }
   ],
 
@@ -87,9 +89,9 @@ export const preservativesData = {
 
   relatedProducts: {
     relatedProducts: [
-      { name: "Emulsifying Wax", image: "/assets/RELATED PROD IMG/Emulsifying wax2.png" },
-      { name: "D-Panthenol", image: "/assets/RELATED PROD IMG/Beeswax2 (2).png" },
-      { name: "Surfactants", image: "/assets/RELATED PROD IMG/sodium-salphate.png" },
+      { name: "Emulsifying Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/emulsifyingwax.jpg" },
+      { name: "D-Panthenol", image: "/assets/RELATED PROD IMG/NEW IMAGES/Dpanthenol.jpg" },
+      { name: "Surfactants", image: "/assets/RELATED PROD IMG/NEW IMAGES/surfactant.jpg" },
     ],
   },
 };

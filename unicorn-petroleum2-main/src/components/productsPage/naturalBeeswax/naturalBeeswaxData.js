@@ -2,18 +2,20 @@ export const naturalBeeswaxData = {
   name: "Natural Beeswax",
   description:
     "Purity for every application.",
-  bannerImage: "/assets/hero-bg-home.jpg", // Add your natural beeswax banner image path here
-  // Slider configuration - Add multiple slides here
+  bannerImage: "/assets/BannerImages/productsPage/beeswax%201.jpg", // Fallback for single banner
+  // Slider configuration - Desktop banners only
   slider: [
     {
       title: "Natural Beeswax",
       subtitle: "Purity for every application",
-      image: "/assets/hero-bg-home.jpg"
+      image: "/assets/BannerImages/productsPage/beeswax%201.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-beeswax%201.jpg"
     },
     {
-      title: "100% Natural Product",
-      subtitle: "Refined for pharmaceutical and cosmetic use",
-      image: "/assets/hero-bg-home.jpg"
+      title: "",
+      subtitle: "",
+      image: "/assets/BannerImages/productsPage/beeswax%202.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-beeswax%202.jpg"
     }
   ],
 
@@ -83,9 +85,9 @@ export const naturalBeeswaxData = {
 
   relatedProducts: {
     relatedProducts: [
-      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/Petroleum Jelly (2).png" },
-      { name: "Microcrystalline Wax", image: "/assets/RELATED PROD IMG/Microcrystalline.png" },
-      { name: "Emulsifying Wax", image: "/assets/RELATED PROD IMG/Emulsifying wax2.png" },
+      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg" },
+      { name: "Microcrystalline Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg" },
+      { name: "Emulsifying Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/emulsifyingwax.jpg" },
     ],
   },
 };

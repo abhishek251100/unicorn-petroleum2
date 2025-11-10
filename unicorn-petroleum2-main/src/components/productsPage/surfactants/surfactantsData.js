@@ -1,18 +1,20 @@
 export const surfactantsData = {
   name: "Surfactants",
   description: "Anionic and nonionic surfactants for cleansing and emulsification",
-  bannerImage: "/assets/hero-bg-home.jpg", // Add your surfactants banner image path here
-  // Slider configuration - Add multiple slides here
+  bannerImage: "/assets/BannerImages/productsPage/surfactants%201.jpg", // Fallback for single banner
+  // Slider configuration - Desktop banners only
   slider: [
     {
       title: "Surfactants",
       subtitle: "Anionic and nonionic surfactants for cleansing and emulsification",
-      image: "/assets/hero-bg-home.jpg"
+      image: "/assets/BannerImages/productsPage/surfactants%201.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-surfactants%201.jpg"
     },
     {
-      title: "Versatile Cleaning Solutions",
-      subtitle: "From personal care to industrial applications",
-      image: "/assets/hero-bg-home.jpg"
+      title: "",
+      subtitle: "",
+      image: "/assets/BannerImages/productsPage/surfactants%202.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-surfactants%202.jpg"
     }
   ],
 
@@ -93,9 +95,9 @@ export const surfactantsData = {
 
   relatedProducts: {
     relatedProducts: [
-      { name: "Emulsifying Wax", image: "/assets/RELATED PROD IMG/Emulsifying wax2.png" },
-      { name: "D-Panthenol", image: "/assets/RELATED PROD IMG/Beeswax2 (2).png" },
-      { name: "Preservatives", image: "/assets/RELATED PROD IMG/Frame 531 (4).png" },
+      { name: "Emulsifying Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/emulsifyingwax.jpg" },
+      { name: "D-Panthenol", image: "/assets/RELATED PROD IMG/NEW IMAGES/Dpanthenol.jpg" },
+      { name: "Preservatives", image: "/assets/RELATED PROD IMG/NEW IMAGES/Preservative.jpg" },
     ],
   },
 };

@@ -50,9 +50,9 @@ export function buildStandardProductData({ name, description }) {
 
     relatedProducts: {
       relatedProducts: [
-        { name: "Mineral Oil", image: "/assets/RELATED PROD IMG/Mineral Oil.png" },
-        { name: "Microcrystalline Wax", image: "/assets/RELATED PROD IMG/Microcrystalline.png" },
-        { name: "Paraffin Wax", image: "/assets/RELATED PROD IMG/Paraffin Wax.png" },
+        { name: "Mineral Oil", image: "/assets/RELATED PROD IMG/NEW IMAGES/whiteMineraloil1.jpg" },
+        { name: "Microcrystalline Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg" },
+        { name: "Paraffin Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/paraffinwax.jpg" },
       ],
     },
   };

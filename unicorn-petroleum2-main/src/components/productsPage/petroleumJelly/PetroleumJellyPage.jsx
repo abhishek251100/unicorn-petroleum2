@@ -24,6 +24,12 @@ export default function PetroleumJellyPage() {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Only apply floating effects on desktop (lg breakpoint = 1024px)
+      if (window.innerWidth < 1024) {
+        setSidebarStyle({ position: 'relative', top: '0px' });
+        return;
+      }
+
       if (!sidebarRef.current || !certificationsRef.current || !contentWrapperRef.current || !sidebarColumnRef.current) {
         return;
       }
@@ -68,6 +74,10 @@ export default function PetroleumJellyPage() {
     // Use requestAnimationFrame for smooth updates
     let rafId = null;
     const onScroll = () => {
+      // Only apply floating effects on desktop
+      if (window.innerWidth < 1024) {
+        return;
+      }
       if (rafId) return;
       rafId = requestAnimationFrame(() => {
         handleScroll();

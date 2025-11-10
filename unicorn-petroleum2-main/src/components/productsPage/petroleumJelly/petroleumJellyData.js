@@ -1,20 +1,20 @@
 export const petroleumJellyData = {
   name: "Petroleum Jelly",
   description: "Purity for every application",
-  bannerImage: "/assets/BannerImages/PetroleumJellyDesktop.jpg", // Fallback for single banner
-  // Slider configuration - Add multiple slides here
+  bannerImage: "/assets/BannerImages/productsPage/petroleumjelly1.jpg", // Fallback for single banner
+  // Slider configuration - Desktop banners only
   slider: [
     {
       title: "Petroleum Jelly",
       subtitle: "Purity for every application",
-      image: "/assets/BannerImages/PetroleumJellyDesktop.jpg",
-      mobileImage: "/assets/BannerImages/petoleumJellyMobile.jpg"
+      image: "/assets/BannerImages/productsPage/petroleumjelly1.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-jelly%201.jpg"
     },
     {
-      title: "Pharmaceutical Grade Quality",
-      subtitle: "USP/BP/IP compliant formulations",
-      image: "/assets/BannerImages/PetroleumJellyDesktop.jpg",
-      mobileImage: "/assets/BannerImages/petoleumJellyMobile.jpg"
+      title: "",
+      subtitle: "",
+      image: "/assets/BannerImages/productsPage/petroleumjelly2.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-jelly%202.jpg"
     }
   ],
   
@@ -94,15 +94,15 @@ export const petroleumJellyData = {
     relatedProducts: [
       {
         name: "Mineral Oil",
-        image: "/assets/HomePageImg/P1_Home.png"
+        image: "/assets/RELATED PROD IMG/NEW IMAGES/whiteMineraloil1.jpg"
       },
       {
         name: "Microcrystalline Wax",
-        image: "/assets/RELATED PROD IMG/Microcrystalline.png"
+        image: "/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg"
       },
       {
         name: "Paraffin Wax",
-        image: "/assets/RELATED PROD IMG/Paraffin Wax (2).png"
+        image: "/assets/RELATED PROD IMG/NEW IMAGES/paraffinwax.jpg"
       }
     ]
   }

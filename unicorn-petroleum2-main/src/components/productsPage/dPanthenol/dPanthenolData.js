@@ -1,18 +1,20 @@
   export const dPanthenolData = {
     name: "D-Panthenol",
     description: "Provitamin B5 for moisturization and skin barrier support",
-    bannerImage: "/assets/hero-bg-home.jpg", // Add your D-Panthenol banner image path here
-    // Slider configuration - Add multiple slides here
+    bannerImage: "/assets/BannerImages/productsPage/panthenol%201.jpg", // Fallback for single banner
+    // Slider configuration - Desktop banners only
     slider: [
       {
         title: "D-Panthenol",
         subtitle: "Provitamin B5 for moisturization and skin barrier support",
-        image: "/assets/hero-bg-home.jpg"
+        image: "/assets/BannerImages/productsPage/panthenol%201.jpg",
+        mobileImage: "/assets/BannerImages/MobileProductPage/M-panthenol%201.jpg"
       },
       {
-        title: "Hydrating & Regenerative",
-        subtitle: "Deeply moisturizing and barrier repair properties",
-        image: "/assets/hero-bg-home.jpg"
+        title: "",
+        subtitle: "",
+        image: "/assets/BannerImages/productsPage/panthenol%202.jpg",
+        mobileImage: "/assets/BannerImages/MobileProductPage/M-panthenol%202.jpg"
       }
     ],
 
@@ -59,9 +61,9 @@
 
     relatedProducts: {
       relatedProducts: [
-        { name: "Emulsifying Wax", image: "/assets/RELATED PROD IMG/Emulsifying wax2.png" },
-        { name: "Preservatives", image: "/assets/RELATED PROD IMG/Frame 531 (4).png" },
-        { name: "Surfactants", image: "/assets/RELATED PROD IMG/sodium-salphate.png" },
+        { name: "Emulsifying Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/emulsifyingwax.jpg" },
+        { name: "Preservatives", image: "/assets/RELATED PROD IMG/NEW IMAGES/Preservative.jpg" },
+        { name: "Surfactants", image: "/assets/RELATED PROD IMG/NEW IMAGES/surfactant.jpg" },
       ],
     },
   };

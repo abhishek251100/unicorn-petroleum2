@@ -57,6 +57,12 @@ export default function UVFiltersPage() {
     }
 
     const handleScroll = () => {
+      // Only apply floating effects on desktop (lg breakpoint = 1024px)
+      if (window.innerWidth < 1024) {
+        setSidebarStyle({ position: 'relative', top: '0px' });
+        return;
+      }
+
       if (!sidebarRef.current || !certificationsRef.current || !contentWrapperRef.current || !sidebarColumnRef.current) {
         return;
       }
@@ -112,6 +118,10 @@ export default function UVFiltersPage() {
     // Use requestAnimationFrame for smooth updates
     let rafId = null;
     const onScroll = () => {
+      // Only apply floating effects on desktop
+      if (window.innerWidth < 1024) {
+        return;
+      }
       if (rafId) return;
       rafId = requestAnimationFrame(() => {
         handleScroll();
@@ -166,6 +176,11 @@ export default function UVFiltersPage() {
 
       <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
         <RelatedProductsSection data={data.relatedProducts} />
+      </div>
+
+      {/* Mobile Floating Sidebar - positioned after related products */}
+      <div className="lg:hidden mb-8">
+        <FloatingSidebar navigationData={productsNavigationData} />
       </div>
     </ProductPageLayout>
   );

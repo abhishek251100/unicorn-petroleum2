@@ -22,6 +22,12 @@ export default function PharmaceuticalPage() {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Only apply floating effects on desktop (lg breakpoint = 1024px)
+      if (window.innerWidth < 1024) {
+        setSidebarStyle({ position: 'relative', top: '0px' });
+        return;
+      }
+
       if (!sidebarRef.current || !certificationsRef.current || !contentWrapperRef.current || !sidebarColumnRef.current) {
         return;
       }
@@ -66,6 +72,10 @@ export default function PharmaceuticalPage() {
     // Use requestAnimationFrame for smooth updates
     let rafId = null;
     const onScroll = () => {
+      // Only apply floating effects on desktop
+      if (window.innerWidth < 1024) {
+        return;
+      }
       if (rafId) return;
       rafId = requestAnimationFrame(() => {
         handleScroll();
@@ -94,47 +104,56 @@ export default function PharmaceuticalPage() {
     {
       name: "Petroleum Jelly",
       description: "Healing ointments, skin protectants, and excipients in topical medicines.",
-      image: "/assets/RELATED PROD IMG/Petroleum jelly.png"
+      image: "/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg",
+      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/Petroleumjelly.jpg"
     },
     {
       name: "White Mineral Oils",
       description: "Used as a laxative, tablet coating, ointment base, and in topical formulations.",
-      image: "/assets/RELATED PROD IMG/Mineral Oil.png"
+      image: "/assets/RELATED PROD IMG/NEW IMAGES/whiteMineraloil1.jpg",
+      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/WhiteMineraloil.jpg"
     },
     {
       name: "Microcrystalline Wax",
       description: "Used in manufacturing ointments and balms.",
-      image: "/assets/RELATED PROD IMG/Microcrystalline.png"
+      image: "/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg",
+      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/waxes.jpg"
     },
     {
       name: "Natural Beeswax",
       description: "Used in ointments, tablet coatings, slow-release formulations, and as a binding agent.",
-      image: "/assets/RELATED PROD IMG/Beeswax2 (2).png"
+      image: "/assets/RELATED PROD IMG/NEW IMAGES/Naturalbeeswax.jpg",
+      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/waxes.jpg"
     },
     {
       name: "Emulsifying Wax",
       description: "Used in emulsified medicinal creams.",
-      image: "/assets/RELATED PROD IMG/Emulsifying wax2.png"
+      image: "/assets/RELATED PROD IMG/NEW IMAGES/emulsifyingwax.jpg",
+      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/waxes.jpg"
     },
     {
       name: "D-Panthenol",
       description: "Provitamin of B5 supporting skin regeneration and hydration.",
-      image: "/assets/RELATED PROD IMG/Frame 531 (1).png"
+      image: "/assets/RELATED PROD IMG/NEW IMAGES/Dpanthenol.jpg",
+      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/Panthenol.jpg"
     },
     {
       name: "Preservatives",
       description: "Prevent microbial growth in syrups, eye drops, ointments, and injectables.",
-      image: "/assets/RELATED PROD IMG/Frame 531 (4).png"
+      image: "/assets/RELATED PROD IMG/NEW IMAGES/Preservative.jpg",
+      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/preservative.jpg"
     },
     {
       name: "Surfactants",
       description: "Solubilizers, emulsifiers, wetting agents in syrups, suspensions, and topical formulations.",
-      image: "/assets/RELATED PROD IMG/sodium-salphate.png"
+      image: "/assets/RELATED PROD IMG/NEW IMAGES/surfactant.jpg",
+      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/surfactant.jpg"
     },
     {
       name: "UV Filters",
       description: "Used in dermatological formulations to protect against UV‑induced damage.",
-      image: "/assets/RELATED PROD IMG/ExtraUV/Frame 531 (12).png"
+      image: "/assets/RELATED PROD IMG/NEW IMAGES/uvfilters.jpg",
+      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/uvFilters.jpg"
     }
   ];
 
@@ -161,17 +180,12 @@ export default function PharmaceuticalPage() {
       <SliderHero
         title={pharmaceuticalData.hero.title}
         subtitle={pharmaceuticalData.hero.description}
-        slides={undefined}
-        bannerImage="/assets/hero-bg-home.jpg"
+        slides={pharmaceuticalData.slider}
+        bannerImage="/assets/BannerImages/applications%20desktop.jpg"
         breadcrumbs={breadcrumbs}
       />
 
-      {/* Full Width Heading */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-gray-900 text-center mb-8">
-          {pharmaceuticalData.overview.title}
-        </h1>
-      </div>
+    
 
       {/* Main Content Area with Sidebar - Content area with floating sidebar - stops before certifications */}
       <div ref={contentWrapperRef} className="relative max-w-7xl mx-auto px-4 py-8">

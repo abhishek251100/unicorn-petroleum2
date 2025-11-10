@@ -20,6 +20,12 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Only apply floating effects on desktop (lg breakpoint = 1024px)
+      if (window.innerWidth < 1024) {
+        setSidebarStyle({ position: 'relative', top: '0px' });
+        return;
+      }
+
       if (!sidebarRef.current || !certificationsRef.current || !contentWrapperRef.current || !sidebarColumnRef.current) {
         return;
       }
@@ -64,6 +70,10 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
     // Use requestAnimationFrame for smooth updates
     let rafId = null;
     const onScroll = () => {
+      // Only apply floating effects on desktop
+      if (window.innerWidth < 1024) {
+        return;
+      }
       if (rafId) return;
       rafId = requestAnimationFrame(() => {
         handleScroll();
@@ -111,16 +121,12 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
       <SliderHero
         title={data?.hero?.title || title}
         subtitle={data?.hero?.description || data?.overview?.title}
-        slides={undefined}
-        bannerImage="/assets/hero-bg-home.jpg"
+        slides={data?.slider}
+        bannerImage="/assets/BannerImages/applications%20desktop.jpg"
         breadcrumbs={breadcrumbs}
       />
 
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-gray-900 text-center mb-8">
-          {data?.overview?.title || title}
-        </h1>
-      </div>
+      
 
       {/* Content area with floating sidebar - stops before certifications */}
       <div ref={contentWrapperRef} className="relative max-w-7xl mx-auto px-4 py-8">
@@ -164,9 +170,8 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
 
                   <div ref={sliderRef} className="flex space-x-6 overflow-x-auto pb-4 scrollbar-hide">
                     {products.map((product, index) => {
-                      const shouldShowHover = index === 0;
                       return (
-                      <div key={index} className={`flex-shrink-0 w-80 bg-white rounded-lg border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-shadow flex flex-col h-[430px] ${shouldShowHover ? 'group' : ''}`}>
+                      <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-shadow flex flex-col group h-[430px]">
                         <div className="h-48 bg-gray-100 rounded-t-lg flex items-center justify-center relative overflow-hidden">
                           <img
                             src={product.image}
@@ -177,17 +182,15 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
                           <div data-fallback="1" className="hidden w-full h-full bg-gray-200 rounded-t-lg items-center justify-center">
                             <span className="text-gray-500 font-semibold">{product.name}</span>
                           </div>
-                          {shouldShowHover && (
-                            <img
-                              src={product.hoverImage || getProductHoverImage(product.name)}
-                              alt={`${product.name} hover`}
-                              className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"
-                              loading="lazy"
-                              onError={(e) => {
-                                e.target.src = UNIVERSAL_HOVER_IMAGE;
-                              }}
-                            />
-                          )}
+                          <img
+                            src={product.hoverImage || getProductHoverImage(product.name)}
+                            alt={`${product.name} hover`}
+                            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"
+                            loading="lazy"
+                            onError={(e) => {
+                              e.target.src = UNIVERSAL_HOVER_IMAGE;
+                            }}
+                          />
                         </div>
                         <div className="p-6 text-center flex-1 flex flex-col justify-between">
                           <div>

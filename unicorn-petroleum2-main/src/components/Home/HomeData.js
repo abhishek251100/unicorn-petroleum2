@@ -96,7 +96,8 @@ export const homeData = {
     cards: [
       {
         image:
-          "/assets/HomePageImg/P2_Home.png",
+          "/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/Petroleumjelly.jpg",
         title: "Petroleum Jelly",
         description:
           "Pharma and cosmetic-grade jelly, ideal for skincare and topical formulations.",
@@ -105,7 +106,8 @@ export const homeData = {
       },
       {
         image:
-          "/assets/HomePageImg/P1_Home.png",
+          "/assets/RELATED PROD IMG/NEW IMAGES/whiteMineraloil1.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/WhiteMineraloil.jpg",
         title: "White Mineral Oils",
         description:
           "Ideal blending base and lubricant oil utilised across various industry applications",
@@ -114,7 +116,8 @@ export const homeData = {
       },
       {
         image:
-          "/assets/HomePageImg/P3_Home.png",
+          "/assets/RELATED PROD IMG/NEW IMAGES/surfactant.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/surfactant.jpg",
         title: "Surfactants",
         description:
           "Versatile foaming and wetting agent across wide range of cleaning and personal care products",
@@ -123,7 +126,8 @@ export const homeData = {
       },
       {
         image:
-          "/assets/HomePageImg/P4_Home.png",
+          "/assets/RELATED PROD IMG/NEW IMAGES/Preservative.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/preservative.jpg",
         title: "Preservatives",
         description:
           "Effective antimicrobial substances crucial for extending shelf life of items in the food, pharmaceutical and cosmetics industry",
@@ -131,7 +135,8 @@ export const homeData = {
         link: "/products/preservatives", // Internal link
       },
       {
-        image: "/assets/RELATED PROD IMG/ExtraUV/Frame 531 (11).png",
+        image: "/assets/RELATED PROD IMG/NEW IMAGES/uvfilters.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/uvFilters.jpg",
         title: "UV Filters",
         description:
           "Used in personal care products, shielding skin against UVA and UVB rays and their harmful effects",
@@ -139,7 +144,8 @@ export const homeData = {
         link: "/products/uv-filters",
       },
       {
-        image: "/assets/RELATED PROD IMG/Beeswax2 (2).png",
+        image: "/assets/RELATED PROD IMG/NEW IMAGES/Naturalbeeswax.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/waxes.jpg",
         title: "Waxes",
         description:
           "Range of waxes, from paraffin and microcrystalline to natural beeswax and emulsifying wax, tailored for custom product needs",
@@ -147,7 +153,8 @@ export const homeData = {
         link: "/products",
       },
       {
-        image: "/assets/RELATED PROD IMG/sodium-salphate.png",
+        image: "/assets/RELATED PROD IMG/NEW IMAGES/Speciality chemicals.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/SpecialityChemicals.jpg",
         title: "Specialty Chemicals",
         description:
           "Substances refined for special usecases across niche industries, including panthenol",

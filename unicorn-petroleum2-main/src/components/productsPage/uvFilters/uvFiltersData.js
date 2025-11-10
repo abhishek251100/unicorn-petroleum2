@@ -1,18 +1,20 @@
 export const uvFiltersData = {
   name: "UV Filters",
   description: "Organic and inorganic UV filters for broad-spectrum protection",
-  bannerImage: "/assets/hero-bg-home.jpg", // Add your UV filters banner image path here
-  // Slider configuration - Add multiple slides here
+  bannerImage: "/assets/BannerImages/productsPage/uv%202-1.jpg", // Fallback for single banner
+  // Slider configuration - Desktop banners only
   slider: [
     {
       title: "UV Filters",
       subtitle: "Organic and inorganic UV filters for broad-spectrum protection",
-      image: "/assets/hero-bg-home.jpg"
+      image: "/assets/BannerImages/productsPage/uv%202-1.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-uv%201.jpg"
     },
     {
-      title: "Broad-Spectrum Protection",
-      subtitle: "Shield against UVA and UVB radiation",
-      image: "/assets/hero-bg-home.jpg"
+      title: "",
+      subtitle: "",
+      image: "/assets/BannerImages/productsPage/uv%202.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-uv%202.jpg"
     }
   ],
 
@@ -102,9 +104,9 @@ export const uvFiltersData = {
 
   relatedProducts: {
     relatedProducts: [
-      { name: "Emulsifying Wax", image: "/assets/RELATED PROD IMG/Emulsifying wax2.png" },
-      { name: "D-Panthenol", image: "/assets/RELATED PROD IMG/Beeswax2 (2).png" },
-      { name: "Preservatives", image: "/assets/RELATED PROD IMG/Frame 531 (4).png" },
+      { name: "Emulsifying Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/emulsifyingwax.jpg" },
+      { name: "D-Panthenol", image: "/assets/RELATED PROD IMG/NEW IMAGES/Dpanthenol.jpg" },
+      { name: "Preservatives", image: "/assets/RELATED PROD IMG/NEW IMAGES/Preservative.jpg" },
     ],
   },
 };

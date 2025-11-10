@@ -2,18 +2,20 @@ export const whiteMineralOilsData = {
   name: "White Mineral Oils",
   description:
     "Purity for every application.",
-  bannerImage: "/assets/hero-bg-home.jpg", // Fallback for single banner
-  // Slider configuration - Add multiple slides here
+  bannerImage: "/assets/BannerImages/productsPage/whiteMineraloil%201.jpg", // Fallback for single banner
+  // Slider configuration - Desktop banners only
   slider: [
     {
       title: "White Mineral Oils",
       subtitle: "Purity for every application",
-      image: "/assets/hero-bg-home.jpg"
+      image: "/assets/BannerImages/productsPage/whiteMineraloil%201.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-oil%201.jpg"
     },
     {
-      title: "High Quality Standards",
-      subtitle: "Pharmaceutical and cosmetic grade",
-      image: "/assets/hero-bg-home.jpg"
+      title: "",
+      subtitle: "",
+      image: "/assets/BannerImages/productsPage/whiteMineraloil%202.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-oil%202.jpg"
     }
   ],
 
@@ -95,9 +97,9 @@ export const whiteMineralOilsData = {
   // Related products section
   relatedProducts: {
     relatedProducts: [
-      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/Petroleum Jelly (2).png" },
-      { name: "Microcrystalline Wax", image: "/assets/RELATED PROD IMG/Microcrystalline.png" },
-      { name: "Paraffin Wax", image: "/assets/RELATED PROD IMG/Paraffin Wax (2).png" },
+      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg" },
+      { name: "Microcrystalline Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg" },
+      { name: "Paraffin Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/paraffinwax.jpg" },
     ],
   },
 };

@@ -1,18 +1,20 @@
 export const emulsifyingWaxData = {
   name: "Emulsifying Wax",
   description: "Purity for every application.",
-  bannerImage: "/assets/hero-bg-home.jpg", // Fallback for single banner
-  // Slider configuration - Add multiple slides here
+  bannerImage: "/assets/BannerImages/productsPage/emulsifying%201.jpg", // Fallback for single banner
+  // Slider configuration - Desktop banners only
   slider: [
     {
       title: "Emulsifying Wax",
       subtitle: "Purity for every application",
-      image: "/assets/hero-bg-home.jpg"
+      image: "/assets/BannerImages/productsPage/emulsifying%201.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-emulsifying%201.jpg"
     },
     {
-      title: "Stable Emulsions",
-      subtitle: "Water-in-oil and oil-in-water formulations",
-      image: "/assets/hero-bg-home.jpg"
+      title: "",
+      subtitle: "",
+      image: "/assets/BannerImages/productsPage/emulsifying%202.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-emulsifying%202.jpg"
     }
   ],
 
@@ -56,9 +58,9 @@ export const emulsifyingWaxData = {
 
   relatedProducts: {
     relatedProducts: [
-      { name: "Mineral Oil", image: "/assets/HomePageImg/P1_Home.png" },
-      { name: "Beeswax", image: "/assets/RELATED PROD IMG/Beeswax2 (1).png" },
-      { name: "D-Panthenol", image: "/assets/RELATED PROD IMG/Beeswax2 (2).png" },
+      { name: "Mineral Oil", image: "/assets/RELATED PROD IMG/NEW IMAGES/whiteMineraloil1.jpg" },
+      { name: "Natural Beeswax", image: "/assets/RELATED PROD IMG/NEW IMAGES/Naturalbeeswax.jpg" },
+      { name: "D-Panthenol", image: "/assets/RELATED PROD IMG/NEW IMAGES/Dpanthenol.jpg" },
     ],
   },
 };

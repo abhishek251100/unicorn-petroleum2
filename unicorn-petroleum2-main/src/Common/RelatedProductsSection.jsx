@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { getProductPath } from "../Data/productLinks";
-import { getProductHoverImage, UNIVERSAL_HOVER_IMAGE } from "../Data/productHoverImages";
 
-const RelatedProductsSection = ({ data, onlyFirstCardHover = false }) => {
+const RelatedProductsSection = ({ data }) => {
   if (!data || !data.relatedProducts || data.relatedProducts.length === 0) {
     return null;
   }
@@ -22,11 +21,10 @@ const RelatedProductsSection = ({ data, onlyFirstCardHover = false }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {data.relatedProducts.map((product, index) => {
-            const shouldShowHover = !onlyFirstCardHover || index === 0;
             return (
             <div
               key={index}
-              className={`bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden ${shouldShowHover ? 'group' : ''}`}
+              className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden"
             >
               {/* Mobile: Image on top, text below */}
               <div className="md:hidden">
@@ -40,17 +38,6 @@ const RelatedProductsSection = ({ data, onlyFirstCardHover = false }) => {
                   <div data-fallback="1" className="hidden absolute inset-0 bg-gray-200 items-center justify-center">
                     <span className="text-gray-600 font-semibold">{product.name}</span>
                   </div>
-                  {shouldShowHover && (
-                    <img
-                      src={product.hoverImage || getProductHoverImage(product.name)}
-                      alt={`${product.name} hover`}
-                      className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      loading="lazy"
-                      onError={(e) => {
-                        e.target.src = UNIVERSAL_HOVER_IMAGE;
-                      }}
-                    />
-                  )}
                 </div>
                 
                 <div className="p-6 text-center">
@@ -75,17 +62,6 @@ const RelatedProductsSection = ({ data, onlyFirstCardHover = false }) => {
                   <div data-fallback="1" className="hidden absolute inset-0 bg-gray-200 items-center justify-center">
                     <span className="text-gray-600 font-semibold">{product.name}</span>
                   </div>
-                  {shouldShowHover && (
-                    <img
-                      src={product.hoverImage || getProductHoverImage(product.name)}
-                      alt={`${product.name} hover`}
-                      className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      loading="lazy"
-                      onError={(e) => {
-                        e.target.src = UNIVERSAL_HOVER_IMAGE;
-                      }}
-                    />
-                  )}
                 </div>
                 
                 <div className="h-full">

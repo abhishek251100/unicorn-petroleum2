@@ -140,13 +140,13 @@ export default function SliderHero({
           )}
         </div>
 
-        {/* Navigation Buttons (only show if multiple slides) */}
+        {/* Navigation Buttons (only show if multiple slides, hidden on mobile) */}
         {hasMultipleSlides && totalSlides > 1 && (
           <>
             <button
               onClick={handlePrev}
               disabled={isSliding}
-              className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white/80 hover:bg-white shadow-lg flex items-center justify-center backdrop-blur-sm transition-all duration-200 disabled:opacity-50 hover:scale-110 active:scale-95"
+              className="hidden md:flex absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white/80 hover:bg-white shadow-lg items-center justify-center backdrop-blur-sm transition-all duration-200 disabled:opacity-50 hover:scale-110 active:scale-95"
               aria-label="Previous slide"
             >
               <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 leading-none pb-1.5">‹</span>
@@ -155,7 +155,7 @@ export default function SliderHero({
             <button
               onClick={handleNext}
               disabled={isSliding}
-              className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white/80 hover:bg-white shadow-lg flex items-center justify-center backdrop-blur-sm transition-all duration-200 disabled:opacity-50 hover:scale-110 active:scale-95"
+              className="hidden md:flex absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white/80 hover:bg-white shadow-lg items-center justify-center backdrop-blur-sm transition-all duration-200 disabled:opacity-50 hover:scale-110 active:scale-95"
               aria-label="Next slide"
             >
               <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 leading-none pb-1.5">›</span>

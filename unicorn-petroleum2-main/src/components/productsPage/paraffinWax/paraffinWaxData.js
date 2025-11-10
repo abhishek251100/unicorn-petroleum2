@@ -1,18 +1,20 @@
 export const paraffinWaxData = {
   name: "Paraffin Wax",
   description: "Purity for every application.",
-  bannerImage: "/assets/hero-bg-home.jpg", // Fallback for single banner
-  // Slider configuration - Add multiple slides here
+  bannerImage: "/assets/BannerImages/productsPage/paraffin%201.jpg", // Fallback for single banner
+  // Slider configuration - Desktop banners only
   slider: [
     {
       title: "Paraffin Wax",
       subtitle: "Purity for every application",
-      image: "/assets/hero-bg-home.jpg"
+      image: "/assets/BannerImages/productsPage/paraffin%201.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-paraffin%201.jpg"
     },
     {
-      title: "Versatile Applications",
-      subtitle: "From cosmetics to industrial uses",
-      image: "/assets/hero-bg-home.jpg"
+      title: "",
+      subtitle: "",
+      image: "/assets/BannerImages/productsPage/paraffin%202.jpg",
+      mobileImage: "/assets/BannerImages/MobileProductPage/M-paraffin%202.jpg"
     }
   ],
 
@@ -50,9 +52,9 @@ export const paraffinWaxData = {
 
   relatedProducts: {
     relatedProducts: [
-      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/Petroleum Jelly (2).png" },
-      { name: "Mineral Oil", image: "/assets/HomePageImg/P1_Home.png" },
-      { name: "Microcrystalline Wax", image: "/assets/RELATED PROD IMG/Microcrystalline.png" },
+      { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg" },
+      { name: "Mineral Oil", image: "/assets/RELATED PROD IMG/NEW IMAGES/whiteMineraloil1.jpg" },
+      { name: "Microcrystalline Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg" },
     ],
   },
 };

@@ -3,13 +3,13 @@ export const cosmeticsData = {
     title: "Cosmetics Applications",
     description: "Beauty ingredients that meet global standards"
   },
-  // Slider configuration - Add multiple slides here
+  // Slider configuration - Single banner
   slider: [
     {
       title: "Cosmetics Applications",
       subtitle: "Beauty ingredients that meet global standards",
-      image: "/assets/BannerImages/applications desktop.jpg",
-      mobileImage: "/assets/BannerImages/applications mobile.jpg"
+      image: "/assets/BannerImages/applications%20desktop.jpg",
+      mobileImage: "/assets/BannerImages/applications%20mobile.jpg"
     }
   ],
   overview: {
