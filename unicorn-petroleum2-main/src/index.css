@@ -236,16 +236,19 @@ html, body {
   animation: lineDrawHorizontal 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-/* Scroll-triggered animation states */
+/* Scroll-triggered animation states - Improved performance */
 .scroll-animate {
   opacity: 0;
   transform: translateY(60px) scale(0.95);
-  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
 }
 
 .scroll-animate.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
+  will-change: auto;
 }
 
 .scroll-animate-left {

@@ -125,7 +125,10 @@ export default function QualityStandardsSection({ title, subtitle, showLink = tr
         {/* Desktop Grid */}
         <div className="hidden md:grid md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 md:gap-6 mb-6 md:mb-8">
           {certifications.map((cert, idx) => (
-            <div key={idx} className="text-center">
+            <div 
+              key={idx} 
+              className="text-center"
+            >
               <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-24 md:h-24 mx-auto mb-2 sm:mb-3 flex items-center justify-center">
                 <img src={cert.logo} alt={cert.code} className="w-full h-full object-contain" />
               </div>

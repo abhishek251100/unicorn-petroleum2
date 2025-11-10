@@ -60,7 +60,10 @@ export default function ProductPortfolioSection({ data }) {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {data.cards.map((card, index) => (
-              <div key={index} className="flex-shrink-0 basis-[85%] sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 min-w-0">
+              <div 
+                key={index} 
+                className="flex-shrink-0 basis-[85%] sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 min-w-0"
+              >
                 <Link to={card.link || "/products"} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer border-[1.5px] border-[#EDA94E] flex flex-col">
                   <div className="h-40 sm:h-44 md:h-48 overflow-hidden relative">
                     <img

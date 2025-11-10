@@ -9,13 +9,7 @@ import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySecti
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import { petroleumJellyData } from "./petroleumJellyData";
 import { productsNavigationData } from "../productsNavigationData";
-import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
-
 export default function PetroleumJellyPage() {
-  const commonSectionRef = useScrollAnimation();
-  const applicationsRef = useScrollAnimation();
-  const packagingRef = useScrollAnimation();
-  const featuresRef = useScrollAnimation();
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);
   const certificationsRef = useRef(null);
@@ -112,18 +106,10 @@ export default function PetroleumJellyPage() {
         </div>
 
         <div className="lg:col-span-9 space-y-4">
-          <div ref={commonSectionRef} className="scroll-animate">
-            <ProductPageCommonSection data={petroleumJellyData.commonSection} />
-          </div>
-          <div ref={applicationsRef} className="scroll-animate-left">
-            <ApplicationsSection data={petroleumJellyData.applicationsSection} />
-          </div>
-          <div ref={packagingRef} className="scroll-animate-right">
-            <PackagedResponsiblySection data={petroleumJellyData.packagedResponsibly} />
-          </div>
-          <div ref={featuresRef} className="scroll-animate">
-            <ProductKeyFeaturesSection data={petroleumJellyData.keyFeatures} />
-          </div>
+          <ProductPageCommonSection data={petroleumJellyData.commonSection} />
+          <ApplicationsSection data={petroleumJellyData.applicationsSection} />
+          <PackagedResponsiblySection data={petroleumJellyData.packagedResponsibly} />
+          <ProductKeyFeaturesSection data={petroleumJellyData.keyFeatures} />
         </div>
       </div>
 

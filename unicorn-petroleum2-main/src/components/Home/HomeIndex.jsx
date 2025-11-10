@@ -8,9 +8,13 @@ import QualityStandardsSection from "../../Common/QualityStandardsSection";
 import NewsSection from "../../Common/NewsSection";
 import CallToAction from "../../Common/CallToAction";
 import CompanyStatement from "../../Common/CompanyStatement";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import homeData from "./HomeData";
 
 const HomeIndex = () => {
+  // Only animate the first section after banner
+  const firstSectionRef = useScrollAnimation();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section with Slider */}
@@ -30,25 +34,27 @@ const HomeIndex = () => {
         paddingTopClass="pt-12 md:pt-20"
       />
 
-         {/* Icon Road Hero (first section) */}
-         <IconRoadHero data={homeData.iconRoadHero} />
+      {/* Icon Road Hero (first section) - Only this has animation */}
+      <div ref={firstSectionRef.ref} className={`scroll-animate ${firstSectionRef.isVisible ? 'visible' : ''}`}>
+        <IconRoadHero data={homeData.iconRoadHero} />
+      </div>
 
-      {/* Product Portfolio Section */}
+      {/* Product Portfolio Section - No animation */}
       <ProductPortfolioSection data={homeData.products} />
 
-      {/* Industries Section */}
+      {/* Industries Section - No animation */}
       <CardsSection data={{ ...homeData.industries, centerLastRow: true }} />
 
-      {/* Quality Standards Section */}
+      {/* Quality Standards Section - No animation */}
       <QualityStandardsSection />
 
-      {/* News Section */}
+      {/* News Section - No animation */}
       <NewsSection data={homeData.news} />
 
       {/* Company Statement */}
       {/* <CompanyStatement data={homeData.statement} /> */}
 
-      {/* Call to Action Section */}
+      {/* Call to Action Section - No animation */}
       <CallToAction data={homeData.cta} />
     </div>
   );
