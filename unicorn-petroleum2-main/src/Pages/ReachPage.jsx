@@ -105,13 +105,25 @@ const ReachPage = () => {
     <div className="min-h-screen bg-white">
       {/* Banner Section with Stats Circles */}
       <div className="relative h-[340px] sm:h-[480px] md:h-[600px] lg:h-[650px] overflow-visible md:-mt-8 pt-20 md:pt-16 mb-8 md:mb-32">
-        {/* Banner Image Background */}
+        {/* Banner Video Background */}
         <div className="absolute inset-0">
-          <img 
-            src="/assets/hero-bg-home.jpg" 
-            alt="Banner background" 
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
             className="w-full h-full object-cover"
-          />
+            style={{ display: "block" }}
+          >
+            <source src="https://res.cloudinary.com/drfh6ol1u/video/upload/v1763376623/uni_vtyq1b.mp4" type="video/mp4" />
+            {/* Fallback to image if video doesn't load */}
+            <img 
+              src="/assets/hero-bg-home.jpg" 
+              alt="Banner background" 
+              className="w-full h-full object-cover"
+            />
+          </video>
           {/* Subtle dark overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/30"></div>
         </div>
