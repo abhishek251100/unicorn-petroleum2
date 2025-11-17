@@ -2,6 +2,7 @@ import React from "react";
 import QualityStandardsSection from "../Common/QualityStandardsSection";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { useMetaTags } from "../hooks/useMetaTags";
+import VideoBanner from "../Common/VideoBanner";
 
 const AboutPage = () => {
   useMetaTags(
@@ -12,20 +13,21 @@ const AboutPage = () => {
 
   const coreValuesRef = useScrollAnimation();
   const manufacturingRef = useScrollAnimation();
-  const heroRef = useScrollAnimation();
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative h-[360px] sm:h-[420px] md:h-[520px] lg:h-[600px] bg-gradient-to-r from-gray-900 to-gray-700" ref={heroRef}>
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="text-center text-white scroll-animate">
-            <h1 className="text-5xl font-bold mb-2">Unicorn Petroleum Industries Pvt. Ltd.</h1>
-            <p className="text-xl">A legacy of excellence</p>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-white overflow-x-hidden">
+      {/* Hero Section with Video Banner */}
+      <VideoBanner
+        videoSrc="https://res.cloudinary.com/drfh6ol1u/video/upload/v1763377992/istockphoto-1335386074-640_adpp_is_dbnhco.mp4" // Add your video file path here
+        videoSrcWebm="/assets/videos/about-us-banner.webm" // Optional: WebM format for better compression
+        posterImage="/assets/hero-bg-home.jpg" // Fallback image while video loads
+        title="Unicorn Petroleum Industries Pvt. Ltd."
+        subtitle="A legacy of excellence"
+        overlay={true}
+        className=""
+        height="auto"
+        loadImmediately={true} // Load immediately since it's at the top of the page
+      />
 
       {/* Breadcrumbs */}
       <section className="py-4 bg-gray-50">
