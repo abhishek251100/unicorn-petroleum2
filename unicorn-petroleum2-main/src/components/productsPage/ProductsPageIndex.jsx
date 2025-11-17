@@ -126,7 +126,7 @@ export default function ProductsPageIndex() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/contact" 
-              className="inline-flex items-center px-6 py-3 bg-[#E99322] text-white font-semibold rounded-lg hover:bg-[#E99322]/90 transition-colors"
+              className="inline-flex items-center px-6 py-3 bg-[#E99322] text-white font-medium rounded-full hover:bg-[#E99322]/90 transition-all duration-300"
             >
               Contact Our Experts
             </Link>

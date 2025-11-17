@@ -1,11 +1,70 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getProductPath } from "../Data/productLinks";
 
 const RelatedProductsSection = ({ data }) => {
+  const scrollContainerRef = useRef(null);
+  const autoScrollIntervalRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
   if (!data || !data.relatedProducts || data.relatedProducts.length === 0) {
     return null;
   }
+
+  const products = data.relatedProducts;
+  const visibleCount = 3; // Show 3 products at a time on desktop
+
+  // Auto-slide functionality
+  useEffect(() => {
+    if (products.length <= visibleCount) return; // No need to slide if all fit
+
+    const startAutoSlide = () => {
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+
+      autoScrollIntervalRef.current = setInterval(() => {
+        if (isPaused) return;
+        
+        setCurrentIndex((prev) => {
+          const maxIndex = Math.max(0, products.length - visibleCount);
+          return prev >= maxIndex ? 0 : prev + 1;
+        });
+      }, 3500); // Auto-slide every 3.5 seconds
+    };
+
+    startAutoSlide();
+
+    return () => {
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+    };
+  }, [products.length, isPaused]);
+
+  // Scroll to current index
+  useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el || products.length <= visibleCount) return;
+    
+    // Wait for layout to settle
+    const timeoutId = setTimeout(() => {
+      const firstCard = el.querySelector('.related-product-card');
+      if (!firstCard) return;
+      
+      const cardWidth = firstCard.offsetWidth;
+      const gap = 32; // gap-8 = 2rem = 32px
+      const scrollPosition = currentIndex * (cardWidth + gap);
+      
+      el.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+    }, 100);
+    
+    return () => clearTimeout(timeoutId);
+  }, [currentIndex, products.length]);
 
   return (
     <section className="py-12 px-4">
@@ -19,12 +78,18 @@ const RelatedProductsSection = ({ data }) => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {data.relatedProducts.map((product, index) => {
+        <div 
+          ref={scrollContainerRef}
+          className="flex gap-8 overflow-x-auto scrollbar-hide"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {products.map((product, index) => {
             return (
             <div
               key={index}
-              className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden"
+              className="related-product-card flex-shrink-0 w-full md:w-[calc(33.333%-21.33px)] bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden"
             >
               {/* Mobile: Image on top, text below */}
               <div className="md:hidden">
@@ -44,7 +109,7 @@ const RelatedProductsSection = ({ data }) => {
                   <h3 className="text-lg font-semibold text-gray-800 mb-4 leading-tight">
                     {product.name}
                   </h3>
-                  <Link to={product.link || getProductPath(product.name)} className="bg-[#E99322] text-white px-5 py-2 rounded-full font-medium hover:bg-[#E99322] transition-all duration-300 inline-flex items-center whitespace-nowrap min-w-[150px] justify-center">
+                  <Link to={product.link || getProductPath(product.name)} className="bg-[#E99322] text-white px-5 py-2 rounded-full font-medium hover:bg-[#E99322]/90 transition-all duration-300 inline-flex items-center whitespace-nowrap min-w-[150px] justify-center">
                     View Details
                   </Link>
                 </div>
@@ -70,7 +135,7 @@ const RelatedProductsSection = ({ data }) => {
                       {product.name}
                     </h3>
                     <div className="mt-auto w-full flex justify-center">
-                      <Link to={product.link || getProductPath(product.name)} className="bg-[#E99322] text-white px-5 py-2 rounded-full font-medium hover:bg-[#E99322] transition-all duration-300 inline-flex items-center whitespace-nowrap min-w-[150px] justify-center">
+                      <Link to={product.link || getProductPath(product.name)} className="bg-[#E99322] text-white px-5 py-2 rounded-full font-medium hover:bg-[#E99322]/90 transition-all duration-300 inline-flex items-center whitespace-nowrap min-w-[150px] justify-center">
                         View Details
                       </Link>
                     </div>
@@ -81,6 +146,24 @@ const RelatedProductsSection = ({ data }) => {
             );
           })}
         </div>
+
+        {/* Navigation dots (only show if more than 3 products) */}
+        {products.length > visibleCount && (
+          <div className="flex justify-center gap-2 mt-6">
+            {Array.from({ length: Math.max(1, products.length - visibleCount + 1) }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  currentIndex === index 
+                    ? 'bg-[#E99322] w-8' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

@@ -8,19 +8,74 @@ export default function ProductPortfolioSection({ data }) {
   }
 
   const scrollContainerRef = useRef(null);
-
+  const autoScrollIntervalRef = useRef(null);
   const [showNav, setShowNav] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Ensure slider snaps start aligned on mount and compute arrow visibility
+  // Calculate card width for smooth scrolling
+  const getCardWidth = () => {
+    const el = scrollContainerRef.current;
+    if (!el) return 320;
+    const firstCard = el.querySelector('.product-card');
+    if (firstCard) {
+      return firstCard.offsetWidth + parseInt(getComputedStyle(el).gap) || 20;
+    }
+    return 320;
+  };
+
+  // Auto-scroll functionality
   useEffect(() => {
     const el = scrollContainerRef.current;
     if (!el) return;
+    
     el.scrollTo({ left: 0, behavior: 'auto' });
     const compute = () => setShowNav(el.scrollWidth > el.clientWidth + 2);
     compute();
     window.addEventListener('resize', compute);
-    return () => window.removeEventListener('resize', compute);
-  }, []);
+
+    // Auto-scroll setup
+    const startAutoScroll = () => {
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+
+      autoScrollIntervalRef.current = setInterval(() => {
+        if (isPaused || !el) return;
+        
+        const cardWidth = getCardWidth();
+        const maxScroll = el.scrollWidth - el.clientWidth;
+        const currentScroll = el.scrollLeft;
+        
+        // If at the end, reset to start
+        if (currentScroll >= maxScroll - 10) {
+          el.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          // Scroll by one card width
+          el.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        }
+      }, 3000); // Auto-scroll every 3 seconds
+    };
+
+    if (showNav) {
+      startAutoScroll();
+    }
+
+    // Pause on hover
+    const handleMouseEnter = () => setIsPaused(true);
+    const handleMouseLeave = () => setIsPaused(false);
+    
+    el.addEventListener('mouseenter', handleMouseEnter);
+    el.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      window.removeEventListener('resize', compute);
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+      el.removeEventListener('mouseenter', handleMouseEnter);
+      el.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, [showNav, isPaused]);
 
   return (
     <section className="py-8 sm:py-10 md:py-12 px-4">
@@ -37,7 +92,11 @@ export default function ProductPortfolioSection({ data }) {
             <>
               <button
                 type="button"
-                onClick={() => scrollContainerRef.current && scrollContainerRef.current.scrollBy({ left: -320, behavior: 'smooth' })}
+                onClick={() => {
+                  setIsPaused(true);
+                  setTimeout(() => setIsPaused(false), 5000); // Resume after 5 seconds
+                  scrollContainerRef.current && scrollContainerRef.current.scrollBy({ left: -320, behavior: 'smooth' });
+                }}
                 className="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white border-[1.5px] border-[#EDA94E] rounded-full shadow-md hover:shadow-lg transition-all duration-200 items-center justify-center hover:bg-gray-50"
                 aria-label="Previous"
               >
@@ -46,7 +105,11 @@ export default function ProductPortfolioSection({ data }) {
 
               <button
                 type="button"
-                onClick={() => scrollContainerRef.current && scrollContainerRef.current.scrollBy({ left: 320, behavior: 'smooth' })}
+                onClick={() => {
+                  setIsPaused(true);
+                  setTimeout(() => setIsPaused(false), 5000); // Resume after 5 seconds
+                  scrollContainerRef.current && scrollContainerRef.current.scrollBy({ left: 320, behavior: 'smooth' });
+                }}
                 className="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white border-[1.5px] border-[#EDA94E] rounded-full shadow-md hover:shadow-lg transition-all duration-200 items-center justify-center hover:bg-gray-50"
                 aria-label="Next"
               >
@@ -62,7 +125,7 @@ export default function ProductPortfolioSection({ data }) {
             {data.cards.map((card, index) => (
               <div 
                 key={index} 
-                className="flex-shrink-0 basis-[85%] sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 min-w-0"
+                className="product-card flex-shrink-0 basis-[85%] sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 min-w-0"
               >
                 <Link to={card.link || "/products"} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer border-[1.5px] border-[#EDA94E] flex flex-col">
                   <div className="h-40 sm:h-44 md:h-48 overflow-hidden relative">
@@ -91,7 +154,7 @@ export default function ProductPortfolioSection({ data }) {
                       {card.description}
                     </p>
 
-                    <span className="bg-[#E99322] hover:bg-[#E99322]/90 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm transition-all duration-300 hover:shadow-lg inline-flex items-center mx-auto sm:mx-0 mt-auto">
+                    <span className="bg-[#E99322] text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm hover:bg-[#E99322]/90 transition-all duration-300 hover:shadow-lg inline-flex items-center mx-auto sm:mx-0 mt-auto">
                       {card.buttonText}
                     </span>
                   </div>

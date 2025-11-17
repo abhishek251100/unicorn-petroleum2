@@ -23,8 +23,9 @@ const FGridSection = ({ data, cardType = "strength", customPadding = "py-12 px-4
       </div>
 
       <div className="mt-6 sm:mt-8 flex justify-center">
-        <button className="bg-[#E99322] hover:bg-[#E99322] text-white font-medium rounded-3xl px-6 sm:px-8 py-2 sm:py-3 normal-case flex items-center gap-2 text-sm sm:text-base">
-          {data.buttonText} <span className="text-base sm:text-lg ml-1">→</span>
+        <button className="bg-[#E99322] text-white font-medium rounded-full px-6 sm:px-8 py-2 sm:py-3 hover:bg-[#E99322]/90 transition-all duration-300 flex items-center gap-2 text-sm sm:text-base">
+          <span>{data.buttonText}</span>
+          <span className="text-base sm:text-lg">→</span>
         </button>
       </div>
     </section>

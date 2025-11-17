@@ -318,7 +318,7 @@ const AboutPage = () => {
               <div className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] text-center overflow-hidden">
                 <div className="w-full">
                   <img
-                    src="/assets/about/Manifacturing img1.png"
+                    src="/assets/about/Manifacturing img1.jpg"
                     alt="Advance production units"
                     className="w-full h-64 object-cover"
                     onError={(e) => {
@@ -358,7 +358,7 @@ const AboutPage = () => {
               <div className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] text-center overflow-hidden">
                 <div className="w-full">
                   <img
-                    src="/assets/about/Artboard 3.jpg"
+                    src="/assets/about/packaging.jpg"
                     alt="Flexible packaging options"
                     className="w-full h-64 object-cover"
                     onError={(e) => {

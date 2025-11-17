@@ -53,7 +53,7 @@ export default function FloatingSidebar({ navigationData }) {
                           isItemActive ? 'text-white' : 'text-black'
                         }`}
                       >
-                        ⌄
+                        {isItemActive ? '⌄' : '>'}
                       </button>
                     ) : (
                       <span className={`font-bold text-lg ml-6 ${isItemActive ? 'text-white' : 'text-black'}`}>

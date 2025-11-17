@@ -19,6 +19,8 @@ export default function PharmaceuticalPage() {
   const contentWrapperRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sidebarStyle, setSidebarStyle] = useState({ position: 'sticky', top: '140px' });
+  const autoScrollIntervalRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,54 +105,63 @@ export default function PharmaceuticalPage() {
   const products = [
     {
       name: "Petroleum Jelly",
+      link: "/products/petroleum-jelly",
       description: "Healing ointments, skin protectants, and excipients in topical medicines.",
       image: "/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg",
       hoverImage: "/assets/RELATED PROD IMG/New Hover Images/Petroleumjelly.jpg"
     },
     {
       name: "White Mineral Oils",
+      link: "/products/white-mineral-oils",
       description: "Used as a laxative, tablet coating, ointment base, and in topical formulations.",
       image: "/assets/RELATED PROD IMG/NEW IMAGES/whiteMineraloil1.jpg",
       hoverImage: "/assets/RELATED PROD IMG/New Hover Images/WhiteMineraloil.jpg"
     },
     {
       name: "Microcrystalline Wax",
+      link: "/products/microcrystalline-wax",
       description: "Used in manufacturing ointments and balms.",
       image: "/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg",
-      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/waxes.jpg"
+      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/micro2.jpg"
     },
     {
       name: "Natural Beeswax",
+      link: "/products/natural-beeswax",
       description: "Used in ointments, tablet coatings, slow-release formulations, and as a binding agent.",
       image: "/assets/RELATED PROD IMG/NEW IMAGES/Naturalbeeswax.jpg",
-      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/waxes.jpg"
+      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/beeswax2.jpg"
     },
     {
       name: "Emulsifying Wax",
+      link: "/products/emulsifying-wax",
       description: "Used in emulsified medicinal creams.",
       image: "/assets/RELATED PROD IMG/NEW IMAGES/emulsifyingwax.jpg",
-      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/waxes.jpg"
+      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/emulsifying2.jpg"
     },
     {
       name: "D-Panthenol",
+      link: "/products/d-panthenol",
       description: "Provitamin of B5 supporting skin regeneration and hydration.",
       image: "/assets/RELATED PROD IMG/NEW IMAGES/Dpanthenol.jpg",
       hoverImage: "/assets/RELATED PROD IMG/New Hover Images/Panthenol.jpg"
     },
     {
       name: "Preservatives",
+      link: "/products/preservatives",
       description: "Prevent microbial growth in syrups, eye drops, ointments, and injectables.",
       image: "/assets/RELATED PROD IMG/NEW IMAGES/Preservative.jpg",
       hoverImage: "/assets/RELATED PROD IMG/New Hover Images/preservative.jpg"
     },
     {
       name: "Surfactants",
+      link: "/products/surfactants",
       description: "Solubilizers, emulsifiers, wetting agents in syrups, suspensions, and topical formulations.",
       image: "/assets/RELATED PROD IMG/NEW IMAGES/surfactant.jpg",
       hoverImage: "/assets/RELATED PROD IMG/New Hover Images/surfactant.jpg"
     },
     {
       name: "UV Filters",
+      link: "/products/uv-filters",
       description: "Used in dermatological formulations to protect against UV‑induced damage.",
       image: "/assets/RELATED PROD IMG/NEW IMAGES/uvfilters.jpg",
       hoverImage: "/assets/RELATED PROD IMG/New Hover Images/uvFilters.jpg"
@@ -172,7 +183,52 @@ export default function PharmaceuticalPage() {
       container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
       setCurrentSlide(Math.min(products.length - 1, currentSlide + 1));
     }
+    
+    // Pause auto-scroll when user manually navigates
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 5000); // Resume after 5 seconds
   };
+
+  // Auto-slide functionality
+  useEffect(() => {
+    if (products.length === 0) return;
+
+    const startAutoSlide = () => {
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+
+      autoScrollIntervalRef.current = setInterval(() => {
+        if (isPaused || !sliderRef.current) return;
+        
+        const cardWidth = 320; // w-80 = 320px
+        const gap = 24; // space-x-6 = 24px
+        const scrollAmount = cardWidth + gap;
+        const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+        const currentScroll = sliderRef.current.scrollLeft;
+        
+        // If at the end, reset to start
+        if (currentScroll >= maxScroll - 10) {
+          sliderRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+          setCurrentSlide(0);
+        } else {
+          // Scroll by one card width
+          sliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          const newScroll = currentScroll + scrollAmount;
+          const newSlide = Math.round(newScroll / scrollAmount);
+          setCurrentSlide(Math.max(0, Math.min(newSlide, products.length - 1)));
+        }
+      }, 3500); // Auto-slide every 3.5 seconds
+    };
+
+    startAutoSlide();
+
+    return () => {
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+    };
+  }, [products.length, isPaused]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -231,6 +287,8 @@ export default function PharmaceuticalPage() {
                 <div 
                   ref={sliderRef}
                   className="flex space-x-6 overflow-x-auto pb-4 scrollbar-hide"
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
                 >
                   {products.map((product, index) => (
                     <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-shadow flex flex-col group h-[430px]">
@@ -263,7 +321,7 @@ export default function PharmaceuticalPage() {
                           <h3 className="text-xl font-semibold text-gray-800 mb-3">{product.name}</h3>
                           <p className="text-gray-600 mb-4">{product.description}</p>
                         </div>
-                        <Link to={getProductPath(product.name)} className="w-full bg-[#E99322] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#E99322]/90 transition-colors flex items-center justify-center">
+                        <Link to={product.link || getProductPath(product.name)} className="w-full bg-[#E99322] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#E99322]/90 transition-all duration-300 flex items-center justify-center">
                           View Details
                         </Link>
                       </div>

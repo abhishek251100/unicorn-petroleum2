@@ -13,7 +13,7 @@ export default function CallToAction({ data }) {
             href={data.primaryButtonLink}
             className="bg-[#E99322] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-[#E99322]/90 transition-all duration-300 font-medium flex items-center gap-2 justify-center text-sm sm:text-base"
           >
-            {data.primaryButton}
+            <span>{data.primaryButton}</span>
             <span className="text-base sm:text-lg">→</span>
           </a>
           <a

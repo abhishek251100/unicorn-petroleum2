@@ -186,7 +186,7 @@ export default function Navbar() {
             {/* Search Icon and WhatsApp Button */}
             <div className="hidden md:flex items-center space-x-4">
               <FiSearch className="text-gray-800 text-xl cursor-pointer hover:text-[#E99322] transition-colors" />
-              <button className="bg-[#E99322] text-white px-4 py-2 rounded-full text-sm hover:bg-[#E99322]/90 transition-colors">
+              <button className="bg-[#E99322] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#E99322]/90 transition-all duration-300">
                 WhatsApp Us
               </button>
             </div>
@@ -241,7 +241,7 @@ export default function Navbar() {
               ))}
 
               <div className="px-4 py-3 border-t border-gray-300/30 mt-4">
-                <button className="w-full bg-[#E99322] text-white px-4 py-2 rounded-full text-sm hover:bg-[#E99322]/90 transition-colors flex items-center justify-center gap-2">
+                <button className="w-full bg-[#E99322] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#E99322]/90 transition-all duration-300 flex items-center justify-center gap-2">
                   <FaWhatsapp className="text-lg" />
                   WhatsApp Us
                 </button>

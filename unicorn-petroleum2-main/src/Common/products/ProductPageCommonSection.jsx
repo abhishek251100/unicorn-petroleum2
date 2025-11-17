@@ -38,7 +38,7 @@ const ProductPageCommonSection = ({ data }) => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button 
             onClick={handleRequestInfo}
-            className="bg-[#E99322] text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-[#E99322]/90 transition-colors flex items-center space-x-2"
+            className="bg-[#E99322] text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-[#E99322]/90 transition-all duration-300 flex items-center gap-2"
           >
             <span>Request Info</span>
             <span className="text-xl">→</span>

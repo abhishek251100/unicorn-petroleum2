@@ -11,10 +11,10 @@ export const textileData = {
   relatedProducts: [
     { name: 'Petroleum Jelly', image: '/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/Petroleumjelly.jpg', description: 'Healing ointments, skin protectants, and excipients in topical medicines.' },
     { name: 'White Mineral Oils', image: '/assets/RELATED PROD IMG/NEW IMAGES/whiteMineraloil1.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/WhiteMineraloil.jpg', description: 'Used as a laxative, tablet coating, ointment base, and in topical formulations.' },
-    { name: 'Microcrystalline Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/waxes.jpg', description: 'Enhances thread strength and finish quality.' },
-    { name: 'Paraffin Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/paraffinwax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/waxes.jpg', description: 'Anti-static and friction-reducing coating for threads' },
+    { name: 'Microcrystalline Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/micro2.jpg', description: 'Enhances thread strength and finish quality.' },
+    { name: 'Paraffin Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/paraffinwax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/paraffin2.jpg', description: 'Anti-static and friction-reducing coating for threads' },
     { name: 'Preservatives', image: '/assets/RELATED PROD IMG/NEW IMAGES/Preservative.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/preservative.jpg', description: 'Prevent microbial contamination in water-based metalworking fluids.' },
-    { name: 'Emulsifying Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/emulsifyingwax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/waxes.jpg', description: 'Used in emulsified medicinal creams.' },
+    { name: 'Emulsifying Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/emulsifyingwax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/emulsifying2.jpg', description: 'Used in emulsified medicinal creams.' },
     { name: 'Surfactants', image: '/assets/RELATED PROD IMG/NEW IMAGES/surfactant.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/surfactant.jpg', description: 'Additives in formulations for dispersing and cleaning functions.' },
     { name: 'UV Filters', image: '/assets/RELATED PROD IMG/NEW IMAGES/uvfilters.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/uvFilters.jpg', description: 'Protection of lubricants from degradation due to UV exposure in open environments.' },
   ],

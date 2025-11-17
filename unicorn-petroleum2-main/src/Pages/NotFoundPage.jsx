@@ -49,7 +49,7 @@ const NotFoundPage = () => {
           <div className="space-y-4">
             <Link 
               to="/"
-              className="block w-full bg-[#E99322] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#E99322]/90 transition-colors"
+              className="block w-full bg-[#E99322] text-white font-medium py-3 px-6 rounded-full hover:bg-[#E99322]/90 transition-all duration-300"
             >
               Go to Homepage
             </Link>

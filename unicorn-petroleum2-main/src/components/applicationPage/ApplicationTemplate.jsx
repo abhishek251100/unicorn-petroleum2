@@ -93,6 +93,8 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
   }, []);
 
   const products = data.relatedProducts || [];
+  const autoScrollIntervalRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   const breadcrumbs = [
     { text: "Home", link: "/" },
@@ -114,7 +116,52 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
       container.scrollBy({ left: scrollAmount, behavior: "smooth" });
       setCurrentSlide(Math.min(products.length - 1, currentSlide + 1));
     }
+    
+    // Pause auto-scroll when user manually navigates
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 5000); // Resume after 5 seconds
   };
+
+  // Auto-slide functionality
+  useEffect(() => {
+    if (products.length === 0) return;
+
+    const startAutoSlide = () => {
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+
+      autoScrollIntervalRef.current = setInterval(() => {
+        if (isPaused || !sliderRef.current) return;
+        
+        const cardWidth = 320; // w-80 = 320px
+        const gap = 24; // space-x-6 = 24px
+        const scrollAmount = cardWidth + gap;
+        const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+        const currentScroll = sliderRef.current.scrollLeft;
+        
+        // If at the end, reset to start
+        if (currentScroll >= maxScroll - 10) {
+          sliderRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+          setCurrentSlide(0);
+        } else {
+          // Scroll by one card width
+          sliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          const newScroll = currentScroll + scrollAmount;
+          const newSlide = Math.round(newScroll / scrollAmount);
+          setCurrentSlide(Math.max(0, Math.min(newSlide, products.length - 1)));
+        }
+      }, 3500); // Auto-slide every 3.5 seconds
+    };
+
+    startAutoSlide();
+
+    return () => {
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+    };
+  }, [products.length, isPaused]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -168,7 +215,12 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
                     </button>
                   </div>
 
-                  <div ref={sliderRef} className="flex space-x-6 overflow-x-auto pb-4 scrollbar-hide">
+                  <div 
+                    ref={sliderRef} 
+                    className="flex space-x-6 overflow-x-auto pb-4 scrollbar-hide"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                  >
                     {products.map((product, index) => {
                       return (
                       <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-shadow flex flex-col group h-[430px]">
@@ -197,7 +249,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
                             <h3 className="text-xl font-semibold text-gray-800 mb-3">{product.name}</h3>
                             {product.description && <p className="text-gray-600 mb-4">{product.description}</p>}
                           </div>
-                          <Link to={product.link || getProductPath(product.name)} className="w-full bg-[#E99322] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#E99322]/90 transition-colors flex items-center justify-center">
+                          <Link to={product.link || getProductPath(product.name)} className="w-full bg-[#E99322] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#E99322]/90 transition-all duration-300 flex items-center justify-center">
                             View Details
                           </Link>
                         </div>
