@@ -8,8 +8,14 @@ import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySecti
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import { productsNavigationData } from "../productsNavigationData";
 import { emulsifyingWaxData } from "./emulsifyingWaxData";
+import { useMetaTags } from "../../../hooks/useMetaTags";
 
 export default function EmulsifyingWaxPage() {
+  useMetaTags(
+    "Emulsifying Wax - Unicorn Petroleum | Anionic & Non-Ionic Emulsifying Waxes",
+    "Specialized emulsifying waxes for creating stable water-in-oil and oil-in-water emulsions. Used in lotions, creams, ointments, and beauty products. Both anionic and non-ionic grades available.",
+    "emulsifying wax, anionic emulsifying wax, non-ionic emulsifying wax, emulsion stabilizer, cosmetic emulsifier, pharmaceutical emulsifier, lotion base, cream base, Unicorn Petroleum"
+  );
   const data = emulsifyingWaxData;
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);

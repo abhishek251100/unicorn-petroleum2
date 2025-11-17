@@ -9,8 +9,14 @@ import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySecti
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import { productsNavigationData } from "../productsNavigationData";
 import { dPanthenolData } from "./dPanthenolData";
+import { useMetaTags } from "../../../hooks/useMetaTags";
 
 export default function DPanthenolPage() {
+  useMetaTags(
+    "D-Panthenol - Unicorn Petroleum | Provitamin B5 for Skin & Hair Care",
+    "High-purity D-Panthenol (Provitamin B5) for deeply hydrating, soothing, and regenerative properties. Used in skin care, hair care, baby care, and wound-healing formulations. High purity and formulation stability.",
+    "D-panthenol, provitamin B5, panthenol, skin conditioning, hair conditioning, moisturizing agent, wound healing, cosmetic active, pharmaceutical ingredient, Unicorn Petroleum"
+  );
   const data = dPanthenolData;
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);

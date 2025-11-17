@@ -9,7 +9,14 @@ import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySecti
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import { petroleumJellyData } from "./petroleumJellyData";
 import { productsNavigationData } from "../productsNavigationData";
+import { useMetaTags } from "../../../hooks/useMetaTags";
+
 export default function PetroleumJellyPage() {
+  useMetaTags(
+    "Petroleum Jelly - Unicorn Petroleum | Premium Quality Petrolatum",
+    "High-quality Petroleum Jelly (Petrolatum) manufactured since 1964. Versatile emollient for pharmaceutical and cosmetic applications. Strict quality control ensures consistency and purity.",
+    "petroleum jelly, petrolatum, white soft paraffin, yellow soft paraffin, emollient, skin care, pharmaceutical ingredients, cosmetic ingredients, Unicorn Petroleum"
+  );
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);
   const certificationsRef = useRef(null);

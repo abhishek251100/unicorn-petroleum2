@@ -1,7 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import SliderHero from "../Common/SliderHero";
+import { useMetaTags } from "../hooks/useMetaTags";
 
 const ReachPage = () => {
+  useMetaTags(
+    "Global Reach - Unicorn Petroleum | Delivering Quality Beyond Borders",
+    "Unicorn Petroleum exports to over 60 countries, serving world's most recognizable pharmaceutical, cosmetic, and FMCG companies. Over 60 years of excellence in quality petroleum products.",
+    "global reach, exports, international markets, pharmaceutical companies, cosmetic companies, FMCG, worldwide distribution, India exports"
+  );
   const [counts, setCounts] = useState({ years: 0, countries: 0, companies: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const desktopCounterRef = useRef(null);

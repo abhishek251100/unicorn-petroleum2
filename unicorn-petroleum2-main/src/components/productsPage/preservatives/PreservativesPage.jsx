@@ -9,8 +9,14 @@ import PreservativeProductsSection from "../../../Common/PreservativeProductsSec
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import { productsNavigationData } from "../productsNavigationData";
 import { preservativesData } from "./preservativesData";
+import { useMetaTags } from "../../../hooks/useMetaTags";
 
 export default function PreservativesPage() {
+  useMetaTags(
+    "Preservatives - Unicorn Petroleum | Antimicrobial Systems for Personal Care & Pharma",
+    "Effective preservative systems including parabens and phenoxyethanol to prevent microbial growth and extend shelf life. Regulatory-compliant preservatives for cosmetics, pharmaceuticals, and personal care products.",
+    "preservatives, parabens, phenoxyethanol, antimicrobial agents, cosmetic preservatives, pharmaceutical preservatives, shelf life extension, microbial protection, Unicorn Petroleum"
+  );
   const data = preservativesData;
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);

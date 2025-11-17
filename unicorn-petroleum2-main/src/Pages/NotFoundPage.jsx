@@ -1,26 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useMetaTags } from "../hooks/useMetaTags";
 
 const NotFoundPage = () => {
-  useEffect(() => {
-    // Update document title and meta description
-    document.title = "404 - Page Not Found | Unicorn Petroleum";
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "The page you're looking for doesn't exist. Return to Unicorn Petroleum's homepage to explore our premium petroleum products.");
-    }
-    
-    // Add robots meta tag
-    let robotsMeta = document.querySelector('meta[name="robots"]');
-    if (!robotsMeta) {
-      robotsMeta = document.createElement('meta');
-      robotsMeta.name = 'robots';
-      document.head.appendChild(robotsMeta);
-    }
-    robotsMeta.setAttribute('content', 'noindex, nofollow');
-  }, []);
+  useMetaTags(
+    "404 - Page Not Found | Unicorn Petroleum",
+    "The page you're looking for doesn't exist. Return to Unicorn Petroleum's homepage to explore our premium petroleum products.",
+    "",
+    "noindex, nofollow"
+  );
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">

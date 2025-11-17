@@ -1,8 +1,15 @@
 import React from "react";
 import BannerWithNavigation from "../Common/BannerWithNavigation";
 import QualityStandardsSection from "../Common/QualityStandardsSection";
+import { useMetaTags } from "../hooks/useMetaTags";
 
 const QualityPage = () => {
+  useMetaTags(
+    "Quality & Certifications - Unicorn Petroleum | Engineered for Consistency",
+    "Unicorn Petroleum maintains stringent quality control and follows internationally recognized standards. View our certifications and quality assurance processes for pharmaceutical, cosmetic, and industrial products.",
+    "quality assurance, quality control, certifications, ISO certification, pharmaceutical standards, cosmetic standards, quality standards, Mumbai manufacturer"
+  );
+
   const breadcrumbs = [{ text: "Home", link: "/" }, { text: "Quality" }];
   return (
     <div className="min-h-screen">

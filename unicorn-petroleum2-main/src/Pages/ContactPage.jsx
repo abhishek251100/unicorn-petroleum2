@@ -1,20 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import BannerWithNavigation from "../Common/BannerWithNavigation";
 import QualityStandardsSection from "../Common/QualityStandardsSection";
 import QuoteFormSection from "../Common/QuoteFormSection";
+import { useMetaTags } from "../hooks/useMetaTags";
 
 const ContactPage = () => {
-  const breadcrumbs = [{ text: "Home", link: "/" }, { text: "Contact" }];
+  useMetaTags(
+    "Contact Us | Unicorn Petroleum Industries",
+    "Get in touch with Unicorn Petroleum Industries. Contact us for inquiries about petroleum jelly, mineral oils, waxes, and specialty chemicals. Located in Mumbai, India. Monday-Friday, 9 AM - 6 PM IST.",
+    "contact Unicorn Petroleum, Mumbai office, inquiry, quote request, customer support, India contact"
+  );
 
-  useEffect(() => {
-    // Update meta tags for Contact page
-    document.title = "Contact Us | Unicorn Petroleum Industries";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Get in touch with Unicorn Petroleum Industries. Contact us for inquiries about petroleum jelly, mineral oils, waxes, and specialty chemicals. Located in Mumbai, India.');
-    }
-  }, []);
+  const breadcrumbs = [{ text: "Home", link: "/" }, { text: "Contact" }];
 
   return (
     <div className="min-h-screen">

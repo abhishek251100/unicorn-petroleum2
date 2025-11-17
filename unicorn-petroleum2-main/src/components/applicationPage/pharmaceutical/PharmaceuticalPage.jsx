@@ -8,8 +8,14 @@ import QuoteFormSection from '../../../Common/QuoteFormSection';
 import SliderHero from '../../../Common/SliderHero';
 import { getNavigationData } from '../../../Data/navigationData';
 import { pharmaceuticalData } from './pharmaceuticalData';
+import { useMetaTags } from '../../../hooks/useMetaTags';
 
 export default function PharmaceuticalPage() {
+  useMetaTags(
+    "Pharmaceutical Applications - Unicorn Petroleum | Pharmaceutical Ingredients & Excipients",
+    "High-quality pharmaceutical ingredients and excipients including petroleum jelly, mineral oils, waxes, preservatives, and specialty chemicals. Compliant with pharmacopoeial standards for pharmaceutical formulations.",
+    "pharmaceutical ingredients, pharmaceutical excipients, pharmaceutical applications, pharmacopoeial standards, tablet coating, ointment base, pharmaceutical wax, pharmaceutical preservatives"
+  );
   // Get navigation data for applications section
   const applicationsNavData = getNavigationData('applications');
   const sliderRef = useRef(null);

@@ -1,8 +1,14 @@
 import React from 'react';
 import ApplicationTemplate from '../ApplicationTemplate';
 import { cosmeticsData } from './cosmeticsData';
+import { useMetaTags } from '../../../hooks/useMetaTags';
 
 export default function CosmeticsPage() {
+  useMetaTags(
+    "Cosmetic Applications - Unicorn Petroleum | Cosmetic Ingredients & Formulations",
+    "Premium cosmetic ingredients including petroleum jelly, mineral oils, waxes, D-panthenol, preservatives, surfactants, and UV filters for cosmetic formulations. High-quality ingredients for beauty and personal care products.",
+    "cosmetic ingredients, cosmetic applications, beauty products, personal care ingredients, cosmetic wax, cosmetic preservatives, cosmetic surfactants, UV filters cosmetics"
+  );
   return (
     <ApplicationTemplate
       title="Cosmetics"

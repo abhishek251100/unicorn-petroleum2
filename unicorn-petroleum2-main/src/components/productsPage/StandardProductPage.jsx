@@ -9,9 +9,17 @@ import PackagedResponsiblySection from "../../Common/PackagedResponsiblySection"
 import RelatedProductsSection from "../../Common/RelatedProductsSection";
 import { productsNavigationData } from "./productsNavigationData";
 import { buildStandardProductData } from "./standardProductData";
+import { useMetaTags } from "../../hooks/useMetaTags";
 
 export default function StandardProductPage({ title, description }) {
   const data = buildStandardProductData({ name: title, description });
+  
+  // Generate SEO-friendly meta tags
+  const metaTitle = `${title} - Unicorn Petroleum | Premium Quality Products`;
+  const metaDescription = description || `Explore ${title} from Unicorn Petroleum. High-quality product for pharmaceutical, cosmetic, and industrial applications. Request a quote today.`;
+  const metaKeywords = `${title.toLowerCase()}, petroleum products, specialty chemicals, pharmaceutical ingredients, cosmetic ingredients, industrial chemicals, Unicorn Petroleum`;
+  
+  useMetaTags(metaTitle, metaDescription, metaKeywords);
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);
   const certificationsRef = useRef(null);

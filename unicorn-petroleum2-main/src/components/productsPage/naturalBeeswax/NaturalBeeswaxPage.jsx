@@ -9,8 +9,14 @@ import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySecti
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import { productsNavigationData } from "../productsNavigationData";
 import { naturalBeeswaxData } from "./naturalBeeswaxData";
+import { useMetaTags } from "../../../hooks/useMetaTags";
 
 export default function NaturalBeeswaxPage() {
+  useMetaTags(
+    "Natural Beeswax - Unicorn Petroleum | Pure Refined Beeswax for Cosmetics & Pharmaceuticals",
+    "100% natural, highly refined beeswax with emollient, soothing, and softening properties. Pharmaceutical and cosmetic grade beeswax for topical formulations. Complies with international regulatory requirements.",
+    "natural beeswax, refined beeswax, cosmetic beeswax, pharmaceutical beeswax, emollient, natural wax, cosmetic ingredients, pharmaceutical ingredients, Unicorn Petroleum"
+  );
   const data = naturalBeeswaxData;
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);

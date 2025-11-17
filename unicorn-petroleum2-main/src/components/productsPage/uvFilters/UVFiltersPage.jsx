@@ -9,8 +9,14 @@ import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import UVFilterProductsSection from "../../../Common/UVFilterProductsSection";
 import { productsNavigationData } from "../productsNavigationData";
 import { uvFiltersData } from "./uvFiltersData";
+import { useMetaTags } from "../../../hooks/useMetaTags";
 
 export default function UVFiltersPage() {
+  useMetaTags(
+    "UV Filters - Unicorn Petroleum | Organic & Inorganic UV Filters for Sun Protection",
+    "Broad-spectrum UV filters (UVA & UVB) for sunscreens, cosmetics, and moisturizers. Organic and inorganic UV filters to protect against sunburns, premature aging, and skin cancer. Regulatory-compliant grades.",
+    "UV filters, organic UV filters, inorganic UV filters, sunscreen ingredients, UVA protection, UVB protection, sun protection, cosmetic UV filters, regulatory compliant, Unicorn Petroleum"
+  );
   const data = uvFiltersData;
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);

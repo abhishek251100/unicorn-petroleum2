@@ -1,8 +1,15 @@
 import React from "react";
 import QualityStandardsSection from "../Common/QualityStandardsSection";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { useMetaTags } from "../hooks/useMetaTags";
 
 const AboutPage = () => {
+  useMetaTags(
+    "About Us - Unicorn Petroleum Industries | A Legacy of Excellence Since 1964",
+    "Learn about Unicorn Petroleum Industries, a trusted manufacturer of petroleum products since 1964. Discover our values, vision, mission, and commitment to quality, consistency, and customer satisfaction.",
+    "Unicorn Petroleum, about us, company history, petroleum manufacturer, quality standards, customer satisfaction, ethical business, Mumbai India"
+  );
+
   const coreValuesRef = useScrollAnimation();
   const manufacturingRef = useScrollAnimation();
   const heroRef = useScrollAnimation();

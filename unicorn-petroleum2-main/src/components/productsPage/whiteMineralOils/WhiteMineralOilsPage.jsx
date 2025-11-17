@@ -9,8 +9,14 @@ import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySecti
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import { whiteMineralOilsData } from "./whiteMineralOilsData";
 import { productsNavigationData } from "../productsNavigationData";
+import { useMetaTags } from "../../../hooks/useMetaTags";
 
 export default function WhiteMineralOilsPage() {
+  useMetaTags(
+    "White Mineral Oils - Unicorn Petroleum | High-Quality Paraffinic Mineral Oils",
+    "Premium white mineral oils (paraffinic) in various viscosities for pharmaceutical, cosmetic, personal care, and industrial applications. Colorless, odorless, and highly refined.",
+    "white mineral oil, mineral oil, paraffinic mineral oil, light mineral oil, heavy mineral oil, pharmaceutical mineral oil, cosmetic mineral oil, industrial lubricant"
+  );
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);
   const certificationsRef = useRef(null);

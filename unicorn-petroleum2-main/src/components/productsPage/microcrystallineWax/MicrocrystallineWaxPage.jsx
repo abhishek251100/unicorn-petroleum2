@@ -8,8 +8,14 @@ import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySecti
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import { productsNavigationData } from "../productsNavigationData";
 import { microcrystallineWaxData } from "./microcrystallineWaxData";
+import { useMetaTags } from "../../../hooks/useMetaTags";
 
 export default function MicrocrystallineWaxPage() {
+  useMetaTags(
+    "Microcrystalline Wax - Unicorn Petroleum | Fine-Grained Wax for Formulations",
+    "High-quality microcrystalline wax with excellent binding and coating properties. Used in cosmetic and pharmaceutical formulations for structural strength, texture, and stability. Consistent quality and global compliance.",
+    "microcrystalline wax, petroleum wax, cosmetic wax, pharmaceutical wax, binding agent, coating agent, texture modifier, Unicorn Petroleum"
+  );
   const data = microcrystallineWaxData;
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);

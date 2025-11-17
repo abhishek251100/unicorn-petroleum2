@@ -9,8 +9,14 @@ import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import SurfactantProductsSection from "../../../Common/SurfactantProductsSection";
 import { productsNavigationData } from "../productsNavigationData";
 import { surfactantsData } from "./surfactantsData";
+import { useMetaTags } from "../../../hooks/useMetaTags";
 
 export default function SurfactantsPage() {
+  useMetaTags(
+    "Surfactants - Unicorn Petroleum | Anionic & Nonionic Surfactants for Cleaning & Personal Care",
+    "High-quality anionic and nonionic surfactants for effective cleaning, foaming, and emulsification. Used in shampoos, detergents, personal care products, and industrial cleaning solutions.",
+    "surfactants, anionic surfactants, nonionic surfactants, cleaning agents, foaming agents, emulsifiers, detergents, personal care ingredients, industrial surfactants, Unicorn Petroleum"
+  );
   const data = surfactantsData;
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);
