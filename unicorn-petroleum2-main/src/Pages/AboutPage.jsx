@@ -130,7 +130,7 @@ const AboutPage = () => {
         {/* Our Values */}
         <section className="pt-20 pb-20 md:pb-24 px-4 bg-white" ref={coreValuesRef}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Our Values</h2>
+            <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Our Core Values</h2>
           
           {/* Timeline-style layout */}
           <div className="relative overflow-visible">
@@ -148,9 +148,9 @@ const AboutPage = () => {
                     className="w-14 h-14 md:w-16 md:h-16 object-contain animate-icon-float"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Commitment to customers</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Customer Commitment</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  We pride ourselves in being a customer-oriented organization, committed to exceeding the expectations and aspirations of our esteemed customers. We always strive to achieve <strong>Customer Delight</strong> by offering perfect solutions to their needs and rendering efficient services and quality products always.
+                We are deeply committed to our customers' success. We build trust through transparency, reliability, and understanding unique needs. Our goal is to deliver solutions that consistently exceed expectations.
                 </p>
               </div>
 
@@ -163,9 +163,9 @@ const AboutPage = () => {
                     className="w-14 h-14 md:w-16 md:h-16 object-contain animate-icon-float"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Pledge to quality</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Uncompromising Quality</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  <strong>Quality</strong> is synonymous with "<strong>UNICORN</strong>" and we, as an organization, always strive to maintain the highest standards of quality and consistency in all our finished products, at all cost, without compromising on the raw materials, manufacturing processes or packaging elements whatsoever.
+                Our pledge is a promise of excellence in every detail. Quality is our culture, ensuring precision from sourcing to delivery. We are dedicated to providing nothing but the best for our customers.
                 </p>
               </div>
 
@@ -180,7 +180,7 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Ethical and fair business</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Considering our industry mix, wherein malpractices are rampant, we always adhere to ethical practices and carry out all commercial transactions in a very <strong>transparent, professional</strong> manner.
+                We conduct business with honesty, transparency, and accountability. Every partnership is built on mutual trust and respect. We prioritize responsibility to create sustainable value for all.
                 </p>
               </div>
 
@@ -193,9 +193,9 @@ const AboutPage = () => {
                     className="w-14 h-14 md:w-16 md:h-16 object-contain animate-icon-float"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Integrity and adherence to law</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Integrity & Legal Compliance</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Each and every employee of the company operates with the highest standards of <strong>Integrity, Loyalty and Sincerity</strong>, in accordance with the state regulations.
+                We operate with unwavering integrity and a strong commitment to the law. Our actions are guided by honesty, accountability, and respect for regulations. This ensures our business remains responsible and worthy of trust.
                 </p>
               </div>
 
@@ -208,9 +208,9 @@ const AboutPage = () => {
                     className="w-14 h-14 md:w-16 md:h-16 object-contain"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Safety, health and environment consciousness</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Safety, Health & Environment</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  The company continuously implements and reviews systems, plant and operation efficiencies, designed for <strong>maximizing employee safety, health and well-being</strong>, while maintaining responsibility towards the environment by minimizing pollutant and effluent discharge levels.
+                We prioritize the safety and well-being of our people above all. Our operations demonstrate a deep responsibility toward the environment. We foster a culture of sustainability to protect our workforce and our planet.
                 </p>
               </div>
             </div>
