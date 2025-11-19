@@ -185,34 +185,28 @@ export const homeData = {
         link: "/applications#cosmetic", // Internal link with anchor
       },
       {
-        icon: "/assets/Icons/Bulk.png",
-        label: "Bulk Chemicals",
-        hoverDescription: "Oils, waxes, preservatives and specialty chemicals",
-        link: "/applications#bulk-chemicals", // Internal link with anchor
-      },
-      {
         icon: "/assets/Icons/Property 1=herbal.png",
         label: "Personal Care",
         hoverDescription: "Petroleum jellies, mineral oil, waxes, emulsifiers and specialty chemicals",
         link: "/applications#personal-care", // Internal link with anchor
       },
       {
-        icon: "/assets/Icons/Property 1=lube.png",
-        label: "Lubricants",
-        hoverDescription: "Oils, waxes and protective coatings",
-        link: "/applications#lubricants", // Internal link with anchor
-      },
-      {
-        icon: "/assets/Icons/Property 1=agro.png",
-        label: "Agrochemical",
-        hoverDescription: "Carrier oils, coating and formulation agents",
-        link: "/applications#agrochemical", // Internal link with anchor
+        icon: "/assets/Icons/Bulk.png",
+        label: "Home Care",
+        hoverDescription: "Oils, waxes, preservatives and specialty chemicals",
+        link: "/applications#home-care", // Internal link with anchor
       },
       {
         icon: "/assets/Icons/Property 1=petro.png",
         label: "Textile",
         hoverDescription: "Lubricants, protective coatings and specialty chemicals",
         link: "/applications#textile", // Internal link with anchor
+      },
+      {
+        icon: "/assets/Icons/Property 1=lube.png",
+        label: "Lubricants",
+        hoverDescription: "Oils, waxes and protective coatings",
+        link: "/applications#lubricants", // Internal link with anchor
       },
     ],
     buttonText: "View All Applications",

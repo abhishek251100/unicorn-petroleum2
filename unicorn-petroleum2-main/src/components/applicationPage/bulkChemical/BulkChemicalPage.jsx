@@ -5,11 +5,11 @@ import { useMetaTags } from '../../../hooks/useMetaTags';
 
 export default function BulkChemicalPage() {
   useMetaTags(
-    "Bulk Chemical Applications - Unicorn Petroleum | Bulk Chemical Ingredients",
-    "Bulk chemical ingredients and specialty chemicals for various industrial applications. High-quality petroleum products, waxes, and chemicals supplied in bulk quantities for industrial manufacturing.",
-    "bulk chemicals, bulk chemical ingredients, industrial chemicals, specialty chemicals, bulk petroleum products, industrial manufacturing chemicals"
+    "Home Care Applications - Unicorn Petroleum | Home Care Ingredients",
+    "Home care ingredients and specialty chemicals for various household applications. High-quality petroleum products, waxes, and chemicals supplied for home care manufacturing.",
+    "home care, home care ingredients, household chemicals, specialty chemicals, home care petroleum products, home care manufacturing chemicals"
   );
-  return <ApplicationTemplate title="Bulk Chemical" breadcrumbsTitle="Bulk Chemical" data={data} />;
+  return <ApplicationTemplate title="Home Care" breadcrumbsTitle="Home Care" data={data} />;
 }
 
 

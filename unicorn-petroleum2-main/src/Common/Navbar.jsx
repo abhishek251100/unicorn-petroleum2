@@ -90,11 +90,10 @@ export default function Navbar() {
       dropdownItems: [
         { name: "Pharmaceutical", link: "/applications/pharmaceutical" },
         { name: "Cosmetics", link: "/applications/cosmetics" },
-        { name: "Bulk Chemical", link: "/applications/bulk-chemical" },
         { name: "Personal Care", link: "/applications/personal-care" },
-        { name: "Lubricants", link: "/applications/lubricants" },
-        { name: "Agrochemical", link: "/applications/agrochemical" },
-        { name: "Textile", link: "/applications/textile" }
+        { name: "Home Care", link: "/applications/home-care" },
+        { name: "Textile", link: "/applications/textile" },
+        { name: "Lubricants", link: "/applications/lubricants" }
       ]
     },
     { name: "Reach", link: "/reach", hasDropdown: false },

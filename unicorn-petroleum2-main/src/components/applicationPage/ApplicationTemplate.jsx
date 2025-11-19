@@ -10,12 +10,10 @@ import { getProductHoverImage, UNIVERSAL_HOVER_IMAGE } from "../../Data/productH
 
 export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
   const applicationsNavData = getNavigationData("applications");
-  const sliderRef = useRef(null);
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);
   const certificationsRef = useRef(null);
   const contentWrapperRef = useRef(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [sidebarStyle, setSidebarStyle] = useState({ position: 'sticky', top: '140px' });
 
   useEffect(() => {
@@ -93,8 +91,14 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
   }, []);
 
   const products = data.relatedProducts || [];
-  const autoScrollIntervalRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [isManualScroll, setIsManualScroll] = useState(false);
+  const marqueeRef = useRef(null);
+  const containerRef = useRef(null);
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const isDragging = useRef(false);
+  const scrollTimeoutRef = useRef(null);
 
   const breadcrumbs = [
     { text: "Home", link: "/" },
@@ -102,66 +106,192 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
     { text: breadcrumbsTitle || title },
   ];
 
-  const scrollToSlide = (direction) => {
-    if (!sliderRef.current) return;
-    const container = sliderRef.current;
-    const cardWidth = 320; // w-80 = 320px
-    const gap = 24; // space-x-6 = 24px
-    const scrollAmount = cardWidth + gap;
+  // Duplicate products for seamless infinite scroll
+  const duplicatedProducts = [...products, ...products];
 
-    if (direction === "left") {
-      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-      setCurrentSlide(Math.max(0, currentSlide - 1));
-    } else {
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      setCurrentSlide(Math.min(products.length - 1, currentSlide + 1));
+  // Initialize scroll position when switching to manual mode
+  useEffect(() => {
+    if (!containerRef.current || !isManualScroll || !marqueeRef.current) return;
+
+    // Calculate current animation position and sync scroll
+    const container = containerRef.current;
+    const marquee = marqueeRef.current;
+    const cardWidth = window.innerWidth < 640 ? 288 : 320;
+    const gap = 24;
+    
+    // Get computed transform value if animation was running
+    const computedStyle = window.getComputedStyle(marquee);
+    const transform = computedStyle.transform;
+    let currentTranslateX = 0;
+    
+    if (transform && transform !== 'none') {
+      const matrix = transform.match(/matrix\(([^)]+)\)/);
+      if (matrix) {
+        currentTranslateX = parseFloat(matrix[1].split(',')[4]) || 0;
+      }
     }
     
-    // Pause auto-scroll when user manually navigates
+    // Convert translateX to scrollLeft (invert the value)
+    const scrollPosition = Math.abs(currentTranslateX);
+    container.scrollLeft = scrollPosition;
+  }, [isManualScroll]);
+
+  // Handle infinite scroll when manually scrolling
+  useEffect(() => {
+    if (!containerRef.current || !isManualScroll) return;
+
+    const container = containerRef.current;
+    const cardWidth = window.innerWidth < 640 ? 288 : 320; // w-72 or w-80
+    const gap = 24; // space-x-6
+    const scrollWidth = (cardWidth + gap) * products.length;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      
+      // If scrolled past the first set, reset to beginning seamlessly
+      if (scrollLeft >= scrollWidth - 10) {
+        container.scrollLeft = scrollLeft - scrollWidth;
+      }
+      // If scrolled before start, jump to end seamlessly
+      else if (scrollLeft <= 10) {
+        container.scrollLeft = scrollWidth + scrollLeft;
+      }
+    };
+
+    container.addEventListener('scroll', handleScroll, { passive: true });
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, [isManualScroll, products.length]);
+
+  // Touch handlers for swipe
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
     setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 5000); // Resume after 5 seconds
+    setIsManualScroll(true);
+    
+    // Remove animation, enable scrolling
+    if (marqueeRef.current) {
+      marqueeRef.current.style.animation = 'none';
+      const currentScroll = containerRef.current?.scrollLeft || 0;
+      marqueeRef.current.style.transform = `translateX(-${currentScroll}px)`;
+    }
+    if (containerRef.current) {
+      containerRef.current.style.overflowX = 'auto';
+      // Sync scroll position with current animation position
+      const marquee = marqueeRef.current;
+      if (marquee) {
+        const computedStyle = window.getComputedStyle(marquee);
+        const transform = computedStyle.transform;
+        if (transform && transform !== 'none') {
+          const matrix = transform.match(/matrix\(([^)]+)\)/);
+          if (matrix) {
+            const currentTranslateX = parseFloat(matrix[1].split(',')[4]) || 0;
+            containerRef.current.scrollLeft = Math.abs(currentTranslateX);
+          }
+        }
+      }
+    }
   };
 
-  // Auto-slide functionality
+  const handleTouchMove = (e) => {
+    // Allow native scrolling - don't prevent default
+    if (!isDragging.current) {
+      const deltaX = Math.abs(e.touches[0].clientX - touchStartX.current);
+      const deltaY = Math.abs(e.touches[0].clientY - touchStartY.current);
+      if (deltaX > deltaY && deltaX > 10) {
+        isDragging.current = true;
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    isDragging.current = false;
+    // Resume auto-slide after interaction ends
+    resumeAutoSlide();
+  };
+
+  // Mouse drag handlers
+  const handleMouseDown = (e) => {
+    e.preventDefault();
+    isDragging.current = true;
+    touchStartX.current = e.clientX;
+    setIsPaused(true);
+    setIsManualScroll(true);
+    
+    // Remove animation, enable scrolling
+    if (marqueeRef.current) {
+      marqueeRef.current.style.animation = 'none';
+      const currentScroll = containerRef.current?.scrollLeft || 0;
+      marqueeRef.current.style.transform = `translateX(-${currentScroll}px)`;
+    }
+    if (containerRef.current) {
+      containerRef.current.style.overflowX = 'auto';
+      containerRef.current.style.cursor = 'grabbing';
+    }
+    
+    // Add global mouse handlers for dragging outside container
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+  };
+
+  const handleMouseMove = (e) => {
+    if (isDragging.current && containerRef.current) {
+      const deltaX = touchStartX.current - e.clientX;
+      containerRef.current.scrollLeft += deltaX;
+      touchStartX.current = e.clientX;
+    }
+  };
+
+  const resumeAutoSlide = () => {
+    // Clear any existing timeout
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+    
+    // Resume auto-slide after 2 seconds of no interaction
+    scrollTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false);
+      setIsManualScroll(false);
+      if (marqueeRef.current) {
+        marqueeRef.current.style.animation = '';
+        marqueeRef.current.style.transform = '';
+      }
+      if (containerRef.current) {
+        containerRef.current.style.overflowX = 'hidden';
+        containerRef.current.scrollLeft = 0;
+        containerRef.current.style.cursor = 'default';
+      }
+    }, 2000);
+  };
+
+  const handleMouseUp = () => {
+    const wasDragging = isDragging.current;
+    const wasManualScroll = isManualScroll;
+    
+    isDragging.current = false;
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mouseup', handleMouseUp);
+    
+    if (containerRef.current) {
+      containerRef.current.style.cursor = wasManualScroll ? 'grab' : 'default';
+    }
+    
+    // Always resume auto-slide after interaction ends (resumeAutoSlide handles multiple calls)
+    if (wasManualScroll || wasDragging) {
+      resumeAutoSlide();
+    }
+  };
+
+  // Cleanup on unmount
   useEffect(() => {
-    if (products.length === 0) return;
-
-    const startAutoSlide = () => {
-      if (autoScrollIntervalRef.current) {
-        clearInterval(autoScrollIntervalRef.current);
-      }
-
-      autoScrollIntervalRef.current = setInterval(() => {
-        if (isPaused || !sliderRef.current) return;
-        
-        const cardWidth = 320; // w-80 = 320px
-        const gap = 24; // space-x-6 = 24px
-        const scrollAmount = cardWidth + gap;
-        const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
-        const currentScroll = sliderRef.current.scrollLeft;
-        
-        // If at the end, reset to start
-        if (currentScroll >= maxScroll - 10) {
-          sliderRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-          setCurrentSlide(0);
-        } else {
-          // Scroll by one card width
-          sliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-          const newScroll = currentScroll + scrollAmount;
-          const newSlide = Math.round(newScroll / scrollAmount);
-          setCurrentSlide(Math.max(0, Math.min(newSlide, products.length - 1)));
-        }
-      }, 3500); // Auto-slide every 3.5 seconds
-    };
-
-    startAutoSlide();
-
     return () => {
-      if (autoScrollIntervalRef.current) {
-        clearInterval(autoScrollIntervalRef.current);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
       }
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [products.length, isPaused]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -197,65 +327,124 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
 
               {products && products.length > 0 && (
                 <div className="relative">
-                  <div className="flex justify-between items-center mb-4">
-                    <button
-                      onClick={() => scrollToSlide("left")}
-                      disabled={currentSlide === 0}
-                      className="w-10 h-10 rounded-full bg-[#E99322] text-white hover:bg-[#E99322]/90 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center transition-colors"
-                    >
-                      ‹
-                    </button>
-                    <h3 className="text-xl font-semibold text-gray-800">Related Products</h3>
-                    <button
-                      onClick={() => scrollToSlide("right")}
-                      disabled={currentSlide === products.length - 1}
-                      className="w-10 h-10 rounded-full bg-[#E99322] text-white hover:bg-[#E99322]/90 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center transition-colors"
-                    >
-                      ›
-                    </button>
+                  <div className="mb-4">
+                    <h3 className="text-xl font-semibold text-gray-800 text-center">Related Products</h3>
                   </div>
 
+                  {/* Marquee Container */}
                   <div 
-                    ref={sliderRef} 
-                    className="flex space-x-6 overflow-x-auto pb-4 scrollbar-hide"
-                    onMouseEnter={() => setIsPaused(true)}
-                    onMouseLeave={() => setIsPaused(false)}
+                    ref={containerRef}
+                    className={`marquee-container relative w-full ${isManualScroll ? 'overflow-x-auto' : 'overflow-hidden'}`}
+                    onMouseEnter={() => {
+                      if (!isManualScroll) {
+                        setIsPaused(true);
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      // If user was manually scrolling or dragging, ensure we resume auto-slide
+                      if (isManualScroll || isDragging.current) {
+                        handleMouseUp();
+                      } else {
+                        // Just unpause if we were only hovering
+                        setIsPaused(false);
+                      }
+                    }}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                    onMouseDown={handleMouseDown}
+                    onMouseUp={handleMouseUp}
+                    style={{
+                      cursor: isManualScroll ? 'grab' : 'default',
+                      WebkitOverflowScrolling: 'touch',
+                      scrollbarWidth: 'thin',
+                      scrollbarColor: '#E99322 transparent',
+                    }}
                   >
-                    {products.map((product, index) => {
-                      return (
-                      <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-shadow flex flex-col group h-[430px]">
-                        <div className="h-48 bg-gray-100 rounded-t-lg flex items-center justify-center relative overflow-hidden">
-                          <img
-                            src={product.image}
-                            alt={product.name}
-                            className="w-full h-full object-cover rounded-t-lg"
-                            onError={(e)=>{ e.target.style.display='none'; const fallback=e.target.nextSibling; if(fallback && fallback.dataset.fallback==='1'){ fallback.style.display='flex'; } }}
-                          />
-                          <div data-fallback="1" className="hidden w-full h-full bg-gray-200 rounded-t-lg items-center justify-center">
-                            <span className="text-gray-500 font-semibold">{product.name}</span>
+                    <style>{`
+                      @keyframes marquee-scroll {
+                        0% {
+                          transform: translateX(0);
+                        }
+                        100% {
+                          transform: translateX(-50%);
+                        }
+                      }
+                      .marquee-animation {
+                        animation: marquee-scroll ${Math.max(products.length * 2.5, 20)}s linear infinite;
+                      }
+                      .marquee-paused {
+                        animation-play-state: paused;
+                      }
+                      @media (max-width: 640px) {
+                        .marquee-animation {
+                          animation-duration: ${Math.max(products.length * 2, 15)}s;
+                        }
+                      }
+                      /* Custom scrollbar */
+                      .marquee-container::-webkit-scrollbar {
+                        height: 6px;
+                      }
+                      .marquee-container::-webkit-scrollbar-track {
+                        background: transparent;
+                      }
+                      .marquee-container::-webkit-scrollbar-thumb {
+                        background: #E99322;
+                        border-radius: 3px;
+                      }
+                      .marquee-container::-webkit-scrollbar-thumb:hover {
+                        background: #E99322;
+                      }
+                    `}</style>
+                    
+                    <div 
+                      ref={marqueeRef}
+                      className={`flex space-x-6 ${isPaused && !isManualScroll ? 'marquee-paused' : !isManualScroll ? 'marquee-animation' : ''}`}
+                      style={{
+                        width: 'fit-content',
+                        willChange: isManualScroll ? 'auto' : 'transform',
+                        display: 'flex',
+                      }}
+                    >
+                      {duplicatedProducts.map((product, index) => {
+                        return (
+                        <div 
+                          key={`${product.name}-${index}`} 
+                          className="flex-shrink-0 w-72 sm:w-80 bg-white rounded-lg border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-shadow flex flex-col group h-[430px]"
+                        >
+                          <div className="h-48 bg-gray-100 rounded-t-lg flex items-center justify-center relative overflow-hidden">
+                            <img
+                              src={product.image}
+                              alt={product.name}
+                              className="w-full h-full object-cover rounded-t-lg"
+                              onError={(e)=>{ e.target.style.display='none'; const fallback=e.target.nextSibling; if(fallback && fallback.dataset.fallback==='1'){ fallback.style.display='flex'; } }}
+                            />
+                            <div data-fallback="1" className="hidden w-full h-full bg-gray-200 rounded-t-lg items-center justify-center">
+                              <span className="text-gray-500 font-semibold">{product.name}</span>
+                            </div>
+                            <img
+                              src={product.hoverImage || getProductHoverImage(product.name)}
+                              alt={`${product.name} hover`}
+                              className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"
+                              loading="lazy"
+                              onError={(e) => {
+                                e.target.src = UNIVERSAL_HOVER_IMAGE;
+                              }}
+                            />
                           </div>
-                          <img
-                            src={product.hoverImage || getProductHoverImage(product.name)}
-                            alt={`${product.name} hover`}
-                            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"
-                            loading="lazy"
-                            onError={(e) => {
-                              e.target.src = UNIVERSAL_HOVER_IMAGE;
-                            }}
-                          />
-                        </div>
-                        <div className="p-6 text-center flex-1 flex flex-col justify-between">
-                          <div>
-                            <h3 className="text-xl font-semibold text-gray-800 mb-3">{product.name}</h3>
-                            {product.description && <p className="text-gray-600 mb-4">{product.description}</p>}
+                          <div className="p-6 text-center flex-1 flex flex-col justify-between">
+                            <div>
+                              <h3 className="text-xl font-semibold text-gray-800 mb-3">{product.name}</h3>
+                              {product.description && <p className="text-gray-600 mb-4 text-sm">{product.description}</p>}
+                            </div>
+                            <Link to={product.link || getProductPath(product.name)} className="w-full bg-[#E99322] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#E99322]/90 transition-all duration-300 flex items-center justify-center">
+                              View Details
+                            </Link>
                           </div>
-                          <Link to={product.link || getProductPath(product.name)} className="w-full bg-[#E99322] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#E99322]/90 transition-all duration-300 flex items-center justify-center">
-                            View Details
-                          </Link>
                         </div>
-                      </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               )}

@@ -1,17 +1,17 @@
 export const bulkChemicalData = {
-  hero: { title: 'Bulk Chemical Applications', description: 'Reliable ingredients for bulk chemical industry' },
+  hero: { title: 'Home Care Applications', description: 'Reliable ingredients for home care industry' },
   slider: [
     {
-      title: 'Bulk Chemical Applications',
-      subtitle: 'Reliable ingredients for bulk chemical industry',
+      title: 'Home Care Applications',
+      subtitle: 'Reliable ingredients for home care industry',
       image: '/assets/BannerImages/applications%20desktop.jpg',
       mobileImage: '/assets/BannerImages/applications%20mobile.jpg',
     },
   ],
   overview: {
-    title: 'Tailored for chemical products',
+    title: 'Tailored for home care products',
     description:
-      'Chemical manufacturing requires ingredients that are consistent, compatible, and industrial-grade. We supply versatile raw materials like Paraffin wax, Microcrystalline wax, and mineral oils that integrate seamlessly into a wide range of formulations and processes.',
+      'Home care manufacturing requires ingredients that are consistent, compatible, and high-quality. We supply versatile raw materials like Paraffin wax, Microcrystalline wax, and mineral oils that integrate seamlessly into a wide range of home care formulations and processes.',
   },
   relatedProducts: [
     { name: 'Petroleum Jelly', image: '/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/Petroleumjelly.jpg', description: 'Healing ointments, skin protectants, and excipients in topical medicines.' },
