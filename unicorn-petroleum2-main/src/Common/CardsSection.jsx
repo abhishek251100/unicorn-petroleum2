@@ -1,4 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
+
+// Mobile Cards Layout Component with tap functionality
+function MobileCardsLayout({ cards, showDescriptions }) {
+  const [activeIndex, setActiveIndex] = useState(null);
+  const cardsCount = cards.length;
+
+  const handleCardClick = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  return (
+    <div className="md:hidden">
+      <div className="grid grid-cols-2 gap-4 mb-4">
+        {cards.slice(0, Math.max(0, cardsCount - 1)).map((card, index) => {
+          const isActive = activeIndex === index;
+          return (
+            <div
+              key={`m-${index}`}
+              onClick={() => handleCardClick(index)}
+              className={`bg-white p-4 rounded-2xl border-[1.5px] border-[#EDA94E] transition-all duration-300 text-center flex flex-col justify-center cursor-pointer ${
+                isActive ? 'shadow-xl border-[#E99322]' : ''
+              }`}
+              style={{ minHeight: '150px' }}
+            >
+              <div className="text-[#E99322] mb-2 flex justify-center">
+                {card.icon && card.icon.startsWith('/') ? (
+                  <img src={card.icon} alt={card.title || card.label || card.name} className="w-10 h-10 object-contain" />
+                ) : (
+                  card.icon
+                )}
+              </div>
+              <div className={`font-semibold text-gray-800 text-sm ${isActive ? 'hidden' : 'block'}`}>
+                {card.title || card.label || card.name}
+              </div>
+              {showDescriptions && (card.hoverDescription || card.description) && (
+                <div className={`text-gray-700 text-xs mt-1 ${isActive ? 'block' : 'hidden'}`}>
+                  {card.hoverDescription || card.description}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      {cardsCount > 0 && (
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="col-span-2 justify-self-center w-[calc(50%-0.5rem)]">
+            <div
+              onClick={() => handleCardClick(cardsCount - 1)}
+              className={`bg-white p-4 rounded-2xl border-[1.5px] border-[#EDA94E] text-center flex flex-col justify-center cursor-pointer ${
+                activeIndex === cardsCount - 1 ? 'shadow-xl border-[#E99322]' : ''
+              }`}
+              style={{ minHeight: '150px' }}
+            >
+              <div className="text-[#E99322] mb-2 flex justify-center">
+                {cards[cardsCount - 1].icon && cards[cardsCount - 1].icon.startsWith('/') ? (
+                  <img src={cards[cardsCount - 1].icon} alt={cards[cardsCount - 1].title || cards[cardsCount - 1].label || cards[cardsCount - 1].name} className="w-10 h-10 object-contain" />
+                ) : (
+                  cards[cardsCount - 1].icon
+                )}
+              </div>
+              <div className={`font-semibold text-gray-800 text-sm ${activeIndex === cardsCount - 1 ? 'hidden' : 'block'}`}>
+                {cards[cardsCount - 1].title || cards[cardsCount - 1].label || cards[cardsCount - 1].name}
+              </div>
+              {showDescriptions && (cards[cardsCount - 1].hoverDescription || cards[cardsCount - 1].description) && (
+                <div className={`text-gray-700 text-xs mt-1 ${activeIndex === cardsCount - 1 ? 'block' : 'hidden'}`}>
+                  {cards[cardsCount - 1].hoverDescription || cards[cardsCount - 1].description}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function CardsSection({ data }) {
   if (!data || !data.cards || data.cards.length === 0) {
@@ -30,47 +105,10 @@ export default function CardsSection({ data }) {
 
         {/* Special mobile layout: two columns with centered last card */}
         {Boolean(data.mobileTwoCols) && (
-          <div className="md:hidden">
-            <div className="grid grid-cols-2 gap-4 mb-4">
-              {data.cards.slice(0, Math.max(0, cardsCount - 1)).map((card, index) => (
-                <div
-                  key={`m-${index}`}
-                  className="bg-white p-4 rounded-2xl border-[1.5px] border-[#EDA94E] transition-all duration-300 text-center h-[150px] flex flex-col justify-center"
-                >
-                  <div className="text-[#E99322] mb-2 flex justify-center">
-                    {card.icon && card.icon.startsWith('/') ? (
-                      <img src={card.icon} alt={card.title || card.label || card.name} className="w-10 h-10 object-contain" />
-                    ) : (
-                      card.icon
-                    )}
-                  </div>
-                  <div className="font-semibold text-gray-800 text-sm">
-                    {card.title || card.label || card.name}
-                  </div>
-                </div>
-              ))}
-            </div>
-            {cardsCount > 0 && (
-              <div className="grid grid-cols-2 gap-4 mb-4">
-                <div className="col-span-2 justify-self-center w-[calc(50%-0.5rem)]">
-                  <div className="bg-white p-4 rounded-2xl border-[1.5px] border-[#EDA94E] text-center h-[150px] flex flex-col justify-center">
-                    <div className="text-[#E99322] mb-2 flex justify-center">
-                      {data.cards[cardsCount - 1].icon && data.cards[cardsCount - 1].icon.startsWith('/') ? (
-                        <img src={data.cards[cardsCount - 1].icon} alt={data.cards[cardsCount - 1].title || data.cards[cardsCount - 1].label || data.cards[cardsCount - 1].name} className="w-10 h-10 object-contain" />
-                      ) : (
-                        data.cards[cardsCount - 1].icon
-                      )}
-                    </div>
-                    <div className="font-semibold text-gray-800 text-sm">
-                      {data.cards[cardsCount - 1].title || data.cards[cardsCount - 1].label || data.cards[cardsCount - 1].name}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
+          <MobileCardsLayout cards={data.cards} showDescriptions={showDescriptions} />
         )}
 
+        {/* Desktop layout - hidden on mobile when mobileTwoCols is true */}
         {centerLastRow && cardsCount % 4 === 3 ? (
           <>
             <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
@@ -158,7 +196,7 @@ export default function CardsSection({ data }) {
             </div>
           </>
         ) : (
-          <div className={gridClasses}>
+          <div className={`${gridClasses} ${Boolean(data.mobileTwoCols) ? 'hidden md:grid' : ''}`}>
             {data.cards.map((card, index) => (
                 <div
                   key={index}

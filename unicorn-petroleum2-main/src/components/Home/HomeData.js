@@ -192,9 +192,9 @@ export const homeData = {
       },
       {
         icon: "/assets/Icons/Bulk.png",
-        label: "Home Care",
+        label: "Bulk Chemicals",
         hoverDescription: "Oils, waxes, preservatives and specialty chemicals",
-        link: "/applications#home-care", // Internal link with anchor
+        link: "/applications/home-care", // Internal link to home care application page
       },
       {
         icon: "/assets/Icons/Property 1=petro.png",
@@ -207,6 +207,12 @@ export const homeData = {
         label: "Lubricants",
         hoverDescription: "Oils, waxes and protective coatings",
         link: "/applications#lubricants", // Internal link with anchor
+      },
+      {
+        icon: "/assets/Icons/Property 1=agro.png",
+        label: "Agrochemical",
+        hoverDescription: "Carrier oils, coating and formulation agents",
+        link: "/applications/agrochemical", // Internal link to agrochemical application page
       },
     ],
     buttonText: "View All Applications",

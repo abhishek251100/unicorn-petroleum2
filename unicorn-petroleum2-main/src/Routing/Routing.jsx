@@ -28,6 +28,7 @@ import CosmeticsPage from "../components/applicationPage/cosmetics/CosmeticsPage
 import BulkChemicalPage from "../components/applicationPage/bulkChemical/BulkChemicalPage";
 import PersonalCarePage from "../components/applicationPage/personalCare/PersonalCarePage";
 import LubricantsPage from "../components/applicationPage/lubricants/LubricantsPage";
+import AgrochemicalPage from "../components/applicationPage/agrochemical/AgrochemicalPage";
 import TextilePage from "../components/applicationPage/textile/TextilePage";
 
 // Coming Soon pages
@@ -69,6 +70,7 @@ const router = createBrowserRouter([
       { path: "/applications/personal-care", element: <PersonalCarePage /> },
       { path: "/applications/textile", element: <TextilePage /> },
       { path: "/applications/lubricants", element: <LubricantsPage /> },
+      { path: "/applications/agrochemical", element: <AgrochemicalPage /> },
       { path: "/reach", element: <ReachPage /> },
       { path: "/contact", element: <ContactPage /> },
       { path: "/privacy", element: <ComingSoon title="Privacy Policy" breadcrumbs={[{ text: "Home", link: "/" }, { text: "Privacy Policy" }]} /> },

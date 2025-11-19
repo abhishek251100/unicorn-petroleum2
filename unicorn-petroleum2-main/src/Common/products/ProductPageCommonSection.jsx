@@ -1,17 +1,10 @@
 import React from "react";
-import { FiDownload } from "react-icons/fi";
 
 const ProductPageCommonSection = ({ data }) => {
   const handleRequestInfo = () => {
     const quoteSection = document.getElementById('quote-form-section');
     if (quoteSection) {
       quoteSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleDownloadBrochure = () => {
-    if (data.brochureUrl) {
-      window.open(data.brochureUrl, '_blank');
     }
   };
 
@@ -35,21 +28,13 @@ const ProductPageCommonSection = ({ data }) => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex justify-center items-center">
           <button 
             onClick={handleRequestInfo}
-            className="bg-[#E99322] text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-[#E99322]/90 transition-all duration-300 flex items-center gap-2"
+            className="bg-[#E99322] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base hover:bg-[#E99322]/90 transition-all duration-300 flex items-center gap-2"
           >
             <span>Request Info</span>
-            <span className="text-xl">→</span>
-          </button>
-          
-          <button 
-            onClick={handleDownloadBrochure}
-            className="bg-white text-black border-2 border-black px-8 py-4 rounded-full font-medium text-lg hover:bg-gray-50 transition-colors flex items-center space-x-2"
-          >
-            <span>Download Brochure</span>
-            <FiDownload className="text-xl" />
+            <span className="text-base sm:text-lg">→</span>
           </button>
         </div>
       </div>
