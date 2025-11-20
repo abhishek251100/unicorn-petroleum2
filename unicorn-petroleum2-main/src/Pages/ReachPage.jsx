@@ -151,30 +151,39 @@ const ReachPage = () => {
         </div>
 
         {/* Stats Circles - overlay on md+ only */}
-        <div className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-5xl px-4 z-10 pointer-events-none">
-          <div ref={desktopCounterRef} className="grid grid-cols-3 gap-14">
+        <div className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-4xl px-4 z-10 pointer-events-none">
+          <div
+            ref={desktopCounterRef}
+            className="grid grid-cols-3 gap-10 justify-items-center"
+          >
             {/* Years */}
-            <div className="rounded-full aspect-square flex flex-col items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#E99322] mb-1">
+            <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full flex flex-col items-center justify-center p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#E99322] mb-1">
                 {counts.years}+
               </div>
-              <div className="text-sm sm:text-base md:text-lg font-medium text-[#E99322]">years</div>
+              <div className="text-sm sm:text-base md:text-lg font-medium text-[#E99322]">
+                years
+              </div>
             </div>
 
             {/* Countries */}
-            <div className="rounded-full aspect-square flex flex-col items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#E99322] mb-1">
+            <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full flex flex-col items-center justify-center p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#E99322] mb-1">
                 {counts.countries}+
               </div>
-              <div className="text-sm sm:text-base md:text-lg font-medium text-[#E99322]">countries</div>
+              <div className="text-sm sm:text-base md:text-lg font-medium text-[#E99322]">
+                countries
+              </div>
             </div>
 
             {/* Companies */}
-            <div className="rounded-full aspect-square flex flex-col items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#E99322] mb-1">
+            <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full flex flex-col items-center justify-center p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#E99322] mb-1">
                 {counts.companies}+
               </div>
-              <div className="text-sm sm:text-base md:text-lg font-medium text-[#E99322]">companies</div>
+              <div className="text-sm sm:text-base md:text-lg font-medium text-[#E99322]">
+                companies
+              </div>
             </div>
           </div>
         </div>
