@@ -135,7 +135,7 @@ const AboutPage = () => {
           {/* Timeline-style layout */}
           <div className="relative overflow-visible">
             {/* Center vertical line - simple fixed positioning */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] bg-[#E99322] hidden md:block animate-draw-line" style={{top: '10%', height: '83%'}}></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] bg-[#E99322] hidden md:block animate-draw-line" style={{top: '9%', height: '83%'}}></div>
             
             {/* Mobile Layout */}
             <div className="md:hidden space-y-10 pb-8">
@@ -428,7 +428,7 @@ const AboutPage = () => {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Regulatory compliance</h3>
-                <p className="text-gray-700">Ensure consistent batch production in state-of-art manufacturing and testing facilities as required by regulatory markets.</p>
+                <p className="text-gray-700">Our unwavering commitment to regulatory compliance ensures that every product and process meets the highest standards, delivering safety, reliability, and trust to our customers</p>
               </div>
 
               {/* Environment consciousness */}
@@ -445,7 +445,7 @@ const AboutPage = () => {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Environment consciousness</h3>
-                <p className="text-gray-700">Always striving for operational responsibility towards the environment by minimizing pollutant and effluent discharge levels.</p>
+                <p className="text-gray-700">We prioritize sustainability by minimizing our impact on the environment and promoting responsible practices across all operations.</p>
               </div>
 
               {/* Ethical operations */}
@@ -462,7 +462,7 @@ const AboutPage = () => {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Ethical operations</h3>
-                <p className="text-gray-700">Maintaining the highest standards of integrity, value and business ethics with transparency and professionalism in all commercial transactions.</p>
+                <p className="text-gray-700"> We uphold the highest standards of integrity in every aspect of our business, ensuring transparency, fairness, and responsibly guide all our operations.</p>
               </div>
             </div>
 
@@ -483,7 +483,7 @@ const AboutPage = () => {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Timely delivery</h3>
-                  <p className="text-gray-700">On a quest for excellence in services with strict adherence to delivery schedules of our prestigious customers.</p>
+                  <p className="text-gray-700">We are committed to delivering every product and service on time, ensuring reliability and consistency for our customers. Punctuality is central to our operations, helping us build trust and long-lasting partnerships.</p>
                 </div>
 
                 {/* Quality assurance */}
@@ -500,7 +500,7 @@ const AboutPage = () => {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Quality assurance</h3>
-                  <p className="text-gray-700">Renowned for our quality consistence, amongst majority of the world's most recognisable pharmaceutical, cosmetic & FMCG companies.</p>
+                  <p className="text-gray-700">We ensure every product meets the highest standards through rigorous quality checks and continuous improvement. Our commitment to assurance guarantees reliability and safety for our partners.</p>
                 </div>
               </div>
             </div>

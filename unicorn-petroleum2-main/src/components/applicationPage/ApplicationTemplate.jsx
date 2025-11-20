@@ -109,6 +109,18 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
   // Duplicate products for seamless infinite scroll
   const duplicatedProducts = [...products, ...products];
 
+  // Ensure animation starts on mount
+  useEffect(() => {
+    if (products.length > 0 && marqueeRef.current && !isManualScroll) {
+      // Force animation to start
+      const marquee = marqueeRef.current;
+      marquee.style.animation = 'none';
+      // Trigger reflow
+      void marquee.offsetWidth;
+      marquee.style.animation = '';
+    }
+  }, [products.length, isManualScroll]);
+
   // Initialize scroll position when switching to manual mode
   useEffect(() => {
     if (!containerRef.current || !isManualScroll || !marqueeRef.current) return;
@@ -399,7 +411,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
                     
                     <div 
                       ref={marqueeRef}
-                      className={`flex space-x-6 ${isPaused && !isManualScroll ? 'marquee-paused' : !isManualScroll ? 'marquee-animation' : ''}`}
+                      className={`flex space-x-6 ${isManualScroll ? '' : isPaused ? 'marquee-paused' : 'marquee-animation'}`}
                       style={{
                         width: 'fit-content',
                         willChange: isManualScroll ? 'auto' : 'transform',
