@@ -455,7 +455,7 @@ export default function PharmaceuticalPage() {
                     
                     <div 
                       ref={marqueeRef}
-                      className={`flex space-x-6 ${isManualScroll ? '' : isPaused ? 'marquee-paused' : 'marquee-animation'}`}
+                      className={`flex space-x-6 ${!isManualScroll ? 'marquee-animation' : ''} ${!isManualScroll && isPaused ? 'marquee-paused' : ''}`}
                       style={{
                         width: 'fit-content',
                         willChange: isManualScroll ? 'auto' : 'transform',

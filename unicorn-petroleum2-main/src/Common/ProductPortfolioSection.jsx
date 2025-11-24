@@ -263,7 +263,7 @@ export default function ProductPortfolioSection({ data }) {
             
             <div 
               ref={marqueeRef}
-              className={`flex gap-5 sm:gap-7 md:gap-9 py-1 ${isManualScroll ? '' : isPaused ? 'marquee-paused' : 'marquee-animation'}`}
+              className={`flex gap-5 sm:gap-7 md:gap-9 py-1 ${!isManualScroll ? 'marquee-animation' : ''} ${!isManualScroll && isPaused ? 'marquee-paused' : ''}`}
               style={{
                 width: 'fit-content',
                 willChange: isManualScroll ? 'auto' : 'transform',
