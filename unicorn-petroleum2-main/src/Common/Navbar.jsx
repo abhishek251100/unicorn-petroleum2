@@ -1,29 +1,45 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FiMenu, FiX, FiChevronDown, FiPhone, FiMail, FiSearch } from "react-icons/fi";
+import { FiMenu, FiX, FiChevronDown, FiChevronRight, FiPhone, FiMail, FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeNestedDropdown, setActiveNestedDropdown] = useState(null);
   const [mobileDropdowns, setMobileDropdowns] = useState({});
+  const [mobileNestedDropdowns, setMobileNestedDropdowns] = useState({});
   const [isScrolled, setIsScrolled] = useState(false);
   const hoverTimeoutRef = useRef(null);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(prev => {
+      const next = !prev;
+      if (!next) {
+        setMobileDropdowns({});
+        setMobileNestedDropdowns({});
+      }
+      return next;
+    });
+  };
 
   const toggleDropdown = (index) => {
     setActiveDropdown(activeDropdown === index ? null : index);
+    setActiveNestedDropdown(null);
   };
 
   const openDropdown = (index) => {
     if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
     setActiveDropdown(index);
+    setActiveNestedDropdown(null);
   };
 
   const closeDropdownWithDelay = () => {
     if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
-    hoverTimeoutRef.current = setTimeout(() => setActiveDropdown(null), 180);
+    hoverTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+      setActiveNestedDropdown(null);
+    }, 180);
   };
 
   const toggleMobileDropdown = (index) => {
@@ -73,10 +89,16 @@ export default function Navbar() {
       dropdownItems: [
         { name: "Petroleum Jelly", link: "/products/petroleum-jelly" },
         { name: "White Mineral Oils", link: "/products/white-mineral-oils" },
-        { name: "Microcrystalline Wax", link: "/products/microcrystalline-wax" },
-        { name: "Paraffin Wax", link: "/products/paraffin-wax" },
-        { name: "Natural Beeswax", link: "/products/natural-beeswax" },
-        { name: "Emulsifying Wax", link: "/products/emulsifying-wax" },
+        {
+          name: "Waxes",
+          link: "/products",
+          subItems: [
+            { name: "Microcrystalline Wax", link: "/products/microcrystalline-wax" },
+            { name: "Paraffin Wax", link: "/products/paraffin-wax" },
+            { name: "Natural Beeswax", link: "/products/natural-beeswax" },
+            { name: "Emulsifying Wax", link: "/products/emulsifying-wax" },
+          ],
+        },
         { name: "D-Panthenol", link: "/products/d-panthenol" },
         { name: "Preservatives", link: "/products/preservatives" },
         { name: "Surfactants", link: "/products/surfactants" },
@@ -148,20 +170,63 @@ export default function Navbar() {
                       {activeDropdown === index && (
                         <div className="absolute top-full left-0 pt-2 z-50" onMouseEnter={() => openDropdown(index)} onMouseLeave={closeDropdownWithDelay}>
                           <div className="w-56 bg-white/90 backdrop-blur-md shadow-xl rounded-md py-2 border border-gray-400">
-                            {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
-                              <Link
-                                key={dropdownIndex}
-                                to={dropdownItem.link}
-                                className="flex px-6 py-4 text-base font-semibold text-black hover:bg-[#E99322]/10 border-b border-gray-400 last:border-b-0 items-center justify-between"
-                                onClick={() => {
-                                  setActiveDropdown(null);
-                                  window.scrollTo(0, 0);
-                                }}
-                              >
-                                <span className="flex-1">{dropdownItem.name}</span>
-                                <span className="text-black font-bold ml-6">&gt;</span>
-                              </Link>
-                            ))}
+                            {item.dropdownItems?.map((dropdownItem, dropdownIndex) => {
+                              const nestedKey = `${index}-${dropdownIndex}`;
+                              const hasNested = dropdownItem.subItems && dropdownItem.subItems.length > 0;
+
+                              if (hasNested) {
+                                return (
+                                  <div
+                                    key={nestedKey}
+                                    className="relative border-b border-gray-400 last:border-b-0"
+                                    onMouseEnter={() => setActiveNestedDropdown(nestedKey)}
+                                    onMouseLeave={() => setActiveNestedDropdown(null)}
+                                  >
+                                    <button
+                                      className="flex w-full px-6 py-4 text-base font-semibold text-black hover:bg-[#E99322]/10 items-center justify-between"
+                                      onClick={(e) => e.preventDefault()}
+                                    >
+                                      <span className="flex-1 text-left">{dropdownItem.name}</span>
+                                      <FiChevronRight className="ml-6 text-black" />
+                                    </button>
+                                    {activeNestedDropdown === nestedKey && (
+                                      <div className="absolute top-0 left-full ml-2 w-56 bg-white/90 backdrop-blur-md shadow-xl rounded-md py-2 border border-gray-400">
+                                        {dropdownItem.subItems.map((subItem, subIndex) => (
+                                          <Link
+                                            key={`${nestedKey}-${subIndex}`}
+                                            to={subItem.link}
+                                            className="flex px-6 py-3 text-sm font-semibold text-black hover:bg-[#E99322]/10 border-b border-gray-300 last:border-b-0 items-center justify-between"
+                                            onClick={() => {
+                                              setActiveDropdown(null);
+                                              setActiveNestedDropdown(null);
+                                              window.scrollTo(0, 0);
+                                            }}
+                                          >
+                                            <span className="flex-1">{subItem.name}</span>
+                                            <span className="text-black font-bold ml-6">&gt;</span>
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </div>
+                                );
+                              }
+
+                              return (
+                                <Link
+                                  key={nestedKey}
+                                  to={dropdownItem.link}
+                                  className="flex px-6 py-4 text-base font-semibold text-black hover:bg-[#E99322]/10 border-b border-gray-400 last:border-b-0 items-center justify-between"
+                                  onClick={() => {
+                                    setActiveDropdown(null);
+                                    window.scrollTo(0, 0);
+                                  }}
+                                >
+                                  <span className="flex-1">{dropdownItem.name}</span>
+                                  <span className="text-black font-bold ml-6">&gt;</span>
+                                </Link>
+                              );
+                            })}
                           </div>
                         </div>
                       )}
@@ -214,16 +279,62 @@ export default function Navbar() {
                       </button>
                       {mobileDropdowns[index] && (
                         <div className="border-t border-gray-300/30 bg-white/10 backdrop-blur-lg">
-                          {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
-                            <Link
-                              key={dropdownIndex}
-                              to={dropdownItem.link}
-                              className="block px-8 py-3 text-sm text-gray-800 hover:text-[#E99322]/80 hover:bg-white/20 border-b border-gray-300/30 last:border-b-0"
-                              onClick={() => { setIsOpen(false); setMobileDropdowns({}); window.scrollTo(0, 0); }}
-                            >
-                              {dropdownItem.name}
-                            </Link>
-                          ))}
+                          {item.dropdownItems?.map((dropdownItem, dropdownIndex) => {
+                            const nestedKey = `${index}-${dropdownIndex}`;
+                            const hasNested = dropdownItem.subItems && dropdownItem.subItems.length > 0;
+
+                            if (hasNested) {
+                              return (
+                                <div key={nestedKey} className="border-b border-gray-300/30 last:border-b-0">
+                                  <button
+                                    onClick={() => setMobileNestedDropdowns(prev => ({
+                                      ...prev,
+                                      [nestedKey]: !prev[nestedKey]
+                                    }))}
+                                    className="w-full text-left px-8 py-3 text-gray-800 hover:text-[#E99322]/80 flex items-center justify-between"
+                                  >
+                                    <span className="text-sm font-semibold">{dropdownItem.name}</span>
+                                    <FiChevronDown className={`text-sm transition-transform ${mobileNestedDropdowns[nestedKey] ? 'rotate-180' : ''}`} />
+                                  </button>
+                                  {mobileNestedDropdowns[nestedKey] && (
+                                    <div className="bg-white/20">
+                                      {dropdownItem.subItems.map((subItem, subIndex) => (
+                                        <Link
+                                          key={`${nestedKey}-${subIndex}`}
+                                          to={subItem.link}
+                                          className="block px-10 py-3 text-xs text-gray-800 hover:text-[#E99322]/80 border-t border-gray-300/30"
+                                          onClick={() => { 
+                                            setIsOpen(false);
+                                            setMobileDropdowns({});
+                                            setMobileNestedDropdowns({});
+                                            window.scrollTo(0, 0);
+                                          }}
+                                        >
+                                          {subItem.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            }
+
+                            return (
+                              <Link
+                                key={nestedKey}
+                                to={dropdownItem.link}
+                                className="block px-8 py-3 text-sm text-gray-800 hover:text-[#E99322]/80 hover:bg-white/20 border-b border-gray-300/30 last:border-b-0"
+                                onClick={() => { 
+                                  setIsOpen(false); 
+                                  setMobileDropdowns({}); 
+                                  setMobileNestedDropdowns({});
+                                  window.scrollTo(0, 0); 
+                                }}
+                              >
+                                {dropdownItem.name}
+                              </Link>
+                            );
+                          })}
                         </div>
                       )}
                     </div>
