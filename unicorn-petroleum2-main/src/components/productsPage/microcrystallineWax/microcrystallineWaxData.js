@@ -22,7 +22,7 @@ export const microcrystallineWaxData = {
   commonSection: {
     title: "Microcrystalline wax",
     description:
-      "Known for its crystal finesse, microcrystalline waxes are produced by de-oiling petrolatum, as part of the petroleum refining process. With an affinity for paraffin wax and mineral oil, it is widely used in oil-based formulations in the cosmetic / pharmaceutical industry, adding structural strength and lustre to the final product. Whether it's locking in moisture or improving texture and stability, our waxes are formulated to perform.",
+      "Microcrystalline waxes are a type of wax produced by de-oiling petrolatum, as part of the petroleum refining process. It is characterised by the fineness of its crystals and is a higher molecular weight saturated aliphatic hydrocarbon. The elastic and adhesive characteristics of microcrystalline waxes are due to their branched-chain components. This wax has affinity for paraffin wax and mineral oil, due to which it is widely used in oil-based formulations in the cosmetic/pharmaceutical industry. It provides strong oil-holding performance, minimizing oil separation, thus helping formulations to remain stable and consistent throughout long-term storage. Microwax works as a reliable occlusive agent, creating a protective layer on the skin that helps lock in moisture and prevent dehydration in topical formulations. Micro waxes add structural strength and lustre to the final product.",
     // additionalInfo:
     //   "At Unicorn, we manufacture microcrystalline wax with uncompromising attention to quality. Our process ensures precise control over melting point, hardness, and viscosity — delivering waxes that are consistent, pure, and ready for global compliance. Each batch is rigorously tested to meet industry-specific standards so you can formulate with confidence.",
     brochureUrl: "#",
@@ -63,18 +63,19 @@ export const microcrystallineWaxData = {
     ],
   },
 
+  // Key features data - Pharmacopoeial Compliance card only for Microcrystalline Wax
   keyFeatures: {
-    heading: "Key Features of Microcrystalline Wax from Unicorn",
+    heading: "Key Features of all Microcrystalline Wax from Unicorn",
     features: [
       {
         icon: "/assets/Icons/Property 1=Compliance.png",
-        title: "Consistency & Stability",
-        items: ["Excellent binding", "Improved texture", "Oxidative stability"],
-      },
-      {
-        icon: "/assets/Icons/Property 1=Compliance.png",
-        title: "Regulatory Fit",
-        items: ["Food-contact suitable grades", "Halal & Kosher"],
+        title: "Pharmacopoeial Compliance",
+        items: [
+          "Indian Pharmacopoeia [IP]",
+          "British Pharmacopoeia [BP]",
+          "United States Pharmacopoeia [USP]",
+          "European Pharmacopoeia [Ph. Eur.]",
+        ],
       },
     ],
   },

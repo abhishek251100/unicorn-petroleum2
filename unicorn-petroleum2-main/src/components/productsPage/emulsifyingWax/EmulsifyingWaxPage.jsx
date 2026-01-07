@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import ProductPageLayout from "../ProductPageLayout";
 import FloatingSidebar from "../../../Common/FloatingSidebar";
 import ProductPageCommonSection from "../../../Common/products/ProductPageCommonSection";
+import ProductKeyFeaturesSection from "../../../Common/products/ProductKeyFeaturesSection";
 import QualityStandardsSection from "../../../Common/QualityStandardsSection";
 import ApplicationsSection from "../../../Common/ApplicationsSection";
 import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySection";
@@ -110,6 +111,7 @@ export default function EmulsifyingWaxPage() {
           <ProductPageCommonSection data={data.commonSection} />
           <ApplicationsSection data={data.applicationsSection} />
           <PackagedResponsiblySection data={data.packagedResponsibly} />
+          <ProductKeyFeaturesSection data={data.keyFeatures} />
         </div>
       </div>
 
@@ -117,6 +119,7 @@ export default function EmulsifyingWaxPage() {
         <ProductPageCommonSection data={data.commonSection} />
         <ApplicationsSection data={data.applicationsSection} />
         <PackagedResponsiblySection data={data.packagedResponsibly} />
+        <ProductKeyFeaturesSection data={data.keyFeatures} />
       </div>
 
       {/* Certifications and beyond - sidebar stops floating here - Full width sections */}

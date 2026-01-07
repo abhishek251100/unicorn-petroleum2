@@ -24,6 +24,13 @@ export const whiteMineralOilsData = {
     title: "White mineral oils",
     description:
       "Mineral Oils are colourless, odourless mixtures of saturated liquid hydrocarbons obtained from the distillation of petroleum. Our Mineral Oils are Paraffinic in nature and we offer a wide range for viscosities for varied applications.",
+    bulletPoints: [
+      "Our Unimin range of cosmetic / pharmaceutical grade Mineral Oils are highly refined, and tailor made for skincare and hair-care formulations.",
+      "These products are treated for harmful polycyclic aromatic impurities and they pass the Polycyclic Aromatic Hydrocarbon test along with other purity norms in the Pharmacopoeia and comply with all the Regulatory requirements as per the European commission and USFDA.",
+      "They do not support pathogenic bacterial growth and due to this property, they become ideal blending bases for Pharmaceutical / cosmetic applications.",
+      "Having excellent lubricating property, it can be used as a general-purpose lubricant.",
+      "Characterized by a high viscosity index, our White Mineral Oils keep stable viscosity at extreme temperatures.",
+    ],
     // additionalInfo:
     //   "Use them with confidence in pharmaceuticals, personal care, plastics processing, food-contact lubricants and more.",
     brochureUrl: "/brochures/white-mineral-oils-brochure.pdf",
@@ -69,30 +76,23 @@ export const whiteMineralOilsData = {
   //   ],
   // },
 
-  // Key features data
-  // keyFeatures: {
-  //   heading: "Key Features of White Mineral Oils from Unicorn",
-  //   features: [
-  //     {
-  //       icon: "/assets/Icons/Property 1=Compliance.png",
-  //       title: "Exceptional Purity",
-  //       items: [
-  //         "Highly refined, colorless and odorless",
-  //         "Low volatility for stability",
-  //         "Excellent oxidative resistance",
-  //       ],
-  //     },
-  //     {
-  //       icon: "/assets/Icons/Property 1=Compliance.png",
-  //       title: "Regulatory Conformance",
-  //       items: [
-  //         "USP/NF and EP compliant grades",
-  //         "Food-contact suitable grades",
-  //         "Halal & Kosher",
-  //       ],
-  //     },
-  //   ],
-  // },
+  // Key features data - Only Other Compliances card for White Mineral Oils
+  keyFeatures: {
+    heading: "Key Features of all White Mineral Oils from Unicorn",
+    features: [
+      {
+        icon: "/assets/Icons/Property 1=Compliance.png",
+        title: "Other Compliances",
+        items: [
+          "21 CFR 172.878 and 21 CFR 178.3620 (a)",
+          "ICH Q3C (R4) for residual solvents",
+          "USP <467> for residual solvents",
+          "TSE/BSE free",
+          "Halal & Kosher"
+        ],
+      },
+    ],
+  },
 
   // Related products section
   relatedProducts: {

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductPageCommonSection = ({ data }) => {
+const ProductPageCommonSection = ({ data, alignLeft = false }) => {
   const handleRequestInfo = () => {
     const quoteSection = document.getElementById('quote-form-section');
     if (quoteSection) {
@@ -15,15 +15,32 @@ const ProductPageCommonSection = ({ data }) => {
           <h1 className="text-4xl font-bold text-gray-900 mb-8">
             {data.title || "Product Title"}
           </h1>
-          
-          <div className="prose max-w-none mb-8">
+
+          <div className={alignLeft ? "prose max-w-3xl mx-auto mb-8 text-left" : "prose max-w-none mb-8"}>
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
               {data.description || "Product description will come from the product's JSON file."}
             </p>
+
             {data.additionalInfo && (
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed mb-4">
                 {data.additionalInfo}
               </p>
+            )}
+
+            {Array.isArray(data.bulletPoints) && data.bulletPoints.length > 0 && (
+              <ul
+                className={
+                  alignLeft
+                    ? "list-disc list-outside pl-5 md:pl-8 text-left text-base md:text-lg text-gray-600 space-y-2"
+                    : "list-disc list-inside text-left text-lg text-gray-600 space-y-1"
+                }
+              >
+                {data.bulletPoints.map((item, index) => (
+                  <li key={index}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             )}
           </div>
         </div>

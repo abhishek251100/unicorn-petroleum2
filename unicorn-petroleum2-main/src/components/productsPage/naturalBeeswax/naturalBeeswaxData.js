@@ -22,9 +22,9 @@ export const naturalBeeswaxData = {
   commonSection: {
     title: "Natural beeswax",
     description:
-      "Beeswax is a natural wax produced in the beehive of honeybees of the genus Apis. It is mainly esters of fatty acids and various long chain alcohols. Our cosmetic / pharmaceutical grade Beeswax is pale yellow, smooth, highly refined wax with emollient, soothing and softening properties.",
+      "Beeswax is a natural substance produced by honeybees within the hive of genus Apis. It has a distinct structure composed of esters of fatty acids and long-chain alcohols. Our beeswax is carefully treated to provide a smooth, pale yellow appearance and is highly valued for its gentle, calming effects on the skin, thereby making it a perfect fit for the cosmetic and pharmaceutical industry. In addition to preserving and softening the skin, it also enhances the texture and guarantees that other ingredients stay together, thereby providing stability to the finished product.",
     additionalInfo:
-      "Our Beeswax is a 100 % natural product purified for use in pharmaceutical, cosmetic and personal-care formulations. Being a natural product, the quality of our refined beeswax is highly moderated by us to comply with international regulatory requirements.",
+      "Being a natural product, the quality of our refined beeswax is highly moderated by us to comply with international regulatory requirements. It works especially well in stick and for solid preparations because of its inherent ability to create a cohesive film and bind materials together, improving durability and grip. ",
     brochureUrl: "#",
   },
 

@@ -21,8 +21,8 @@ export const emulsifyingWaxData = {
   commonSection: {
     title: "Emulsifying wax",
     description:
-      "Emulsifying wax serves the very purpose it indicates — emulsifying the water and oil phases together into smooth, stable formulations. With both anionic and non-ionic grades, emulsifying waxes from Unicorn aim to cater to many diverse needs of the industry as they come for both water-in-oil emulsions and oil-in-water emulsions.",
-    additionalInfo: "Widely used in the manufacturing of lotions, creams, ointments and other beauty products, it ensures the end products feel as good as they look.",
+      "Emulsifying Wax is a type of cosmetic emulsifying ingredient used primarily in the manufacturing of creams, lotions, and other beauty products that have both water and oil phase. This type of wax helps in mixing or emulsifying the water phase and oil phase together to form an ointment  minimizing phase separation and increasing formulation stability especially during a diverse temperature environment. The emulsification occurs when two substances — in this case, oil and water — are successfully bound together; creating a sort of glue that combines the ingredients of a product which provides consistent viscosity and structure to formulations, resulting in smooth, uniform creams and lotions with improved spreadability.",
+    additionalInfo: "At the molecular level, Emulsifying Wax attracts both water and oil at the same time and keeps them together. Emulsions made with this wax are more stable to weak acids such as Boric, Carbolic & Salicylic. Emulsifying Wax thickens the liquid and marries the oil - and water-based elements of the creation. It is white in colour, solid, and possesses a light alcohol scent. It is easy to process and reliable in performance, making it suitable for both small-scale and industrial manufacturing environments.",
     brochureUrl: "#",
   },
 
@@ -54,7 +54,22 @@ export const emulsifyingWaxData = {
   //   ],
   // },
 
-  // No Key Features section for this page
+  // Key Features section - Pharmacopoeial Compliance card for Emulsifying Wax
+  keyFeatures: {
+    heading: "Key Features of all Emulsifying Wax from Unicorn",
+    features: [
+      {
+        icon: "/assets/Icons/Property 1=Compliance.png",
+        title: "Pharmacopoeial Compliance",
+        items: [
+          "Indian Pharmacopoeia [IP]",
+          "British Pharmacopoeia [BP]",
+          "United States Pharmacopoeia [USP]",
+          "European Pharmacopoeia [Ph. Eur.]",
+        ],
+      },
+    ],
+  },
 
   relatedProducts: {
     relatedProducts: [

@@ -21,7 +21,7 @@ export const paraffinWaxData = {
   commonSection: {
     title: "Paraffin wax",
     description:
-      "Paraffin wax is a mixture of solid hydrocarbons of high molecular weight, which are obtained from crude petroleum. It is characterized by relatively large crystals which are insoluble in water or alcohol & sparingly soluble in benzene, turpentine, chloroform, ether, carbon disulfide and oils. It is also miscible with fats.",
+      "Paraffin wax that is derived as a byproduct from crude oil, is a blend of solid hydrocarbons with a higher molecular weight. It dissolves partly in solvents like benzene, turpentine, chloroform, ether, carbon di-sulphide & oil and is distinguished by its ability to form naturally bigger crystals that do not dissolve in water & alcohol. Its adaptability in different formulations is further enhanced by the fact that it combines nicely with fats. Paraffin wax is frequently utilized in protective coatings and sealing applications where dependable moisture preservation is crucial because of its potent water-resistant qualities.",
     additionalInfo: "",
     brochureUrl: "#",
   },
@@ -48,7 +48,22 @@ export const paraffinWaxData = {
     ],
   },
 
-  // No Key Features section on this page
+  // Key Features section - Pharmacopoeial Compliance card for Paraffin Wax
+  keyFeatures: {
+    heading: "Key Features of all Paraffin Wax from Unicorn",
+    features: [
+      {
+        icon: "/assets/Icons/Property 1=Compliance.png",
+        title: "Pharmacopoeial Compliance",
+        items: [
+          "Indian Pharmacopoeia [IP]",
+          "British Pharmacopoeia [BP]",
+          "United States Pharmacopoeia [USP]",
+          "European Pharmacopoeia [Ph. Eur.]",
+        ],
+      },
+    ],
+  },
 
   relatedProducts: {
     relatedProducts: [

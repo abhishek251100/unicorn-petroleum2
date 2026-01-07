@@ -113,7 +113,7 @@ export default function WhiteMineralOilsPage() {
         </div>
 
         <div className="lg:col-span-9 space-y-4">
-          <ProductPageCommonSection data={whiteMineralOilsData.commonSection} />
+          <ProductPageCommonSection data={whiteMineralOilsData.commonSection} alignLeft />
           <ApplicationsSection data={whiteMineralOilsData.applicationsSection} />
           <PackagedResponsiblySection data={whiteMineralOilsData.packagedResponsibly} />
           <ProductKeyFeaturesSection data={whiteMineralOilsData.keyFeatures} />
@@ -122,7 +122,7 @@ export default function WhiteMineralOilsPage() {
 
       {/* Mobile Layout */}
       <div className="lg:hidden space-y-4 mb-4">
-        <ProductPageCommonSection data={whiteMineralOilsData.commonSection} />
+        <ProductPageCommonSection data={whiteMineralOilsData.commonSection} alignLeft />
         <ApplicationsSection data={whiteMineralOilsData.applicationsSection} />
         <PackagedResponsiblySection data={whiteMineralOilsData.packagedResponsibly} />
         <ProductKeyFeaturesSection data={whiteMineralOilsData.keyFeatures} />

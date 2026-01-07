@@ -21,8 +21,8 @@ export const petroleumJellyData = {
   // Common section data
   commonSection: {
     title: "Petroleum Jelly",
-    description: "Petroleum Jelly (also known as Petrolatum or White / Yellow Soft Paraffin) is an ointment-like homogenous, highly refined semi solid with a delicate balance between liquid and solid hydrocarbons for skin-care application and topical formulations.\nWe have been manufacturing this product since 1964 in a dedicated facility. With years of experience and a varied clientele, we have an expertise in this field.",
-    additionalInfo: "Our petroleum jelly is manufactured under strict quality control measures to ensure consistency and purity for pharmaceutical and cosmetic applications.",
+    description: "Petroleum Jelly is an ointment-like, homogenous, highly refined semi-solid with a delicate balance between liquid and solid hydrocarbons for skin-care application and topical formulations.\n Our product maintains a good structure during processing and congeals to form a smooth surface while packing, which adds to aesthetic value, and it has the ability to resist moisture, prevent decolorization and retain oil content even at elevated temperatures.",
+    additionalInfo: "It is available in the following colours: bright snow-white, off-white, pearl-white, Lily, Pale-yellow, bright-yellow and amber.",
     brochureUrl: "/brochures/petroleum-jelly-brochure.pdf"
   },
 
