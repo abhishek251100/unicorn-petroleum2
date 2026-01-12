@@ -33,9 +33,12 @@ const PackagedResponsiblySection = ({ data }) => {
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 {option.type}
               </h3>
-              <p className="text-gray-600 text-sm">
-                {option.weight}
-              </p>
+              <div className="text-gray-600 text-sm">
+                <p>{option.weight}</p>
+                {option.additionalText && (
+                  <p className="mt-1">{option.additionalText}</p>
+                )}
+              </div>
             </div>
           ))}
         </div>

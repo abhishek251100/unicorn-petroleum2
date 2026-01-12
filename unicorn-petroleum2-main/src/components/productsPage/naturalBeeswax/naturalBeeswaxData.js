@@ -20,7 +20,7 @@ export const naturalBeeswaxData = {
   ],
 
   commonSection: {
-    title: "Natural beeswax",
+    title: "Natural beeswax / Cera Alba / Cera Flava",
     description:
       "Beeswax is a natural substance produced by honeybees within the hive of genus Apis. It has a distinct structure composed of esters of fatty acids and long-chain alcohols. Our beeswax is carefully treated to provide a smooth, pale yellow appearance and is highly valued for its gentle, calming effects on the skin, thereby making it a perfect fit for the cosmetic and pharmaceutical industry. In addition to preserving and softening the skin, it also enhances the texture and guarantees that other ingredients stay together, thereby providing stability to the finished product.",
     additionalInfo:
@@ -60,12 +60,12 @@ export const naturalBeeswaxData = {
     ],
   },
 
-  // packagedResponsibly: {
-  //   packagingOptions: [
-  //     { icon: "bag", type: "Bags", weight: "25kg" },
-  //     { icon: "box", type: "Cartons", weight: "25kg" },
-  //   ],
-  // },
+  packagedResponsibly: {
+  packagingOptions: [
+      { icon: "bag", type: "Bags", weight: "25kg" },
+       { icon: "box", type: "Cartons", weight: "25kg", additionalText: "Slab Form" },
+     ],
+   },
 
   keyFeatures: {
     heading: "Key feature of all beeswax from us",

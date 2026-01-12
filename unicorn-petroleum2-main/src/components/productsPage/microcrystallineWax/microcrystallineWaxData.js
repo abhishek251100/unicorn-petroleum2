@@ -58,8 +58,8 @@ export const microcrystallineWaxData = {
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "bag", type: "Bags", weight: "25kg/30kg" },
-      { icon: "box", type: "Cartons", weight: "25kg/30kg" },
+      { icon: "bag", type: "Bags", weight: "25kg" },
+      { icon: "box", type: "Cartons", weight: "25kg" },
     ],
   },
 

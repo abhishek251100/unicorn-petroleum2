@@ -1,11 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProductPageCommonSection = ({ data, alignLeft = false }) => {
+  const navigate = useNavigate();
+
   const handleRequestInfo = () => {
-    const quoteSection = document.getElementById('quote-form-section');
-    if (quoteSection) {
-      quoteSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    navigate("/contact");
   };
 
   return (

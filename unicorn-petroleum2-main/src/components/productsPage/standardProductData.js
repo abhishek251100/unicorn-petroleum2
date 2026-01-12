@@ -27,8 +27,8 @@ export function buildStandardProductData({ name, description }) {
 
     packagedResponsibly: {
       packagingOptions: [
-        { icon: "bag", type: "Bags", weight: "25kg/35kg" },
-        { icon: "box", type: "Cartons", weight: "25kg/35kg" },
+        { icon: "bag", type: "Bags", weight: "25kg" },
+        { icon: "box", type: "Cartons", weight: "25kg" },
       ],
     },
 

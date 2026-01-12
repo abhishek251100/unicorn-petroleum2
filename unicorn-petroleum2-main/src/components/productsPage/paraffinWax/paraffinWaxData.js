@@ -19,7 +19,7 @@ export const paraffinWaxData = {
   ],
 
   commonSection: {
-    title: "Paraffin wax",
+    title: "Fully Refined Paraffin Wax / Candle Wax",
     description:
       "Paraffin wax that is derived as a byproduct from crude oil, is a blend of solid hydrocarbons with a higher molecular weight. It dissolves partly in solvents like benzene, turpentine, chloroform, ether, carbon di-sulphide & oil and is distinguished by its ability to form naturally bigger crystals that do not dissolve in water & alcohol. Its adaptability in different formulations is further enhanced by the fact that it combines nicely with fats. Paraffin wax is frequently utilized in protective coatings and sealing applications where dependable moisture preservation is crucial because of its potent water-resistant qualities.",
     additionalInfo: "",
@@ -43,8 +43,8 @@ export const paraffinWaxData = {
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "bag", type: "Bags", weight: "25kg/50kg" },
-      { icon: "box", type: "Cartons", weight: "25kg/50kg" },
+      { icon: "bag", type: "Bags", weight: "25kg" },
+      { icon: "box", type: "Cartons", weight: "25kg" },
     ],
   },
 

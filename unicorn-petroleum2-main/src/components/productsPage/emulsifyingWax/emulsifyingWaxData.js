@@ -54,6 +54,16 @@ export const emulsifyingWaxData = {
   //   ],
   // },
 
+  // Emulsifying Wax Blends Table
+  emulsifyingWaxBlends: {
+    heading: "We offer the following blends of Self-emulsifying wax.",
+    tableData: [
+      { productName: "Anionic emulsifying wax", inciName: "Cetearyl Alcohol & Sodium Lauryl Sulphate" },
+      { productName: "Non-ionic emulsifying wax", inciName: "Cetearyl Alcohol & Ceteareath-20" },
+      { productName: "Emulsifying wax 1440", inciName: "Cetearyl Alcohol & Polysorbate 60" },
+    ],
+  },
+
   // Key Features section - Pharmacopoeial Compliance card for Emulsifying Wax
   keyFeatures: {
     heading: "Key Features of all Emulsifying Wax from Unicorn",

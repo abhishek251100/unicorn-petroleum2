@@ -7,6 +7,7 @@ import QualityStandardsSection from "../../../Common/QualityStandardsSection";
 import ApplicationsSection from "../../../Common/ApplicationsSection";
 import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySection";
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
+import EmulsifyingWaxBlendsTable from "./EmulsifyingWaxBlendsTable";
 import { productsNavigationData } from "../productsNavigationData";
 import { emulsifyingWaxData } from "./emulsifyingWaxData";
 import { useMetaTags } from "../../../hooks/useMetaTags";
@@ -111,6 +112,7 @@ export default function EmulsifyingWaxPage() {
           <ProductPageCommonSection data={data.commonSection} />
           <ApplicationsSection data={data.applicationsSection} />
           <PackagedResponsiblySection data={data.packagedResponsibly} />
+          <EmulsifyingWaxBlendsTable data={data.emulsifyingWaxBlends} />
           <ProductKeyFeaturesSection data={data.keyFeatures} />
         </div>
       </div>
@@ -119,6 +121,7 @@ export default function EmulsifyingWaxPage() {
         <ProductPageCommonSection data={data.commonSection} />
         <ApplicationsSection data={data.applicationsSection} />
         <PackagedResponsiblySection data={data.packagedResponsibly} />
+        <EmulsifyingWaxBlendsTable data={data.emulsifyingWaxBlends} />
         <ProductKeyFeaturesSection data={data.keyFeatures} />
       </div>
 
