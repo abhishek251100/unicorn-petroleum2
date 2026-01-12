@@ -20,7 +20,7 @@ export const petroleumJellyData = {
   
   // Common section data
   commonSection: {
-    title: "Petroleum Jelly",
+    title: "Petroleum Jelly / Petrolatum / Soft paraffin",
     description: "Petroleum Jelly is an ointment-like, homogenous, highly refined semi-solid with a delicate balance between liquid and solid hydrocarbons for skin-care application and topical formulations.\n Our product maintains a good structure during processing and congeals to form a smooth surface while packing, which adds to aesthetic value, and it has the ability to resist moisture, prevent decolorization and retain oil content even at elevated temperatures.",
     additionalInfo: "It is available in the following colours: bright snow-white, off-white, pearl-white, Lily, Pale-yellow, bright-yellow and amber.",
     brochureUrl: "/brochures/petroleum-jelly-brochure.pdf"
