@@ -1,5 +1,5 @@
 import React from "react";
-import { FiPackage, FiBox, FiDroplet } from "react-icons/fi";
+import { FiBox, FiDroplet } from "react-icons/fi";
 
 const PackagedResponsiblySection = ({ data }) => {
   if (!data || !data.packagingOptions || data.packagingOptions.length === 0) {
@@ -25,7 +25,7 @@ const PackagedResponsiblySection = ({ data }) => {
                 {option.icon && option.icon.startsWith('/') ? (
                   <img src={option.icon} alt={option.type} className="w-16 h-16 object-contain" />
                 ) : (
-                  option.icon === 'bag' ? <FiPackage /> : 
+                  option.icon === 'bag' ? <img src="/assets/bag (2).png" alt={option.type} className="w-16 h-16 object-contain" /> : 
                   option.icon === 'bottle' ? <FiDroplet /> : 
                   <FiBox />
                 )}

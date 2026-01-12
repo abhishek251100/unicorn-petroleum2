@@ -11,6 +11,7 @@ export default function Navbar() {
   const [mobileNestedDropdowns, setMobileNestedDropdowns] = useState({});
   const [isScrolled, setIsScrolled] = useState(false);
   const hoverTimeoutRef = useRef(null);
+  const nestedHoverTimeoutRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(prev => {
@@ -30,8 +31,8 @@ export default function Navbar() {
 
   const openDropdown = (index) => {
     if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    if (nestedHoverTimeoutRef.current) clearTimeout(nestedHoverTimeoutRef.current);
     setActiveDropdown(index);
-    setActiveNestedDropdown(null);
   };
 
   const closeDropdownWithDelay = () => {
@@ -39,7 +40,20 @@ export default function Navbar() {
     hoverTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
       setActiveNestedDropdown(null);
-    }, 180);
+    }, 200);
+  };
+
+  const openNestedDropdown = (nestedKey) => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    if (nestedHoverTimeoutRef.current) clearTimeout(nestedHoverTimeoutRef.current);
+    setActiveNestedDropdown(nestedKey);
+  };
+
+  const closeNestedDropdownWithDelay = () => {
+    if (nestedHoverTimeoutRef.current) clearTimeout(nestedHoverTimeoutRef.current);
+    nestedHoverTimeoutRef.current = setTimeout(() => {
+      setActiveNestedDropdown(null);
+    }, 150);
   };
 
   const toggleMobileDropdown = (index) => {
@@ -78,6 +92,13 @@ export default function Navbar() {
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+      if (nestedHoverTimeoutRef.current) clearTimeout(nestedHoverTimeoutRef.current);
+    };
   }, []);
 
   const menuItems = [
@@ -179,8 +200,8 @@ export default function Navbar() {
                                   <div
                                     key={nestedKey}
                                     className="relative border-b border-gray-400 last:border-b-0"
-                                    onMouseEnter={() => setActiveNestedDropdown(nestedKey)}
-                                    onMouseLeave={() => setActiveNestedDropdown(null)}
+                                    onMouseEnter={() => openNestedDropdown(nestedKey)}
+                                    onMouseLeave={closeNestedDropdownWithDelay}
                                   >
                                     <button
                                       className="flex w-full px-6 py-4 text-base font-semibold text-black hover:bg-[#E99322]/10 items-center justify-between"
@@ -190,7 +211,12 @@ export default function Navbar() {
                                       <FiChevronRight className="ml-6 text-black" />
                                     </button>
                                     {activeNestedDropdown === nestedKey && (
-                                      <div className="absolute top-0 left-full ml-2 w-56 bg-white/90 backdrop-blur-md shadow-xl rounded-md py-2 border border-gray-400">
+                                      <div 
+                                        className="absolute top-0 left-full w-56 bg-white/90 backdrop-blur-md shadow-xl rounded-md py-2 border border-gray-400"
+                                        style={{ marginLeft: '4px' }}
+                                        onMouseEnter={() => openNestedDropdown(nestedKey)}
+                                        onMouseLeave={closeNestedDropdownWithDelay}
+                                      >
                                         {dropdownItem.subItems.map((subItem, subIndex) => (
                                           <Link
                                             key={`${nestedKey}-${subIndex}`}
@@ -327,7 +353,7 @@ export default function Navbar() {
                                 onClick={() => { 
                                   setIsOpen(false); 
                                   setMobileDropdowns({}); 
-                                  setMobileNestedDropdowns({});
+                                  setMobileNestedDropdowns({}); 
                                   window.scrollTo(0, 0); 
                                 }}
                               >
