@@ -6,6 +6,18 @@ const SurfactantProductsSection = ({ data }) => {
     return null;
   }
 
+  const toTitleCase = (value) => {
+    if (!value) return "";
+    return value
+      .split(" ")
+      .map((word) => {
+        if (!word) return "";
+        if (word === word.toUpperCase()) return word;
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      })
+      .join(" ");
+  };
+
   return (
     <section className="py-12 px-4">
       <div className="max-w-6xl mx-auto">
@@ -40,13 +52,10 @@ const SurfactantProductsSection = ({ data }) => {
                 </div>
 
                 <div className="h-full">
-                  <div className="w-full h-full px-6 py-4 flex flex-col justify-start">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2 leading-tight">
-                      {product.name}
+                  <div className="w-full h-full px-6 py-0 flex items-center justify-center text-center">
+                    <h3 className="text-lg font-semibold text-gray-800 leading-tight">
+                      {toTitleCase(product.name)}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {product.description}
-                    </p>
                   </div>
                 </div>
               </div>

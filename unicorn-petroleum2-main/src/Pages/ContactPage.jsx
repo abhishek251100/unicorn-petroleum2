@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import BannerWithNavigation from "../Common/BannerWithNavigation";
 import QualityStandardsSection from "../Common/QualityStandardsSection";
 import QuoteFormSection from "../Common/QuoteFormSection";
 import { useMetaTags } from "../hooks/useMetaTags";
 
 const ContactPage = () => {
+  const location = useLocation();
   useMetaTags(
     "Contact Us | Unicorn Petroleum Industries",
     "Get in touch with Unicorn Petroleum Industries. Contact us for inquiries about petroleum jelly, mineral oils, waxes, and specialty chemicals. Located in Mumbai, India. Monday-Friday, 9 AM - 6 PM IST.",
@@ -12,6 +14,25 @@ const ContactPage = () => {
   );
 
   const breadcrumbs = [{ text: "Home", link: "/" }, { text: "Contact" }];
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.replace("#", "");
+    if (!id) return;
+    const scrollToTarget = () => {
+      const target = document.getElementById(id);
+      if (!target) return;
+      const offset = 120;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    };
+    const timeoutIds = [
+      setTimeout(scrollToTarget, 0),
+      setTimeout(scrollToTarget, 300),
+      setTimeout(scrollToTarget, 800),
+    ];
+    return () => timeoutIds.forEach(clearTimeout);
+  }, [location.hash]);
 
   return (
     <div className="min-h-screen">
@@ -165,7 +186,9 @@ const ContactPage = () => {
       </section>
 
       {/* Contact form (common component for uniformity) */}
-      <QuoteFormSection mode="contact" title="Send us a message" />
+      <div id="quote-form-section" className="scroll-mt-24 pb-24">
+        <QuoteFormSection mode="contact" title="Send us a message" />
+      </div>
 
     
     </div>

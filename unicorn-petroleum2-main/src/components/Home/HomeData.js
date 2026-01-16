@@ -305,7 +305,7 @@ export const homeData = {
     primaryButton: "Contact Sales",
     primaryButtonLink: "/contact", // Internal link
     secondaryButton: "Request Sample",
-    secondaryButtonLink: "/contact#sample-request", // Internal link with anchor
+    secondaryButtonLink: "/contact#quote-form-section", // Internal link with anchor
   },
 };
 

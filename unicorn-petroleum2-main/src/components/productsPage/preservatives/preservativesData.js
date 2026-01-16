@@ -31,7 +31,7 @@ export const preservativesData = {
     products: [
       {
         name: "Phenoxyethanol",
-        description: "Colourless, clear viscous liquid",
+        description: "",
         image: "/assets/RELATED PROD IMG/Extra/Frame 531 (5).png"
       },
       {

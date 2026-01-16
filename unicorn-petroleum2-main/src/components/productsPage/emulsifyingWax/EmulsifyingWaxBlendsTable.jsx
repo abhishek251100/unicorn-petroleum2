@@ -17,13 +17,13 @@ const EmulsifyingWaxBlendsTable = ({ data }) => {
         )}
 
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse bg-white rounded-lg shadow-sm border border-gray-200">
+          <table className="w-full border-collapse bg-white rounded-lg shadow-sm border border-gray-400">
             <thead>
               <tr className="bg-[#E99322] text-white">
-                <th className="w-1/2 px-6 py-4 text-center font-semibold text-base border-b border-gray-300 border-r border-gray-300">
+                <th className="w-1/2 px-6 py-4 text-center font-semibold text-lg border-b border-gray-500 border-r border-gray-500">
                   Product name
                 </th>
-                <th className="w-1/2 px-6 py-4 text-center font-semibold text-base border-b border-gray-300">
+                <th className="w-1/2 px-6 py-4 text-center font-semibold text-lg border-b border-gray-500">
                   INCI name
                 </th>
               </tr>
@@ -34,10 +34,10 @@ const EmulsifyingWaxBlendsTable = ({ data }) => {
                   key={index}
                   className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
                 >
-                  <td className="w-1/2 px-6 py-4 text-center text-gray-800 border-b border-gray-200 border-r border-gray-200">
+                  <td className="w-1/2 px-6 py-4 text-center text-gray-800 border-b border-gray-400 border-r border-gray-400">
                     {row.productName}
                   </td>
-                  <td className="w-1/2 px-6 py-4 text-center text-gray-800 border-b border-gray-200">
+                  <td className="w-1/2 px-6 py-4 text-center text-gray-800 border-b border-gray-400">
                     {row.inciName}
                   </td>
                 </tr>

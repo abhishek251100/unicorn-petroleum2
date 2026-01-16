@@ -143,37 +143,6 @@ const ApplicationsSection = ({ data }) => {
   return (
     <section ref={sectionRef} className="pt-6 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Applications of {data.productName}
-          </h2>
-          <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
-            {data.applications}
-          </p>
-          
-          {/* Application Points as Bullet Points */}
-          {data.applicationPoints && data.applicationPoints.length > 0 && (
-            <div className="mt-6 max-w-4xl mx-auto">
-              <ul className="text-lg text-gray-700 space-y-2 text-left">
-                {data.applicationPoints.map((point, index) => {
-                  const colonIndex = point.indexOf(':');
-                  const industryName = colonIndex !== -1 ? point.substring(0, colonIndex + 1) : '';
-                  const description = colonIndex !== -1 ? point.substring(colonIndex + 1).trim() : point;
-                  
-                  return (
-                    <li key={index} className="flex items-start">
-                      <span className="text-[#E99322] mr-3 mt-1">•</span>
-                      <span>
-                        {industryName && <span className="font-bold">{industryName}</span>}
-                        {description && <span> {description}</span>}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          )}
-        </div>
 
         <div className="mb-8">
           <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">
@@ -203,7 +172,7 @@ const ApplicationsSection = ({ data }) => {
               {data.finalProductUtilization.map((item, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 px-6 py-3 bg-white border-[1.5px] border-[#EDA94E] rounded-full text-gray-700 font-medium"
+                  className="flex-shrink-0 px-6 py-3 bg-white border-[1.5px] border-[#EDA94E] rounded-full text-gray-700 font-semibold md:font-bold md:text-lg"
                 >
                   {item}
                 </div>

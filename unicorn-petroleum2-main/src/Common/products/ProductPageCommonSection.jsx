@@ -5,7 +5,7 @@ const ProductPageCommonSection = ({ data, alignLeft = false }) => {
   const navigate = useNavigate();
 
   const handleRequestInfo = () => {
-    navigate("/contact");
+    navigate("/about#quote-form-section");
   };
 
   return (
@@ -15,7 +15,7 @@ const ProductPageCommonSection = ({ data, alignLeft = false }) => {
           <h1 className="text-4xl font-bold text-gray-900 mb-8">
             {data.title || "Product Title"}
           </h1>
-
+          
           <div className={alignLeft ? "prose max-w-3xl mx-auto mb-8 text-left" : "prose max-w-none mb-8"}>
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
               {data.description || "Product description will come from the product's JSON file."}

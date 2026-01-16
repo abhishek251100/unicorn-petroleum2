@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import QualityStandardsSection from "../Common/QualityStandardsSection";
+import QuoteFormSection from "../Common/QuoteFormSection";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { useMetaTags } from "../hooks/useMetaTags";
 import VideoBanner from "../Common/VideoBanner";
 
 const AboutPage = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.replace("#", "");
+    if (!id) return;
+    const scrollToTarget = () => {
+      const target = document.getElementById(id);
+      if (!target) return;
+      const offset = 120;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    };
+
+    // Try immediately, then retry to account for layout shifts (images/video).
+    const timeoutIds = [
+      setTimeout(scrollToTarget, 0),
+      setTimeout(scrollToTarget, 300),
+      setTimeout(scrollToTarget, 800),
+    ];
+
+    return () => timeoutIds.forEach(clearTimeout);
+  }, [location.hash]);
   useMetaTags(
     "About Us - Unicorn Petroleum Industries | A Legacy of Excellence Since 1964",
     "Learn about Unicorn Petroleum Industries, a trusted manufacturer of petroleum products since 1964. Discover our values, vision, mission, and commitment to quality, consistency, and customer satisfaction.",
@@ -13,6 +38,7 @@ const AboutPage = () => {
 
   const coreValuesRef = useScrollAnimation();
   const manufacturingRef = useScrollAnimation();
+
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -331,7 +357,7 @@ const AboutPage = () => {
                     alt="Advance production units"
                     className="w-full h-64 object-cover"
                     onError={(e) => {
-                      e.target.src = "/assets/about/Artboard 1.jpg";
+                      e.target.src = "/assets/about/packaging.jpg";
                     }}
                   />
                 </div>
@@ -348,7 +374,7 @@ const AboutPage = () => {
                 <div className="w-full">
                   <img
                     src="/assets/about/r&d.jpg"
-                    alt="In-house R&D & QA lab"
+                    alt="In-house R&D & QC lab"
                     className="w-full h-64 object-cover"
                     onError={(e) => {
                       e.target.style.display = 'none';
@@ -367,7 +393,7 @@ const AboutPage = () => {
               <div className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] text-center overflow-hidden">
                 <div className="w-full">
                   <img
-                    src="/assets/about/packaging.jpg"
+                    src="/assets/about/packaging (1).jpg"
                     alt="Flexible packaging options"
                     className="w-full h-64 object-cover"
                     onError={(e) => {
@@ -512,6 +538,11 @@ const AboutPage = () => {
         <div className="max-w-xs md:max-w-2xl mx-auto">
           <div className="h-[2px] bg-[#EDA94E]"></div>
         </div>
+      </div>
+
+      {/* About Us Form */}
+      <div id="quote-form-section" className="scroll-mt-24 pb-24">
+        <QuoteFormSection mode="contact" title="Send us a message" />
       </div>
 
       {/* Certifications */}
