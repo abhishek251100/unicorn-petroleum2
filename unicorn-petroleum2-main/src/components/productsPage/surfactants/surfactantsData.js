@@ -21,8 +21,8 @@ export const surfactantsData = {
   commonSection: {
     title: "Surfactants",
     description:
-      "Surfactants are key ingredients in a wide range of cleaning and personal care products, valued for their ability to reduce surface tension and enable the mixing of water with oils, dirt, and other impurities. Together, these surfactants play critical roles in different formulations, from foaming agents in shampoos to grease removal in detergents. Their versatility makes them integral to both industrial and household cleaning solutions, as well as personal care formulations.",
-    additionalInfo: "When surfactants are added to a mixture, they arrange themselves at the interface between the two substances. The hydrophilic heads interact with the water molecules, while the hydrophobic tails interact with the other substance. This creates a barrier between the two substances, reducing the surface tension and allowing them to mix more easily.",
+      "Surfactants find its importance in a varied range of cleaning & personal care products by reducing surface tension and enabling blending of water with dirt & other contaminants. Jointly, surfactants play a vital role in diverse formulations from helping shampoos foam up to removing grease from products. Due to its adaptable nature, it is a crucial ingredient that finds its importance in the homecare and personal care industry.",
+    additionalInfo: "As surfactants are used in combination, they place themselves at the junction between two substances in a way that the hydrophilic part interconnects with the water molecules while the hydrophobic part attaches with the other substance. This leads to an obstruction between the two compounds thereby decreasing surface tension and lighting the dirt from surface tension for effective results. In line with these functionalities, we offer surfactants such as Alpha olefin sulphonate (AOS), Sodium lauryl ether sulphate (SLES), Cocamido propyl betaine (CAPB), and Linear alkyl benzene sulphonic acid (LABSA).",
     brochureUrl: "#",
   },
 
@@ -31,22 +31,26 @@ export const surfactantsData = {
       {
         name: "Alpha olefin sulphonate (AOS)",
         description: "Available in different grades in powder and liquid states.",
-        image: "/assets/RELATED PROD IMG/Extra/Frame 531 (7).png"
+        image: "/assets/RELATED PROD IMG/Extra/Frame 531 (7).png",
+        pdfUrl: "/assets/PDF/Surfactants/Surfactants/Alpha Olefin Sulphonate.pdf"
       },
       {
         name: "Sodium lauryl ether sulphate (SLES) 70",
         description: "Translucent paste with no characteristic odour.",
-        image: "/assets/RELATED PROD IMG/sodium-salphate.png"
+        image: "/assets/RELATED PROD IMG/sodium-salphate.png",
+        pdfUrl: "/assets/PDF/Surfactants/Surfactants/Sodium Lauryl Ether Sulphate.pdf"
       },
       {
         name: "CAPB / Betaine",
         description: "Appears colorless to light yellow liquid.",
-        image: "/assets/RELATED PROD IMG/Extra/images (2).png"
+        image: "/assets/RELATED PROD IMG/Extra/images (2).png",
+        pdfUrl: "/assets/PDF/Surfactants/Surfactants/CAPB - Betaine.pdf"
       },
       {
         name: "LABSA 96%",
         description: "Appears as honey to dark brown liquid.",
-        image: "/assets/RELATED PROD IMG/Extra/Images (1).png"
+        image: "/assets/RELATED PROD IMG/Extra/Images (1).png",
+        pdfUrl: "/assets/PDF/Surfactants/Surfactants/LABSA 96%.pdf"
       }
     ]
   },
@@ -87,8 +91,8 @@ export const surfactantsData = {
   packagedResponsibly: {
     packagingOptions: [
       { icon: "/assets/Icons/trolley.png", type: "Bags/FlexiBags", weight: "25 kg" },
-      { icon: "/assets/Icons/trolley (3).png", type: "IBC Containers", weight: "25kg" },
-      { icon: "/assets/Icons/trolley (3).png", type: "HDPE Drums", weight: "170kg/235kg/240Kg,250kg" },
+      { icon: "/assets/Icons/trolley (3).png", type: "IBC Containers", weight: "25 kg" },
+      { icon: "/assets/Icons/trolley (3).png", type: "HDPE Drums", weight: "170 kg / 235 kg / 240 kg / 250 kg" },
       
     ],
   },

@@ -9,9 +9,9 @@ export const bulkChemicalData = {
     },
   ],
   overview: {
-    title: 'Tailored for home care products',
+    title: 'Home Care',
     description:
-      'Home care manufacturing requires ingredients that are consistent, compatible, and high-quality. We supply versatile raw materials like Paraffin wax, Microcrystalline wax, and mineral oils that integrate seamlessly into a wide range of home care formulations and processes.',
+      'Our products are frequently utilized as functional ingredients in home care and cleaning formulations. They contribute to product effectiveness, stability, and ease of use. These materials support efficient cleaning, surface protection, and controlled application across liquid, gel, and spray-based formulations. They are suitable for use in household cleaners, detergents, polishing agents, and surface care products, including kitchen, bathroom, and floor care applications. Their stability and reliability help deliver uniform results in routine use. They enable manufacturers to develop safe, effective, and dependable home care solutions for everyday environments.',
   },
   relatedProducts: [
     { name: 'Petroleum Jelly', image: '/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/Petroleumjelly.jpg', description: 'Healing ointments, skin protectants, and excipients in topical medicines.' },

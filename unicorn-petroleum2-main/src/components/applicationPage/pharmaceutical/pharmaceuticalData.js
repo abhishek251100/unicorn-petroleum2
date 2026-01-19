@@ -13,8 +13,8 @@ export const pharmaceuticalData = {
     }
   ],
   overview: {
-    title: "Pharmaceutical Excellence",
-    description: "Our pharmaceutical-grade ingredients meet the most stringent quality standards required by global pharmacopoeias. We supply critical raw materials that form the foundation of life-saving medications and therapeutic formulations."
+    title: "Pharmaceutical industry",
+    description: "Our products are widely employed as practical additives and production aids in the pharmaceutical industry. They support the formulation of ointments, creams, gels, syrups, and oral dosage forms by improving durability, uniformity, and consistency. These materials are also used in topical, oral, and external preparations, as well as in medical and wellness applications. In addition, they assist with lubrication, surface protection, and equipment efficiency during manufacturing and packaging operations. Their refined nature makes them suitable for applications where purity and reliability are essential. Manufacturers rely on them to ensure efficient processing, consistent product performance, and the delivery of safe, effective, and high-quality healthcare solutions."
   },
   // New section: Tailored for pharma
   tailoredForPharma: {

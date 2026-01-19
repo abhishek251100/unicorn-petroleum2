@@ -176,7 +176,7 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Customer Commitment</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                We are deeply committed to our customers' success. We build trust through transparency, reliability, and understanding unique needs. Our goal is to deliver solutions that consistently exceed expectations.
+                  We focus on our customers' success. Our motto is transparency, reliability and understanding unique requirements. We strive to provide solutions that exceed expectations.
                 </p>
               </div>
 
@@ -191,7 +191,7 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Uncompromising Quality</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                Our pledge is a promise of excellence in every detail. Quality is our culture, ensuring precision from sourcing to delivery. We are dedicated to providing nothing but the best for our customers.
+                  For us, quality isn’t just a goal. It’s our daily habit. You’ll see it in the details we perfect and the decisions we question. This is how we make sure that what finally reaches you is crafted carefully and with intention.
                 </p>
               </div>
 
@@ -206,7 +206,7 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Ethical and fair business</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                We conduct business with honesty, transparency, and accountability. Every partnership is built on mutual trust and respect. We prioritize responsibility to create sustainable value for all.
+                  We conduct our business with honesty, ethics, and responsibility. We prioritise accountability so as to produce long-term benefit for our customers.
                 </p>
               </div>
 
@@ -221,7 +221,7 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Integrity & Legal Compliance</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                We operate with unwavering integrity and a strong commitment to the law. Our actions are guided by honesty, accountability, and respect for regulations. This ensures our business remains responsible and worthy of trust.
+                  We work with absolute devotion to the law and handle our activities honestly. This protects our corporate image and promotes public trust by preventing negative impact on society.
                 </p>
               </div>
 
@@ -236,7 +236,7 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Safety, Health & Environment</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                We prioritize the safety and well-being of our people above all. Our operations demonstrate a deep responsibility toward the environment. We foster a culture of sustainability to protect our workforce and our planet.
+                  Nothing is more important than the safety of our team. And we run our business with the same sense of care for the environment they work in. It's not just policy, it's the foundation of how we think about the future.
                 </p>
               </div>
             </div>
@@ -248,7 +248,7 @@ const AboutPage = () => {
                 <div className="w-1/2 pr-8 text-right">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Customer Commitment</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                   We are deeply committed to our customers' success. We build trust through transparency, reliability, and understanding unique needs. Our goal is to deliver solutions that consistently exceed expectations.
+                    We focus on our customers' success. Our motto is transparency, reliability and understanding unique requirements. We strive to provide solutions that exceed expectations.
                   </p>
                 </div>
                 <div className="w-16 h-16 flex items-center justify-center z-10">
@@ -274,7 +274,7 @@ const AboutPage = () => {
                 <div className="w-1/2 pl-8 text-left">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Uncompromising Quality</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                  Our pledge is a promise of excellence in every detail. Quality is our culture, ensuring precision from sourcing to delivery. We are dedicated to providing nothing but the best for our customers.
+                    For us, quality isn’t just a goal. It’s our daily habit. You’ll see it in the details we perfect and the decisions we question. This is how we make sure that what finally reaches you is crafted carefully and with intention.
                   </p>
                 </div>
               </div>
@@ -284,7 +284,7 @@ const AboutPage = () => {
                 <div className="w-1/2 pr-8 text-right">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Ethical and fair business</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    We conduct business with honesty, transparency, and accountability. Every partnership is built on mutual trust and respect. We prioritize responsibility to create sustainable value for all.
+                    We conduct our business with honesty, ethics, and responsibility. We prioritise accountability so as to produce long-term benefit for our customers.
                   </p>
                 </div>
                 <div className="w-16 h-16 flex items-center justify-center z-10">
@@ -310,7 +310,7 @@ const AboutPage = () => {
                 <div className="w-1/2 pl-8 text-left">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Integrity & Legal Compliance</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    We operate with unwavering integrity and a strong commitment to the law. Our actions are guided by honesty, accountability, and respect for regulations. This ensures our business remains responsible and worthy of trust.
+                    We work with absolute devotion to the law and handle our activities honestly. This protects our corporate image and promotes public trust by preventing negative impact on society.
                   </p>
                 </div>
               </div>
@@ -320,7 +320,7 @@ const AboutPage = () => {
                 <div className="w-1/2 pr-8 text-right">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Safety, Health & Environment</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                   We prioritize the safety and well-being of our people above all. Our operations demonstrate a deep responsibility toward the environment. We foster a culture of sustainability to protect our workforce and our planet.
+                    Nothing is more important than the safety of our team. And we run our business with the same sense of care for the environment they work in. It's not just policy, it's the foundation of how we think about the future.
                   </p>
                 </div>
                 <div className="w-16 h-16 flex items-center justify-center z-10">
@@ -364,7 +364,7 @@ const AboutPage = () => {
                 <div className="p-4 sm:p-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Advance production units</h3>
                   <p className="text-base text-gray-700 leading-relaxed">
-                    Two fully-equipped plants around Mumbai with state-of-art manufacturing, testing and storage facilities
+                    Two well-equipped facilities on the outskirts of Mumbai, where manufacturing, testing, and storage takes place under one roof to ensure credibility and reliable quality.
                   </p>
                 </div>
               </div>
@@ -384,7 +384,7 @@ const AboutPage = () => {
                 <div className="p-4 sm:p-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">In-house R&D & QA lab</h3>
                   <p className="text-base text-gray-700 leading-relaxed">
-                    On-site laboratory for product innovation, testing, and batch-wise quality assurance.
+                    Quality isn’t outsourced, it’s handled in our own lab. Every batch is monitored with care from start to finish.
                   </p>
                 </div>
               </div>
@@ -454,7 +454,7 @@ const AboutPage = () => {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Regulatory compliance</h3>
-                <p className="text-gray-700">Our unwavering commitment to regulatory compliance ensures that every product and process meets the highest standards, delivering safety, reliability, and trust to our customers</p>
+                <p className="text-gray-700">We never compromise on safety and dependability. We meet the highest safety standards in all we do. Thus, you can be completely confident in any product you receive.</p>
               </div>
 
               {/* Environment consciousness */}
@@ -471,7 +471,7 @@ const AboutPage = () => {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Environment consciousness</h3>
-                <p className="text-gray-700">We prioritize sustainability by minimizing our impact on the environment and promoting responsible practices across all operations.</p>
+                <p className="text-gray-700">The earth is our home, and we always try to be responsible houseguests. We implement innovative and sustainable practices across every aspect of our organization which helps in decreasing our impact on the environment</p>
               </div>
 
               {/* Ethical operations */}
@@ -488,7 +488,7 @@ const AboutPage = () => {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Ethical operations</h3>
-                <p className="text-gray-700"> We uphold the highest standards of integrity in every aspect of our business, ensuring transparency, fairness, and responsibly guide all our operations.</p>
+                <p className="text-gray-700">For us, integrity is transparency. It means being upfront, playing fair, and taking responsibility for our actions. That's the straightforward approach we take in every part of our business.</p>
               </div>
             </div>
 
@@ -509,7 +509,7 @@ const AboutPage = () => {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Timely delivery</h3>
-                  <p className="text-gray-700">We are committed to delivering every product and service on time, ensuring reliability and consistency for our customers. Punctuality is central to our operations, helping us build trust and long-lasting partnerships.</p>
+                  <p className="text-gray-700">Your time matters and we ought to deliver our products and solutions on time. Punctuality is at the core of our operations which ensures reliability and finally builds trust.</p>
                 </div>
 
                 {/* Quality assurance */}
@@ -526,7 +526,7 @@ const AboutPage = () => {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Quality assurance</h3>
-                  <p className="text-gray-700">We ensure every product meets the highest standards through rigorous quality checks and continuous improvement. Our commitment to assurance guarantees reliability and safety for our partners.</p>
+                  <p className="text-gray-700">We conduct extensive quality checks and continuous improvements to ensure that every product surpasses the set standards. This discipline makes us and our products worthy of your trust</p>
                 </div>
               </div>
             </div>

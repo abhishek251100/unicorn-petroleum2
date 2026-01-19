@@ -18,13 +18,13 @@
       }
     ],
 
-    commonSection: {
-      title: "D-Panthenol",
-      description:
-        "D-Panthenol is a versatile, water-soluble active known for its deeply hydrating, soothing, and regenerative properties. Widely used in skin, hair, and personal care formulations, it supports barrier repair, enhances shine and softness, and helps reduce irritation — making it a must-have ingredient in high-performance products. From leave-in conditioners and shampoos to moisturizing lotions, baby care, after-sun products, and wound-healing ointments, D-Panthenol plays a critical role in both feel and function.",
-      additionalInfo: "We manufacture D-Panthenol with a focus on high purity, clarity, and formulation stability. Each batch is optimized for solubility in aqueous systems and compatibility with other actives — so it integrates seamlessly into your products without compromising performance.",
-      brochureUrl: "#",
-    },
+  commonSection: {
+    title: "D-Panthenol / Dex panthenol",
+    description:
+      "The mild, ready-to-use precursor of pantothenic acid—also referred to as the superstar vitamin B5—is panthenol that is stable, covering a wide pH range and is suitable with varied cosmetic / pharmaceutical raw materials, thereby blending well into diverse formulations. It showcases exceptional humectant values for long-lasting hydration. It readily dissolves in water, alcohol, propylene glycol, ether, chloroform and is partially soluble in glycerin. Panthenol acts as a silky-smooth moisturizer gliding over the skin, leaving a soft and moisturized looking surface that is drastically smoother and more flexible. However, its expertise is not limited to skincare. Panthenol and Pantothenic Acid are both excellent hair care ingredients. They pair up providing the hair bounce, plumpness, and an appealing appearance thereby nourishing hair that's been worn down by heat and chemical treatments.",
+    additionalInfo: "",
+    brochureUrl: "#",
+  },
 
     applicationsSection: {
       productName: "d-panthenol",

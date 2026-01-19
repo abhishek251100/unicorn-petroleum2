@@ -20,11 +20,11 @@ export const naturalBeeswaxData = {
   ],
 
   commonSection: {
-    title: "Natural beeswax / Cera Alba / Cera Flava",
+    title: "Beeswax / Cera Alba / Cera Flava",
     description:
-      "Beeswax is a natural substance produced by honeybees within the hive of genus Apis. It has a distinct structure composed of esters of fatty acids and long-chain alcohols. Our beeswax is carefully treated to provide a smooth, pale yellow appearance and is highly valued for its gentle, calming effects on the skin, thereby making it a perfect fit for the cosmetic and pharmaceutical industry. In addition to preserving and softening the skin, it also enhances the texture and guarantees that other ingredients stay together, thereby providing stability to the finished product.",
+      "Beeswax is a natural substance produced by honeybees within the hive of genus Apis. It has a distinct structure composed of esters of fatty acids and long-chain alcohols. Our beeswax is carefully treated to provide a smooth, pale yellow appearance and is highly valued for its gentle, calming effects on the skin thereby making it a perfect fit for the cosmetic and pharmaceutical industry. In addition to preserving and softening the skin, it also enhances the texture and guarantees that other ingredients stay together thereby providing stability to the finished product.",
     additionalInfo:
-      "Being a natural product, the quality of our refined beeswax is highly moderated by us to comply with international regulatory requirements. It works especially well in stick and for solid preparations because of its inherent ability to create a cohesive film and bind materials together, improving durability and grip. ",
+      "Being a natural product, the quality of our refined beeswax is highly moderated by us to comply with international regulatory requirements. It works especially well in stick and for solid preparations because of its inherent ability to create a cohesive film and bind materials together, improving durability and grip.",
     brochureUrl: "#",
   },
 
@@ -62,8 +62,8 @@ export const naturalBeeswaxData = {
 
   packagedResponsibly: {
   packagingOptions: [
-      { icon: "bag", type: "Bags", weight: "25kg" },
-       { icon: "box", type: "Cartons", weight: "25kg", additionalText: "Slab Form" },
+      { icon: "bag", type: "Bags", weight: "25 kg", additionalText: "Pellet Form" },
+       { icon: "box", type: "Cartons", weight: "25 kg", additionalText: "Slab Form" },
      ],
    },
 
@@ -74,10 +74,10 @@ export const naturalBeeswaxData = {
         icon: "/assets/Icons/Property 1=Compliance.png",
         title: "Pharmacopoeial Compliance",
         items: [
-          "Indian Pharmacopoeia (IP)",
-          "British Pharmacopoeia (BP)",
-          "United States Pharmacopoeia (USP)",
-          "European Pharmacopoeia (Ph. Eur.)",
+          "Indian Pharmacopoeia [IP]",
+          "British Pharmacopoeia [BP]",
+          "United States Pharmacopoeia [USP]",
+          "European Pharmacopoeia [Ph. Eur.]",
         ],
       },
     ],

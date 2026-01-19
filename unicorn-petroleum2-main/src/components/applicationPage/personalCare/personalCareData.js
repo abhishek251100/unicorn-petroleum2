@@ -4,9 +4,9 @@ export const personalCareData = {
     { title: 'Personal Care Applications', subtitle: 'Ingredients for daily care products', image: '/assets/BannerImages/applications%20desktop.jpg', mobileImage: '/assets/BannerImages/applications%20mobile.jpg' },
   ],
   overview: {
-    title: 'Tailored for personal care products',
+    title: 'Personal Care',
     description:
-      'Personal care formulations demand ingredients that balance performance with skin-friendliness. Our petroleum jellies, Emulsifying waxes, and beeswax serve as ideal bases for creams, lotions, lip care, and moisturizers — supporting safe, effective, and sensorially pleasing product development.',
+      'Our products have a significant impact on common personal care formulations. They aid in retaining moisture, promote suppleness, and allow for gentle application to the skin and hair. These materials help ensure product durability and extended shelf life across daily-use and rinse-off formulations. They are widely utilised in skin care, hair care, baby care, oral care, and personal hygiene products. In addition, they support cleansing, conditioning, and protective applications in everyday routines. Their dependable performance ensures consistent quality in consumer products. They enable manufacturers to deliver reliable, effective, and convenient personal care solutions.',
   },
   relatedProducts: [
     { name: 'Petroleum Jelly', image: '/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/Petroleumjelly.jpg', description: 'Healing ointments, skin protectants, and excipients in topical medicines.' },

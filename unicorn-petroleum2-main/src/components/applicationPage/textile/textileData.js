@@ -4,9 +4,9 @@ export const textileData = {
     { title: 'Textile Applications', subtitle: 'Ingredients for textile processing and finishing', image: '/assets/BannerImages/applications%20desktop.jpg', mobileImage: '/assets/BannerImages/applications%20mobile.jpg' },
   ],
   overview: {
-    title: 'Tailored for textile products',
+    title: 'Textile Industry',
     description:
-      'The textile industry relies on high-performance materials to enhance processing efficiency and fabric quality. Our high-melting petroleum jellies, specialty waxes, and refined oils are used in fiber lubrication, textile finishing, thread conditioning, and anti-static treatments. Known for their thermal stability, smooth application, and consistent performance, these products help optimize manufacturing processes while ensuring fabric care and durability.',
+      'Our products are widely utilized as processing aids in the textile production and finishing industries. They support fibre lubrication, yarn manufacturing, and fabric handling throughout production, including fibre preparation and post-processing stages. These materials promote smoother machine operation and reduced friction across high-speed and continuous processing lines. They are commonly applied in spinning, weaving, knitting, finishing, and fabric treatment operations, including dyeing and coating processes. Their stability and uniformity help ensure consistent fabric quality and processing efficiency. They enable textile manufacturers to achieve reliable performance and consistent production outcomes.',
   },
   relatedProducts: [
     { name: 'Petroleum Jelly', image: '/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/Petroleumjelly.jpg', description: 'Healing ointments, skin protectants, and excipients in topical medicines.' },

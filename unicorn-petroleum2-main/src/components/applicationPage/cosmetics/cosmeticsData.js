@@ -13,8 +13,8 @@ export const cosmeticsData = {
     }
   ],
   overview: {
-    title: "Tailored for cosmetic products",
-    description: "In the cosmetics industry, safety and sensory appeal go hand in hand. Our high-purity oils, waxes, and emollients are carefully formulated to deliver smooth texture, stability, and long-lasting performance in skincare, haircare, and personal grooming products."
+    title: "Cosmetic industry",
+    description: "Our products are often employed as both basic materials and functional additives in cosmetic compositions. They enhance the texture, shine, and spreadability of cosmetics and skincare products. These ingredients promote formulation stability and uniformity across a variety of product formats, including creams, lotions, balms, and color cosmetics. They help facilitate smooth application while improving the sensory experience in facial, body, and lip care products. Their versatility also supports use in decorative cosmetics and skin conditioning applications. This adaptability makes them suitable for a wide range of cosmetic innovations and developments."
   },
   // Using FGridSection structure for applications
   applications: {

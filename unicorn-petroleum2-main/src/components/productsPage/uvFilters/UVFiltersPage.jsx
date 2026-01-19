@@ -4,6 +4,7 @@ import FloatingSidebar from "../../../Common/FloatingSidebar";
 import ProductPageCommonSection from "../../../Common/products/ProductPageCommonSection";
 import QualityStandardsSection from "../../../Common/QualityStandardsSection";
 import ApplicationsSection from "../../../Common/ApplicationsSection";
+import CharacteristicsSection from "../../../Common/CharacteristicsSection";
 import PackagedResponsiblySection from "../../../Common/PackagedResponsiblySection";
 import RelatedProductsSection from "../../../Common/RelatedProductsSection";
 import UVFilterProductsSection from "../../../Common/UVFilterProductsSection";
@@ -164,6 +165,7 @@ export default function UVFiltersPage() {
           <ProductPageCommonSection data={data.commonSection} />
           <UVFilterProductsSection data={data.uvFilterProducts} />
           <ApplicationsSection data={data.applicationsSection} />
+          <CharacteristicsSection data={data.characteristicsSection} />
           <PackagedResponsiblySection data={data.packagedResponsibly} />
         </div>
       </div>
@@ -172,6 +174,7 @@ export default function UVFiltersPage() {
         <ProductPageCommonSection data={data.commonSection} />
         <UVFilterProductsSection data={data.uvFilterProducts} />
         <ApplicationsSection data={data.applicationsSection} />
+        <CharacteristicsSection data={data.characteristicsSection} />
         <PackagedResponsiblySection data={data.packagedResponsibly} />
       </div>
 

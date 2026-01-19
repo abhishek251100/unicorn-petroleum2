@@ -4,9 +4,9 @@ export const lubricantsData = {
     { title: 'Lubricant Applications', subtitle: 'Base oils and waxes for lubrication', image: '/assets/BannerImages/applications%20desktop.jpg', mobileImage: '/assets/BannerImages/applications%20mobile.jpg' },
   ],
   overview: {
-    title: 'Tailored for lubricant products',
+    title: 'Lubricant Industry',
     description:
-      'Reliability and temperature stability are key to lubricant performance. Our mineral oils, petroleum jellies, and wax blends are engineered to meet the needs of light and industrial lubrication, offering excellent viscosity control and oxidation resistance.',
+      'Our materials are utilized in lubricant formulations as functional components and base stocks. They contribute to uniform performance, regulated viscosity, and thermal stability. These materials facilitate smooth mechanical action, wear protection, and friction reduction across hydraulic systems, gear oils, and industrial machinery applications. They may be used in a variety of automotive, marine, and heavy-duty industrial lubricant formulations. Under a range of operational conditions, their stability ensures reliable performance. They enable lubricant producers to deliver durable, high-performance, and multi-purpose lubrication solutions.',
   },
   relatedProducts: [
     { name: 'Petroleum Jelly', image: '/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/Petroleumjelly.jpg', description: 'Healing ointments, skin protectants, and excipients in topical medicines.' },

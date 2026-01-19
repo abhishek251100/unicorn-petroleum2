@@ -19,10 +19,10 @@ export const emulsifyingWaxData = {
   ],
 
   commonSection: {
-    title: "Emulsifying wax",
+    title: "Emulsifying Wax / Anionic Emulsifying Wax / Non-Ionic Emulsifying Wax / Self Emulsifying Wax",
     description:
-      "Emulsifying Wax is a type of cosmetic emulsifying ingredient used primarily in the manufacturing of creams, lotions, and other beauty products that have both water and oil phase. This type of wax helps in mixing or emulsifying the water phase and oil phase together to form an ointment  minimizing phase separation and increasing formulation stability especially during a diverse temperature environment. The emulsification occurs when two substances — in this case, oil and water — are successfully bound together; creating a sort of glue that combines the ingredients of a product which provides consistent viscosity and structure to formulations, resulting in smooth, uniform creams and lotions with improved spreadability.",
-    additionalInfo: "At the molecular level, Emulsifying Wax attracts both water and oil at the same time and keeps them together. Emulsions made with this wax are more stable to weak acids such as Boric, Carbolic & Salicylic. Emulsifying Wax thickens the liquid and marries the oil - and water-based elements of the creation. It is white in colour, solid, and possesses a light alcohol scent. It is easy to process and reliable in performance, making it suitable for both small-scale and industrial manufacturing environments.",
+      "Emulsifying Wax is a type of cosmetic emulsifying ingredient used primarily in the manufacturing of creams, lotions, and other beauty products that have both water and oil phase. This type of wax helps in mixing or emulsifying the water phase and oil phase together to form an ointment minimizing phase separation and increasing formulation stability especially during a diverse temperature environment. The emulsification occurs when two substances — in this case, oil and water — are successfully bound together; creating a sort of glue that combines the ingredients of a product which provides consistent viscosity and structure to formulations, resulting in smooth, uniform creams and lotions with improved spreadability. At the molecular level, Emulsifying Wax attracts both water and oil at the same time and keeps them together. Emulsions made with this wax are more stable to weak acids such as Boric, Carbolic & Salicylic. Emulsifying Wax thickens the liquid and marries the oil - and water-based elements of the creation. It is white in colour, solid, and possesses a light alcohol scent. It is easy to process and reliable in performance, making it suitable for both small-scale and industrial manufacturing environments.",
+    additionalInfo: "",
     brochureUrl: "#",
   },
 
@@ -56,11 +56,11 @@ export const emulsifyingWaxData = {
 
   // Emulsifying Wax Blends Table
   emulsifyingWaxBlends: {
-    heading: "We offer the following blends of Self-emulsifying wax.",
+    heading: "We offer the following blends of Self-emulsifying wax",
     tableData: [
-      { productName: "Anionic emulsifying wax", inciName: "Cetearyl Alcohol & Sodium Lauryl Sulphate" },
-      { productName: "Non-ionic emulsifying wax", inciName: "Cetearyl Alcohol & Ceteareath-20" },
-      { productName: "Emulsifying wax 1440", inciName: "Cetearyl Alcohol & Polysorbate 60" },
+      { productName: "Anionic Emulsifying Wax", inciName: "Cetearyl Alcohol & Sodium Lauryl Sulphate" },
+      { productName: "Non-Ionic Emulsifying wax", inciName: "Cetearyl Alcohol & Cetereath-20" },
+      { productName: "Emulsifying Wax 1440", inciName: "Cetearyl Alcohol & Polysorbate 60" },
     ],
   },
 
@@ -75,7 +75,6 @@ export const emulsifyingWaxData = {
           "Indian Pharmacopoeia [IP]",
           "British Pharmacopoeia [BP]",
           "United States Pharmacopoeia [USP]",
-          "European Pharmacopoeia [Ph. Eur.]",
         ],
       },
     ],

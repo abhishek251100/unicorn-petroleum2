@@ -21,8 +21,8 @@ export const preservativesData = {
   commonSection: {
     title: "Preservatives",
     description:
-      "Preservatives are substances added to products to prevent microbial growth and deterioration caused by oxidation or by fungi. They are crucial for extending the shelf life of various items, from food and beverages to pharmaceuticals, cosmetics and industrial materials. Be it of natural, processed or synthetic origin; preservatives play a vital role in modern society by ensuring food safety, increasing the availability of goods for longer duration and maintaining product consistency.",
-    additionalInfo: "They help to maintain safety and effectiveness of products over time by preventing undesirable chemical changes. They create an environment inhospitable to microbial growth while maintaining the product's desired characteristics. This protective action ensures that products remain safe and effective from the point of manufacture until they reach the end user even after multiple uses or extended storage periods. It is essential to note that use of preservatives are subject to product composition, indented use, storage conditions & strict regulated guidelines ensuring consumer safety and minimising any potential health hazards.",
+      "Preservatives are specific substances used to prevent decomposition caused by bacteria, fungi, and oxidation. Preventing multiple kinds of degradation can extend the shelf life of an extensive selection of commodities, particularly dietary supplements, medications, cosmetics, and industrial chemicals. Its primary task is to ensure that the product is healthy, efficient, and useful over time, while also preserving its original quality and performance. The composition, intended usage, and preservation environment of the product impact the choice and concentration of preservatives utilised. Furthermore, its application is driven by strict regulated guidelines aiming to safeguard consumers and reduce any related health hazards. We offer a comprehensive range of preservatives such as Glycerol monostearate, phenoxyethanol, methyl paraben, propyl paraben, ethylhexyl glycerine, and DMDM hydantoin.",
+    additionalInfo: "",
     brochureUrl: "#",
   },
 
@@ -32,22 +32,26 @@ export const preservativesData = {
       {
         name: "Phenoxyethanol",
         description: "",
-        image: "/assets/RELATED PROD IMG/Extra/Frame 531 (5).png"
+        image: "/assets/RELATED PROD IMG/Extra/Frame 531 (5).png",
+        pdfUrl: "/assets/PDF/Preservative/Preservative/Phenoxyethanol.pdf"
       },
       {
         name: "Ethylexyl glycerine",
         description: "Clear colourless liquid with no characteristic odour",
-        image: "/assets/RELATED PROD IMG/Extra/Frame 531 (6).png"
+        image: "/assets/RELATED PROD IMG/Extra/Frame 531 (6).png",
+        pdfUrl: "/assets/PDF/Preservative/Preservative/Ethylhexyl Glycerine.pdf"
       },
       {
         name: "Parabens",
         description: "White or almost white crystalline powder",
-        image: "/assets/RELATED PROD IMG/Frame 531 (4).png"
+        image: "/assets/RELATED PROD IMG/Frame 531 (4).png",
+        pdfUrl: "/assets/PDF/Preservative/Preservative/Parabens.pdf"
       },
       {
         name: "DMDM Hydantoin",
         description: "Clear liquid with a low characteristic odour",
-        image: "/assets/RELATED PROD IMG/Extra/Images.png"
+        image: "/assets/RELATED PROD IMG/Extra/Images.png",
+        pdfUrl: "/assets/PDF/Preservative/Preservative/DMDM Hydantoin.pdf"
       }
     ]
   },
@@ -81,9 +85,9 @@ export const preservativesData = {
   packagedResponsibly: {
     packagingOptions: [
       { icon: "/assets/Icons/trolley.png", type: "Bags", weight: "25 kg" },
-      { icon: "/assets/Icons/trolley (3).png", type: "Fibre Drums", weight: "25kg" },
-      { icon: "/assets/Icons/trolleyn.png", type: "IBC Containers", weight: "25kg" },
-      { icon: "/assets/Icons/trolley (3).png", type: "HDPE Drums", weight: "25kg" },
+      { icon: "/assets/Icons/trolley (3).png", type: "Fibre Drums", weight: "25 kg" },
+      { icon: "/assets/Icons/trolleyn.png", type: "IBC Containers", weight: "25 kg" },
+      { icon: "/assets/Icons/trolley (3).png", type: "HDPE Drums", weight: "200 kg / 220 kg" },
     ],
   },
 

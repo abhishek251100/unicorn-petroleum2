@@ -28,10 +28,21 @@ const SurfactantProductsSection = ({ data }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {data.products.map((product, index) => (
-            <div
+          {data.products.map((product, index) => {
+            const Wrapper = product.pdfUrl ? "a" : "div";
+            const wrapperProps = product.pdfUrl
+              ? {
+                  href: product.pdfUrl,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                }
+              : {};
+
+            return (
+            <Wrapper
               key={index}
-              className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden h-48 group"
+              className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden h-48 group block"
+              {...wrapperProps}
             >
               <div className="grid h-full" style={{ gridTemplateColumns: '50% 50%' }}>
                 <div className="h-full w-full relative">
@@ -59,8 +70,9 @@ const SurfactantProductsSection = ({ data }) => {
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            </Wrapper>
+          );
+          })}
         </div>
       </div>
     </section>

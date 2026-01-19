@@ -22,10 +22,21 @@ const PreservativeProductsSection = ({ data }) => {
     <section className="py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {data.products.map((product, index) => (
-            <div
+          {data.products.map((product, index) => {
+            const Wrapper = product.pdfUrl ? "a" : "div";
+            const wrapperProps = product.pdfUrl
+              ? {
+                  href: product.pdfUrl,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                }
+              : {};
+
+            return (
+            <Wrapper
               key={index}
-              className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden h-36 group"
+              className="bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden h-36 group block"
+              {...wrapperProps}
             >
               <div className="grid h-full" style={{ gridTemplateColumns: '40% 60%' }}>
                 <div className="h-full w-full relative">
@@ -53,8 +64,9 @@ const PreservativeProductsSection = ({ data }) => {
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            </Wrapper>
+          );
+          })}
         </div>
       </div>
     </section>
