@@ -21,8 +21,9 @@ export const preservativesData = {
   commonSection: {
     title: "Preservatives",
     description:
-      "Preservatives are specific substances used to prevent decomposition caused by bacteria, fungi, and oxidation. Preventing multiple kinds of degradation can extend the shelf life of an extensive selection of commodities, particularly dietary supplements, medications, cosmetics, and industrial chemicals. Its primary task is to ensure that the product is healthy, efficient, and useful over time, while also preserving its original quality and performance. The composition, intended usage, and preservation environment of the product impact the choice and concentration of preservatives utilised. Furthermore, its application is driven by strict regulated guidelines aiming to safeguard consumers and reduce any related health hazards. We offer a comprehensive range of preservatives such as Glycerol monostearate, phenoxyethanol, methyl paraben, propyl paraben, ethylhexyl glycerine, and DMDM hydantoin.",
-    additionalInfo: "",
+      "Preservatives are specific substances used to prevent decomposition caused by bacteria, fungi, and oxidation. Preventing multiple kinds of degradation can extend the shelf life of an extensive selection of commodities, particularly dietary supplements, medications, cosmetics, and industrial chemicals. Its primary task is to ensure that the product is healthy, efficient, and useful over time, while also preserving its original quality and performance.",
+    additionalInfo:
+      "The composition, intended usage, and preservation environment of the product impact the choice and concentration of preservatives utilised. Furthermore, its application is driven by strict regulated guidelines aiming to safeguard consumers and reduce any related health hazards. We offer a comprehensive range of preservatives such as Glycerol monostearate, phenoxyethanol, methyl paraben, propyl paraben, ethylhexyl glycerine, and DMDM hydantoin.",
     brochureUrl: "#",
   },
 

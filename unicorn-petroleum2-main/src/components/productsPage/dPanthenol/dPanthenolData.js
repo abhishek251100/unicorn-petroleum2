@@ -19,10 +19,11 @@
     ],
 
   commonSection: {
-    title: "D-Panthenol / Dex panthenol",
+    title: "D-Panthenol / Dexpanthenol",
     description:
-      "The mild, ready-to-use precursor of pantothenic acid—also referred to as the superstar vitamin B5—is panthenol that is stable, covering a wide pH range and is suitable with varied cosmetic / pharmaceutical raw materials, thereby blending well into diverse formulations. It showcases exceptional humectant values for long-lasting hydration. It readily dissolves in water, alcohol, propylene glycol, ether, chloroform and is partially soluble in glycerin. Panthenol acts as a silky-smooth moisturizer gliding over the skin, leaving a soft and moisturized looking surface that is drastically smoother and more flexible. However, its expertise is not limited to skincare. Panthenol and Pantothenic Acid are both excellent hair care ingredients. They pair up providing the hair bounce, plumpness, and an appealing appearance thereby nourishing hair that's been worn down by heat and chemical treatments.",
-    additionalInfo: "",
+      "The mild, ready-to-use precursor of pantothenic acid—also referred to as the superstar vitamin B5—is panthenol that is stable, covering a wide pH range and is suitable with varied cosmetic / pharmaceutical raw materials, thereby blending well into diverse formulations. It showcases exceptional humectant values for long-lasting hydration. It readily dissolves in water, alcohol, propylene glycol, ether, chloroform and is partially soluble in glycerin. Panthenol acts as a silky-smooth moisturizer gliding over the skin, leaving a soft and moisturized looking surface that is drastically smoother and more flexible.",
+    additionalInfo:
+      "However, its expertise is not limited to skincare. Panthenol and Pantothenic Acid are both excellent hair care ingredients. They pair up providing the hair bounce, plumpness, and an appealing appearance thereby nourishing hair that's been worn down by heat and chemical treatments.",
     brochureUrl: "#",
   },
 
