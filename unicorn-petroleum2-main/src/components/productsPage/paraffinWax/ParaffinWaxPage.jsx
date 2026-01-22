@@ -13,7 +13,7 @@ import { useMetaTags } from "../../../hooks/useMetaTags";
 
 export default function ParaffinWaxPage() {
   useMetaTags(
-    "Paraffin Wax - Unicorn Petroleum | Versatile Wax for Industrial Applications",
+    "Hard Paraffin Wax - Unicorn Petroleum | Versatile Wax for Industrial Applications",
     "High-quality paraffin wax products for multiple industrial applications. Solid hydrocarbons with excellent binding properties, suitable for candles, packaging, cosmetics, and pharmaceutical uses.",
     "paraffin wax, industrial wax, candle wax, packaging wax, cosmetic wax, pharmaceutical wax, solid hydrocarbons, Unicorn Petroleum"
   );

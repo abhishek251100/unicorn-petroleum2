@@ -379,7 +379,7 @@ export default function PharmaceuticalPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
                 Tailored for pharmaceutical products
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-8">
+              <p className="text-gray-700 leading-relaxed mb-8 text-justify text-left">
                 {pharmaceuticalData.overview.description}
               </p>
               

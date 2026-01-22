@@ -9,7 +9,7 @@ export const productNameToPath = {
   "UV Filters": "/products/uv-filters",
   "Emulsifying Wax": "/products/emulsifying-wax",
   "Microcrystalline Wax": "/products/microcrystalline-wax",
-  "Paraffin Wax": "/products/paraffin-wax",
+  "Hard Paraffin Wax": "/products/paraffin-wax",
   "Natural Beeswax": "/products/natural-beeswax",
   "D-Panthenol": "/products/d-panthenol",
 };

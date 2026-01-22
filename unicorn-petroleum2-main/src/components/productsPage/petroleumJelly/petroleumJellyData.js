@@ -101,7 +101,7 @@ export const petroleumJellyData = {
         image: "/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg"
       },
       {
-        name: "Paraffin Wax",
+        name: "Hard Paraffin Wax",
         image: "/assets/RELATED PROD IMG/NEW IMAGES/paraffinwax.jpg"
       }
     ]

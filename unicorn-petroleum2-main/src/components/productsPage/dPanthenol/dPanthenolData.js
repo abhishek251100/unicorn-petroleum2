@@ -44,13 +44,11 @@
       ],
     },
 
-    packagedResponsibly: {
-      packagingOptions: [
-        { icon: "/assets/Icons/trolley.png", type: "Bottles", weight: "" },
-        { icon: "/assets/Icons/trolley (1).png", type: "Cartons", weight: "" },
-        { icon: "/assets/Icons/trolley (3).png", type: "HDPE Drums", weight: "" },
-      ],
-    },
+  packagedResponsibly: {
+    packagingOptions: [
+      { icon: "/assets/Icons/trolley (3).png", type: "Pail", weight: "20 kg" },
+    ],
+  },
 
     // keyFeatures: {
     //   heading: "Key Features of D-Panthenol",

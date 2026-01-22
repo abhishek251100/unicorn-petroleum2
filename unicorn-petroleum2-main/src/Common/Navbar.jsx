@@ -115,7 +115,7 @@ export default function Navbar() {
           link: "/products",
           subItems: [
             { name: "Microcrystalline Wax", link: "/products/microcrystalline-wax" },
-            { name: "Paraffin Wax", link: "/products/paraffin-wax" },
+            { name: "Hard Paraffin Wax", link: "/products/paraffin-wax" },
             { name: "Natural Beeswax", link: "/products/natural-beeswax" },
             { name: "Emulsifying Wax", link: "/products/emulsifying-wax" },
           ],

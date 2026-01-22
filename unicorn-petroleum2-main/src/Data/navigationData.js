@@ -21,7 +21,7 @@ export const navigationData = {
       { id: 'petroleum-jelly', name: 'Petroleum Jelly', link: '/products/petroleum-jelly' },
       { id: 'white-mineral-oils', name: 'White Mineral Oils', link: '/products/white-mineral-oils' },
       { id: 'microcrystalline-wax', name: 'Microcrystalline Wax', link: '/products/microcrystalline-wax' },
-      { id: 'paraffin-wax', name: 'Paraffin Wax', link: '/products/paraffin-wax' },
+      { id: 'paraffin-wax', name: 'Hard Paraffin Wax', link: '/products/paraffin-wax' },
       { id: 'natural-beeswax', name: 'Natural Beeswax', link: '/products/natural-beeswax' },
       { id: 'emulsifying-wax', name: 'Emulsifying Wax', link: '/products/emulsifying-wax' },
       { id: 'd-panthenol', name: 'D-Panthenol', link: '/products/d-panthenol' },

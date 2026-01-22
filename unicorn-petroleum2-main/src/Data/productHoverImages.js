@@ -9,7 +9,7 @@ export const productHoverImages = {
   "Petroleum Jelly": "/assets/RELATED PROD IMG/Petroleum Jelly (2).png",
   "White Mineral Oils": "/assets/RELATED PROD IMG/Mineral Oil.png",
   "Microcrystalline Wax": "/assets/RELATED PROD IMG/New Hover Images/micro2.jpg",
-  "Paraffin Wax": "/assets/RELATED PROD IMG/New Hover Images/paraffin2.jpg",
+  "Hard Paraffin Wax": "/assets/RELATED PROD IMG/New Hover Images/paraffin2.jpg",
   "Natural Beeswax": "/assets/RELATED PROD IMG/New Hover Images/beeswax2.jpg",
   "Emulsifying Wax": "/assets/RELATED PROD IMG/New Hover Images/emulsifying2.jpg",
   "D-Panthenol": "/assets/RELATED PROD IMG/D-Panthenol.png",

@@ -34,9 +34,9 @@ const PackagedResponsiblySection = ({ data }) => {
                 {option.type}
               </h3>
               <div className="text-gray-600 text-sm">
-                <p>{option.weight}</p>
+                {option.weight && <p>{option.weight}</p>}
                 {option.additionalText && (
-                  <p className="mt-1">{option.additionalText}</p>
+                  <p className={option.weight ? "mt-1" : ""}>{option.additionalText}</p>
                 )}
               </div>
             </div>

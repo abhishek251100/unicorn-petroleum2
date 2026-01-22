@@ -332,7 +332,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
                 {data?.overview?.title || title}
               </h2>
               {data?.overview?.description && (
-                <p className="text-gray-700 leading-relaxed mb-8">
+                <p className="text-gray-700 leading-relaxed mb-8 text-justify text-left">
                   {data.overview.description}
                 </p>
               )}

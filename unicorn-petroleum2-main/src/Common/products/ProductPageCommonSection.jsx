@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const ProductPageCommonSection = ({ data, alignLeft = false }) => {
+const ProductPageCommonSection = ({ data, alignLeft = false, justifyText = true }) => {
   const navigate = useNavigate();
 
   const handleRequestInfo = () => {
@@ -17,12 +17,12 @@ const ProductPageCommonSection = ({ data, alignLeft = false }) => {
           </h1>
           
           <div className={alignLeft ? "prose max-w-3xl mx-auto mb-8 text-left" : "prose max-w-none mb-8"}>
-            <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            <p className={`text-lg text-gray-600 leading-relaxed mb-6${justifyText ? " text-justify text-left" : ""}`}>
               {data.description || "Product description will come from the product's JSON file."}
             </p>
 
             {data.additionalInfo && (
-              <p className="text-lg text-gray-600 leading-relaxed mb-4">
+              <p className={`text-lg text-gray-600 leading-relaxed mb-4${justifyText ? " text-justify text-left" : ""}`}>
                 {data.additionalInfo}
               </p>
             )}

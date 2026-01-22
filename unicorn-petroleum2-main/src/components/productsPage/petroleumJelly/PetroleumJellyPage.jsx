@@ -113,7 +113,7 @@ export default function PetroleumJellyPage() {
         </div>
 
         <div className="lg:col-span-9 space-y-4">
-          <ProductPageCommonSection data={petroleumJellyData.commonSection} />
+          <ProductPageCommonSection data={petroleumJellyData.commonSection} justifyText />
           <ApplicationsSection data={petroleumJellyData.applicationsSection} />
           <PackagedResponsiblySection data={petroleumJellyData.packagedResponsibly} />
           <ProductKeyFeaturesSection data={petroleumJellyData.keyFeatures} />
@@ -122,7 +122,7 @@ export default function PetroleumJellyPage() {
 
       {/* Mobile Layout */}
       <div className="lg:hidden space-y-4 mb-4">
-        <ProductPageCommonSection data={petroleumJellyData.commonSection} />
+        <ProductPageCommonSection data={petroleumJellyData.commonSection} justifyText />
         <ApplicationsSection data={petroleumJellyData.applicationsSection} />
         <PackagedResponsiblySection data={petroleumJellyData.packagedResponsibly} />
         <ProductKeyFeaturesSection data={petroleumJellyData.keyFeatures} />

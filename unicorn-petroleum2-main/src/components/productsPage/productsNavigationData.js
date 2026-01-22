@@ -27,7 +27,7 @@ export const productsNavigationData = {
     },
     {
       id: "paraffin-wax",
-      name: "Paraffin Wax",
+      name: "Hard Paraffin Wax",
       hasSubItems: true,
       isActive: false,
       link: "/products/paraffin-wax",

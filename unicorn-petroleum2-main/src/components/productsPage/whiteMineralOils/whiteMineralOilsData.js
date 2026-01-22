@@ -106,7 +106,7 @@ export const whiteMineralOilsData = {
     relatedProducts: [
       { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg" },
       { name: "Microcrystalline Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg" },
-      { name: "Paraffin Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/paraffinwax.jpg" },
+      { name: "Hard Paraffin Wax", image: "/assets/RELATED PROD IMG/NEW IMAGES/paraffinwax.jpg" },
     ],
   },
 };

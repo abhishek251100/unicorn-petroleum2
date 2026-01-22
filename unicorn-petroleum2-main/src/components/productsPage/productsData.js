@@ -27,7 +27,7 @@ export const productsData = {
     },
     {
       id: "paraffin-wax",
-      name: "Paraffin Wax",
+      name: "Hard Paraffin Wax",
       description: "Specialized paraffin waxes for candle making, packaging, and industrial applications",
       image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=300&fit=crop",
       link: "/products/paraffin-wax",
