@@ -21,7 +21,7 @@ const PackagedResponsiblySection = ({ data }) => {
               key={index}
               className="bg-white p-8 rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 text-center w-56 h-56 flex flex-col items-center justify-center mx-auto sm:mx-0"
             >
-              <div className="text-5xl text-[#E99322] mb-6">
+              <div className="text-5xl text-[#E99322] mb-6 h-12 flex items-center justify-center">
                 {option.icon && option.icon.startsWith('/') ? (
                   <img src={option.icon} alt={option.type} className="w-16 h-16 object-contain" />
                 ) : (
@@ -30,14 +30,14 @@ const PackagedResponsiblySection = ({ data }) => {
                   <FiBox />
                 )}
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 min-h-[1.75rem] flex items-center justify-center">
                 {option.type}
               </h3>
-              <div className="text-gray-600 text-sm">
-                {option.weight && <p>{option.weight}</p>}
-                {option.additionalText && (
-                  <p className={option.weight ? "mt-1" : ""}>{option.additionalText}</p>
-                )}
+              <div className="text-gray-600 text-sm min-h-[2.75rem] flex flex-col items-center justify-start leading-5">
+                <p className={option.weight ? "" : "opacity-0"}>{option.weight || "."}</p>
+                <p className={`${option.weight ? "mt-1 " : ""}${option.additionalText ? "" : "opacity-0"}`}>
+                  {option.additionalText || "."}
+                </p>
               </div>
             </div>
           ))}

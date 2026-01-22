@@ -340,7 +340,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
               {products && products.length > 0 && (
                 <div className="relative">
                   <div className="mb-4">
-                    <h3 className="text-xl font-semibold text-gray-800 text-center">Related Products</h3>
+                    <h3 className="text-xl font-semibold text-gray-800 text-center">Related products</h3>
                   </div>
 
                   {/* Marquee Container */}

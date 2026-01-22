@@ -33,7 +33,7 @@ export const homeData = {
   hero: {
     title: "Pioneering Excellence in Petroleum Specialties for 6+ Decades",
     subtitle:
-      "Your trusted partner for quality-assured ingredients for Pharma, Cosmetics, and Industry",
+      "Your trusted partner for quality-assured ingredients for pharmaceutical, Cosmetics, and Industry",
     primaryButton: "Explore Products ",
     primaryButtonLink: "/products",
     secondaryButton: "Why Choose Us?",

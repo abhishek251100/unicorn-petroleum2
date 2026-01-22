@@ -187,7 +187,7 @@ export default function UVFiltersPage() {
         <RelatedProductsSection data={data.relatedProducts} />
       </div>
 
-      {/* Mobile Floating Sidebar - positioned after related products */}
+      {/* Mobile Floating Sidebar - positioned after Related products */}
       <div className="lg:hidden mb-8">
         <FloatingSidebar navigationData={productsNavigationData} />
       </div>

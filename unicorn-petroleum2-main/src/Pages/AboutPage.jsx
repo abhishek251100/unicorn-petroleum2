@@ -174,7 +174,7 @@ const AboutPage = () => {
                     className="w-14 h-14 md:w-16 md:h-16 object-contain animate-icon-float"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Customer Commitment</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Customer commitment</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   We focus on our customers' success. Our motto is transparency, reliability and understanding unique requirements. We strive to provide solutions that exceed expectations.
                 </p>
@@ -189,7 +189,7 @@ const AboutPage = () => {
                     className="w-14 h-14 md:w-16 md:h-16 object-contain animate-icon-float"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Uncompromising Quality</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Uncompromising quality</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   For us, quality isn’t just a goal. It’s our daily habit. You’ll see it in the details we perfect and the decisions we question. This is how we make sure that what finally reaches you is crafted carefully and with intention.
                 </p>
@@ -219,7 +219,7 @@ const AboutPage = () => {
                     className="w-14 h-14 md:w-16 md:h-16 object-contain animate-icon-float"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Integrity & Legal Compliance</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Integrity & Legal compliance</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   We work with absolute devotion to the law and handle our activities honestly. This protects our corporate image and promotes public trust by preventing negative impact on society.
                 </p>
@@ -246,7 +246,7 @@ const AboutPage = () => {
               {/* Commitment to customers */}
               <div className="flex items-center">
                 <div className="w-1/2 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Customer Commitment</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Customer commitment</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     We focus on our customers' success. Our motto is transparency, reliability and understanding unique requirements. We strive to provide solutions that exceed expectations.
                   </p>
@@ -272,7 +272,7 @@ const AboutPage = () => {
                   />
                 </div>
                 <div className="w-1/2 pl-8 text-left">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Uncompromising Quality</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Uncompromising quality</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     For us, quality isn’t just a goal. It’s our daily habit. You’ll see it in the details we perfect and the decisions we question. This is how we make sure that what finally reaches you is crafted carefully and with intention.
                   </p>
@@ -308,7 +308,7 @@ const AboutPage = () => {
                   />
                 </div>
                 <div className="w-1/2 pl-8 text-left">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Integrity & Legal Compliance</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Integrity & Legal compliance</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     We work with absolute devotion to the law and handle our activities honestly. This protects our corporate image and promotes public trust by preventing negative impact on society.
                   </p>

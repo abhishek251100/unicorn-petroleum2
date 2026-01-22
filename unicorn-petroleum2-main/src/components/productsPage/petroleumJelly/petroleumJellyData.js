@@ -50,12 +50,12 @@ export const petroleumJellyData = {
   //     {
   //       icon: "bag",
   //       type: "Bags",
-  //       weight: "25kg/35kg"
+  //       weight: "25 kg/35kg"
   //     },
   //     {
   //       icon: "box", 
   //       type: "Cartons",
-  //       weight: "25kg/35kg"
+  //       weight: "25 kg/35kg"
   //     }
   //   ]
   // },

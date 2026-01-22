@@ -43,8 +43,8 @@ export const paraffinWaxData = {
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "bag", type: "Bags", weight: "25kg" },
-      { icon: "box", type: "Cartons", weight: "25kg" },
+      { icon: "bag", type: "Bags", weight: "25 kg" },
+      { icon: "box", type: "Cartons", weight: "25 kg" },
     ],
   },
 
