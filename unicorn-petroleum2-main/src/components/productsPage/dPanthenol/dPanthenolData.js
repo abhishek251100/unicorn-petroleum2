@@ -46,7 +46,7 @@
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "/assets/Icons/trolley (3).png", type: "Pail", weight: "20 kg" },
+      { icon: "/assets/Icons/ICON/Icon 5.jpg.jpeg", type: "Pail", weight: "20 kg" },
     ],
   },
 

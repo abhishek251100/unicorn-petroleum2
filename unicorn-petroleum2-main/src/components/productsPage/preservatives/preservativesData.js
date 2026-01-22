@@ -85,10 +85,10 @@ export const preservativesData = {
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "/assets/Icons/trolley.png", type: "Bags", weight: "25 kg" },
-      { icon: "/assets/Icons/trolley (3).png", type: "Fibre Drums", weight: "" },
-      { icon: "/assets/Icons/trolleyn.png", type: "IBC Containers", weight: "" },
-      { icon: "/assets/Icons/trolley (3).png", type: "HDPE Drums", weight: "200 kg / 220 kg" },
+      { icon: "/assets/Icons/ICON/Icon 4.jpg.jpeg", type: "Bags", weight: "25 kg" },
+      { icon: "/assets/Icons/ICON/Icon 2.jpg.jpeg", type: "Fibre Drums", weight: "" },
+      { icon: "/assets/Icons/ICON/Icon 3.jpg.jpeg", type: "IBC Containers", weight: "" },
+      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "HDPE Drums", weight: "200 kg / 220 kg" },
     ],
   },
 

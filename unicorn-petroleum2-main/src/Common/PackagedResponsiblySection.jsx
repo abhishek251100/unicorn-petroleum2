@@ -25,7 +25,8 @@ const PackagedResponsiblySection = ({ data }) => {
                 {option.icon && option.icon.startsWith('/') ? (
                   <img src={option.icon} alt={option.type} className="w-16 h-16 object-contain" />
                 ) : (
-                  option.icon === 'bag' ? <img src="/assets/bag (2).png" alt={option.type} className="w-16 h-16 object-contain" /> : 
+                  option.icon === 'bag' ? <img src="/assets/Icons/ICON/Icon 4.jpg.jpeg" alt={option.type} className="w-16 h-16 object-contain" /> : 
+                  option.icon === 'pail' ? <img src="/assets/Icons/ICON/Icon 5.jpg.jpeg" alt={option.type} className="w-16 h-16 object-contain" /> : 
                   option.icon === 'bottle' ? <FiDroplet /> : 
                   <FiBox />
                 )}

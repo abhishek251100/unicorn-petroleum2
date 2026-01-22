@@ -90,10 +90,10 @@ export const surfactantsData = {
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "/assets/Icons/trolley.png", type: "Bags", weight: "25 kg" },
-      { icon: "/assets/Icons/trolley.png", type: "Flexi bags", weight: "" },
-      { icon: "/assets/Icons/trolley (3).png", type: "IBC Containers", weight: "" },
-      { icon: "/assets/Icons/trolley (3).png", type: "HDPE Drums", weight: "170 kg / 235 kg / 240 kg / 250 kg" },
+      { icon: "/assets/Icons/ICON/Icon 4.jpg.jpeg", type: "Bags", weight: "25 kg" },
+      { icon: "/assets/Icons/ICON/Icon 4.jpg.jpeg", type: "Flexi bags", weight: "" },
+      { icon: "/assets/Icons/ICON/Icon 3.jpg.jpeg", type: "IBC Containers", weight: "" },
+      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "HDPE Drums", weight: "170 kg / 235 kg / 240 kg / 250 kg" },
     ],
   },
 
