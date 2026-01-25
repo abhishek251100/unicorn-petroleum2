@@ -128,13 +128,6 @@ export default function PharmaceuticalPage() {
       hoverImage: "/assets/RELATED PROD IMG/New Hover Images/WhiteMineraloil.jpg"
     },
     {
-      name: "Microcrystalline Wax",
-      link: "/products/microcrystalline-wax",
-      description: "Used in manufacturing ointments and balms.",
-      image: "/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg",
-      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/micro2.jpg"
-    },
-    {
       name: "Natural Beeswax",
       link: "/products/natural-beeswax",
       description: "Used in ointments, tablet coatings, slow-release formulations, and as a binding agent.",
@@ -161,20 +154,6 @@ export default function PharmaceuticalPage() {
       description: "Prevent microbial growth in syrups, eye drops, ointments, and injectables.",
       image: "/assets/RELATED PROD IMG/NEW IMAGES/Preservative.jpg",
       hoverImage: "/assets/RELATED PROD IMG/New Hover Images/preservative.jpg"
-    },
-    {
-      name: "Surfactants",
-      link: "/products/surfactants",
-      description: "Solubilizers, emulsifiers, wetting agents in syrups, suspensions, and topical formulations.",
-      image: "/assets/RELATED PROD IMG/NEW IMAGES/surfactant.jpg",
-      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/surfactant.jpg"
-    },
-    {
-      name: "UV Filters",
-      link: "/products/uv-filters",
-      description: "Used in dermatological formulations to protect against UV‑induced damage.",
-      image: "/assets/RELATED PROD IMG/NEW IMAGES/uvfilters.jpg",
-      hoverImage: "/assets/RELATED PROD IMG/New Hover Images/uvFilters.jpg"
     }
   ];
 

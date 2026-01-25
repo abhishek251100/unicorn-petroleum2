@@ -71,7 +71,7 @@ const AboutPage = () => {
       {/* Company Introduction */}
       <section className="py-16 px-4 border-b-0">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Unicorn Petroleum Industries Pvt. Ltd.</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Unicorn Petroleum Industries Pvt. Ltd.</h2><br></br>
           <h3 className="text-3xl font-bold text-gray-800 mb-8">A legacy of excellence</h3>
           
           <p className="text-lg text-gray-700 mb-6 leading-relaxed text-justify text-left">
@@ -103,7 +103,7 @@ const AboutPage = () => {
             </div>
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Our belief</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <p className="text-lg text-gray-700 leading-relaxed text-justify text-left">
             We, at Unicorn, firmly believe in <strong>Total Customer Satisfaction</strong>, providing customers with the best solutions to suit their diverse applications with tailor-made, consistently superior products, along with efficient services at reasonable costs. The name "<strong>UNICORN</strong>" is now synonymous for ethical practices, superior consistent quality and customer oriented management.
           </p>
         </div>
@@ -122,7 +122,7 @@ const AboutPage = () => {
             </div>
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Our vision</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <p className="text-lg text-gray-700 leading-relaxed text-justify text-left">
             Become a customer-centric, result oriented organization, with sustainable resources, for over-all self and society development. We aim to be recognized as trend-setters for <strong>setting the standards of excellence in the field of petrochemical specialties</strong> in the Indian sub-continent. We are committed to meeting our commitments to our valuable customers, stake-holders and employees in an ethical, professional manner.
           </p>
         </div>
@@ -141,7 +141,7 @@ const AboutPage = () => {
             </div>
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Our mission</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <p className="text-lg text-gray-700 leading-relaxed text-justify text-left">
             To strive earnestly to meet the expectations and aspirations of our customers vis-a-vis <strong>quality, consistency and compatibility of our products</strong>, while maintaining the highest standards of integrity, value and business ethics. To innovate and develop customer centric products to suit diverse applications.
           </p>
         </div>
@@ -156,7 +156,7 @@ const AboutPage = () => {
         {/* Our Values */}
         <section className="pt-20 pb-20 md:pb-24 px-4 bg-white" ref={coreValuesRef}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Our Core Values</h2>
+            <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Our core values</h2>
           
           {/* Timeline-style layout */}
           <div className="relative overflow-visible">
@@ -204,7 +204,7 @@ const AboutPage = () => {
                     className="w-14 h-14 md:w-16 md:h-16 object-contain animate-icon-float"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Ethical and fair business</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Ethical and Fair business</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   We conduct our business with honesty, ethics, and responsibility. We prioritise accountability so as to produce long-term benefit for our customers.
                 </p>

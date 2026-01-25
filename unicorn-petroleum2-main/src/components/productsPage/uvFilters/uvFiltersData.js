@@ -115,7 +115,7 @@ export const uvFiltersData = {
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "HDPE Drums", weight: "25 kg / 200 kg / 220 kg / 235 kg" },
+      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "HDPE drums", weight: "" },
     ],
   },
 

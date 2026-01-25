@@ -19,7 +19,7 @@ export const emulsifyingWaxData = {
   ],
 
   commonSection: {
-    title: "Emulsifying Wax / Anionic Emulsifying Wax / Non-Ionic Emulsifying Wax / Self Emulsifying Wax",
+    title: "Emulsifying Wax (Anionic / Non-Ionic) / Self Emulsifying Wax",
     description:
       "Emulsifying Wax is a type of cosmetic emulsifying ingredient used primarily in the manufacturing of creams, lotions, and other beauty products that have both water and oil phase. This type of wax helps in mixing or emulsifying the water phase and oil phase together to form an ointment minimizing phase separation and increasing formulation stability especially during a diverse temperature environment.",
     additionalInfo:
@@ -48,12 +48,12 @@ export const emulsifyingWaxData = {
     ],
   },
 
-  // packagedResponsibly: {
-  //   packagingOptions: [
-  //     { icon: "bag", type: "Bags", weight: "25 kg" },
-  //     { icon: "box", type: "Cartons", weight: "25 kg" },
-  //   ],
-  // },
+  packagedResponsibly: {
+    packagingOptions: [
+      { icon: "bag", type: "Bags", weight: "20 kg/ 25 kg", additionalText: "Pastilles / Flakes form" },
+      
+    ],
+  },
 
   // Emulsifying Wax Blends Table
   emulsifyingWaxBlends: {

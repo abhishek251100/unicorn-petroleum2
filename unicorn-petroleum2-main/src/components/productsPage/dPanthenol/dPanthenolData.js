@@ -46,7 +46,7 @@
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "/assets/Icons/ICON/Icon 5.jpg.jpeg", type: "Pail", weight: "20 kg" },
+      { icon: "/assets/Icons/ICON/Icon 5.jpg.jpeg", type: "HDPE pails", weight: "20 kg" },
     ],
   },
 

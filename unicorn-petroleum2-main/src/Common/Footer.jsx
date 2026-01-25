@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
-import { FaLinkedin, FaFacebook } from "react-icons/fa";
+// import { FaLinkedin, FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -19,16 +19,23 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Company Branding & Socials */}
             <div>
-              <div className="mb-4">
-                <Link to="/" className="inline-flex items-center gap-1.5">
+              <div className="mb-4 inline-flex items-center gap-1.5">
+                <Link to="/" className="inline-flex items-center">
                   <img src="/assets/logo 1.png" alt="Unicorn logo" className="h-10 w-auto" />
-                  <img src="/assets/logo 2.png" alt="Unicorn logo" className="h-11 w-24 pt-1" />
                 </Link>
+                <a
+                  href="https://www.easternpetroleum.in/"
+                  className="inline-flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/assets/logo 2.png" alt="Eastern Petroleum logo" className="h-11 w-24 pt-1" />
+                </a>
               </div>
               <p className="text-gray-600 mb-4 text-sm sm:text-base">
               Your trusted partner for specialty products and sourcing solutions from India
               </p>
-              <div>
+              {/* <div>
                 <p className="text-sm text-gray-600 mb-2">Follow us on:</p>
                 <div className="flex space-x-3">
                   <a
@@ -48,12 +55,12 @@ export default function Footer() {
                     <FaFacebook className="text-xl" />
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Quick Links */}
             <div className="md:ml-12">
-              <h3 className="font-semibold text-gray-800 mb-4">Quick Links</h3>
+              <h3 className="font-semibold text-gray-800 mb-4">Quick links</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
@@ -92,7 +99,7 @@ export default function Footer() {
                     to="/contact"
                     className="text-gray-600 hover:text-[#E99322] transition-colors"
                   >
-                    Contact Us
+                    Contact 
                   </Link>
                 </li>
               </ul>
@@ -113,13 +120,13 @@ export default function Footer() {
                 <div className="flex items-center">
                   <FiMail className="text-[#E99322] mr-3" />
                   <span className="text-gray-600 text-sm">
-                    manan@unicornpetro.co.in | info@unicornpetro.co.in
+                  info@unicornpetro.co.in | manan@unicornpetro.co.in 
                   </span>
                 </div>
                 <div className="flex items-start">
                   <FiMapPin className="text-[#E99322] mr-3 mt-1 flex-shrink-0" />
                   <span className="text-gray-600 text-xs sm:text-sm">
-                  Unit No. 1 'Riddhi Siddhi', Corporate Park, VN Purav Marg, Chembur, Mumbai, 400071, India.
+                  Unit No. 1, Riddhi Siddhi Corporate Park, VN Purav Marg, (Sion Trombay Road), Chembur, Mumbai - 400071, MH, India.
                   </span>
                 </div>
               </div>
@@ -134,7 +141,7 @@ export default function Footer() {
               Copyright © 2020 Unicorn. All rights reserved.
             </p>
             <div className="flex space-x-3 sm:space-x-4 mt-2 md:mt-0">
-              <Link
+              {/* <Link
                 to="/privacy"
                 className="text-white hover:text-[#E99322]/80 transition-colors text-xs sm:text-sm"
               >
@@ -145,7 +152,7 @@ export default function Footer() {
                 className="text-white hover:text-[#E99322]/80 transition-colors text-xs sm:text-sm"
               >
                 Terms of Use
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

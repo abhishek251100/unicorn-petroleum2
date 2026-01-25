@@ -139,14 +139,14 @@ export default function Navbar() {
         { name: "Lubricants", link: "/applications/lubricants" }
       ]
     },
-    { name: "Reach", link: "/reach", hasDropdown: false },
+    { name: "Global Reach", link: "/reach", hasDropdown: false },
     { name: "Contact", link: "/contact", hasDropdown: false }
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top Contact Bar */}
-      <div className="bg-[#F5CD99] py-2 px-4 relative z-30">
+      {/* <div className="bg-[#F5CD99] py-2 px-4 relative z-30">
         <div className="max-w-7xl mx-auto px-4 text-xs sm:text-sm">
           <div className="w-full flex items-center justify-between sm:justify-end sm:gap-4">
             <span className="text-black font-bold hidden sm:inline">Contact us on :</span>
@@ -160,7 +160,7 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <nav className="py-2 border-b border-white/20 shadow-lg relative z-30 bg-white/60 backdrop-blur-lg">
         <div className="max-w-7xl mx-auto px-4">
