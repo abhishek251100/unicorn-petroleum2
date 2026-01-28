@@ -67,7 +67,7 @@ export default function Footer() {
                     to="/about"
                     className="text-gray-600 hover:text-[#E99322] transition-colors"
                   >
-                    About Us
+                    About us
                   </Link>
                 </li>
                 <li>

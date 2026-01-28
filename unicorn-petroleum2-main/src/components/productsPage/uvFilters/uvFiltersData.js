@@ -116,6 +116,7 @@ export const uvFiltersData = {
   packagedResponsibly: {
     packagingOptions: [
       { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "HDPE drums", weight: "" },
+      { icon: "/assets/Icons/ICON/Icon 2.jpg.jpeg", type: "Fibre drums", weight: "" },
     ],
   },
 

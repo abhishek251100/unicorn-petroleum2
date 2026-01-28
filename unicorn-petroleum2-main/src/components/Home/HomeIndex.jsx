@@ -31,7 +31,7 @@ const HomeIndex = () => {
         primaryButtonColor={homeData.hero.primaryButtonColor}
         secondaryButtonColor={homeData.hero.secondaryButtonColor}
         overlapClass="md:-mt-4"
-        paddingTopClass="pt-12 md:pt-20"
+        paddingTopClass="pt-0 md:pt-[68px]"
       />
 
       {/* Icon Road Hero (first section) - Only this has animation */}

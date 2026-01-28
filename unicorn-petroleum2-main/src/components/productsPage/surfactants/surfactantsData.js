@@ -92,8 +92,8 @@ export const surfactantsData = {
     packagingOptions: [
       { icon: "/assets/Icons/ICON/Icon 4.jpg.jpeg", type: "Bags", weight: "" },
       { icon: "/assets/Icons/ICON/Icon 4.jpg.jpeg", type: "Flexi bags", weight: "" },
-      { icon: "/assets/Icons/ICON/Icon 3.jpg.jpeg", type: "IBC Containers", weight: "" },
-      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "HDPE Drums", weight: "" },
+      { icon: "/assets/Icons/ICON/Icon 3.jpg.jpeg", type: "IBC containers", weight: "" },
+      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "HDPE drums", weight: "" },
     ],
   },
 

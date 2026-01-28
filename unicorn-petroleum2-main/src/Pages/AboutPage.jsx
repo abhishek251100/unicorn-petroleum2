@@ -404,7 +404,7 @@ const AboutPage = () => {
                 <div className="p-4 sm:p-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Flexible packaging options</h3>
                   <p className="text-base text-gray-700 leading-relaxed">
-                    Customizable pack sizes from small batches to bulk drums
+                    Customizable pack sizes from small batches to bulk drums.
                   </p>
                 </div>
               </div>
@@ -471,7 +471,7 @@ const AboutPage = () => {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Environment consciousness</h3>
-                <p className="text-gray-700">The earth is our home, and we always try to be responsible houseguests. We implement innovative and sustainable practices across every aspect of our organization which helps in decreasing our impact on the environment</p>
+                <p className="text-gray-700">The earth is our home, and we always try to be responsible houseguests. We implement innovative and sustainable practices across every aspect of our organization which helps in decreasing our impact on the environment.</p>
               </div>
 
               {/* Ethical operations */}
@@ -526,7 +526,7 @@ const AboutPage = () => {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Quality assurance</h3>
-                  <p className="text-gray-700">We conduct extensive quality checks and continuous improvements to ensure that every product surpasses the set standards. This discipline makes us and our products worthy of your trust</p>
+                  <p className="text-gray-700">We conduct extensive quality checks and continuous improvements to ensure that every product surpasses the set standards. This discipline makes us and our products worthy of your trust.</p>
                 </div>
               </div>
             </div>
