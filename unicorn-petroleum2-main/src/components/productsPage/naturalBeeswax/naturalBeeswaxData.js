@@ -62,8 +62,8 @@ export const naturalBeeswaxData = {
 
   packagedResponsibly: {
   packagingOptions: [
-      { icon: "/assets/Icons/ICON/Icon 4.jpg.jpeg", type: "Bags", weight: "25 kg", additionalText: "Pellet Form" },
-       { icon: "box", type: "Cartons", weight: "25 kg", additionalText: "Slab Form" },
+      { icon: "/assets/Icons/ICON/Icon 4.jpg.jpeg", type: "Bags", weight: "25 kg", additionalText: "Pellet form" },
+       { icon: "box", type: "Cartons", weight: "25 kg", additionalText: "Slab form" },
      ],
    },
 

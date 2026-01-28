@@ -50,7 +50,7 @@ export const emulsifyingWaxData = {
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "bag", type: "Bags", weight: "20 kg/ 25 kg", additionalText: "Pastilles / Flakes form" },
+      { icon: "bag", type: "Bags", weight: "20 kg / 25 kg", additionalText: "Pastilles / Flakes form" },
       
     ],
   },
