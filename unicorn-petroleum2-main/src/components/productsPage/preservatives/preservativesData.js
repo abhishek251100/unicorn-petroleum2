@@ -40,7 +40,7 @@ export const preservativesData = {
         name: "Ethylexyl glycerine",
         description: "Clear colourless liquid with no characteristic odour",
         image: "/assets/RELATED PROD IMG/Extra/Frame 531 (6).png",
-        pdfUrl: "/assets/PDF/Preservative/Preservative/Ethylhexyl Glycerine.pdf"
+        pdfUrl: "/assets/PDF/Preservative/Preservative/Ethylhexyl%20Glycerine.pdf"
       },
       {
         name: "Parabens",
@@ -52,7 +52,7 @@ export const preservativesData = {
         name: "DMDM Hydantoin",
         description: "Clear liquid with a low characteristic odour",
         image: "/assets/RELATED PROD IMG/Extra/Images.png",
-        pdfUrl: "/assets/PDF/Preservative/Preservative/DMDM Hydantoin.pdf"
+        pdfUrl: "/assets/PDF/Preservative/Preservative/DMDM%20Hydantoin.pdf"
       }
     ]
   },

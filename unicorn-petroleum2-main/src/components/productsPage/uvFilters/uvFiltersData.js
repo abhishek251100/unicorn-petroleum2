@@ -32,49 +32,49 @@ export const uvFiltersData = {
         name: "Octylmethoxy cinnamate",
         description: "A popular choice in sunscreen formulations due to its stability",
         image: "/assets/RELATED PROD IMG/ExtraUV/Frame 531 (9).png",
-        pdfUrl: "/assets/PDF/UV Filter/UV Filter/OMC.pdf"
+        pdfUrl: "/assets/PDF/UV%20Filter/UV%20Filter/OMC.pdf"
       },
       {
         name: "Octyl salicylate",
         description: "Formed from salicylics acid and 2-ethylexanol, is used to filter UVB rays in the range of 280 -320 nm",
         image: "/assets/RELATED PROD IMG/ExtraUV/octyl-salicylate-liquid.png",
-        pdfUrl: "/assets/PDF/UV Filter/UV Filter/Octyl Salicylate.pdf"
+        pdfUrl: "/assets/PDF/UV%20Filter/UV%20Filter/Octyl%20Salicylate.pdf"
       },
       {
         name: "Homosalate",
         description: "Protective barrier against UVB rays but provide minimal defense against UVA rays",
         image: "/assets/RELATED PROD IMG/ExtraUV/Frame 531 (10).png",
-        pdfUrl: "/assets/PDF/UV Filter/UV Filter/Homosalate.pdf"
+        pdfUrl: "/assets/PDF/UV%20Filter/UV%20Filter/Homosalate.pdf"
       },
       {
         name: "Avobenzone",
         description: "A potent UV filter often combined with other stabilizers like Octocrylene to improve stability",
         image: "/assets/RELATED PROD IMG/ExtraUV/Frame 531 (11).png",
-        pdfUrl: "/assets/PDF/UV Filter/UV Filter/Avobenzone.pdf"
+        pdfUrl: "/assets/PDF/UV%20Filter/UV%20Filter/Avobenzone.pdf"
       },
       {
         name: "Benzophenone 3",
         description: "Offers protection against UVB and a portion of UVA rays, preventing both sunburn and DNA damage",
         image: "/assets/RELATED PROD IMG/ExtraUV/Frame 531 (12).png",
-        pdfUrl: "/assets/PDF/UV Filter/UV Filter/Benzophenone 3.pdf"
+        pdfUrl: "/assets/PDF/UV%20Filter/UV%20Filter/Benzophenone%203.pdf"
       },
       {
         name: "Benzophenone 4",
         description: "Safeguard filter against both UVA and UVB rays, enhancing effectiveness and longetivity of product",
         image: "/assets/RELATED PROD IMG/ExtraUV/Frame 531 (13).png",
-        pdfUrl: "/assets/PDF/UV Filter/UV Filter/Benzophenone 4.pdf"
+        pdfUrl: "/assets/PDF/UV%20Filter/UV%20Filter/Benzophenone%204.pdf"
       },
       {
         name: "Ethyl hexyl triazone",
         description: "Synthetic organic compound known for its photostability, protecting against UVB rays",
         image: "/assets/RELATED PROD IMG/ExtraUV/Frame 531 (14).png",
-        pdfUrl: "/assets/PDF/UV Filter/UV Filter/Ethyl Hexyl Triazone.pdf"
+        pdfUrl: "/assets/PDF/UV%20Filter/UV%20Filter/Ethyl%20Hexyl%20Triazone.pdf"
       },
       {
         name: "Octocrylene",
         description: "Broad spectrum sun protection used enhancing defence with dual absorption",
         image: "/assets/RELATED PROD IMG/ExtraUV/Frame 531 (15).png",
-        pdfUrl: "/assets/PDF/UV Filter/UV Filter/Octocrylene.pdf"
+        pdfUrl: "/assets/PDF/UV%20Filter/UV%20Filter/Octocrylene.pdf"
       }
     ]
   },

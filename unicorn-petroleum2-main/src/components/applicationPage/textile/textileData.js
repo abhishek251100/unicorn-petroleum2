@@ -6,17 +6,14 @@ export const textileData = {
   overview: {
     title: 'Textile Industry',
     description:
-      'Our products are widely utilized as processing aids in the textile production and finishing industries. They support fibre lubrication, yarn manufacturing, and fabric handling throughout production, including fibre preparation and post-processing stages. These materials promote smoother machine operation and reduced friction across high-speed and continuous processing lines. They are commonly applied in spinning, weaving, knitting, finishing, and fabric treatment operations, including dyeing and coating processes. Their stability and uniformity help ensure consistent fabric quality and processing efficiency. They enable textile manufacturers to achieve reliable performance and consistent production outcomes.',
+      'Our products are commonly used as processing aids in the textile manufacturing and finishing sectors. They help with fibre lubrication, yarn creation, and fabric handling throughout the manufacturing process, including fibre preparation. These substances improve machine function and minimize friction on high-speed processing lines. They have numerous applications in the fields of spinning, weaving, knitting, finishing, and fabric treatment activities, such as dyeing and coating procedures. Their stability and homogeneity contribute to constant fabric quality and processing efficiency. They help textile producers achieve dependable performance and predictable manufacturing results.',
   },
   relatedProducts: [
-    { name: 'Petroleum Jelly', image: '/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/Petroleumjelly.jpg', description: 'Healing ointments, skin protectants, and excipients in topical medicines.' },
     { name: 'White Mineral Oils', image: '/assets/RELATED PROD IMG/NEW IMAGES/whiteMineraloil1.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/WhiteMineraloil.jpg', description: 'Used as a laxative, tablet coating, ointment base, and in topical formulations.' },
+    { name: 'Natural Beeswax', image: '/assets/RELATED PROD IMG/NEW IMAGES/Naturalbeeswax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/beeswax2.jpg', description: 'Used in lotions, creams and lip balms for its emollient and protective benefits' },
     { name: 'Microcrystalline Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/micro2.jpg', description: 'Enhances thread strength and finish quality.' },
     { name: 'Hard Paraffin Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/paraffinwax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/paraffin2.jpg', description: 'Anti-static and friction-reducing coating for threads' },
-    { name: 'Preservatives', image: '/assets/RELATED PROD IMG/NEW IMAGES/Preservative.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/preservative.jpg', description: 'Prevent microbial contamination in water-based metalworking fluids.' },
-    { name: 'Emulsifying Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/emulsifyingwax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/emulsifying2.jpg', description: 'Used in emulsified medicinal creams.' },
     { name: 'Surfactants', image: '/assets/RELATED PROD IMG/NEW IMAGES/surfactant.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/surfactant.jpg', description: 'Additives in formulations for dispersing and cleaning functions.' },
-    { name: 'UV Filters', image: '/assets/RELATED PROD IMG/NEW IMAGES/uvfilters.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/uvFilters.jpg', description: 'Protection of lubricants from degradation due to UV exposure in open environments.' },
   ],
 };
 

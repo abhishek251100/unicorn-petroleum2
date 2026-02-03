@@ -14,7 +14,7 @@ export const cosmeticsData = {
   ],
   overview: {
     title: "Cosmetic industry",
-    description: "Our products are often employed as both basic materials and functional additives in cosmetic compositions. They enhance the texture, shine, and spreadability of cosmetics and skincare products. These ingredients promote formulation stability and uniformity across a variety of product formats, including creams, lotions, balms, and color cosmetics. They help facilitate smooth application while improving the sensory experience in facial, body, and lip care products. Their versatility also supports use in decorative cosmetics and skin conditioning applications. This adaptability makes them suitable for a wide range of cosmetic innovations and developments."
+    description: "Our chemicals are frequently used as both base materials and functional additions in cosmetic formulations. They improve the texture, gloss, and spreading ability of cosmetic and skincare products. These chemicals improve formulation stability and homogeneity in a wide range of product types, particularly lotions and creams, lip balms, and pigmented cosmetics. They provide a smooth application of face, body, and lip care products while also boosting the sensory experience. Their adaptability also allows for usage in decorative cosmetics and skin conditioning treatments and this versatility qualifies them for an extensive list of cosmetic advancements and developments."
   },
   // Using FGridSection structure for applications
   applications: {

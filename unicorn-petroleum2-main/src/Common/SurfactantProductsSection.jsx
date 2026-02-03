@@ -23,7 +23,7 @@ const SurfactantProductsSection = ({ data }) => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Our Surfactant Products
+            Our Surfactants
           </h2>
         </div>
 

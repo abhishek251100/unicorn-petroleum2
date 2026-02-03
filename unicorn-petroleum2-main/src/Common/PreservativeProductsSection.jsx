@@ -21,6 +21,11 @@ const PreservativeProductsSection = ({ data }) => {
   return (
     <section className="py-12 px-4">
       <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Our Preservatives
+          </h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {data.products.map((product, index) => {
             const Wrapper = product.pdfUrl ? "a" : "div";

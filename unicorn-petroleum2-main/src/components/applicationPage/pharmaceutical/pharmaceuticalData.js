@@ -14,7 +14,7 @@ export const pharmaceuticalData = {
   ],
   overview: {
     title: "Pharmaceutical industry",
-    description: "Our products are widely employed as practical additives and production aids in the pharmaceutical industry. They support the formulation of ointments, creams, gels, syrups, and oral dosage forms by improving durability, uniformity, and consistency. These materials are also used in topical, oral, and external preparations, as well as in medical and wellness applications. In addition, they assist with lubrication, surface protection, and equipment efficiency during manufacturing and packaging operations. Their refined nature makes them suitable for applications where purity and reliability are essential. Manufacturers rely on them to ensure efficient processing, consistent product performance, and the delivery of safe, effective, and high-quality healthcare solutions."
+    description: "Our products are widely used as practical additives and manufacturing aids in the pharmaceutical business. They help in the production of lotions, gels, creams, liquids, and pills for oral use by increasing durability, homogeneity, and consistency. These components are also employed in topical, oral, and external formulations, as well as medicinal and wellness applications. Additionally, they help with lubrication, surface protection, and equipment efficiency during packaging activities within this industry. Their purified character makes them ideal for applications that need purity and dependability. Manufacturers utilize them to guarantee that their finished products are processed efficiently, operate consistently, and give secure and excellent healthcare solutions."
   },
   // New section: Tailored for pharma
   tailoredForPharma: {
