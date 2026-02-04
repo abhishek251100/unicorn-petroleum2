@@ -19,6 +19,7 @@ import NaturalBeeswaxPage from "../components/productsPage/naturalBeeswax/Natura
 import PreservativesPage from "../components/productsPage/preservatives/PreservativesPage";
 import SurfactantsPage from "../components/productsPage/surfactants/SurfactantsPage";
 import UVFiltersPage from "../components/productsPage/uvFilters/UVFiltersPage";
+import LanolinPage from "../components/productsPage/lanolin/LanolinPage";
 
 // About pages - consolidated into single page
 
@@ -51,6 +52,7 @@ const router = createBrowserRouter([
       { path: "/products/soft-paraffin", element: <StandardProductPage title="Soft Paraffin" description="" /> },
       { path: "/products/hard-paraffin", element: <StandardProductPage title="Hard Paraffin" description="" /> },
       { path: "/products/natural-beeswax", element: <NaturalBeeswaxPage /> },
+      { path: "/products/lanolin", element: <LanolinPage /> },
       { path: "/products/emulsifying-wax", element: <EmulsifyingWaxPage /> },
       { path: "/products/d-panthenol", element: <DPanthenolPage /> },
       { path: "/products/preservatives", element: <PreservativesPage /> },

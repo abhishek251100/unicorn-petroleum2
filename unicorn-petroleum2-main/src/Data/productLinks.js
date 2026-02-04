@@ -11,6 +11,7 @@ export const productNameToPath = {
   "Microcrystalline Wax": "/products/microcrystalline-wax",
   "Hard Paraffin Wax": "/products/paraffin-wax",
   "Natural Beeswax": "/products/natural-beeswax",
+  "Lanolin": "/products/lanolin",
   "D-Panthenol": "/products/d-panthenol",
 };
 

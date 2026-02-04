@@ -108,8 +108,16 @@ export default function Navbar() {
       link: "/products",
       hasDropdown: true,
       dropdownItems: [
-        { name: "Petroleum Jelly", link: "/products/petroleum-jelly" },
-        { name: "White Mineral Oils", link: "/products/white-mineral-oils" },
+       
+        {
+          name: "Excipients",
+          link: "/products",
+          subItems: [
+            { name: "White Mineral Oils", link: "/products/white-mineral-oils" },
+            { name: "Petroleum Jelly", link: "/products/petroleum-jelly" },
+            { name: "Lanolin", link: "/products/lanolin" },
+          ],
+        },
         {
           name: "Waxes",
           link: "/products",
@@ -168,7 +176,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex items-center space-x-4">
               <Link to="/" className="flex items-center">
-                <img src="/assets/logo 1.jpg" alt="Unicorn logo" className="h-9 w-auto" />
+                <img src="/assets/logo 1.png" alt="Unicorn logo" className="h-9 w-auto" />
               </Link>
             </div>
 

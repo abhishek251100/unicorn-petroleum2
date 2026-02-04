@@ -23,6 +23,7 @@ export const navigationData = {
       { id: 'microcrystalline-wax', name: 'Microcrystalline Wax', link: '/products/microcrystalline-wax' },
       { id: 'paraffin-wax', name: 'Hard Paraffin Wax', link: '/products/paraffin-wax' },
       { id: 'natural-beeswax', name: 'Natural Beeswax', link: '/products/natural-beeswax' },
+      { id: 'lanolin', name: 'Lanolin', link: '/products/lanolin' },
       { id: 'emulsifying-wax', name: 'Emulsifying Wax', link: '/products/emulsifying-wax' },
       { id: 'd-panthenol', name: 'D-Panthenol', link: '/products/d-panthenol' },
       { id: 'preservatives', name: 'Preservatives', link: '/products/preservatives' },

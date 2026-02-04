@@ -35,6 +35,7 @@ export default function ProductsPageIndex() {
       'microcrystalline-wax': 'Fine-grained wax with excellent binding and coating properties',
       'paraffin-wax': 'Versatile wax products for multiple industrial applications',
       'natural-beeswax': 'Pure natural wax with excellent emulsifying properties',
+      'lanolin': 'Refined wool grease for cosmetic, pharmaceutical, and industrial use',
       'emulsifying-wax': 'Specialized wax for creating stable emulsions',
       'd-panthenol': 'Provitamin B5 for enhanced skin conditioning and healing',
       'preservatives': 'Antimicrobial agents to extend product shelf life',

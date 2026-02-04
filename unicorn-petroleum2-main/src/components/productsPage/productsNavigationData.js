@@ -19,6 +19,13 @@ export const productsNavigationData = {
       ]
     },
     {
+      id: "lanolin",
+      name: "Lanolin",
+      hasSubItems: false,
+      isActive: false,
+      link: "/products/lanolin"
+    },
+    {
       id: "microcrystalline-wax",
       name: "Microcrystalline Wax",
       hasSubItems: false,
