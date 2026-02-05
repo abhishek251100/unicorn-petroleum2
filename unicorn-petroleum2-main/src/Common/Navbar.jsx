@@ -102,7 +102,7 @@ export default function Navbar() {
   }, []);
 
   const menuItems = [
-    { name: "About", link: "/about", hasDropdown: false },
+    { name: "About us", link: "/about", hasDropdown: false },
     {
       name: "Products",
       link: "/products",
