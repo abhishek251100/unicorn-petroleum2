@@ -111,7 +111,6 @@ export default function ProductPortfolioSection({ data }) {
 
   // Mouse drag handlers
   const handleMouseDown = (e) => {
-    e.preventDefault();
     isDragging.current = true;
     touchStartX.current = e.clientX;
     setIsPaused(true);
@@ -153,7 +152,6 @@ export default function ProductPortfolioSection({ data }) {
       }
       if (containerRef.current) {
         containerRef.current.style.overflowX = 'hidden';
-        containerRef.current.scrollLeft = 0;
         containerRef.current.style.cursor = 'default';
       }
     }, 2000);
@@ -201,26 +199,11 @@ export default function ProductPortfolioSection({ data }) {
           {/* Marquee Container */}
           <div 
             ref={containerRef}
-            className={`marquee-container relative w-full ${isManualScroll ? 'overflow-x-auto' : 'overflow-hidden'}`}
-            onMouseEnter={() => {
-              if (!isManualScroll) {
-                setIsPaused(true);
-              }
-            }}
-            onMouseLeave={() => {
-              if (isManualScroll || isDragging.current) {
-                handleMouseUp();
-              } else {
-                setIsPaused(false);
-              }
-            }}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
+            className="marquee-container relative w-full overflow-hidden"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             style={{
-              cursor: isManualScroll ? 'grab' : 'default',
+              cursor: 'default',
               WebkitOverflowScrolling: 'touch',
               scrollbarWidth: 'thin',
               scrollbarColor: '#E99322 transparent',

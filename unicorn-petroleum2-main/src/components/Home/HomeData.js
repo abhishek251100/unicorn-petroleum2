@@ -116,6 +116,16 @@ export const homeData = {
       },
       {
         image:
+          "/assets/RELATED PROD IMG/NEW IMAGES/lanolin.jpg",
+        // If hover image is missing, component will fall back to mapped hover image
+        title: "Lanolin",
+        description:
+          "Refined wool grease used as a skin-conditioning excipient in cosmetic and topical formulations.",
+        buttonText: "View Details →",
+        link: "/products/lanolin", // Internal link
+      },
+      {
+        image:
           "/assets/RELATED PROD IMG/NEW IMAGES/surfactant.jpg",
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/surfactant.jpg",
         title: "Surfactants",

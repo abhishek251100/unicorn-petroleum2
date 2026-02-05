@@ -204,7 +204,7 @@ const AboutPage = () => {
                     className="w-14 h-14 md:w-16 md:h-16 object-contain animate-icon-float"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Ethical and Fair business</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Ethical & Fair business</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   We conduct our business with honesty, ethics, and responsibility. We prioritise accountability so as to produce long-term benefit for our customers.
                 </p>
