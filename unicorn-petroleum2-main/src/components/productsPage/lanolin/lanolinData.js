@@ -21,6 +21,12 @@ export const lanolinData = {
       "It possesses anti-corrosive, protective and lubricating properties which are used for industrial applications. Lanolin is non-conductive thereby finding extensive use in making electric components.",
     ],
   },
+
+  packagedResponsibly: {
+    packagingOptions: [
+      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "MS drums", weight: "" },
+    ],
+  },
 };
 
 export default lanolinData;

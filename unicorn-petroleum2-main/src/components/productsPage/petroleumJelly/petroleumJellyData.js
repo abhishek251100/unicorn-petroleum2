@@ -62,7 +62,7 @@ export const petroleumJellyData = {
 
   // Key features data
   keyFeatures: {
-    heading: "Key Features of all Petroleum Jelly from Unicorn",
+    heading: "Key Features of all Petroleum Jelly from Unicorn from us",
     features: [
       {
         icon: "/assets/Icons/Property 1=Compliance.png",

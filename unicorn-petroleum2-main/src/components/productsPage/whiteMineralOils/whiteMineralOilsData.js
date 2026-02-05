@@ -74,7 +74,7 @@ export const whiteMineralOilsData = {
 
   // Key features data - Pharmacopoeial Compliance and Other Compliances cards for White Mineral Oils
   keyFeatures: {
-    heading: "Key Features of all White Mineral Oils from Unicorn",
+    heading: "Key Features of all White Mineral Oils from Unicorn from us",
     features: [
       {
         icon: "/assets/Icons/Property 1=Compliance.png",

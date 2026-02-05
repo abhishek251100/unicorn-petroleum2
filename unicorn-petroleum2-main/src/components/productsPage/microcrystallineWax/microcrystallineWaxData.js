@@ -65,7 +65,7 @@ export const microcrystallineWaxData = {
 
   // Key features data - Pharmacopoeial Compliance card only for Microcrystalline Wax
   keyFeatures: {
-    heading: "Key Features of all Microcrystalline Wax from Unicorn",
+    heading: "Key Features of all Microcrystalline Wax from Unicorn from us",
     features: [
       {
         icon: "/assets/Icons/Property 1=Compliance.png",

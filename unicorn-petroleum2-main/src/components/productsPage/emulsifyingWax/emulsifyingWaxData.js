@@ -67,7 +67,7 @@ export const emulsifyingWaxData = {
 
   // Key Features section - Pharmacopoeial Compliance card for Emulsifying Wax
   keyFeatures: {
-    heading: "Key Features of all Emulsifying Wax from Unicorn",
+    heading: "Key Features of all Emulsifying Wax from Unicorn from us",
     features: [
       {
         icon: "/assets/Icons/Property 1=Compliance.png",
