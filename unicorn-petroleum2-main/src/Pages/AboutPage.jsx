@@ -245,7 +245,7 @@ const AboutPage = () => {
             <div className="hidden md:block space-y-16 pb-8 min-h-[600px]">
               {/* Commitment to customers */}
               <div className="flex items-center">
-                <div className="w-1/2 pr-8 text-right">
+                <div className="w-1/2 pr-8 text-center">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Customer commitment</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     We focus on our customers' success. Our motto is transparency, reliability and understanding unique requirements. We strive to provide solutions that exceed expectations.
@@ -271,7 +271,7 @@ const AboutPage = () => {
                     className="w-14 h-14 md:w-16 md:h-16 object-contain"
                   />
                 </div>
-                <div className="w-1/2 pl-8 text-left">
+                <div className="w-1/2 pl-8 text-center">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Uncompromising quality</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     For us, quality isn’t just a goal. It’s our daily habit. You’ll see it in the details we perfect and the decisions we question. This is how we make sure that what finally reaches you is crafted carefully and with intention.
@@ -281,8 +281,8 @@ const AboutPage = () => {
 
               {/* Ethical and fair business */}
               <div className="flex items-center">
-                <div className="w-1/2 pr-8 text-right">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Ethical and fair business</h3>
+                <div className="w-1/2 pr-8 text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Ethical & fair business</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     We conduct our business with honesty, ethics, and responsibility. We prioritise accountability so as to produce long-term benefit for our customers.
                   </p>
@@ -307,7 +307,7 @@ const AboutPage = () => {
                     className="w-14 h-14 md:w-16 md:h-16 object-contain"
                   />
                 </div>
-                <div className="w-1/2 pl-8 text-left">
+                <div className="w-1/2 pl-8 text-center">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Integrity & Legal compliance</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     We work with absolute devotion to the law and handle our activities honestly. This protects our corporate image and promotes public trust by preventing negative impact on society.
@@ -317,7 +317,7 @@ const AboutPage = () => {
 
               {/* Safety, health and environment consciousness */}
               <div className="flex items-center">
-                <div className="w-1/2 pr-8 text-right">
+                <div className="w-1/2 pr-8 text-center">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Safety, Health & Environment</h3>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     Nothing is more important than the safety of our team. And we run our business with the same sense of care for the environment they work in. It's not just policy, it's the foundation of how we think about the future.
@@ -399,7 +399,7 @@ const AboutPage = () => {
                     onError={(e) => {
                       e.target.style.display = 'none';
                     }}
-                  />
+                  /> 
                 </div>
                 <div className="p-4 sm:p-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Flexible packaging options</h3>
@@ -432,11 +432,11 @@ const AboutPage = () => {
           {/* Differentiators with vertical lines */}
           <div className="relative">
             {/* 5 simple vertical lines from header */}
-            <div className="absolute top-[-12%] left-[15.4%] w-0.5 h-[25%] bg-[#E99322] hidden lg:block"></div>
-            <div className="absolute top-[-12%] left-[31%] w-0.5 h-[76%] bg-[#E99322] hidden lg:block"></div>
+            <div className="absolute top-[-10%] left-[15.4%] w-0.5 h-[23%] bg-[#E99322] hidden lg:block"></div>
+            <div className="absolute top-[-10%] left-[31%] w-0.5 h-[73%] bg-[#E99322] hidden lg:block"></div>
             <div className="absolute top-[-12%] left-[50%] w-0.5 h-[25%] bg-[#E99322] hidden lg:block"></div>
-            <div className="absolute top-[-12%] left-[68.5%] w-0.5 h-[80%] bg-[#E99322] hidden lg:block"></div>
-            <div className="absolute top-[-12%] left-[84.5%] w-0.5 h-[26%] bg-[#E99322] hidden lg:block"></div>
+            <div className="absolute top-[-10%] left-[68.9%] w-0.5 h-[78%] bg-[#E99322] hidden lg:block"></div>
+            <div className="absolute top-[-10%] left-[84.5%] w-0.5 h-[23%] bg-[#E99322] hidden lg:block"></div>
             
             {/* Top row - 3 items */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12">

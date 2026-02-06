@@ -91,7 +91,7 @@ export const homeData = {
 
   // Product portfolio
   products: {
-    heading: "Our Core Product Portfolio",
+    heading: "Our core product portfolio",
     subheading: "Where Innovation Meets Quality - Since 1964",
     cards: [
       {
@@ -125,26 +125,6 @@ export const homeData = {
         link: "/products/lanolin", // Internal link
       },
       {
-        image:
-          "/assets/RELATED PROD IMG/NEW IMAGES/surfactant.jpg",
-        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/surfactant.jpg",
-        title: "Surfactants",
-        description:
-          "Versatile foaming and wetting agent across wide range of cleaning and personal care products",
-        buttonText: "View Details →",
-        link: "/products/surfactants", // Internal link
-      },
-      {
-        image:
-          "/assets/RELATED PROD IMG/NEW IMAGES/Preservative.jpg",
-        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/preservative.jpg",
-        title: "Preservatives",
-        description:
-          "Effective antimicrobial substances crucial for extending shelf life of items in the food, pharmaceutical and cosmetics industry",
-        buttonText: "View Details →",
-        link: "/products/preservatives", // Internal link
-      },
-      {
         image: "/assets/RELATED PROD IMG/NEW IMAGES/uvfilters.jpg",
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/uvFilters.jpg",
         title: "UV Filters",
@@ -171,6 +151,26 @@ export const homeData = {
         buttonText: "View Details →",
         link: "/products",
       },
+      {
+        image:
+          "/assets/RELATED PROD IMG/NEW IMAGES/surfactant.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/surfactant.jpg",
+        title: "Surfactants",
+        description:
+          "Versatile foaming and wetting agent across wide range of cleaning and personal care products",
+        buttonText: "View Details →",
+        link: "/products/surfactants", // Internal link
+      },
+      {
+        image:
+          "/assets/RELATED PROD IMG/NEW IMAGES/Preservative.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/preservative.jpg",
+        title: "Preservatives",
+        description:
+          "Effective antimicrobial substances crucial for extending shelf life of items in the food, pharmaceutical and cosmetics industry",
+        buttonText: "View Details →",
+        link: "/products/preservatives", // Internal link
+      },
     ],
     buttonText: "View All Products →",
     buttonLink: "/products", // Internal link
@@ -178,7 +178,7 @@ export const homeData = {
 
   // Industries
   industries: {
-    heading: "Catering to Diverse Industries Worldwide",
+    heading: "Catering to diverse industries worldwide",
     subheading: "Shaping the future of cosmetic & pharmaceutical ingredients",
     mobileTwoCols: true,
     cards: [
@@ -186,23 +186,23 @@ export const homeData = {
         icon: "/assets/Icons/Property 1=pharma.png",
         label: "Pharmaceutical",
         hoverDescription: "Petroleum jellies, mineral oil, waxes and specialty chemicals",
-        link: "/applications#pharmaceutical", // Internal link with anchor
+        link: "/applications/pharmaceutical",
       },
       {
         icon: "/assets/Icons/Property 1=cosmetic.png",
         label: "Cosmetic",
         hoverDescription: "Petroleum jellies, mineral oil, waxes, UV filters and specialty chemicals",
-        link: "/applications#cosmetic", // Internal link with anchor
+        link: "/applications/cosmetics",
       },
       {
         icon: "/assets/Icons/Property 1=herbal.png",
         label: "Personal Care",
         hoverDescription: "Petroleum jellies, mineral oil, waxes, emulsifiers and specialty chemicals",
-        link: "/applications#personal-care", // Internal link with anchor
+        link: "/applications/personal-care",
       },
       {
         icon: "/assets/Icons/Bulk.png",
-        label: "Bulk Chemicals",
+        label: "Home Care",
         hoverDescription: "Oils, waxes, preservatives and specialty chemicals",
         link: "/applications/home-care", // Internal link to home care application page
       },
@@ -210,13 +210,13 @@ export const homeData = {
         icon: "/assets/Icons/Property 1=petro.png",
         label: "Textile",
         hoverDescription: "Lubricants, protective coatings and specialty chemicals",
-        link: "/applications#textile", // Internal link with anchor
+        link: "/applications/textile",
       },
       {
         icon: "/assets/Icons/Property 1=lube.png",
         label: "Lubricants",
         hoverDescription: "Oils, waxes and protective coatings",
-        link: "/applications#lubricants", // Internal link with anchor
+        link: "/applications/lubricants",
       },
       {
         icon: "/assets/Icons/Property 1=agro.png",

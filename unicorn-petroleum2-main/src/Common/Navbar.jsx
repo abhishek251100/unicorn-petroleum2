@@ -113,8 +113,8 @@ export default function Navbar() {
           name: "Excipients",
           link: "/products",
           subItems: [
-            { name: "White Mineral Oils", link: "/products/white-mineral-oils" },
             { name: "Petroleum Jelly", link: "/products/petroleum-jelly" },
+            { name: "White Mineral Oils", link: "/products/white-mineral-oils" },
             { name: "Lanolin", link: "/products/lanolin" },
           ],
         },
@@ -148,7 +148,7 @@ export default function Navbar() {
       ]
     },
     { name: "Global Reach", link: "/reach", hasDropdown: false },
-    { name: "Contact", link: "/contact", hasDropdown: false }
+    { name: "Contact us", link: "/contact", hasDropdown: false }
   ];
 
   return (

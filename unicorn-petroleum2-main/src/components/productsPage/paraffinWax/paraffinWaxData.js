@@ -50,7 +50,7 @@ export const paraffinWaxData = {
 
   // Key Features section - Pharmacopoeial Compliance card for Hard Paraffin Wax
   keyFeatures: {
-    heading: "Key Features of all Hard Paraffin Wax from Unicorn from us",
+    heading: "Key Features of all Hard Paraffin Wax from us",
     features: [
       {
         icon: "/assets/Icons/Property 1=Compliance.png",

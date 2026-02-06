@@ -128,6 +128,13 @@ export default function PharmaceuticalPage() {
       hoverImage: "/assets/RELATED PROD IMG/New Hover Images/WhiteMineraloil.jpg"
     },
     {
+      name: "Lanolin",
+      link: "/products/lanolin",
+      description: "Refined wool grease used as a skin-conditioning excipient in cosmetic and topical formulations.",
+      image: "/assets/RELATED PROD IMG/NEW IMAGES/lanolin.jpg",
+      hoverImage: "/assets/RELATED PROD IMG/NEW IMAGES/lanolin.jpg"
+    },
+    {
       name: "Natural Beeswax",
       link: "/products/natural-beeswax",
       description: "Used in ointments, tablet coatings, slow-release formulations, and as a binding agent.",

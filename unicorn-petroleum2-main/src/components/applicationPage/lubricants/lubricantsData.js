@@ -13,6 +13,7 @@ export const lubricantsData = {
     { name: 'Petroleum Jelly', image: '/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/Petroleumjelly.jpg', description: 'Healing ointments, skin protectants, and excipients in topical medicines.' },
     { name: 'Hard Paraffin Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/paraffinwax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/paraffin2.jpg', description: 'Anti-static and friction-reducing coating for threads' },
     { name: 'Microcrystalline Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/micro2.jpg', description: 'Used in manufacturing ointments and balms.' },
+    { name: 'Lanolin', image: '/assets/RELATED PROD IMG/NEW IMAGES/lanolin.jpg', hoverImage: '/assets/RELATED PROD IMG/NEW IMAGES/lanolin.jpg', description: 'Refined wool grease used as a skin-conditioning excipient in cosmetic and topical formulations.' },
     { name: 'Preservatives', image: '/assets/RELATED PROD IMG/NEW IMAGES/Preservative.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/preservative.jpg', description: 'Prevent microbial contamination in water-based metalworking fluids.' },
   ],
 };

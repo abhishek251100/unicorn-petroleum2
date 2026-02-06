@@ -24,7 +24,23 @@ export const lanolinData = {
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "MS drums", weight: "" },
+      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "MS drums", weight: "190 kg" },
+    ],
+  },
+
+  keyFeatures: {
+    heading: "Key Features of all Lanolin from us",
+    features: [
+      {
+        icon: "/assets/Icons/Property 1=Compliance.png",
+        title: "Pharmacopoeial Compliance",
+        items: [
+          "Indian Pharmacopoeia [IP]",
+          "British Pharmacopoeia [BP]",
+          "United States Pharmacopoeia [USP]",
+          "European Pharmacopoeia [Ph. Eur.]",
+        ],
+      },
     ],
   },
 };

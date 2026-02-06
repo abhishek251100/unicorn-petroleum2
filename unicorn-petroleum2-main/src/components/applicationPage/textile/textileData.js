@@ -13,6 +13,7 @@ export const textileData = {
     { name: 'Natural Beeswax', image: '/assets/RELATED PROD IMG/NEW IMAGES/Naturalbeeswax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/beeswax2.jpg', description: 'Used in lotions, creams and lip balms for its emollient and protective benefits' },
     { name: 'Microcrystalline Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/micro2.jpg', description: 'Enhances thread strength and finish quality.' },
     { name: 'Hard Paraffin Wax', image: '/assets/RELATED PROD IMG/NEW IMAGES/paraffinwax.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/paraffin2.jpg', description: 'Anti-static and friction-reducing coating for threads' },
+    { name: 'Lanolin', image: '/assets/RELATED PROD IMG/NEW IMAGES/lanolin.jpg', hoverImage: '/assets/RELATED PROD IMG/NEW IMAGES/lanolin.jpg', description: 'Refined wool grease used as a skin-conditioning excipient in cosmetic and topical formulations.' },
     { name: 'Surfactants', image: '/assets/RELATED PROD IMG/NEW IMAGES/surfactant.jpg', hoverImage: '/assets/RELATED PROD IMG/New Hover Images/surfactant.jpg', description: 'Additives in formulations for dispersing and cleaning functions.' },
   ],
 };
