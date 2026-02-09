@@ -13,6 +13,9 @@ export const productNameToPath = {
   "Natural Beeswax": "/products/natural-beeswax",
   "Lanolin": "/products/lanolin",
   "D-Panthenol": "/products/d-panthenol",
+  // Home page portfolio grouping labels
+  "Waxes": "/products/microcrystalline-wax",
+  "Specialty Chemicals": "/products/d-panthenol",
 };
 
 export const getProductPath = (name) => productNameToPath[name] || "/products";

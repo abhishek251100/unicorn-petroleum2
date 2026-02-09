@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import ProductPageLayout from "../ProductPageLayout";
 import FloatingSidebar from "../../../Common/FloatingSidebar";
 import ProductPageCommonSection from "../../../Common/products/ProductPageCommonSection";
+import ProductKeyFeaturesSection from "../../../Common/products/ProductKeyFeaturesSection";
 import QualityStandardsSection from "../../../Common/QualityStandardsSection";
 import ApplicationsSection from "../../../Common/ApplicationsSection";
 import CharacteristicsSection from "../../../Common/CharacteristicsSection";
@@ -105,6 +106,7 @@ export default function LanolinPage() {
           <CharacteristicsSection data={data.characteristicsSection} />
           <ApplicationsSection data={data.applicationsSection} />
           <PackagedResponsiblySection data={data.packagedResponsibly} />
+          {data.keyFeatures && <ProductKeyFeaturesSection data={data.keyFeatures} />}
         </div>
       </div>
 
@@ -113,6 +115,7 @@ export default function LanolinPage() {
         <CharacteristicsSection data={data.characteristicsSection} />
         <ApplicationsSection data={data.applicationsSection} />
         <PackagedResponsiblySection data={data.packagedResponsibly} />
+        {data.keyFeatures && <ProductKeyFeaturesSection data={data.keyFeatures} />}
       </div>
 
       <div ref={certificationsRef} className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">

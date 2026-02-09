@@ -1,25 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-// Mobile Cards Layout Component with tap functionality
+// Mobile Cards Layout Component - tap navigates to application pages
 function MobileCardsLayout({ cards, showDescriptions }) {
-  const [activeIndex, setActiveIndex] = useState(null);
   const cardsCount = cards.length;
-
-  const handleCardClick = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
 
   return (
     <div className="md:hidden">
       <div className="grid grid-cols-2 gap-4 mb-4">
         {cards.slice(0, Math.max(0, cardsCount - 1)).map((card, index) => {
-          const isActive = activeIndex === index;
+          const CardWrapper = card.link ? Link : "div";
+          const cardProps = card.link
+            ? { to: card.link }
+            : {};
           return (
-            <div
+            <CardWrapper
               key={`m-${index}`}
-              onClick={() => handleCardClick(index)}
+              {...cardProps}
               className={`bg-white p-4 rounded-2xl border-[1.5px] border-[#EDA94E] transition-all duration-300 text-center flex flex-col justify-center cursor-pointer ${
-                isActive ? 'shadow-xl border-[#E99322]' : ''
+                card.link ? "hover:shadow-xl hover:border-[#E99322]" : ""
               }`}
               style={{ minHeight: '150px' }}
             >
@@ -30,26 +29,33 @@ function MobileCardsLayout({ cards, showDescriptions }) {
                   card.icon
                 )}
               </div>
-              <div className={`font-semibold text-gray-800 text-sm ${isActive ? 'hidden' : 'block'}`}>
+              <div className="font-semibold text-gray-800 text-sm">
                 {card.title || card.label || card.name}
               </div>
               {showDescriptions && (card.hoverDescription || card.description) && (
-                <div className={`text-gray-700 text-xs mt-1 ${isActive ? 'block' : 'hidden'}`}>
+                <div className="text-gray-700 text-xs mt-1">
                   {card.hoverDescription || card.description}
                 </div>
               )}
-            </div>
+            </CardWrapper>
           );
         })}
       </div>
       {cardsCount > 0 && (
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div className="col-span-2 justify-self-center w-[calc(50%-0.5rem)]">
-            <div
-              onClick={() => handleCardClick(cardsCount - 1)}
-              className={`bg-white p-4 rounded-2xl border-[1.5px] border-[#EDA94E] text-center flex flex-col justify-center cursor-pointer ${
-                activeIndex === cardsCount - 1 ? 'shadow-xl border-[#E99322]' : ''
-              }`}
+            {(() => {
+              const card = cards[cardsCount - 1];
+              const CardWrapper = card.link ? Link : "div";
+              const cardProps = card.link
+                ? { to: card.link }
+                : {};
+              return (
+                <CardWrapper
+                  {...cardProps}
+                  className={`bg-white p-4 rounded-2xl border-[1.5px] border-[#EDA94E] text-center flex flex-col justify-center cursor-pointer ${
+                    card.link ? "hover:shadow-xl hover:border-[#E99322]" : ""
+                  }`}
               style={{ minHeight: '150px' }}
             >
               <div className="text-[#E99322] mb-2 flex justify-center">
@@ -59,15 +65,17 @@ function MobileCardsLayout({ cards, showDescriptions }) {
                   cards[cardsCount - 1].icon
                 )}
               </div>
-              <div className={`font-semibold text-gray-800 text-sm ${activeIndex === cardsCount - 1 ? 'hidden' : 'block'}`}>
+              <div className="font-semibold text-gray-800 text-sm">
                 {cards[cardsCount - 1].title || cards[cardsCount - 1].label || cards[cardsCount - 1].name}
               </div>
               {showDescriptions && (cards[cardsCount - 1].hoverDescription || cards[cardsCount - 1].description) && (
-                <div className={`text-gray-700 text-xs mt-1 ${activeIndex === cardsCount - 1 ? 'block' : 'hidden'}`}>
+                <div className="text-gray-700 text-xs mt-1">
                   {cards[cardsCount - 1].hoverDescription || cards[cardsCount - 1].description}
                 </div>
               )}
-            </div>
+                </CardWrapper>
+              );
+            })()}
           </div>
         </div>
       )}
@@ -113,8 +121,9 @@ export default function CardsSection({ data }) {
           <>
             <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
               {data.cards.slice(0, 4).map((card, index) => (
-                <div
+                <Link
                   key={index}
+                  to={card.link || "#"}
                   className="bg-white p-4 sm:p-6 rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center flex flex-col h-[220px] sm:h-[240px] md:h-[260px]"
                 >
                   <div className="flex-1 flex items-center justify-center text-[#E99322] text-3xl sm:text-4xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
@@ -132,13 +141,14 @@ export default function CardsSection({ data }) {
                   <h3 className="font-semibold text-gray-800 mb-1 sm:mb-2 group-hover:text-[#E99322] transition-colors text-sm sm:text-base">
                     <span className="block">{card.title || card.label || card.name}</span>
                   </h3>
-                </div>
+                </Link>
               ))}
             </div>
             <div className="hidden md:grid grid-cols-1 sm:grid-cols-3 gap-6 lg:hidden">
               {data.cards.slice(4).map((card, index) => (
-                <div
+                <Link
                   key={index + 4}
+                  to={card.link || "#"}
                   className="bg-white p-6 rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center h-[260px] flex flex-col"
                 >
                   <div className="flex-1 flex items-center justify-center text-[#E99322] text-3xl sm:text-4xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
@@ -156,13 +166,14 @@ export default function CardsSection({ data }) {
                   <h3 className="font-semibold text-gray-800 mb-1 sm:mb-2 group-hover:text-[#E99322] transition-colors text-sm sm:text-base">
                     <span className="block">{card.title || card.label || card.name}</span>
                   </h3>
-                </div>
+                </Link>
               ))}
             </div>
             <div className="hidden lg:flex justify-center gap-6">
               {data.cards.slice(4).map((card, index) => (
-                <div
+                <Link
                   key={index + 4}
+                  to={card.link || "#"}
                   className="w-[240px]"
                 >
                   <div className="bg-white p-6 rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center h-[260px] flex flex-col">
@@ -182,17 +193,18 @@ export default function CardsSection({ data }) {
                       <span className="block">{card.title || card.label || card.name}</span>
                     </h3>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </>
         ) : (
           <div className={`${gridClasses} ${Boolean(data.mobileTwoCols) ? 'hidden md:grid' : ''}`}>
             {data.cards.map((card, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-4 sm:p-6 rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center flex flex-col h-[220px] sm:h-[240px] md:h-[260px]"
-                >
+              <Link
+                key={index}
+                to={card.link || "#"}
+                className="bg-white p-4 sm:p-6 rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-xl hover:border-[#EDA94E] transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group text-center flex flex-col h-[220px] sm:h-[240px] md:h-[260px]"
+              >
                 <div className="flex-1 flex items-center justify-center text-[#E99322] text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
                   {card.icon && card.icon.startsWith('/') ? (
                     <img 
@@ -211,17 +223,20 @@ export default function CardsSection({ data }) {
                     <span className="hidden group-hover:block text-gray-700">{card.hoverDescription || card.description}</span>
                   )}
                 </h3>
-              </div>
+              </Link>
             ))}
           </div>
         )}
 
         {data.buttonText && (
           <div className="text-center mt-4 sm:mt-6">
-            <button className="bg-[#E99322] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-[#E99322]/90 transition-all duration-300 font-medium flex items-center gap-2 mx-auto text-sm sm:text-base">
+            <Link
+              to={data.buttonLink || "/applications"}
+              className="inline-flex items-center gap-2 bg-[#E99322] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-[#E99322]/90 transition-all duration-300 font-medium text-sm sm:text-base"
+            >
               <span>{data.buttonText}</span>
               <span className="text-base sm:text-lg">→</span>
-            </button>
+            </Link>
           </div>
         )}
       </div>

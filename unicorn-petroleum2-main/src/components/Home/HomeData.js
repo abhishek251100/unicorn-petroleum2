@@ -115,23 +115,14 @@ export const homeData = {
         link: "/products/white-mineral-oils", // Internal link
       },
       {
-        image:
-          "/assets/RELATED PROD IMG/NEW IMAGES/lanolin.jpg",
-        // If hover image is missing, component will fall back to mapped hover image
+        // Temporary dummy image for Lanolin (can be replaced with a specific asset later)
+        image: "/assets/RELATED PROD IMG/Beeswax.png",
+        hoverImage: "/assets/RELATED PROD IMG/Beeswax.png",
         title: "Lanolin",
         description:
           "Refined wool grease used as a skin-conditioning excipient in cosmetic and topical formulations.",
         buttonText: "View Details →",
         link: "/products/lanolin", // Internal link
-      },
-      {
-        image: "/assets/RELATED PROD IMG/NEW IMAGES/uvfilters.jpg",
-        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/uvFilters.jpg",
-        title: "UV Filters",
-        description:
-          "Used in personal care products, shielding skin against UVA and UVB rays and their harmful effects",
-        buttonText: "View Details →",
-        link: "/products/uv-filters",
       },
       {
         image: "/assets/RELATED PROD IMG/NEW IMAGES/Naturalbeeswax.jpg",
@@ -171,6 +162,15 @@ export const homeData = {
         buttonText: "View Details →",
         link: "/products/preservatives", // Internal link
       },
+      {
+        image: "/assets/RELATED PROD IMG/NEW IMAGES/uvfilters.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/uvFilters.jpg",
+        title: "UV Filters",
+        description:
+          "Used in personal care products, shielding skin against UVA and UVB rays and their harmful effects",
+        buttonText: "View Details →",
+        link: "/products/uv-filters",
+      },
     ],
     buttonText: "View All Products →",
     buttonLink: "/products", // Internal link
@@ -181,6 +181,8 @@ export const homeData = {
     heading: "Catering to diverse industries worldwide",
     subheading: "Shaping the future of cosmetic & pharmaceutical ingredients",
     mobileTwoCols: true,
+    // Disable sub text under cards for this section
+    showDescriptions: false,
     cards: [
       {
         icon: "/assets/Icons/Property 1=pharma.png",

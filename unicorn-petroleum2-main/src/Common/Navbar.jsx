@@ -144,7 +144,8 @@ export default function Navbar() {
         { name: "Personal Care", link: "/applications/personal-care" },
         { name: "Home Care", link: "/applications/home-care" },
         { name: "Textile", link: "/applications/textile" },
-        { name: "Lubricants", link: "/applications/lubricants" }
+        { name: "Lubricants", link: "/applications/lubricants" },
+        { name: "Agrochemical", link: "/applications/agrochemical" }
       ]
     },
     { name: "Global Reach", link: "/reach", hasDropdown: false },

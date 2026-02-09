@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getProductHoverImage, UNIVERSAL_HOVER_IMAGE } from "../Data/productHoverImages";
+import { getProductPath } from "../Data/productLinks";
 
 export default function ProductPortfolioSection({ data }) {
   if (!data || !data.cards || data.cards.length === 0) {
@@ -18,6 +19,16 @@ export default function ProductPortfolioSection({ data }) {
 
   // Duplicate cards for seamless infinite scroll
   const duplicatedCards = [...data.cards, ...data.cards];
+
+  // Safely determine the link for each card.
+  // If a card explicitly points to the generic products page,
+  // fall back to a product-specific path based on its title.
+  const getCardLink = (card) => {
+    if (card.link && card.link !== "/products") {
+      return card.link;
+    }
+    return getProductPath(card.title);
+  };
 
   // Initialize scroll position when switching to manual mode
   useEffect(() => {
@@ -258,7 +269,10 @@ export default function ProductPortfolioSection({ data }) {
                   key={`${card.title}-${index}`} 
                   className="product-card flex-shrink-0 w-72 sm:w-80"
                 >
-                  <Link to={card.link || "/products"} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer border-[1.5px] border-[#EDA94E] flex flex-col">
+                  <Link
+                    to={getCardLink(card)}
+                    className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer border-[1.5px] border-[#EDA94E] flex flex-col"
+                  >
                     <div className="h-40 sm:h-44 md:h-48 overflow-hidden relative">
                       <img
                         src={card.image}
