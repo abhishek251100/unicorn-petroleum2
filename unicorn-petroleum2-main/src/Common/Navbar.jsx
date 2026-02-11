@@ -176,7 +176,16 @@ export default function Navbar() {
           <div className="flex justify-between items-center h-full">
             {/* Logo */}
             <div className="flex items-center space-x-4">
-              <Link to="/" className="flex items-center">
+              <Link
+                to="/"
+                className="flex items-center"
+                onClick={() => {
+                  setIsOpen(false);
+                  setActiveDropdown(null);
+                  setActiveNestedDropdown(null);
+                  window.scrollTo(0, 0);
+                }}
+              >
                 <img src="/assets/logo 1.png" alt="Unicorn logo" className="h-9 w-auto" />
               </Link>
             </div>

@@ -54,7 +54,15 @@ export const homeData = {
         subtitle: "",
         image: "/assets/BannerImages/HomeBannerDesktop2.jpg",
         mobileImage: "/assets/BannerImages/HomeBannerMobile2.jpg"
-      }
+      },
+      // {
+      //   // ChemExpo banner: image-only slide (no title/subtitle)
+      //   title: "",
+      //   subtitle: "",
+      //   // Use URL-encoded path so spaces don't break background-image
+      //   image: "/assets/BannerImages/Chem%20Expo%20Exhibition.jpeg",
+      //   mobileImage: "/assets/BannerImages/Chem%20Expo%20Exhibition.jpeg"
+      // }
     ]
   },
 
@@ -115,9 +123,8 @@ export const homeData = {
         link: "/products/white-mineral-oils", // Internal link
       },
       {
-        // Temporary dummy image for Lanolin (can be replaced with a specific asset later)
-        image: "/assets/RELATED PROD IMG/Beeswax.png",
-        hoverImage: "/assets/RELATED PROD IMG/Beeswax.png",
+        image: "/assets/RELATED PROD IMG/Lanolin.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/lanolin1.jpg",
         title: "Lanolin",
         description:
           "Refined wool grease used as a skin-conditioning excipient in cosmetic and topical formulations.",
@@ -125,18 +132,45 @@ export const homeData = {
         link: "/products/lanolin", // Internal link
       },
       {
-        image: "/assets/RELATED PROD IMG/NEW IMAGES/Naturalbeeswax.jpg",
-        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/waxes.jpg",
-        title: "Waxes",
+        image: "/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/micro2.jpg",
+        title: "Microcrystalline Wax",
         description:
-          "Range of waxes, from paraffin and microcrystalline to natural beeswax and emulsifying wax, tailored for custom product needs",
+          "Fine-grained wax offering excellent adhesion, flexibility, and binding properties for ointments and balms.",
         buttonText: "View Details →",
-        link: "/products",
+        link: "/products/microcrystalline-wax",
+      },
+      {
+        image: "/assets/RELATED PROD IMG/NEW IMAGES/paraffinwax.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/paraffin2.jpg",
+        title: "Hard Paraffin Wax",
+        description:
+          "High-quality paraffin wax grades ideal for candles, coatings, and industrial applications.",
+        buttonText: "View Details →",
+        link: "/products/paraffin-wax",
+      },
+      {
+        image: "/assets/RELATED PROD IMG/NEW IMAGES/Naturalbeeswax.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/beeswax2.jpg",
+        title: "Natural Beeswax",
+        description:
+          "Premium natural beeswax used in balms, creams, and other personal care formulations.",
+        buttonText: "View Details →",
+        link: "/products/natural-beeswax",
+      },
+      {
+        image: "/assets/RELATED PROD IMG/NEW IMAGES/emulsifyingwax.jpg",
+        hoverImage: "/assets/RELATED PROD IMG/New Hover Images/emulsifying2.jpg",
+        title: "Emulsifying Wax",
+        description:
+          "Specialized emulsifying wax designed to create stable oil-in-water and water-in-oil emulsions.",
+        buttonText: "View Details →",
+        link: "/products/emulsifying-wax",
       },
       {
         image: "/assets/RELATED PROD IMG/NEW IMAGES/Speciality chemicals.jpg",
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/SpecialityChemicals.jpg",
-        title: "Specialty Chemicals",
+        title: "D-panthenol",
         description:
           "Substances refined for special usecases across niche industries, including panthenol",
         buttonText: "View Details →",
@@ -220,12 +254,12 @@ export const homeData = {
         hoverDescription: "Oils, waxes and protective coatings",
         link: "/applications/lubricants",
       },
-      {
-        icon: "/assets/Icons/Property 1=agro.png",
-        label: "Agrochemical",
-        hoverDescription: "Carrier oils, coating and formulation agents",
-        link: "/applications/agrochemical", // Internal link to agrochemical application page
-      },
+      // {
+      //   icon: "/assets/Icons/Property 1=agro.png",
+      //   label: "Agrochemical",
+      //   hoverDescription: "Carrier oils, coating and formulation agents",
+      //   link: "/applications/agrochemical", // Internal link to agrochemical application page
+      // },
     ],
     buttonText: "View All Applications",
     buttonLink: "/applications", // Internal link
