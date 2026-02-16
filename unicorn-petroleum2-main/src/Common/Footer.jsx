@@ -99,7 +99,7 @@ export default function Footer() {
                     to="/contact"
                     className="text-gray-600 hover:text-[#E99322] transition-colors"
                   >
-                    Contact 
+                    Contact us 
                   </Link>
                 </li>
               </ul>

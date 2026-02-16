@@ -89,10 +89,11 @@ export default function CardsSection({ data }) {
   }
 
   const cardsCount = data.cards.length;
+  const lgColsClass = data.desktopCols === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4";
   const gridClasses =
-    cardsCount <= 4
+    cardsCount <= 4 && !data.desktopCols
       ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6"
-      : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6";
+      : `grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ${lgColsClass} gap-6`;
 
   const centerLastRow = Boolean(data.centerLastRow) && cardsCount > 4;
   const showDescriptions = data.showDescriptions !== false;
@@ -218,9 +219,9 @@ export default function CardsSection({ data }) {
                 </div>
 
                 <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-[#E99322] transition-colors">
-                  <span className="block group-hover:hidden">{card.title || card.label || card.name}</span>
+                  <span className="block">{card.title || card.label || card.name}</span>
                   {showDescriptions && (card.hoverDescription || card.description) && (
-                    <span className="hidden group-hover:block text-gray-700">{card.hoverDescription || card.description}</span>
+                    <span className="block text-gray-600 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">{card.hoverDescription || card.description}</span>
                   )}
                 </h3>
               </Link>

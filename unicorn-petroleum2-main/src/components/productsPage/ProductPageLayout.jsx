@@ -74,7 +74,7 @@ export default function ProductPageLayout({
     if (isTransitioning) return;
     
     setAnimationDirection(direction);
-    setIsTransitioning(true);
+    setIsTransitioning(true);JJ
     
     // Navigate after a brief delay to allow exit animation
     setTimeout(() => {

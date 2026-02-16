@@ -174,7 +174,7 @@ export const homeData = {
         description:
           "Substances refined for special usecases across niche industries, including panthenol",
         buttonText: "View Details →",
-        link: "/products",
+        link: "/products/d-panthenol",
       },
       {
         image:
@@ -215,6 +215,7 @@ export const homeData = {
     heading: "Catering to diverse industries worldwide",
     subheading: "Shaping the future of cosmetic & pharmaceutical ingredients",
     mobileTwoCols: true,
+    desktopCols: 3,
     // Disable sub text under cards for this section
     showDescriptions: false,
     cards: [
