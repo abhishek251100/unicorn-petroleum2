@@ -48,13 +48,13 @@ export const paraffinWaxData = {
     ],
   },
 
-  // Key Features section - Pharmacopoeial Compliance card for Hard Paraffin Wax
+  // Key features section - Pharmacopoeial Compliance card for Hard Paraffin Wax
   keyFeatures: {
-    heading: "Key Features of all Hard Paraffin Wax from us",
+    heading: "Key features of Hard Paraffin Wax from us",
     features: [
       {
         icon: "/assets/Icons/Property 1=Compliance.png",
-        title: "Pharmacopoeial Compliance",
+        title: "Pharmacopoeial compliance",
         items: [
           "Indian Pharmacopoeia [IP]",
           "British Pharmacopoeia [BP]",

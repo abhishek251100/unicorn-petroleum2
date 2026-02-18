@@ -67,11 +67,11 @@ export const emulsifyingWaxData = {
 
   // Key Features section - Pharmacopoeial Compliance card for Emulsifying Wax
   keyFeatures: {
-    heading: "Key Features of all Emulsifying Wax from us",
+    heading: "Key features of Emulsifying Wax from us",
     features: [
       {
         icon: "/assets/Icons/Property 1=Compliance.png",
-        title: "Pharmacopoeial Compliance",
+        title: "Pharmacopoeial compliance",
         items: [
           "Indian Pharmacopoeia [IP]",
           "British Pharmacopoeia [BP]",

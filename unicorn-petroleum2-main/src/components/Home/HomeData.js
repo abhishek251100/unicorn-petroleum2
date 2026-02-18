@@ -32,8 +32,7 @@ export const homeData = {
   // Hero
   hero: {
     title: "Pioneering Excellence in Petroleum Specialties for 6+ Decades",
-    subtitle:
-      "Your trusted partner for quality-assured ingredients for pharmaceutical, Cosmetics, and Industry",
+    subtitle: "",
     primaryButton: "Explore Products ",
     primaryButtonLink: "/products",
     secondaryButton: "Why Choose Us?",
@@ -45,7 +44,7 @@ export const homeData = {
     slider: [
       {
         title: "Pioneering Excellence in Petroleum Specialties for 6+ Decades",
-        subtitle: "Your trusted partner for quality-assured ingredients for Pharma, Cosmetics, and Industry",
+        subtitle: "",
         image: "/assets/hero-bg-home.jpg",
         mobileImage: "/assets/hero-bg-home.jpg"
       },
@@ -262,8 +261,6 @@ export const homeData = {
       //   link: "/applications/agrochemical", // Internal link to agrochemical application page
       // },
     ],
-    buttonText: "View All Applications",
-    buttonLink: "/applications", // Internal link
     centerLastRow: true,
   },
 

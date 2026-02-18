@@ -68,11 +68,11 @@ export const naturalBeeswaxData = {
    },
 
   keyFeatures: {
-  heading: "Key Features of all Beeswax from us",
+  heading: "Key features of Beeswax from us",
   features: [
       {
         icon: "/assets/Icons/Property 1=Compliance.png",
-        title: "Pharmacopoeial Compliance",
+        title: "Pharmacopoeial compliance",
         items: [
           "Indian Pharmacopoeia [IP]",
           "British Pharmacopoeia [BP]",

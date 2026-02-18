@@ -148,7 +148,7 @@ export default function Navbar() {
         // { name: "Agrochemical", link: "/applications/agrochemical" }
       ]
     },
-    { name: "Global Reach", link: "/reach", hasDropdown: false },
+    { name: "Global reach", link: "/reach", hasDropdown: false },
     { name: "Contact us", link: "/contact", hasDropdown: false }
   ];
 

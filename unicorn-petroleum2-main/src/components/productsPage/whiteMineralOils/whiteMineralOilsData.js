@@ -74,11 +74,11 @@ export const whiteMineralOilsData = {
 
   // Key features data - Pharmacopoeial Compliance and Other Compliances cards for White Mineral Oils
   keyFeatures: {
-    heading: "Key Features of all White Mineral Oils from us",
+    heading: "Key features of White Mineral Oils from us",
     features: [
       {
         icon: "/assets/Icons/Property 1=Compliance.png",
-        title: "Pharmacopoeial Compliance",
+        title: "Pharmacopoeial compliance",
         items: [
           "Indian Pharmacopoeia [IP]",
           "British Pharmacopoeia [BP]",
@@ -89,7 +89,7 @@ export const whiteMineralOilsData = {
       },
       {
         icon: "/assets/Icons/Property 1=Compliance.png",
-        title: "Other Compliances",
+        title: "Other compliances",
         items: [
           "21 CFR 172.878 and 21 CFR 178.3620 (a)",
           "ICH Q3C (R4) for residual solvents",

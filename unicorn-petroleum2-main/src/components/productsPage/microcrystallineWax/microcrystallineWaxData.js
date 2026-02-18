@@ -65,11 +65,11 @@ export const microcrystallineWaxData = {
 
   // Key features data - Pharmacopoeial Compliance card only for Microcrystalline Wax
   keyFeatures: {
-    heading: "Key Features of all Microcrystalline Wax from us",
+    heading: "Key features of Microcrystalline Wax from us",
     features: [
       {
         icon: "/assets/Icons/Property 1=Compliance.png",
-        title: "Pharmacopoeial Compliance",
+        title: "Pharmacopoeial compliance",
         items: [
           "Indian Pharmacopoeia [IP]",
           "British Pharmacopoeia [BP]",
