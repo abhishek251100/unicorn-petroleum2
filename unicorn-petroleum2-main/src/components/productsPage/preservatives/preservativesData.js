@@ -33,25 +33,29 @@ export const preservativesData = {
       {
         name: "Phenoxyethanol",
         description: "",
-        image: "/assets/RELATED PROD IMG/Extra/Frame 531 (5).png",
+        image: "/assets/pRESERVATIVES/Phenoxyethanol 1.jpg",
+        hoverImage: "/assets/pRESERVATIVES/Phenoxyethanol 2.jpg",
         pdfUrl: "/assets/PDF/Preservative/Preservative/Phenoxyethanol.pdf"
       },
       {
         name: "Ethylexyl glycerine",
         description: "Clear colourless liquid with no characteristic odour",
-        image: "/assets/RELATED PROD IMG/Extra/Frame 531 (6).png",
+        image: "/assets/pRESERVATIVES/Ethyl Hexyl Glycerine 1.jpg",
+        hoverImage: "/assets/pRESERVATIVES/Ethyl Hexyl Glycerine 2.jpg",
         pdfUrl: "/assets/PDF/Preservative/Preservative/Ethylhexyl%20Glycerine.pdf"
       },
       {
         name: "Parabens",
         description: "White or almost white crystalline powder",
-        image: "/assets/RELATED PROD IMG/Frame 531 (4).png",
+        image: "/assets/pRESERVATIVES/parabens 1.jpg",
+        hoverImage: "/assets/pRESERVATIVES/parabens 2.jpg",
         pdfUrl: "/assets/PDF/Preservative/Preservative/Parabens.pdf"
       },
       {
         name: "DMDM Hydantoin",
         description: "Clear liquid with a low characteristic odour",
-        image: "/assets/RELATED PROD IMG/Extra/Images.png",
+        image: "/assets/pRESERVATIVES/DMDM Hydantoin 1.jpg",
+        hoverImage: "/assets/pRESERVATIVES/DMDM Hydantoin 2.jpg",
         pdfUrl: "/assets/PDF/Preservative/Preservative/DMDM%20Hydantoin.pdf"
       }
     ]

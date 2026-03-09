@@ -31,25 +31,29 @@ export const surfactantsData = {
       {
         name: "Alpha olefin sulphonate (AOS)",
         description: "Available in different grades in powder and liquid states.",
-        image: "/assets/RELATED PROD IMG/Extra/Frame 531 (7).png",
+        image: "/assets/sURFACTANTS/AOS 96 (powder).jpg",
+        hoverImage: "/assets/sURFACTANTS/AOS 38_ (liquid).jpg",
         pdfUrl: "/assets/PDF/Surfactants/Surfactants/Alpha%20Olefin%20Sulphonate.pdf"
       },
       {
         name: "Sodium lauryl ether sulphate (SLES) 70",
         description: "Translucent paste with no characteristic odour.",
-        image: "/assets/RELATED PROD IMG/sodium-salphate.png",
+        image: "/assets/sURFACTANTS/SLES 1.jpg",
+        hoverImage: "/assets/sURFACTANTS/SLES 2.jpg",
         pdfUrl: "/assets/PDF/Surfactants/Surfactants/Sodium%20Lauryl%20Ether%20Sulphate.pdf"
       },
       {
         name: "CAPB / Betaine",
         description: "Appears colorless to light yellow liquid.",
-        image: "/assets/RELATED PROD IMG/Extra/images (2).png",
+        image: "/assets/sURFACTANTS/CAPB 1.jpg",
+        hoverImage: "/assets/sURFACTANTS/CAPB 2.jpg",
         pdfUrl: "/assets/PDF/Surfactants/Surfactants/CAPB%20-%20Betaine.pdf"
       },
       {
         name: "LABSA 96%",
         description: "Appears as honey to dark brown liquid.",
-        image: "/assets/RELATED PROD IMG/Extra/Images (1).png",
+        image: "/assets/sURFACTANTS/LABSA 1.jpg",
+        hoverImage: "/assets/sURFACTANTS/LABSA 2.jpg",
         pdfUrl: "/assets/PDF/Surfactants/Surfactants/LABSA%2096%25.pdf"
       }
     ]
