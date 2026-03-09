@@ -4,8 +4,8 @@ export const bulkChemicalData = {
     {
       title: 'Home Care Applications',
       subtitle: 'Reliable ingredients for home care industry',
-      image: '/assets/BannerImages/applications%20desktop.jpg',
-      mobileImage: '/assets/BannerImages/applications%20mobile.jpg',
+      image: '/assets/Application%20Banner/Home%20care%20application.jpg',
+      mobileImage: '/assets/Application%20Banner/Home%20care%20application.jpg',
     },
   ],
   overview: {

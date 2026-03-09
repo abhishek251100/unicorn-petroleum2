@@ -67,10 +67,10 @@ export const whiteMineralOilsData = {
   // Packaged responsibly section
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "bag", type: "HDPE drums", weight: "" },
-      { icon: "box", type: "MS drums", weight: "" },
-      { icon: "pail", type: "Flexibag", weight: "" },
-      { icon: "bottle", type: "IBC", weight: "" },
+      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "HDPE drums", weight: "" },
+      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "MS drums", weight: "" },
+      { icon: "/assets/Icons/ICON/Icon 5.jpg.jpeg", type: "Flexibag", weight: "" },
+      { icon: "/assets/Icons/ICON/Icon 3.jpg.jpeg", type: "IBC", weight: "" },
     ],
   },
 

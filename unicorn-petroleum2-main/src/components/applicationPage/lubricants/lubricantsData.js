@@ -1,7 +1,7 @@
 export const lubricantsData = {
   hero: { title: 'Lubricant Applications', description: 'Base oils and waxes for lubrication' },
   slider: [
-    { title: 'Lubricant Applications', subtitle: 'Base oils and waxes for lubrication', image: '/assets/BannerImages/applications%20desktop.jpg', mobileImage: '/assets/BannerImages/applications%20mobile.jpg' },
+    { title: 'Lubricant Applications', subtitle: 'Base oils and waxes for lubrication', image: '/assets/Application%20Banner/lubricant%20application.jpg', mobileImage: '/assets/Application%20Banner/lubricant%20application.jpg' },
   ],
   overview: {
     title: 'Lubricant Industry',

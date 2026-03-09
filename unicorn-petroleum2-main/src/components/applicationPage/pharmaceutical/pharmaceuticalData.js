@@ -3,13 +3,13 @@ export const pharmaceuticalData = {
     title: "Pharmaceutical Applications",
     description: "High-purity ingredients for life-saving medicines"
   },
-  // Slider configuration - Single banner
+  // Slider configuration - Application-specific banner
   slider: [
     {
       title: "Pharmaceutical Applications",
       subtitle: "High-purity ingredients for life-saving medicines",
-      image: "/assets/BannerImages/applications%20desktop.jpg",
-      mobileImage: "/assets/BannerImages/applications%20mobile.jpg"
+      image: "/assets/Application%20Banner/Pharmaceutical%20application.jpg",
+      mobileImage: "/assets/Application%20Banner/Pharmaceutical%20application.jpg"
     }
   ],
   overview: {

@@ -48,12 +48,12 @@ export const petroleumJellyData = {
   packagedResponsibly: {
     packagingOptions: [
       {
-        icon: "bag",
+        icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg",
         type: "HDPE drums",
         weight: "",
       },
       {
-        icon: "box",
+        icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg",
         type: "MS drums",
         weight: "",
       },
