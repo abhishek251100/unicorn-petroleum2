@@ -21,7 +21,7 @@ export const uvFiltersData = {
   commonSection: {
     title: "UV Filters",
     description:
-      "UV filters are used to manufacture personal care products to protect our skin from detrimental ultraviolet radiation. It has the ability to prevent skin defacement caused by exposure to UVA & UVB lights by absorbing or reflecting UV Rays. UV filters are used in cosmetics, sunscreens and moisturizers that work as a shield against sunburns, premature ageing and skin cancer. To ensure safety and effectiveness in consumer products, it is regulated in many countries.In line with these requirements, we offer UV filters such as octylmethoxy cinnamate (OMC), octyl salicylate, avobenzone, homosalate, benzophenone 3, benzophenone 4, ethyl hexyl triazone, and octocrylene.",
+      "UV filters are used to manufacture personal care products to protect our skin from detrimental ultraviolet radiation. It has the ability to prevent skin defacement caused by exposure to UVA & UVB lights by absorbing or reflecting UV Rays. UV filters are used in cosmetics, sunscreens and moisturizers that work as a shield against sunburns, premature ageing and skin cancer. To ensure safety and effectiveness in consumer products, it is regulated in many countries.",
     additionalInfo: "",
     brochureUrl: "#",
   },
@@ -91,15 +91,10 @@ export const uvFiltersData = {
     ],
     finalProductUtilization: [
       "Sunscreens",
-      "Creams",
-      "Lotions",
-      "Makeup with SPF",
-      "Lip care products",
-      "Hair care products",
-      "Specialty polymers and coatings",
-      "Lubricants",
-      "Crop protection films and sprays",
-      "Clothing with SPF"
+      "Sun Care",
+      "SPF Creams",
+      "Moisturizers",
+      "Cosmetics",
     ],
   },
 

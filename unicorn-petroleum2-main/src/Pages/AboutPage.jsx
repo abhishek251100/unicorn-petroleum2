@@ -75,7 +75,7 @@ const AboutPage = () => {
           <h3 className="text-3xl font-bold text-gray-800 mb-8">A legacy of excellence</h3>
           
           <p className="text-lg text-gray-700 mb-6 leading-relaxed text-justify text-left">
-            Since its incorporation in the Year 1964, Unicorn Petroleum Industries Private Limited has come a long way, in its quest for customer centric quality products and excellence in services without compromising on its values, ethics & beliefs.
+            Since its incorporation in the year 1964, Unicorn Petroleum Industries Private Limited has come a long way, in its quest for customer centric quality products and excellence in services without compromising on its values, ethics & beliefs.
           </p>
           
           <p className="text-lg text-gray-700 leading-relaxed text-justify text-left">

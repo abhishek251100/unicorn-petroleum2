@@ -22,7 +22,7 @@ export const surfactantsData = {
     title: "Surfactants",
     description:
       "Surfactants find its importance in a varied range of cleaning & personal care products by reducing surface tension and enabling blending of water with dirt & other contaminants. Jointly, surfactants play a vital role in diverse formulations from helping shampoos foam up to removing grease from products. Due to its adaptable nature, it is a crucial ingredient that finds its importance in the homecare and personal care industry.",
-    additionalInfo: "As surfactants are used in combination, they place themselves at the junction between two substances in a way that the hydrophilic part interconnects with the water molecules while the hydrophobic part attaches with the other substance. This leads to an obstruction between the two compounds thereby decreasing surface tension and lighting the dirt from surface tension for effective results. In line with these functionalities, we offer surfactants such as Alpha olefin sulphonate (AOS), Sodium lauryl ether sulphate (SLES), Cocamido propyl betaine (CAPB), and Linear alkyl benzene sulphonic acid (LABSA).",
+    additionalInfo: "As surfactants are used in combination, they place themselves at the junction between two substances in a way that the hydrophilic part interacts with the water molecules while the hydrophobic part attaches with the other substance. This leads to an obstruction between the two compounds thereby decreasing surface tension and lifting the dirt from the surface for effective results.",
     brochureUrl: "#",
   },
 
@@ -67,24 +67,11 @@ export const surfactantsData = {
       "Paints & Coatings: These agents improve dispersion in automotive paints, enhance coating adhesion and uniformity, and prevent defects like streaks and bubbles during printing. They function as emulsifiers, wetting agents, and dispersants."
     ],
     finalProductUtilization: [
-      "Solubilizers",
-      "Emulsifiers",
-      "Suspensions",
-      "Topical formulations",
       "Shampoos",
-      "Conditioners",
-      "Face washes",
-      "Body washes",
-      "Toothpastes",
-      "Creams",
-      "Emulsions",
-      "Detergent manufacturing",
-      "Emulsifications processes",
-      "Dispersing and cleaning additive",
-      "Wetting agents",
-      "Spreading agents in pesticides and herbicides",
-      "Scouring agents and dye dispersants in textile processing",
-      "Car-cleaning agents"
+      "Body Wash",
+      "Face Wash",
+      "Liquid Soaps",
+      "Detergents",
     ],
   },
 

@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
-export default function QualityStandardsSection({ title, subtitle, showLink = true }) {
+export default function QualityStandardsSection({ title, subtitle, showLink = false }) {
   const certifications = [
     {
       code: "",

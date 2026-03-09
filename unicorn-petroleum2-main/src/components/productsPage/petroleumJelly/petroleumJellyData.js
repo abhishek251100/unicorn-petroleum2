@@ -44,21 +44,21 @@ export const petroleumJellyData = {
     ]
   },
 
-  // // Packaged responsibly section
-  // packagedResponsibly: {
-  //   packagingOptions: [
-  //     {
-  //       icon: "bag",
-  //       type: "Bags",
-  //       weight: "25 kg/35kg"
-  //     },
-  //     {
-  //       icon: "box", 
-  //       type: "Cartons",
-  //       weight: "25 kg/35kg"
-  //     }
-  //   ]
-  // },
+  // Packaged responsibly section
+  packagedResponsibly: {
+    packagingOptions: [
+      {
+        icon: "bag",
+        type: "HDPE drums",
+        weight: "",
+      },
+      {
+        icon: "box",
+        type: "MS drums",
+        weight: "",
+      },
+    ],
+  },
 
   // Key features data
   keyFeatures: {

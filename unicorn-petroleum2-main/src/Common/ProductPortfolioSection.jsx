@@ -291,11 +291,11 @@ export default function ProductPortfolioSection({ data }) {
                     </div>
 
                     <div className="px-4 py-4 sm:p-6 md:p-7 flex flex-col flex-1 text-center sm:text-left">
-                      <h3 className="font-semibold text-gray-800 mb-1 sm:mb-3 group-hover:text-[#E99322] transition-colors text-sm sm:text-base">
+                      <h3 className="font-semibold text-gray-800 mb-1 sm:mb-3 group-hover:text-[#E99322] transition-colors text-sm sm:text-base min-h-[1.5rem] sm:min-h-[2rem]">
                         {card.title}
                       </h3>
 
-                      <p className="text-gray-600 text-xs sm:text-sm mb-4 line-clamp-3 md:line-clamp-4 min-h-[3.5rem] sm:min-h-[4.5rem] md:min-h-[6rem]">
+                      <p className="text-gray-600 text-xs sm:text-sm mb-4 line-clamp-4 md:line-clamp-5 min-h-[5rem] sm:min-h-[6rem] md:min-h-[7rem]">
                         {card.description}
                       </p>
 

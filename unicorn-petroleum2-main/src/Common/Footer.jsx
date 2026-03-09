@@ -29,7 +29,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/assets/logo 2.png" alt="Eastern Petroleum logo" className="h-11 w-24 pt-1" />
+                  <img src="/assets/logo 2.png" alt="Eastern Petroleum logo" className="h-12 w-auto pt-1" />
                 </a>
               </div>
               <p className="text-gray-600 mb-4 text-sm sm:text-base">

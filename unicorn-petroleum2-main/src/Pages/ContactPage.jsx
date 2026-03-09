@@ -65,6 +65,22 @@ const ContactPage = () => {
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
                     <svg className="w-6 h-6 text-[#E99322]" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm leading-relaxed break-words text-gray-800">
+                      <span className="font-semibold">Unicorn Petroleum Industries Pvt. Ltd.,</span> 10, Vaibhav Industrial Estate, Sion - Trombay Road, Deonar, Mumbai - 400088, MH, India.
+                    </p>
+                    <p className="text-sm leading-relaxed break-words text-gray-800 mt-1">
+                      <span className="font-semibold">Eastern Petroleum Pvt. Ltd.,</span> 235-239 Jawahar Industrial Estate, Kamothe, Panvel, Dist. Raigad, Maharashtra 410209, India.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-6 h-6 text-[#E99322]" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </div>
@@ -109,6 +125,23 @@ const ContactPage = () => {
                     <p className="text-sm font-semibold text-[#E99322] whitespace-nowrap leading-relaxed">Main Office Address:</p>
                   </div>
                   <p className="text-sm leading-relaxed break-words text-gray-800">Unit No. 1, Riddhi Siddhi Corporate Park, VN Purav Marg, (Sion Trombay Road), Chembur, Mumbai - 400071, MH, India.</p>
+
+                  <div className="grid grid-cols-[24px_1fr] gap-x-3 items-start text-right w-full">
+                    <div className="w-6 h-6 flex items-center justify-center">
+                      <svg className="w-6 h-6 text-[#E99322]" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <p className="text-sm font-semibold text-[#E99322] leading-relaxed">Factory Addresses:</p>
+                  </div>
+                  <div className="text-sm leading-relaxed break-words text-gray-800 space-y-1">
+                    <p>
+                      <span className="font-semibold">Unicorn Petroleum Industries Pvt. Ltd.,</span> 10, Vaibhav Industrial Estate, Sion - Trombay Road, Deonar, Mumbai - 400088, MH, India.
+                    </p>
+                    <p>
+                      <span className="font-semibold">Eastern Petroleum Pvt. Ltd.,</span> 235-239 Jawahar Industrial Estate, Kamothe, Panvel, Dist. Raigad, Maharashtra 410209, India.
+                    </p>
+                  </div>
 
                   <div className="grid grid-cols-[24px_1fr] gap-x-3 items-start text-right w-full">
                     <div className="w-6 h-6 flex items-center justify-center">

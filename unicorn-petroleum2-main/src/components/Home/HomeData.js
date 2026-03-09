@@ -107,7 +107,7 @@ export const homeData = {
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/Petroleumjelly.jpg",
         title: "Petroleum Jelly",
         description:
-          "Pharma and cosmetic-grade jelly, ideal for skincare and topical formulations.",
+          "A highly refined semi-solid hydrocarbon base offering excellent stability and superior oil retention, with a controlled melting range and no decolourization to ensure consistent purity and performance.",
         buttonText: "View Details →",
         link: "/products/petroleum-jelly", // Internal link
       },
@@ -117,7 +117,7 @@ export const homeData = {
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/WhiteMineraloil.jpg",
         title: "White Mineral Oils",
         description:
-          "Ideal blending base and lubricant oil utilised across various industry applications",
+          "A highly refined, clear and odourless liquid hydrocarbon with low PAH content offering excellent lubricity and formulation flexibility across multiple viscosity grades, featuring a high viscosity index and very low PAH content for consistent, reliable performance.",
         buttonText: "View Details →",
         link: "/products/white-mineral-oils", // Internal link
       },
@@ -126,7 +126,7 @@ export const homeData = {
         hoverImage: "/assets/RELATED PROD IMG/lanolin1.jpg",
         title: "Lanolin",
         description:
-          "Refined wool grease used as a skin-conditioning excipient in cosmetic and topical formulations.",
+          "Highly refined, high-purity wool wax alcohol complex with controlled odor and color offering excellent emolliency and water-binding capacity for dermatological and topical formulations.",
         buttonText: "View Details →",
         link: "/products/lanolin", // Internal link
       },
@@ -135,7 +135,7 @@ export const homeData = {
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/micro2.jpg",
         title: "Microcrystalline Wax",
         description:
-          "Fine-grained wax offering excellent adhesion, flexibility, and binding properties for ointments and balms.",
+          "A thoroughly refined hydrocarbon wax with fine crystalline structure, offering enhanced oil retention, superior flexibility, cohesion, and structural integrity in semi-solid systems and binding performance for ointments, sticks, and balm formulations for cosmetic and pharmaceutical applications.",
         buttonText: "View Details →",
         link: "/products/microcrystalline-wax",
       },
@@ -144,7 +144,7 @@ export const homeData = {
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/paraffin2.jpg",
         title: "Hard Paraffin Wax",
         description:
-          "High-quality paraffin wax grades ideal for candles, coatings, and industrial applications.",
+          "A high-purity solid hydrocarbon wax with a high melting point and low oil content, suitable for coatings, candles, and industrial processing applications, offering excellent thermal stability for molding and surface protection uses.",
         buttonText: "View Details →",
         link: "/products/paraffin-wax",
       },
@@ -153,7 +153,7 @@ export const homeData = {
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/beeswax2.jpg",
         title: "Natural Beeswax",
         description:
-          "Premium natural beeswax used in balms, creams, and other personal care formulations.",
+          "A naturally derived, ester-rich purified beeswax with controlled color and minimal impurities, offering excellent plasticity, enhanced film formation, and emulsification support while delivering reliable structure in lipsticks, balms, creams, and other topical formulations.",
         buttonText: "View Details →",
         link: "/products/natural-beeswax",
       },
@@ -162,7 +162,7 @@ export const homeData = {
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/emulsifying2.jpg",
         title: "Emulsifying Wax",
         description:
-          "Specialized emulsifying wax designed to create stable oil-in-water and water-in-oil emulsions.",
+          "An optimised emulsifying system designed to create stable oil-in-water and water-in-oil emulsions with consistent viscosity, ensuring uniform dispersion, enhanced texture, and long-term stability in cosmetic and pharmaceutical base formulations.",
         buttonText: "View Details →",
         link: "/products/emulsifying-wax",
       },
@@ -171,7 +171,7 @@ export const homeData = {
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/SpecialityChemicals.jpg",
         title: "D-panthenol",
         description:
-          "Substances refined for special usecases across niche industries, including panthenol",
+          "Provitamin B5 derivative with high purity and pharmacopeial compliance, offering humectant action, enhanced moisturisation, skin repair, and conditioning performance in topical formulations.",
         buttonText: "View Details →",
         link: "/products/d-panthenol",
       },
@@ -181,7 +181,7 @@ export const homeData = {
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/surfactant.jpg",
         title: "Surfactants",
         description:
-          "Versatile foaming and wetting agent across wide range of cleaning and personal care products",
+          "Engineered surface-active compounds in powder and liquid form that deliver efficient emulsification, wetting, and detergency in home and personal care formulations, while offering optimised foaming and dispersing performance through controlled HLB values ensuring effective cleaning.",
         buttonText: "View Details →",
         link: "/products/surfactants", // Internal link
       },
@@ -191,7 +191,7 @@ export const homeData = {
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/preservative.jpg",
         title: "Preservatives",
         description:
-          "Effective antimicrobial substances crucial for extending shelf life of items in the food, pharmaceutical and cosmetics industry",
+          "Broad-spectrum antimicrobial preservation systems formulated to maintain microbiological stability and extend shelf life in regulated applications, carefully engineered for seamless compatibility across both aqueous and emulsion-based formulations.",
         buttonText: "View Details →",
         link: "/products/preservatives", // Internal link
       },
@@ -200,7 +200,7 @@ export const homeData = {
         hoverImage: "/assets/RELATED PROD IMG/New Hover Images/uvFilters.jpg",
         title: "UV Filters",
         description:
-          "Used in personal care products, shielding skin against UVA and UVB rays and their harmful effects",
+          "Photostable UV-absorbing agents that deliver reliable broad-spectrum protection against UVA and UVB radiation, helping enhance SPF performance while maintaining overall formulation stability.",
         buttonText: "View Details →",
         link: "/products/uv-filters",
       },

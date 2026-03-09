@@ -21,14 +21,14 @@ export const whiteMineralOilsData = {
 
   // Common section data
   commonSection: {
-    title: "White mineral oil / Liquid Paraffin / White oil",
+    title: "White Mineral Oil / Liquid Paraffin / White Oil",
     description:
-      "Mineral Oils are colourless, odourless mixtures of saturated liquid hydrocarbons obtained from the distillation of petroleum. Our Mineral Oils are Paraffinic in nature and we offer a wide range for viscosities for varied applications.",
+      "Mineral Oils are colourless, odourless mixtures of saturated liquid hydrocarbons obtained from the distillation of petroleum. Our Mineral Oils are paraffinic in nature and we offer a wide range for viscosities for varied applications.",
     bulletPoints: [
       
     ],
     additionalInfo:
-       "Our Unimin range of cosmetic / pharmaceutical grade Mineral Oils are highly refined, and tailor made for skincare and hair-care formulations. These products are treated for harmful polycyclic aromatic impurities and they pass the Polycyclic Aromatic Hydrocarbon test along with other purity norms in the Pharmacopoeia and comply with all the Regulatory requirements as per the European commission and USFDA. They do not support pathogenic bacterial growth and due to this property, they become ideal blending bases for Pharmaceutical / cosmetic applications. Having excellent lubricating property, it can be used as a general-purpose lubricant. Characterized by a high viscosity index, our White Mineral Oils keep stable viscosity at extreme temperatures.",
+       "Our Unimin range of cosmetic / pharmaceutical grade Mineral Oils are highly refined, and tailor made for skincare and hair-care formulations. These products are treated for harmful polycyclic aromatic impurities and they pass the Polycyclic Aromatic Hydrocarbon test along with other purity norms in the Pharmacopoeia and comply with all the Regulatory requirements as per the European Commission and USFDA. They do not support pathogenic bacterial growth and due to this property, they become ideal blending bases for pharmaceutical / cosmetic applications. Having excellent lubricating property, it can be used as a general-purpose lubricant. Characterized by a high viscosity index, our White Mineral Oils keep stable viscosity at extreme temperatures.",
     brochureUrl: "/brochures/white-mineral-oils-brochure.pdf",
   },
 
@@ -65,12 +65,14 @@ export const whiteMineralOilsData = {
   },
 
   // Packaged responsibly section
-  // packagedResponsibly: {
-  //   packagingOptions: [
-  //     { icon: "bag", type: "Drums", weight: "170kg/200kg" },
-  //     { icon: "box", type: "IBCs", weight: "1000L" },
-  //   ],
-  // },
+  packagedResponsibly: {
+    packagingOptions: [
+      { icon: "bag", type: "HDPE drums", weight: "" },
+      { icon: "box", type: "MS drums", weight: "" },
+      { icon: "pail", type: "Flexibag", weight: "" },
+      { icon: "bottle", type: "IBC", weight: "" },
+    ],
+  },
 
   // Key features data - Pharmacopoeial Compliance and Other Compliances cards for White Mineral Oils
   keyFeatures: {

@@ -6,7 +6,7 @@ const CharacteristicsSection = ({ data }) => {
   }
 
   return (
-    <section className="py-12 px-4">
+    <section className="pt-6 pb-12 px-4">
       <div className="max-w-7xl mx-auto">
         {data.heading && (
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8">
