@@ -24,7 +24,7 @@ export const lanolinData = {
 
   packagedResponsibly: {
     packagingOptions: [
-      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "MS drums", weight: "190 kg" },
+      { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "MS drums", weight: "" },
       { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "HDPE drums", weight: "" },
     ],
   },
