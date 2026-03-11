@@ -313,6 +313,9 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
         slides={data?.slider}
         bannerImage="/assets/BannerImages/applications%20desktop.jpg"
         breadcrumbs={breadcrumbs}
+        contentPosition="bottom"
+        contentBackground="solid"
+        fullWidthContent={true}
       />
 
       

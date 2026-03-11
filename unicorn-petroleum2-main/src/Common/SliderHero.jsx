@@ -20,6 +20,10 @@ export default function SliderHero({
   breadcrumbsNavClass = "text-black font-semibold text-[10px] sm:text-xs md:text-sm lg:text-base px-2 sm:px-4 -mt-[21%] sm:mt-0",
   overlapClass = "md:-mt-12",
   paddingTopClass = "pt-10 sm:pt-12 md:pt-12",
+  // Layout controls
+  contentPosition = "center", // "center" | "bottom"
+  contentBackground = "blur", // "blur" | "solid" | "none"
+  fullWidthContent = false,
 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isSliding, setIsSliding] = useState(false);
@@ -102,6 +106,17 @@ export default function SliderHero({
         mobileImage: bannerImage || "/assets/hero-bg-home.jpg",
       };
 
+  const isBottomPosition = contentPosition === "bottom";
+
+  const contentBgClass =
+    contentBackground === "solid"
+      ? fullWidthContent
+        ? "bg-gradient-to-r from-white/0 via-white/95 to-white/0 w-full py-3 sm:py-4 md:py-5 lg:py-6 shadow-xl rounded-none"
+        : "bg-white/80 rounded-2xl px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-5 lg:px-10 lg:py-6 shadow-xl"
+      : contentBackground === "none"
+      ? ""
+      : "bg-white/10 backdrop-blur-xl rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-xl border-[1.5px] border-[#EDA94E]";
+
   return (
     <div
       className={`relative w-full h-[550px] sm:h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden ${overlapClass} ${paddingTopClass}`}
@@ -183,10 +198,23 @@ export default function SliderHero({
 
         {/* Content - only show if there's a title or subtitle in the current slide */}
         {((currentSlideData.title && currentSlideData.title.trim() !== "") || (currentSlideData.subtitle && currentSlideData.subtitle.trim() !== "")) && (
-          <div className="relative z-20 flex items-center justify-center h-full">
-            <div className={`${primaryButton || secondaryButton ? 'max-w-4xl' : 'text-center text-black max-w-4xl'} mx-auto px-4 sm:px-6`}>
-              {/* Blurred patch for text */}
-              <div className={`${primaryButton || secondaryButton ? 'bg-white/10 backdrop-blur-xl rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-xl border-[1.5px] border-[#EDA94E]' : ''} animate-fade-in`}>
+          <div
+            className={`relative z-20 flex justify-center h-full ${
+              isBottomPosition ? "items-end pb-8 sm:pb-10 md:pb-12 lg:pb-16" : "items-center"
+            }`}
+          >
+            <div
+              className={
+                fullWidthContent
+                  ? "w-full mx-auto px-0 text-center text-black"
+                  : `${
+                      primaryButton || secondaryButton ? "max-w-4xl" : "text-center text-black max-w-4xl"
+                    } mx-auto px-4 sm:px-6 w-full`
+              }
+            >
+              {/* Background patch for text */}
+              <div className={`${contentBgClass} animate-fade-in`}>
+                <div className={fullWidthContent ? "max-w-5xl mx-auto px-4 sm:px-8" : ""}>
                 {(currentSlideData.title && currentSlideData.title.trim() !== "") && (
                   <h1
                     className={`${primaryButton || secondaryButton ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 leading-tight text-left' : 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-2 sm:mb-3 md:mb-4 tracking-tight text-center'} font-bold animate-fade-in`}
@@ -232,6 +260,7 @@ export default function SliderHero({
                     )}
                   </div>
                 )}
+                </div>
               </div>
             </div>
           </div>

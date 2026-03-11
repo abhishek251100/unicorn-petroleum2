@@ -346,6 +346,9 @@ export default function PharmaceuticalPage() {
         slides={pharmaceuticalData.slider}
         bannerImage="/assets/BannerImages/applications%20desktop.jpg"
         breadcrumbs={breadcrumbs}
+        contentPosition="bottom"
+        contentBackground="solid"
+        fullWidthContent={true}
       />
 
     
