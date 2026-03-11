@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
 export default function QualityStandardsSection({ title, subtitle, showLink = false }) {
-  // Order chosen so ISO round logos sit in the middle visually
+  // Order chosen so ISO round logos sit centrally, with all items on one row in desktop
   const certifications = [
     {
       code: "",
@@ -27,12 +27,12 @@ export default function QualityStandardsSection({ title, subtitle, showLink = fa
     {
       code: "",
       full: "",
-      logo: "/assets/Quality Standards Certificates/ISO LOGO.png",
+      logo: "/assets/Quality Standards Certificates/ISO 140012015.jpg.jpeg",
     },
     {
       code: "",
       full: "",
-      logo: "/assets/Quality Standards Certificates/ISO 140012015.jpg.jpeg",
+      logo: "/assets/Quality Standards Certificates/ISO LOGO.jpg.jpeg",
     },
     {
       code: "",
@@ -134,7 +134,7 @@ export default function QualityStandardsSection({ title, subtitle, showLink = fa
         </div>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-5 lg:grid-cols-10 gap-3 sm:gap-4 md:gap-6 mb-6 md:mb-8">
+        <div className="hidden md:grid md:grid-cols-5 lg:grid-cols-10 gap-3 sm:gap-4 md:gap-6 mb-6 md:mb-8 w-fit mx-auto">
           {certifications.map((cert, idx) => (
             <div 
               key={idx} 
