@@ -45,8 +45,8 @@ export const homeData = {
       {
         title: "Pioneering Excellence in Petroleum Specialties for 6+ Decades",
         subtitle: "",
-        image: "/assets/hero-bg-home.jpg",
-        mobileImage: "/assets/hero-bg-home.jpg"
+        image: "/assets/BannerImages/HOMEPage.jpg",
+        mobileImage: "/assets/BannerImages/HOMEPage.jpg"
       },
       {
         title: "",
@@ -62,6 +62,7 @@ export const homeData = {
       //   image: "/assets/BannerImages/Chem%20Expo%20Exhibition.jpeg",
       //   mobileImage: "/assets/BannerImages/Chem%20Expo%20Exhibition.jpeg"
       // }
+    
     ]
   },
 
