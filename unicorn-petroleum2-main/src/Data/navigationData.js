@@ -1,4 +1,4 @@
-// Centralized navigation data for all sections
+
 export const navigationData = {
   about: {
     title: "About Us",
@@ -33,7 +33,7 @@ export const navigationData = {
   }
 };
 
-// Helper function to get navigation data by section
+
 export const getNavigationData = (section) => {
   return navigationData[section] || null;
 };

@@ -4,7 +4,7 @@ const CompanyStatement = () => {
   return (
     <section className="py-8 sm:py-10 md:py-12">
       <div className="w-full">
-        {/* Company Name and Subtitle */}
+        {}
         <div className="text-center mb-6 sm:mb-8 px-4">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
             Unicorn Petroleum Industries Pvt. Ltd.
@@ -14,7 +14,7 @@ const CompanyStatement = () => {
           </h2>
         </div>
 
-        {/* Company Description Paragraphs */}
+        {}
         <div className="mb-4 sm:mb-6 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-4 sm:mb-6 leading-relaxed">

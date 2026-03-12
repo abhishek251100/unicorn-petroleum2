@@ -25,7 +25,7 @@ export default function WhiteMineralOilsPage() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Only apply floating effects on desktop (lg breakpoint = 1024px)
+      
       if (window.innerWidth < 1024) {
         setSidebarStyle({ position: 'relative', top: '0px' });
         return;
@@ -43,14 +43,14 @@ export default function WhiteMineralOilsPage() {
       const certificationsTop = certifications.getBoundingClientRect().top + window.scrollY;
       const wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY;
       const currentScroll = window.scrollY;
-      const topOffset = 140; // Initial position offset in pixels
+      const topOffset = 140; 
       const sidebarHeight = sidebar.offsetHeight;
       const sidebarColumnWidth = sidebarColumn.offsetWidth;
       
-      // Calculate when sidebar should stop scrolling (when its bottom would hit certifications top)
+      
       const stopScrollPosition = certificationsTop - sidebarHeight - topOffset - 20;
       
-      // If we haven't reached the stop point, use sticky to let it scroll naturally
+      
       if (currentScroll < stopScrollPosition) {
         setSidebarStyle({ 
           position: 'sticky', 
@@ -60,7 +60,7 @@ export default function WhiteMineralOilsPage() {
           right: 'auto'
         });
       } else {
-        // We've reached the stop point - lock sidebar in place using absolute positioning
+        
         const maxScrollDistance = stopScrollPosition - wrapperTop;
         setSidebarStyle({ 
           position: 'absolute',
@@ -72,10 +72,10 @@ export default function WhiteMineralOilsPage() {
       }
     };
 
-    // Use requestAnimationFrame for smooth updates
+    
     let rafId = null;
     const onScroll = () => {
-      // Only apply floating effects on desktop
+      
       if (window.innerWidth < 1024) {
         return;
       }
@@ -88,7 +88,7 @@ export default function WhiteMineralOilsPage() {
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll(); 
 
     return () => {
       window.removeEventListener('scroll', onScroll);
@@ -104,7 +104,7 @@ export default function WhiteMineralOilsPage() {
       bannerImage={whiteMineralOilsData.bannerImage}
       slider={whiteMineralOilsData.slider}
     >
-      {/* Desktop Layout */}
+      {}
       <div ref={contentWrapperRef} className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8 relative">
         <div ref={sidebarColumnRef} className="lg:col-span-3 relative">
           <div ref={sidebarRef} className="self-start z-10 w-full" style={sidebarStyle}>
@@ -120,7 +120,7 @@ export default function WhiteMineralOilsPage() {
         </div>
       </div>
 
-      {/* Mobile Layout */}
+      {}
       <div className="lg:hidden space-y-4 mb-4">
         <ProductPageCommonSection data={whiteMineralOilsData.commonSection} />
         <ApplicationsSection data={whiteMineralOilsData.applicationsSection} />
@@ -128,7 +128,7 @@ export default function WhiteMineralOilsPage() {
         <ProductKeyFeaturesSection data={whiteMineralOilsData.keyFeatures} />
       </div>
 
-      {/* Certifications and beyond - sidebar stops floating here - Full width sections */}
+      {}
       <div ref={certificationsRef} className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
       <QualityStandardsSection />
       </div>
@@ -137,7 +137,7 @@ export default function WhiteMineralOilsPage() {
       <RelatedProductsSection data={whiteMineralOilsData.relatedProducts} />
       </div>
 
-      {/* Mobile Floating Sidebar - positioned before footer */}
+      {}
       <div className="lg:hidden mb-8">
         <FloatingSidebar navigationData={productsNavigationData} />
       </div>

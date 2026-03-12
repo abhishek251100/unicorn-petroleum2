@@ -1,5 +1,5 @@
-// Map human-friendly product names to router paths
-// Extend as needed
+
+
 
 export const productNameToPath = {
   "Petroleum Jelly": "/products/petroleum-jelly",
@@ -13,7 +13,7 @@ export const productNameToPath = {
   "Natural Beeswax": "/products/natural-beeswax",
   "Lanolin": "/products/lanolin",
   "D-Panthenol": "/products/d-panthenol",
-  // Home page portfolio grouping labels
+  
   "Waxes": "/products/microcrystalline-wax",
   "Specialty Chemicals": "/products/d-panthenol",
 };

@@ -2,8 +2,8 @@ export const microcrystallineWaxData = {
   name: "Microcrystalline Wax",
   description:
     "Purity for every application.",
-  bannerImage: "/assets/BannerImages/productsPage/microcrystalline%201.jpg", // Fallback for single banner
-  // Slider configuration - Desktop banners only
+  bannerImage: "/assets/BannerImages/productsPage/microcrystalline%201.jpg", 
+  
   slider: [
     {
       title: "Microcrystalline Wax",
@@ -23,8 +23,8 @@ export const microcrystallineWaxData = {
     title: "Microcrystalline wax",
     description:
       "Microcrystalline waxes are a type of wax produced by de-oiling petrolatum, as part of the petroleum refining process. It is characterised by the fineness of its crystals and is a higher molecular weight saturated aliphatic hydrocarbon. The elastic and adhesive characteristics of microcrystalline waxes are due to their branched-chain components. This wax has affinity for paraffin wax and mineral oil, due to which it is widely used in oil-based formulations in the cosmetic/pharmaceutical industry. It provides strong oil-holding performance, minimizing oil separation, thus helping formulations to remain stable and consistent throughout long-term storage. Microwax works as a reliable occlusive agent, creating a protective layer on the skin that helps lock in moisture and prevent dehydration in topical formulations. Micro waxes add structural strength and lustre to the final product.",
-    // additionalInfo:
-    //   "At Unicorn, we manufacture microcrystalline wax with uncompromising attention to quality. Our process ensures precise control over melting point, hardness, and viscosity — delivering waxes that are consistent, pure, and ready for global compliance. Each batch is rigorously tested to meet industry-specific standards so you can formulate with confidence.",
+    
+    
     brochureUrl: "#",
   },
 
@@ -63,7 +63,7 @@ export const microcrystallineWaxData = {
     ],
   },
 
-  // Key features data - Pharmacopoeial Compliance card only for Microcrystalline Wax
+  
   keyFeatures: {
     heading: "Key features of Microcrystalline Wax from us",
     features: [

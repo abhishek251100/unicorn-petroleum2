@@ -43,13 +43,13 @@ const ContactPage = () => {
         breadcrumbs={breadcrumbs}
       />
 
-      {/* Contact information - Full width 3 column layout */}
+      {}
       <section className="py-12 md:py-16 w-full">
         <div className="w-full px-4">
-          {/* Contact information container with 3 columns - Reduced width */}
+          {}
           <div className="max-w-7xl mx-auto p-4 md:p-6 border border-gray-300 rounded-lg">
             <div className="grid grid-cols-1 md:grid-cols-10 gap-0 items-center w-full">
-              {/* Mobile Layout - Single Column with Icons */}
+              {}
               <div className="md:hidden space-y-4">
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
@@ -113,7 +113,7 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              {/* Desktop Layout - Labels and Details */}
+              {}
               <div className="hidden md:block md:col-span-6 pl-4">
                 <div className="grid grid-cols-[194px_1fr] gap-x-6 gap-y-4">
                   <div className="grid grid-cols-[24px_1fr] gap-x-3 items-start text-right w-full">
@@ -176,7 +176,7 @@ const ContactPage = () => {
                 </div>
               </div>
               
-              {/* Mobile Map */}
+              {}
               <div className="md:hidden w-full h-64 rounded-lg overflow-hidden mt-6">
                 <iframe
                   title="Unicorn Petroleum Map"
@@ -190,7 +190,7 @@ const ContactPage = () => {
                 />
               </div>
 
-              {/* Desktop Right Column - Map (40%) */}
+              {}
               <div className="hidden md:block md:col-span-4 w-full h-64 md:h-80 rounded-lg overflow-hidden">
                 <iframe
                   title="Unicorn Petroleum Map"
@@ -208,7 +208,7 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Contact form (common component for uniformity) */}
+      {}
       <div id="quote-form-section" className="scroll-mt-24 pb-24">
         <QuoteFormSection mode="contact" title="Send us a message" />
       </div>

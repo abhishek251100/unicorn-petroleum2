@@ -1,8 +1,8 @@
 export const emulsifyingWaxData = {
   name: "Emulsifying Wax",
   description: "Purity for every application.",
-  bannerImage: "/assets/BannerImages/productsPage/emulsifying%201.jpg", // Fallback for single banner
-  // Slider configuration - Desktop banners only
+  bannerImage: "/assets/BannerImages/productsPage/emulsifying%201.jpg", 
+  
   slider: [
     {
       title: "Emulsifying Wax",
@@ -55,7 +55,7 @@ export const emulsifyingWaxData = {
     ],
   },
 
-  // Emulsifying Wax Blends Table
+  
   emulsifyingWaxBlends: {
     heading: "We offer the following blends of Self-emulsifying wax",
     tableData: [
@@ -65,7 +65,7 @@ export const emulsifyingWaxData = {
     ],
   },
 
-  // Key Features section - Pharmacopoeial Compliance card for Emulsifying Wax
+  
   keyFeatures: {
     heading: "Key features of Emulsifying Wax from us",
     features: [

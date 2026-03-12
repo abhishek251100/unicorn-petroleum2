@@ -1,8 +1,8 @@
   export const dPanthenolData = {
     name: "D-Panthenol",
     description: "Provitamin B5 for moisturization and skin barrier support",
-    bannerImage: "/assets/BannerImages/productsPage/panthenol%201.jpg", // Fallback for single banner
-    // Slider configuration - Desktop banners only
+    bannerImage: "/assets/BannerImages/productsPage/panthenol%201.jpg", 
+    
     slider: [
       {
         title: "D-Panthenol",
@@ -50,13 +50,13 @@
     ],
   },
 
-    // keyFeatures: {
-    //   heading: "Key Features of D-Panthenol",
-    //   features: [
-    //     { icon: "/assets/Icons/Property 1=Compliance.png", title: "High Purity", items: ["Cosmetic & Pharma grades"] },
-    //     { icon: "/assets/Icons/Property 1=Compliance.png", title: "Moisturization", items: ["Improves hydration & feel"] },
-    //   ],
-    // },
+    
+    
+    
+    
+    
+    
+    
 
     relatedProducts: {
       relatedProducts: [

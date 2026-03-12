@@ -56,9 +56,9 @@ export default function VideoBanner({
 
   return (
     <div className={`relative w-full bg-black overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px] ${className}`}>
-      {/* Video Container */}
+      {}
       <div className="relative w-full h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
-        {/* Video */}
+        {}
         {shouldLoadVideo && (
           <video
             ref={videoRef}
@@ -82,7 +82,7 @@ export default function VideoBanner({
           </video>
         )}
 
-        {/* Poster Image Fallback */}
+        {}
         {!isVideoLoaded && posterImage && (
           <img 
             src={posterImage} 
@@ -96,10 +96,10 @@ export default function VideoBanner({
           />
         )}
 
-        {/* Overlay */}
+        {}
         {overlay && <div className="absolute inset-0 bg-black/40 z-10" />}
 
-        {/* Text Content */}
+        {}
         {(title || subtitle) && (
           <div className="absolute inset-0 z-20 flex items-center justify-center">
             <div className="text-center text-white px-4 sm:px-6 md:px-8">

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Mobile Cards Layout Component - tap navigates to application pages
+
 function MobileCardsLayout({ cards, showDescriptions }) {
   const cardsCount = cards.length;
 
@@ -112,12 +112,12 @@ export default function CardsSection({ data }) {
           </div>
         )}
 
-        {/* Special mobile layout: two columns with centered last card */}
+        {}
         {Boolean(data.mobileTwoCols) && (
           <MobileCardsLayout cards={data.cards} showDescriptions={showDescriptions} />
         )}
 
-        {/* Desktop layout - hidden on mobile when mobileTwoCols is true */}
+        {}
         {centerLastRow && cardsCount % 4 === 3 ? (
           <>
             <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">

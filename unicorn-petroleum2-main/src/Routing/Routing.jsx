@@ -10,7 +10,7 @@ import NotFoundPage from "../Pages/NotFoundPage";
 import PetroleumJellyPage from "../components/productsPage/petroleumJelly/PetroleumJellyPage";
 import WhiteMineralOilsPage from "../components/productsPage/whiteMineralOils/WhiteMineralOilsPage";
 import StandardProductPage from "../components/productsPage/StandardProductPage";
-// removed dynamic product fallback to avoid confusion and ensure explicit pages per product
+
 import DPanthenolPage from "../components/productsPage/dPanthenol/DPanthenolPage";
 import MicrocrystallineWaxPage from "../components/productsPage/microcrystallineWax/MicrocrystallineWaxPage";
 import ParaffinWaxPage from "../components/productsPage/paraffinWax/ParaffinWaxPage";
@@ -21,9 +21,9 @@ import SurfactantsPage from "../components/productsPage/surfactants/SurfactantsP
 import UVFiltersPage from "../components/productsPage/uvFilters/UVFiltersPage";
 import LanolinPage from "../components/productsPage/lanolin/LanolinPage";
 
-// About pages - consolidated into single page
 
-// Applications pages
+
+
 import PharmaceuticalPage from "../components/applicationPage/pharmaceutical/PharmaceuticalPage";
 import CosmeticsPage from "../components/applicationPage/cosmetics/CosmeticsPage";
 import BulkChemicalPage from "../components/applicationPage/bulkChemical/BulkChemicalPage";
@@ -32,7 +32,7 @@ import LubricantsPage from "../components/applicationPage/lubricants/LubricantsP
 import AgrochemicalPage from "../components/applicationPage/agrochemical/AgrochemicalPage";
 import TextilePage from "../components/applicationPage/textile/TextilePage";
 
-// Coming Soon pages
+
 import ComingSoon from "../Common/ComingSoon";
 
 const router = createBrowserRouter([
@@ -64,7 +64,6 @@ const router = createBrowserRouter([
       { path: "/products/uv-filters", element: <UVFiltersPage /> },
       { path: "/products/organic-filters", element: <StandardProductPage title="Organic UV Filters" description="" /> },
       { path: "/products/inorganic-filters", element: <StandardProductPage title="Inorganic UV Filters" description="" /> },
-      // Dynamic fallback removed: add explicit pages only
       { path: "/applications", element: <ApplicationPage /> },
       { path: "/applications/pharmaceutical", element: <PharmaceuticalPage /> },
       { path: "/applications/cosmetics", element: <CosmeticsPage /> },
@@ -77,7 +76,7 @@ const router = createBrowserRouter([
       { path: "/contact", element: <ContactPage /> },
       { path: "/privacy", element: <ComingSoon title="Privacy Policy" breadcrumbs={[{ text: "Home", link: "/" }, { text: "Privacy Policy" }]} /> },
       { path: "/terms", element: <ComingSoon title="Terms of Use" breadcrumbs={[{ text: "Home", link: "/" }, { text: "Terms of Use" }]} /> },
-      // 404 catch-all route
+      
       { path: "*", element: <NotFoundPage /> },
     ],
   },

@@ -13,7 +13,7 @@ const NotFoundPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
-        {/* Logo */}
+        {}
         <div className="mb-8">
           <img 
             src="/assets/logo 1.png" 
@@ -22,7 +22,7 @@ const NotFoundPage = () => {
           />
         </div>
         
-        {/* 404 Content */}
+        {}
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
           <div className="mb-6">
             <h1 className="text-6xl font-bold text-[#E99322] mb-2">404</h1>
@@ -33,7 +33,7 @@ const NotFoundPage = () => {
             </p>
           </div>
           
-          {/* Action Buttons */}
+          {}
           <div className="space-y-4">
             <Link 
               to="/"
@@ -58,7 +58,7 @@ const NotFoundPage = () => {
             </div>
           </div>
           
-          {/* Helpful Links */}
+          {}
           <div className="mt-8 pt-6 border-t border-gray-200">
             <p className="text-sm text-gray-500 mb-4">Popular Pages:</p>
             <div className="grid grid-cols-2 gap-2 text-sm">
@@ -78,7 +78,7 @@ const NotFoundPage = () => {
           </div>
         </div>
         
-        {/* Footer Note */}
+        {}
         <div className="mt-8 text-sm text-gray-500">
           <p>If you believe this is an error, please <Link to="/contact" className="text-[#E99322] hover:text-[#E99322]/80">contact our support team</Link>.</p>
         </div>

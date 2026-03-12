@@ -17,12 +17,12 @@ export default function ProductPortfolioSection({ data }) {
   const isDragging = useRef(false);
   const scrollTimeoutRef = useRef(null);
 
-  // Duplicate cards for seamless infinite scroll
+  
   const duplicatedCards = [...data.cards, ...data.cards];
 
-  // Safely determine the link for each card.
-  // If a card explicitly points to the generic products page,
-  // fall back to a product-specific path based on its title.
+  
+  
+  
   const getCardLink = (card) => {
     if (card.link && card.link !== "/products") {
       return card.link;
@@ -30,7 +30,7 @@ export default function ProductPortfolioSection({ data }) {
     return getProductPath(card.title);
   };
 
-  // Initialize scroll position when switching to manual mode
+  
   useEffect(() => {
     if (!containerRef.current || !isManualScroll || !marqueeRef.current) return;
 
@@ -52,7 +52,7 @@ export default function ProductPortfolioSection({ data }) {
     container.scrollLeft = scrollPosition;
   }, [isManualScroll]);
 
-  // Handle infinite scroll when manually scrolling
+  
   useEffect(() => {
     if (!containerRef.current || !isManualScroll) return;
 
@@ -76,7 +76,7 @@ export default function ProductPortfolioSection({ data }) {
     return () => container.removeEventListener('scroll', handleScroll);
   }, [isManualScroll, data.cards.length]);
 
-  // Touch handlers for swipe
+  
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
     touchStartY.current = e.touches[0].clientY;
@@ -120,7 +120,7 @@ export default function ProductPortfolioSection({ data }) {
     resumeAutoSlide();
   };
 
-  // Mouse drag handlers
+  
   const handleMouseDown = (e) => {
     isDragging.current = true;
     touchStartX.current = e.clientX;
@@ -185,7 +185,7 @@ export default function ProductPortfolioSection({ data }) {
     }
   };
 
-  // Cleanup on unmount
+  
   useEffect(() => {
     return () => {
       if (scrollTimeoutRef.current) {
@@ -207,7 +207,7 @@ export default function ProductPortfolioSection({ data }) {
         </div>
 
         <div className="relative">
-          {/* Marquee Container */}
+          {}
           <div 
             ref={containerRef}
             className="marquee-container relative w-full overflow-hidden"

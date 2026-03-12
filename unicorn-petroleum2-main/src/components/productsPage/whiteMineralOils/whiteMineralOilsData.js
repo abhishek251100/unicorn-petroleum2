@@ -2,8 +2,8 @@ export const whiteMineralOilsData = {
   name: "White Mineral Oils",
   description:
     "Purity for every application.",
-  bannerImage: "/assets/BannerImages/productsPage/whiteMineraloil%201.jpg", // Fallback for single banner
-  // Slider configuration - Desktop banners only
+  bannerImage: "/assets/BannerImages/productsPage/whiteMineraloil%201.jpg", 
+  
   slider: [
     {
       title: "White Mineral Oils",
@@ -19,7 +19,7 @@ export const whiteMineralOilsData = {
     }
   ],
 
-  // Common section data
+  
   commonSection: {
     title: "White Mineral Oil / Liquid Paraffin / White Oil",
     description:
@@ -32,7 +32,7 @@ export const whiteMineralOilsData = {
     brochureUrl: "/brochures/white-mineral-oils-brochure.pdf",
   },
 
-  // Applications section structure
+  
   applicationsSection: {
     productName: "white mineral oils",
     applications:
@@ -64,7 +64,7 @@ export const whiteMineralOilsData = {
     ],
   },
 
-  // Packaged responsibly section
+  
   packagedResponsibly: {
     packagingOptions: [
       { icon: "/assets/Icons/ICON/Icon 1.jpg.jpeg", type: "HDPE drums", weight: "" },
@@ -74,7 +74,6 @@ export const whiteMineralOilsData = {
     ],
   },
 
-  // Key features data - Pharmacopoeial Compliance and Other Compliances cards for White Mineral Oils
   keyFeatures: {
     heading: "Key features of White Mineral Oils from us",
     features: [
@@ -103,7 +102,7 @@ export const whiteMineralOilsData = {
     ],
   },
 
-  // Related products section
+  
   relatedProducts: {
     relatedProducts: [
       { name: "Petroleum Jelly", image: "/assets/RELATED PROD IMG/NEW IMAGES/Petroleumjelly.jpg" },

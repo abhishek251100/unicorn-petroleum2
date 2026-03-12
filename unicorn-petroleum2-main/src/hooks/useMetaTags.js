@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 
 export const useMetaTags = (title, description, keywords = '', robots = 'index, follow') => {
   useEffect(() => {
-    // Update document title
+    
     if (title) {
       document.title = title;
     }
 
-    // Update meta description
+    
     let metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', description);
@@ -18,7 +18,7 @@ export const useMetaTags = (title, description, keywords = '', robots = 'index, 
       document.head.appendChild(metaDescription);
     }
 
-    // Update meta keywords
+    
     if (keywords) {
       let metaKeywords = document.querySelector('meta[name="keywords"]');
       if (metaKeywords) {
@@ -31,7 +31,7 @@ export const useMetaTags = (title, description, keywords = '', robots = 'index, 
       }
     }
 
-    // Update robots meta tag
+    
     let metaRobots = document.querySelector('meta[name="robots"]');
     if (metaRobots) {
       metaRobots.setAttribute('content', robots);
@@ -42,7 +42,7 @@ export const useMetaTags = (title, description, keywords = '', robots = 'index, 
       document.head.appendChild(metaRobots);
     }
 
-    // Add Open Graph meta tags
+    
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute('content', title);
@@ -63,7 +63,7 @@ export const useMetaTags = (title, description, keywords = '', robots = 'index, 
       document.head.appendChild(newOgDescription);
     }
 
-    // Add Twitter Card meta tags
+    
     const twitterTitle = document.querySelector('meta[name="twitter:title"]');
     if (twitterTitle) {
       twitterTitle.setAttribute('content', title);

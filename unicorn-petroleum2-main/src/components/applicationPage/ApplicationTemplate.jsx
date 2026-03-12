@@ -18,7 +18,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Only apply floating effects on desktop (lg breakpoint = 1024px)
+      
       if (window.innerWidth < 1024) {
         setSidebarStyle({ position: 'relative', top: '0px' });
         return;
@@ -36,14 +36,14 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
       const certificationsTop = certifications.getBoundingClientRect().top + window.scrollY;
       const wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY;
       const currentScroll = window.scrollY;
-      const topOffset = 140; // Initial position offset in pixels
+      const topOffset = 140; 
       const sidebarHeight = sidebar.offsetHeight;
       const sidebarColumnWidth = sidebarColumn.offsetWidth;
       
-      // Calculate when sidebar should stop scrolling (when its bottom would hit certifications top)
+      
       const stopScrollPosition = certificationsTop - sidebarHeight - topOffset - 20;
       
-      // If we haven't reached the stop point, use sticky to let it scroll naturally
+      
       if (currentScroll < stopScrollPosition) {
         setSidebarStyle({ 
           position: 'sticky', 
@@ -53,7 +53,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
           right: 'auto'
         });
       } else {
-        // We've reached the stop point - lock sidebar in place using absolute positioning
+        
         const maxScrollDistance = stopScrollPosition - wrapperTop;
         setSidebarStyle({ 
           position: 'absolute',
@@ -65,10 +65,10 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
       }
     };
 
-    // Use requestAnimationFrame for smooth updates
+    
     let rafId = null;
     const onScroll = () => {
-      // Only apply floating effects on desktop
+      
       if (window.innerWidth < 1024) {
         return;
       }
@@ -81,7 +81,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll(); 
 
     return () => {
       window.removeEventListener('scroll', onScroll);
@@ -106,32 +106,29 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
     { text: breadcrumbsTitle || title },
   ];
 
-  // Duplicate products for seamless infinite scroll
+  
   const duplicatedProducts = [...products, ...products];
 
-  // Ensure animation starts on mount
+  
   useEffect(() => {
     if (products.length > 0 && marqueeRef.current && !isManualScroll) {
-      // Force animation to start
+      
       const marquee = marqueeRef.current;
       marquee.style.animation = 'none';
-      // Trigger reflow
+      
       void marquee.offsetWidth;
       marquee.style.animation = '';
     }
   }, [products.length, isManualScroll]);
 
-  // Initialize scroll position when switching to manual mode
   useEffect(() => {
     if (!containerRef.current || !isManualScroll || !marqueeRef.current) return;
 
-    // Calculate current animation position and sync scroll
     const container = containerRef.current;
     const marquee = marqueeRef.current;
     const cardWidth = window.innerWidth < 640 ? 288 : 320;
     const gap = 24;
     
-    // Get computed transform value if animation was running
     const computedStyle = window.getComputedStyle(marquee);
     const transform = computedStyle.transform;
     let currentTranslateX = 0;
@@ -143,28 +140,28 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
       }
     }
     
-    // Convert translateX to scrollLeft (invert the value)
+    
     const scrollPosition = Math.abs(currentTranslateX);
     container.scrollLeft = scrollPosition;
   }, [isManualScroll]);
 
-  // Handle infinite scroll when manually scrolling
+  
   useEffect(() => {
     if (!containerRef.current || !isManualScroll) return;
 
     const container = containerRef.current;
-    const cardWidth = window.innerWidth < 640 ? 288 : 320; // w-72 or w-80
-    const gap = 24; // space-x-6
+    const cardWidth = window.innerWidth < 640 ? 288 : 320; 
+    const gap = 24; 
     const scrollWidth = (cardWidth + gap) * products.length;
 
     const handleScroll = () => {
       const scrollLeft = container.scrollLeft;
       
-      // If scrolled past the first set, reset to beginning seamlessly
+      
       if (scrollLeft >= scrollWidth - 10) {
         container.scrollLeft = scrollLeft - scrollWidth;
       }
-      // If scrolled before start, jump to end seamlessly
+      
       else if (scrollLeft <= 10) {
         container.scrollLeft = scrollWidth + scrollLeft;
       }
@@ -174,14 +171,14 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
     return () => container.removeEventListener('scroll', handleScroll);
   }, [isManualScroll, products.length]);
 
-  // Touch handlers for swipe
+  
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
     touchStartY.current = e.touches[0].clientY;
     setIsPaused(true);
     setIsManualScroll(true);
     
-    // Remove animation, enable scrolling
+    
     if (marqueeRef.current) {
       marqueeRef.current.style.animation = 'none';
       const currentScroll = containerRef.current?.scrollLeft || 0;
@@ -189,7 +186,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
     }
     if (containerRef.current) {
       containerRef.current.style.overflowX = 'auto';
-      // Sync scroll position with current animation position
+      
       const marquee = marqueeRef.current;
       if (marquee) {
         const computedStyle = window.getComputedStyle(marquee);
@@ -206,7 +203,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
   };
 
   const handleTouchMove = (e) => {
-    // Allow native scrolling - don't prevent default
+    
     if (!isDragging.current) {
       const deltaX = Math.abs(e.touches[0].clientX - touchStartX.current);
       const deltaY = Math.abs(e.touches[0].clientY - touchStartY.current);
@@ -218,11 +215,11 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
 
   const handleTouchEnd = () => {
     isDragging.current = false;
-    // Resume auto-slide after interaction ends
+    
     resumeAutoSlide();
   };
 
-  // Mouse drag handlers
+  
   const handleMouseDown = (e) => {
     e.preventDefault();
     isDragging.current = true;
@@ -230,7 +227,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
     setIsPaused(true);
     setIsManualScroll(true);
     
-    // Remove animation, enable scrolling
+    
     if (marqueeRef.current) {
       marqueeRef.current.style.animation = 'none';
       const currentScroll = containerRef.current?.scrollLeft || 0;
@@ -241,7 +238,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
       containerRef.current.style.cursor = 'grabbing';
     }
     
-    // Add global mouse handlers for dragging outside container
+    
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseup', handleMouseUp);
   };
@@ -255,12 +252,12 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
   };
 
   const resumeAutoSlide = () => {
-    // Clear any existing timeout
+    
     if (scrollTimeoutRef.current) {
       clearTimeout(scrollTimeoutRef.current);
     }
     
-    // Resume auto-slide after 2 seconds of no interaction
+    
     scrollTimeoutRef.current = setTimeout(() => {
       setIsPaused(false);
       setIsManualScroll(false);
@@ -288,13 +285,13 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
       containerRef.current.style.cursor = wasManualScroll ? 'grab' : 'default';
     }
     
-    // Always resume auto-slide after interaction ends (resumeAutoSlide handles multiple calls)
+    
     if (wasManualScroll || wasDragging) {
       resumeAutoSlide();
     }
   };
 
-  // Cleanup on unmount
+  
   useEffect(() => {
     return () => {
       if (scrollTimeoutRef.current) {
@@ -320,7 +317,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
 
       
 
-      {/* Content area with floating sidebar - stops before certifications */}
+      {}
       <div ref={contentWrapperRef} className="relative max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div ref={sidebarColumnRef} className="lg:col-span-3 relative">
@@ -346,7 +343,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
                     <h3 className="text-xl font-semibold text-gray-800 text-center">Related products</h3>
                   </div>
 
-                  {/* Marquee Container */}
+                  {}
                   <div 
                     ref={containerRef}
                     className={`marquee-container relative w-full ${isManualScroll ? 'overflow-x-auto' : 'overflow-hidden'}`}
@@ -356,11 +353,11 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
                       }
                     }}
                     onMouseLeave={() => {
-                      // If user was manually scrolling or dragging, ensure we resume auto-slide
+                      
                       if (isManualScroll || isDragging.current) {
                         handleMouseUp();
                       } else {
-                        // Just unpause if we were only hovering
+                        
                         setIsPaused(false);
                       }
                     }}
@@ -468,7 +465,7 @@ export default function ApplicationTemplate({ title, breadcrumbsTitle, data }) {
         </div>
       </div>
 
-      {/* Certifications and beyond - sidebar stops floating here - Full width sections */}
+      {}
       <div ref={certificationsRef} className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
         <QualityStandardsSection />
       </div>

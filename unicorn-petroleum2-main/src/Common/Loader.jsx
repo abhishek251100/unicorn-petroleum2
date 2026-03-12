@@ -5,12 +5,12 @@ const Loader = () => {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // Check if page is already loaded
+    
     if (document.readyState === 'complete') {
       handleLoadComplete();
     } else {
       window.addEventListener('load', handleLoadComplete);
-      // Fallback: hide loader after max 2 seconds even if load event doesn't fire
+      
       const timeout = setTimeout(handleLoadComplete, 2000);
       return () => {
         window.removeEventListener('load', handleLoadComplete);
@@ -23,7 +23,7 @@ const Loader = () => {
     setFadeOut(true);
     setTimeout(() => {
       setIsLoading(false);
-    }, 500); // Match fade-out duration
+    }, 500); 
   };
 
   if (!isLoading) return null;
@@ -35,13 +35,13 @@ const Loader = () => {
       }`}
     >
       <div className="flex flex-col items-center gap-4">
-        {/* Animated Logo/Spinner */}
+        {}
         <div className="relative w-20 h-20">
-          {/* Outer ring */}
+          {}
           <div className="absolute inset-0 border-4 border-[#E99322]/20 rounded-full"></div>
-          {/* Animated ring */}
+          {}
           <div className="absolute inset-0 border-4 border-transparent border-t-[#E99322] rounded-full animate-spin"></div>
-          {/* Center unicorn logo */}
+          {}
           <div className="absolute inset-0 flex items-center justify-center">
             <img 
               src="/assets/logo 1.png" 
@@ -51,7 +51,7 @@ const Loader = () => {
           </div>
         </div>
         
-        {/* Loading text */}
+        {}
         <p className="text-[#E99322] font-medium text-sm animate-pulse">Loading...</p>
       </div>
     </div>

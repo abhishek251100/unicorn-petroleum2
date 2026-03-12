@@ -19,7 +19,7 @@ const ReachPage = () => {
   ];
 
   useEffect(() => {
-    if (isVisible) return; // Already started
+    if (isVisible) return; 
 
     const startCounters = () => {
       setIsVisible(true);
@@ -47,7 +47,7 @@ const ReachPage = () => {
     };
 
     const checkAndStart = () => {
-      // Check if desktop section is visible
+      
       if (desktopCounterRef.current) {
         const rect = desktopCounterRef.current.getBoundingClientRect();
         const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
@@ -56,7 +56,7 @@ const ReachPage = () => {
           return;
         }
       }
-      // Check if mobile section is visible
+      
       if (mobileCounterRef.current) {
         const rect = mobileCounterRef.current.getBoundingClientRect();
         const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
@@ -66,7 +66,7 @@ const ReachPage = () => {
       }
     };
 
-    // Check immediately on mount (with a small delay to ensure DOM is ready)
+    
     const timeoutId = setTimeout(() => {
       checkAndStart();
     }, 100);
@@ -82,7 +82,7 @@ const ReachPage = () => {
       { threshold: 0.1, rootMargin: '50px' }
     );
 
-    // Observe both desktop and mobile sections
+    
     if (desktopCounterRef.current) {
       observer.observe(desktopCounterRef.current);
     }
@@ -103,32 +103,24 @@ const ReachPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Banner Section with Stats Circles */}
+      {}
       <div className="relative h-[340px] sm:h-[480px] md:h-[600px] lg:h-[650px] overflow-visible md:-mt-8 pt-20 md:pt-16 mb-8 md:mb-32">
-        {/* Banner Video Background */}
+        {}
         <div className="absolute inset-0">
-          {/* <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            className="w-full h-full object-cover"
-            style={{ display: "block" }}
-          > */}
-            {/* <source src="https://res.cloudinary.com/drfh6ol1u/video/upload/v1763376623/uni_vtyq1b.mp4" type="video/mp4" /> */}
-            {/* Fallback to image if video doesn't load */}
+          {}
+            {}
+            {}
             <img 
               src="/assets/GLOBAL REACH IMAGE.jpg" 
               alt="Banner background" 
               className="w-full h-full object-cover"
             />
-          {/* </video> */}
-          {/* Subtle dark overlay for text readability */}
+          {}
+          {}
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/30"></div>
         </div>
 
-        {/* Breadcrumbs */}
+        {}
         <div className="absolute top-28 sm:top-28 md:top-28 lg:top-32 left-1/2 -translate-x-1/2 z-20">
           <nav className="text-black font-semibold text-xs sm:text-sm md:text-base lg:text-lg">
             <ol className="flex items-center space-x-1 sm:space-x-2">
@@ -150,13 +142,13 @@ const ReachPage = () => {
           </nav>
         </div>
 
-        {/* Stats Circles - overlay on md+ only */}
+        {}
         <div className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-4xl px-4 z-10 pointer-events-none">
           <div
             ref={desktopCounterRef}
             className="grid grid-cols-3 gap-10 justify-items-center"
           >
-            {/* Years */}
+            {}
             <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full flex flex-col items-center justify-center p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#E99322] mb-1">
                 {counts.years}+
@@ -166,7 +158,7 @@ const ReachPage = () => {
               </div>
             </div>
 
-            {/* Countries */}
+            {}
             <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full flex flex-col items-center justify-center p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#E99322] mb-1">
                 {counts.countries}+
@@ -176,7 +168,7 @@ const ReachPage = () => {
               </div>
             </div>
 
-            {/* Companies */}
+            {}
             <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full flex flex-col items-center justify-center p-4 md:p-5 lg:p-6 shadow-2xl pointer-events-auto bg-gradient-to-b from-white/80 via-white/50 to-white/20 backdrop-blur-2xl border border-white/40">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#E99322] mb-1">
                 {counts.companies}+
@@ -190,22 +182,22 @@ const ReachPage = () => {
 
       </div>
 
-      {/* Mobile Circles Section (stacked) */}
+      {}
       <section ref={mobileCounterRef} className="block md:hidden px-4 pt-0 pb-6 bg-white">
         <div className="max-w-md mx-auto grid grid-cols-2 gap-5">
-          {/* Years */}
+          {}
           <div className="w-40 h-40 bg-white rounded-full flex flex-col items-center justify-center p-4 shadow-xl mx-auto">
             <div className="text-2xl font-bold text-[#E99322] mb-0.5">{counts.years}+</div>
             <div className="text-sm font-medium text-[#E99322]">years</div>
           </div>
 
-          {/* Countries */}
+          {}
           <div className="w-40 h-40 bg-white rounded-full flex flex-col items-center justify-center p-4 shadow-xl mx-auto">
             <div className="text-2xl font-bold text-[#E99322] mb-0.5">{counts.countries}+</div>
             <div className="text-sm font-medium text-[#E99322]">countries</div>
           </div>
 
-          {/* Companies - center on its own row */}
+          {}
           <div className="col-span-2 place-self-center w-40 h-40 bg-white rounded-full flex flex-col items-center justify-center p-4 shadow-xl">
             <div className="text-2xl font-bold text-[#E99322] mb-0.5">{counts.companies}+</div>
             <div className="text-sm font-medium text-[#E99322]">companies</div>
@@ -213,9 +205,9 @@ const ReachPage = () => {
         </div>
       </section>
 
-      {/* Content Section */}
+      {}
       <section className="py-16 px-4 bg-white mt-8 md:mt-48">
-        {/* Title Section - After the banner */}
+        {}
         <div className="max-w-6xl mx-auto mb-8 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Global reach

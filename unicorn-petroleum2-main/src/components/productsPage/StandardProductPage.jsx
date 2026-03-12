@@ -14,7 +14,7 @@ import { useMetaTags } from "../../hooks/useMetaTags";
 export default function StandardProductPage({ title, description }) {
   const data = buildStandardProductData({ name: title, description });
   
-  // Generate SEO-friendly meta tags
+  
   const metaTitle = `${title} - Unicorn Petroleum | Premium Quality Products`;
   const metaDescription = description || `Explore ${title} from Unicorn Petroleum. High-quality product for pharmaceutical, cosmetic, and industrial applications. Request a quote today.`;
   const metaKeywords = `${title.toLowerCase()}, petroleum products, specialty chemicals, pharmaceutical ingredients, cosmetic ingredients, industrial chemicals, Unicorn Petroleum`;
@@ -28,7 +28,7 @@ export default function StandardProductPage({ title, description }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Only apply floating effects on desktop (lg breakpoint = 1024px)
+      
       if (window.innerWidth < 1024) {
         setSidebarStyle({ position: 'relative', top: '0px' });
         return;
@@ -46,14 +46,14 @@ export default function StandardProductPage({ title, description }) {
       const certificationsTop = certifications.getBoundingClientRect().top + window.scrollY;
       const wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY;
       const currentScroll = window.scrollY;
-      const topOffset = 140; // Initial position offset in pixels
+      const topOffset = 140; 
       const sidebarHeight = sidebar.offsetHeight;
       const sidebarColumnWidth = sidebarColumn.offsetWidth;
       
-      // Calculate when sidebar should stop scrolling (when its bottom would hit certifications top)
+      
       const stopScrollPosition = certificationsTop - sidebarHeight - topOffset - 20;
       
-      // If we haven't reached the stop point, use sticky to let it scroll naturally
+      
       if (currentScroll < stopScrollPosition) {
         setSidebarStyle({ 
           position: 'sticky', 
@@ -63,7 +63,7 @@ export default function StandardProductPage({ title, description }) {
           right: 'auto'
         });
       } else {
-        // We've reached the stop point - lock sidebar in place using absolute positioning
+        
         const maxScrollDistance = stopScrollPosition - wrapperTop;
         setSidebarStyle({ 
           position: 'absolute',
@@ -75,10 +75,10 @@ export default function StandardProductPage({ title, description }) {
       }
     };
 
-    // Use requestAnimationFrame for smooth updates
+    
     let rafId = null;
     const onScroll = () => {
-      // Only apply floating effects on desktop
+      
       if (window.innerWidth < 1024) {
         return;
       }
@@ -91,7 +91,7 @@ export default function StandardProductPage({ title, description }) {
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll(); 
 
     return () => {
       window.removeEventListener('scroll', onScroll);
@@ -102,7 +102,7 @@ export default function StandardProductPage({ title, description }) {
 
   return (
     <ProductPageLayout title={data.name} subtitle={data.description}>
-      {/* Content area with floating sidebar - stops before certifications */}
+      {}
       <div ref={contentWrapperRef} className="hidden lg:grid lg:grid-cols-12 gap-8 mb-8 relative">
         <div ref={sidebarColumnRef} className="lg:col-span-3 relative">
           <div ref={sidebarRef} className="self-start z-10 w-full" style={sidebarStyle}>
@@ -125,7 +125,7 @@ export default function StandardProductPage({ title, description }) {
         <ProductKeyFeaturesSection data={data.keyFeatures} />
       </div>
 
-      {/* Certifications and beyond - sidebar stops floating here - Full width sections */}
+      {}
       <div ref={certificationsRef} className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
       <QualityStandardsSection />
       </div>

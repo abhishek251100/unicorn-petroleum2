@@ -1,8 +1,8 @@
 export const paraffinWaxData = {
   name: "Hard Paraffin Wax",
   description: "Purity for every application.",
-  bannerImage: "/assets/BannerImages/productsPage/paraffin%201.jpg", // Fallback for single banner
-  // Slider configuration - Desktop banners only
+  bannerImage: "/assets/BannerImages/productsPage/paraffin%201.jpg", 
+  
   slider: [
     {
       title: "Hard Paraffin Wax",
@@ -48,7 +48,7 @@ export const paraffinWaxData = {
     ],
   },
 
-  // Key features section - Pharmacopoeial Compliance card for Hard Paraffin Wax
+  
   keyFeatures: {
     heading: "Key features of Hard Paraffin Wax from us",
     features: [

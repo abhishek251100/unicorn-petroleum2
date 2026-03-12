@@ -1,5 +1,5 @@
 export const applicationsData = {
-  // Hero Section
+  
   hero: {
     title: "Industry Applications",
     subtitle: "Serving Diverse Industries with Petroleum Specialties",
@@ -7,7 +7,7 @@ export const applicationsData = {
     description: "Discover how our petroleum products are used across various industries worldwide."
   },
 
-  // Industry Applications
+  
   industries: [
     {
       id: "pharmaceutical",
@@ -109,7 +109,7 @@ export const applicationsData = {
     }
   ],
 
-  // Technical Support
+  
   technicalSupport: {
     heading: "Technical Support & Services",
     description: "We provide comprehensive technical support for all applications",
@@ -133,7 +133,7 @@ export const applicationsData = {
     ]
   },
 
-  // Case Studies
+  
   caseStudies: {
     heading: "Success Stories",
     description: "Real-world applications and success stories",

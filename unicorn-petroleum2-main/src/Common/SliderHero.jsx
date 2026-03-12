@@ -5,11 +5,11 @@ export default function SliderHero({
   title,
   subtitle,
   slides = [],
-  bannerImage = "/assets/hero-bg-home.jpg", // fallback for single image
+  bannerImage = "/assets/hero-bg-home.jpg", 
   breadcrumbs,
   autoPlay = true,
   autoPlayInterval = 5000,
-  // Optional buttons for hero-style banner
+  
   primaryButton,
   primaryButtonLink,
   secondaryButton,
@@ -20,16 +20,16 @@ export default function SliderHero({
   breadcrumbsNavClass = "text-black font-semibold text-[10px] sm:text-xs md:text-sm lg:text-base px-2 sm:px-4 -mt-[21%] sm:mt-0",
   overlapClass = "md:-mt-12",
   paddingTopClass = "pt-10 sm:pt-12 md:pt-12",
-  // Layout controls
-  contentPosition = "center", // "center" | "bottom"
-  contentBackground = "blur", // "blur" | "solid" | "none"
+  
+  contentPosition = "center", 
+  contentBackground = "blur", 
   fullWidthContent = false,
 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isSliding, setIsSliding] = useState(false);
   const intervalRef = useRef(null);
 
-  // Determine if we have multiple slides or single image
+  
   const hasMultipleSlides = slides && slides.length > 0;
 
   const totalSlides = hasMultipleSlides ? slides.length : 1;
@@ -55,7 +55,7 @@ export default function SliderHero({
     setTimeout(() => setIsSliding(false), 500);
   };
 
-  // Auto-play functionality
+  
   useEffect(() => {
     if (autoPlay && hasMultipleSlides && totalSlides > 1) {
       intervalRef.current = setInterval(() => {
@@ -70,7 +70,7 @@ export default function SliderHero({
     }
   }, [autoPlay, hasMultipleSlides, totalSlides, autoPlayInterval]);
 
-  // Pause auto-play on hover
+  
   const handleMouseEnter = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
@@ -85,12 +85,12 @@ export default function SliderHero({
     }
   };
 
-  // Get current slide data
+  
   const currentSlideData = hasMultipleSlides && slides[currentSlide]
     ? {
         ...slides[currentSlide],
         image: slides[currentSlide]?.image || bannerImage || "/assets/hero-bg-home.jpg",
-        // Use slide's title/subtitle if explicitly defined (even if empty string), otherwise fall back to props
+        
         title: slides[currentSlide].title !== undefined 
           ? slides[currentSlide].title 
           : (title || ""),
@@ -123,11 +123,11 @@ export default function SliderHero({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Slide Container */}
+      
       <div className="relative w-full h-full">
-        {/* Background Images */}
+        {}
         <div className="absolute inset-0 z-0 transition-opacity duration-500 bg-gray-200">
-          {/* Desktop Image */}
+          {}
           <div
             className="hidden md:block absolute inset-0 transition-opacity duration-500"
             style={{
@@ -138,7 +138,7 @@ export default function SliderHero({
               opacity: isSliding ? 0.7 : 1,
             }}
           />
-          {/* Mobile Image */}
+          {}
           <div
             className="md:hidden absolute inset-0 transition-opacity duration-500"
             style={{
@@ -149,13 +149,13 @@ export default function SliderHero({
               opacity: isSliding ? 0.7 : 1,
             }}
           />
-          {/* Overlay for better text readability - only show if there's text */}
+          {}
           {((currentSlideData.title && currentSlideData.title.trim() !== "") || (currentSlideData.subtitle && currentSlideData.subtitle.trim() !== "")) && (
             <div className="absolute inset-0 bg-white/25 pointer-events-none z-10" />
           )}
         </div>
 
-        {/* Navigation Buttons (only show if multiple slides, hidden on mobile) */}
+        {}
         {hasMultipleSlides && totalSlides > 1 && (
           <>
             <button
@@ -178,7 +178,7 @@ export default function SliderHero({
           </>
         )}
 
-        {/* Slide Indicators (only show if multiple slides) */}
+        {}
         {hasMultipleSlides && totalSlides > 1 && (
           <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2 sm:gap-3">
             {slides.map((_, index) => (
@@ -196,7 +196,7 @@ export default function SliderHero({
           </div>
         )}
 
-        {/* Content - only show if there's a title or subtitle in the current slide */}
+        {}
         {((currentSlideData.title && currentSlideData.title.trim() !== "") || (currentSlideData.subtitle && currentSlideData.subtitle.trim() !== "")) && (
           <div
             className={`relative z-20 flex justify-center h-full ${
@@ -212,7 +212,7 @@ export default function SliderHero({
                     } mx-auto px-4 sm:px-6 w-full`
               }
             >
-              {/* Background patch for text */}
+              {}
               <div className={`${contentBgClass} animate-fade-in`}>
                 <div className={fullWidthContent ? "max-w-5xl mx-auto px-4 sm:px-8" : ""}>
                 {(currentSlideData.title && currentSlideData.title.trim() !== "") && (
@@ -232,7 +232,7 @@ export default function SliderHero({
                   </p>
                 )}
                 
-                {/* CTA Buttons (hidden on mobile) - only show on slides with text */}
+                
                 {((currentSlideData.title && currentSlideData.title.trim() !== "") && (primaryButton || secondaryButton)) && (
                   <div className="hidden sm:flex flex-row gap-4 justify-center items-center">
                     {primaryButton && (
@@ -266,7 +266,7 @@ export default function SliderHero({
           </div>
         )}
 
-        {/* Breadcrumbs */}
+        {}
         {breadcrumbs && (
           <div className={`absolute ${breadcrumbsTopClass} left-1/2 -translate-x-1/2 z-20 breadcrumbs-container`}>
             <nav className={`${breadcrumbsNavClass}`}>
@@ -291,7 +291,7 @@ export default function SliderHero({
         )}
       </div>
 
-      {/* CSS for smooth fade animations */}
+      {}
       <style jsx>{`
         @keyframes fade-in {
           from {

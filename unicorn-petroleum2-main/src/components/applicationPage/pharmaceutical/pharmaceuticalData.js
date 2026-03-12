@@ -3,7 +3,7 @@ export const pharmaceuticalData = {
     title: "Pharmaceutical Applications",
     description: "High-purity ingredients for life-saving medicines"
   },
-  // Slider configuration - Application-specific banner
+  
   slider: [
     {
       title: "Pharmaceutical Applications",
@@ -16,7 +16,7 @@ export const pharmaceuticalData = {
     title: "Pharmaceutical industry",
     description: "Our products are widely used as practical additives and manufacturing aids in the pharmaceutical business. They help in the production of lotions, gels, creams, liquids, and pills for oral use by increasing durability, homogeneity, and consistency. These components are also employed in topical, oral, and external formulations, as well as medicinal and wellness applications. Additionally, they help with lubrication, surface protection, and equipment efficiency during packaging activities within this industry. Their purified character makes them ideal for applications that need purity and dependability. Manufacturers utilize them to guarantee that their finished products are processed efficiently, operate consistently, and give secure and excellent healthcare solutions."
   },
-  // New section: Tailored for pharma
+  
   tailoredForPharma: {
     heading: "Tailored for Pharma",
     subheading: "Specialized solutions designed specifically for pharmaceutical formulations",
@@ -38,7 +38,7 @@ export const pharmaceuticalData = {
       }
     ]
   },
-  // Using CardsSection structure for applications
+  
   applications: {
     heading: "Key Applications",
     subheading: "Critical applications in pharmaceutical formulations",

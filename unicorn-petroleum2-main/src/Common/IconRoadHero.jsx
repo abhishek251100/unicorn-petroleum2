@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
-// IconRoadHero: Alternating image-content timeline with a centered vertical line.
-// Data-driven via props: { heading, subheading, centerLogo, items: [{ icon, title, description, image }] }
-// Simple intersection-observer based reveal animations. No external deps.
+
+
+
 
 export default function IconRoadHero({ data = {} }) {
   const containerRef = useRef(null);
@@ -35,7 +35,7 @@ export default function IconRoadHero({ data = {} }) {
 
   const items = Array.isArray(data.items) ? data.items : [];
 
-  // Compute desktop line extents so it begins/ends at the first/last node centers
+  
   useEffect(() => {
     const compute = () => {
       const sectionEl = containerRef.current;
@@ -57,14 +57,14 @@ export default function IconRoadHero({ data = {} }) {
 
   return (
     <section className="relative w-full min-h-[80vh] pt-8 pb-16" ref={containerRef}>
-      {/* Center vertical line (desktop only) */}
+      {}
       <div
         className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[2px] bg-[#E99322] hidden md:block"
         style={lineStyle}
       />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-10 xl:px-16">
-        {/* Heading */}
+        {}
         {(data.heading || data.subheading) && (
           <div className="text-center mb-12">
             {data.heading && (
@@ -76,10 +76,10 @@ export default function IconRoadHero({ data = {} }) {
           </div>
         )}
 
-        {/* Timeline items */}
+        {}
         <div className="space-y-12 sm:space-y-14 md:space-y-20">
           {items.map((item, index) => {
-            const isLeftImage = index % 2 === 0; // image left on odd rows
+            const isLeftImage = index % 2 === 0; 
             const isVisible = visibleIndexes.has(index);
             const translate = isLeftImage ? "-translate-x-6" : "translate-x-6";
             const leftMask = {
@@ -102,7 +102,7 @@ export default function IconRoadHero({ data = {} }) {
             };
             return (
               <div key={index} className="relative" data-observe="true" data-idx={index}>
-                {/* Node icon at the center for this row (desktop) */}
+                {}
                 <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" ref={(el)=> (nodeRefs.current[index] = el)}>
                   <div className="w-16 h-16 rounded-full bg-white border-[2px] border-[#EDA94E] shadow-md flex items-center justify-center">
                     {item.icon && item.icon.startsWith("/") ? (
@@ -118,9 +118,9 @@ export default function IconRoadHero({ data = {} }) {
                   {isLeftImage ? (
                     <>
                       <div className="pr-0 md:pr-6 relative">
-                        {/* Mobile (bottom fade) */}
+                        {}
                         <img src={item.image} alt={item.title} className="block md:hidden w-full h-52 sm:h-64 object-cover rounded-xl shadow" style={bottomMask} />
-                        {/* Desktop (side fade) */}
+                        {}
                         <img src={item.image} alt={item.title} className="hidden md:block w-full md:h-72 object-cover rounded-xl shadow" style={leftMask} />
                         <div className="md:hidden absolute -bottom-6 left-1/2 -translate-x-1/2 z-10">
                           <div className="w-16 h-16 rounded-full bg-white border-[2px] border-[#EDA94E] shadow-md flex items-center justify-center">
@@ -144,9 +144,9 @@ export default function IconRoadHero({ data = {} }) {
                         <p className="text-gray-700 text-sm sm:text-base max-w-[520px] mx-auto md:mx-0">{item.description}</p>
                       </div>
                       <div className="order-1 md:order-2 pl-0 md:pl-6 relative">
-                        {/* Mobile (bottom fade) */}
+                        {}
                         <img src={item.image} alt={item.title} className="block md:hidden w-full h-52 sm:h-64 object-cover rounded-xl shadow" style={bottomMask} />
-                        {/* Desktop (side fade) */}
+                        {}
                         <img src={item.image} alt={item.title} className="hidden md:block w-full md:h-72 object-cover rounded-xl shadow" style={rightMask} />
                         <div className="md:hidden absolute -bottom-6 left-1/2 -translate-x-1/2 z-10">
                           <div className="w-16 h-16 rounded-full bg-white border-[2px] border-[#EDA94E] shadow-md flex items-center justify-center">
@@ -166,7 +166,7 @@ export default function IconRoadHero({ data = {} }) {
           })}
         </div>
 
-        {/* CTA (optional) */}
+        {}
         {data.ctaText && (
           <div className="text-center mt-12">
             <button className="bg-[#E99322] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-[#E99322]/90 transition-all duration-300 font-medium inline-flex items-center gap-2 text-sm sm:text-base">

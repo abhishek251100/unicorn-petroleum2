@@ -13,11 +13,11 @@ const RelatedProductsSection = ({ data }) => {
   }
 
   const products = data.relatedProducts;
-  const visibleCount = 3; // Show 3 products at a time on desktop
+  const visibleCount = 3; 
 
-  // Auto-slide functionality
+  
   useEffect(() => {
-    if (products.length <= visibleCount) return; // No need to slide if all fit
+    if (products.length <= visibleCount) return; 
 
     const startAutoSlide = () => {
       if (autoScrollIntervalRef.current) {
@@ -31,7 +31,7 @@ const RelatedProductsSection = ({ data }) => {
           const maxIndex = Math.max(0, products.length - visibleCount);
           return prev >= maxIndex ? 0 : prev + 1;
         });
-      }, 3500); // Auto-slide every 3.5 seconds
+      }, 3500); 
     };
 
     startAutoSlide();
@@ -43,18 +43,18 @@ const RelatedProductsSection = ({ data }) => {
     };
   }, [products.length, isPaused]);
 
-  // Scroll to current index
+  
   useEffect(() => {
     const el = scrollContainerRef.current;
     if (!el || products.length <= visibleCount) return;
     
-    // Wait for layout to settle
+    
     const timeoutId = setTimeout(() => {
       const firstCard = el.querySelector('.related-product-card');
       if (!firstCard) return;
       
       const cardWidth = firstCard.offsetWidth;
-      const gap = 32; // gap-8 = 2rem = 32px
+      const gap = 32; 
       const scrollPosition = currentIndex * (cardWidth + gap);
       
       el.scrollTo({
@@ -91,7 +91,7 @@ const RelatedProductsSection = ({ data }) => {
               key={index}
               className="related-product-card flex-shrink-0 w-full md:w-[calc(33.333%-21.33px)] bg-white rounded-2xl border-[1.5px] border-[#EDA94E] hover:shadow-lg transition-all duration-300 overflow-hidden"
             >
-              {/* Mobile: Image on top, text below */}
+              {}
               <div className="md:hidden">
                 <div className="w-full h-48 relative">
                   <img
@@ -115,7 +115,7 @@ const RelatedProductsSection = ({ data }) => {
                 </div>
               </div>
 
-              {/* Desktop: Side-by-side layout */}
+              {}
               <div className="hidden md:grid h-36" style={{ gridTemplateColumns: '40% 60%' }}>
                 <div className="h-full w-full relative">
                   <img
@@ -147,7 +147,7 @@ const RelatedProductsSection = ({ data }) => {
           })}
         </div>
 
-        {/* Navigation dots (only show if more than 3 products) */}
+        {}
         {products.length > visibleCount && (
           <div className="flex justify-center gap-2 mt-6">
             {Array.from({ length: Math.max(1, products.length - visibleCount + 1) }).map((_, index) => (

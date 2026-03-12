@@ -8,17 +8,17 @@ export default function ProductsPageIndex() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    // Add entrance animation to the container
+    
     if (containerRef.current) {
       containerRef.current.classList.add('animate-fade-in-up');
     }
   }, []);
 
-  // Show only main category products (no sub-items)
+  
   const getAllProducts = () => {
     const allProducts = [];
     productsNavigationData.categories.forEach(category => {
-      // Add only main category (no sub-items)
+      
       allProducts.push({
         ...category,
         isMainCategory: true,
@@ -66,7 +66,7 @@ export default function ProductsPageIndex() {
   return (
     <ProductPageLayout title="Our Products" subtitle="Comprehensive range of high-quality petroleum and specialty products">
       <div ref={containerRef} className="space-y-12">
-        {/* Hero Section */}
+        {}
         <section className="text-center animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             {productsData.hero.title}
@@ -76,7 +76,7 @@ export default function ProductsPageIndex() {
           </p>
         </section>
 
-        {/* All Products Grid */}
+        {}
         <section className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">
             Complete Product Portfolio
@@ -116,7 +116,7 @@ export default function ProductsPageIndex() {
           </div>
         </section>
 
-        {/* Call to Action */}
+        {}
         <section className="text-center bg-gradient-to-r from-[#E99322]/5 to-[#EDA94E]/5 rounded-2xl p-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <h3 className="text-2xl font-bold text-gray-800 mb-4">
             Need Help Choosing the Right Product?

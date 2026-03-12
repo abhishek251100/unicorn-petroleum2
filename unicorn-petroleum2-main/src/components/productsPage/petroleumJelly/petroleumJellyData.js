@@ -1,8 +1,8 @@
 export const petroleumJellyData = {
   name: "Petroleum Jelly",
   description: "Purity for every application",
-  bannerImage: "/assets/BannerImages/productsPage/petroleumjelly1.jpg", // Fallback for single banner
-  // Slider configuration - Desktop banners only
+  bannerImage: "/assets/BannerImages/productsPage/petroleumjelly1.jpg", 
+  
   slider: [
     {
       title: "Petroleum Jelly",
@@ -18,7 +18,7 @@ export const petroleumJellyData = {
     }
   ],
   
-  // Common section data
+  
   commonSection: {
     title: "Petroleum Jelly / Petrolatum / Soft Paraffin",
     description: "Petroleum Jelly is an ointment-like, homogenous, highly refined semi-solid with a delicate balance between liquid and solid hydrocarbons for skin-care application and topical formulations.\n Our product maintains a good structure during processing and congeals to form a smooth surface while packing, which adds to aesthetic value, and it has the ability to resist moisture, prevent decolorization and retain oil content even at elevated temperatures.",
@@ -26,7 +26,7 @@ export const petroleumJellyData = {
     brochureUrl: "/brochures/petroleum-jelly-brochure.pdf"
   },
 
-  // New Applications section structure
+  
   applicationsSection: {
     productName: "petroleum jelly",
     applications: "White/Yellow petroleum jelly find varied applications as an excipient in cosmetic and pharmaceutical formulations; such as the following:",
@@ -44,7 +44,7 @@ export const petroleumJellyData = {
     ]
   },
 
-  // Packaged responsibly section
+  
   packagedResponsibly: {
     packagingOptions: [
       {
@@ -60,7 +60,6 @@ export const petroleumJellyData = {
     ],
   },
 
-  // Key features data
   keyFeatures: {
   heading: "Key features of Petroleum Jelly from us",
     features: [
@@ -89,7 +88,7 @@ export const petroleumJellyData = {
     ]
   },
 
-  // Related products section - Now using actual product images
+  
   relatedProducts: {
     relatedProducts: [
       {

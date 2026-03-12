@@ -1,8 +1,8 @@
 export const surfactantsData = {
   name: "Surfactants",
   description: "Anionic and nonionic surfactants for cleansing and emulsification",
-  bannerImage: "/assets/BannerImages/productsPage/surfactants%201.jpg", // Fallback for single banner
-  // Slider configuration - Desktop banners only
+  bannerImage: "/assets/BannerImages/productsPage/surfactants%201.jpg", 
+  
   slider: [
     {
       title: "Surfactants",

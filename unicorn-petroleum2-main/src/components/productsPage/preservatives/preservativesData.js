@@ -1,8 +1,8 @@
 export const preservativesData = {
   name: "Preservatives",
   description: "Effective antimicrobial systems for personal care and pharma",
-  bannerImage: "/assets/BannerImages/productsPage/preseravtives%201.jpg", // Fallback for single banner (note: typo in filename)
-  // Slider configuration - Desktop banners only
+  bannerImage: "/assets/BannerImages/productsPage/preseravtives%201.jpg", 
+  
   slider: [
     {
       title: "Preservatives",
@@ -27,7 +27,7 @@ export const preservativesData = {
     brochureUrl: "#",
   },
 
-  // Preservative Products Section
+  
   preservativeProducts: {
     products: [
       {

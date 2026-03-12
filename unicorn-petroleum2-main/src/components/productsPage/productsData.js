@@ -1,5 +1,5 @@
 export const productsData = {
-  // Hero Section
+  
   hero: {
     title: "Our Product Portfolio",
     subtitle: "High-Quality Petroleum Specialties for Diverse Industries",
@@ -7,7 +7,7 @@ export const productsData = {
     description: "Discover our comprehensive range of petroleum-based products designed to meet the highest industry standards."
   },
 
-  // Product Categories
+  
   categories: [
     {
       id: "petroleum-jelly",
@@ -43,7 +43,7 @@ export const productsData = {
     }
   ],
 
-  // Product Features
+  
   features: {
     heading: "Why Choose Our Products?",
     items: [
@@ -70,7 +70,7 @@ export const productsData = {
     ]
   },
 
-  // Applications
+  
   applications: {
     heading: "Industry Applications",
     description: "Our products serve diverse industries worldwide",
@@ -98,7 +98,7 @@ export const productsData = {
     ]
   },
 
-  // Quality Standards
+  
   qualityStandards: {
     heading: "Quality Standards & Certifications",
     description: "We maintain the highest industry standards",

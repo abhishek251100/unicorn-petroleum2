@@ -16,7 +16,7 @@ export default function PharmaceuticalPage() {
     "High-quality pharmaceutical ingredients and excipients including petroleum jelly, mineral oils, waxes, preservatives, and specialty chemicals. Compliant with pharmacopoeial standards for pharmaceutical formulations.",
     "pharmaceutical ingredients, pharmaceutical excipients, pharmaceutical applications, pharmacopoeial standards, tablet coating, ointment base, pharmaceutical wax, pharmaceutical preservatives"
   );
-  // Get navigation data for applications section
+  
   const applicationsNavData = getNavigationData('applications');
   const sidebarRef = useRef(null);
   const sidebarColumnRef = useRef(null);
@@ -34,7 +34,7 @@ export default function PharmaceuticalPage() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Only apply floating effects on desktop (lg breakpoint = 1024px)
+      
       if (window.innerWidth < 1024) {
         setSidebarStyle({ position: 'relative', top: '0px' });
         return;
@@ -52,14 +52,14 @@ export default function PharmaceuticalPage() {
       const certificationsTop = certifications.getBoundingClientRect().top + window.scrollY;
       const wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY;
       const currentScroll = window.scrollY;
-      const topOffset = 140; // Initial position offset in pixels
+      const topOffset = 140; 
       const sidebarHeight = sidebar.offsetHeight;
       const sidebarColumnWidth = sidebarColumn.offsetWidth;
       
-      // Calculate when sidebar should stop scrolling (when its bottom would hit certifications top)
+      
       const stopScrollPosition = certificationsTop - sidebarHeight - topOffset - 20;
       
-      // If we haven't reached the stop point, use sticky to let it scroll naturally
+      
       if (currentScroll < stopScrollPosition) {
         setSidebarStyle({ 
           position: 'sticky', 
@@ -69,7 +69,7 @@ export default function PharmaceuticalPage() {
           right: 'auto'
         });
       } else {
-        // We've reached the stop point - lock sidebar in place using absolute positioning
+        
         const maxScrollDistance = stopScrollPosition - wrapperTop;
         setSidebarStyle({ 
           position: 'absolute',
@@ -81,10 +81,10 @@ export default function PharmaceuticalPage() {
       }
     };
 
-    // Use requestAnimationFrame for smooth updates
+    
     let rafId = null;
     const onScroll = () => {
-      // Only apply floating effects on desktop
+      
       if (window.innerWidth < 1024) {
         return;
       }
@@ -97,7 +97,7 @@ export default function PharmaceuticalPage() {
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll(); 
 
     return () => {
       window.removeEventListener('scroll', onScroll);
@@ -164,10 +164,10 @@ export default function PharmaceuticalPage() {
     }
   ];
 
-  // Duplicate products for seamless infinite scroll
+  
   const duplicatedProducts = [...products, ...products];
 
-  // Initialize scroll position when switching to manual mode
+  
   useEffect(() => {
     if (!containerRef.current || !isManualScroll || !marqueeRef.current) return;
 
@@ -191,7 +191,7 @@ export default function PharmaceuticalPage() {
     container.scrollLeft = scrollPosition;
   }, [isManualScroll]);
 
-  // Handle infinite scroll when manually scrolling
+  
   useEffect(() => {
     if (!containerRef.current || !isManualScroll) return;
 
@@ -215,7 +215,7 @@ export default function PharmaceuticalPage() {
     return () => container.removeEventListener('scroll', handleScroll);
   }, [isManualScroll, products.length]);
 
-  // Touch handlers for swipe
+  
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
     touchStartY.current = e.touches[0].clientY;
@@ -259,7 +259,7 @@ export default function PharmaceuticalPage() {
     resumeAutoSlide();
   };
 
-  // Mouse drag handlers
+  
   const handleMouseDown = (e) => {
     e.preventDefault();
     isDragging.current = true;
@@ -326,7 +326,7 @@ export default function PharmaceuticalPage() {
     }
   };
 
-  // Cleanup on unmount
+  
   useEffect(() => {
     return () => {
       if (scrollTimeoutRef.current) {
@@ -339,7 +339,7 @@ export default function PharmaceuticalPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Slider Hero Banner */}
+      {}
       <SliderHero
         title={pharmaceuticalData.hero.title}
         subtitle={pharmaceuticalData.hero.description}
@@ -353,7 +353,7 @@ export default function PharmaceuticalPage() {
 
     
 
-      {/* Main Content Area with Sidebar - Content area with floating sidebar - stops before certifications */}
+      {}
       <div ref={contentWrapperRef} className="relative max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div ref={sidebarColumnRef} className="lg:col-span-3 relative">
@@ -363,7 +363,7 @@ export default function PharmaceuticalPage() {
           </div>
           
           <div className="lg:col-span-9">
-            {/* Pharmaceutical Content Section */}
+            {}
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
                 Tailored for pharmaceutical products
@@ -372,14 +372,14 @@ export default function PharmaceuticalPage() {
                 {pharmaceuticalData.overview.description}
               </p>
               
-              {/* Related products with Marquee Auto-Slide */}
+              {}
               {products && products.length > 0 && (
                 <div className="relative">
                   <div className="mb-4">
                     <h3 className="text-xl font-semibold text-gray-800 text-center">Related products</h3>
                   </div>
 
-                  {/* Marquee Container */}
+                  {}
                   <div 
                     ref={containerRef}
                     className={`marquee-container relative w-full ${isManualScroll ? 'overflow-x-auto' : 'overflow-hidden'}`}
@@ -498,12 +498,12 @@ export default function PharmaceuticalPage() {
         </div>
       </div>
 
-      {/* Certifications and beyond - sidebar stops floating here - Full width sections */}
+      {}
       <div ref={certificationsRef} className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
       <QualityStandardsSection />
       </div>
 
-      {/* Existing Quote Form Section */}
+      {}
       <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
       <QuoteFormSection />
       </div>

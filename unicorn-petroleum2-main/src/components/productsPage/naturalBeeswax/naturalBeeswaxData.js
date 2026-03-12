@@ -2,8 +2,8 @@ export const naturalBeeswaxData = {
   name: "Natural Beeswax",
   description:
     "Purity for every application.",
-  bannerImage: "/assets/BannerImages/productsPage/beeswax%201.jpg", // Fallback for single banner
-  // Slider configuration - Desktop banners only
+  bannerImage: "/assets/BannerImages/productsPage/beeswax%201.jpg", 
+  
   slider: [
     {
       title: "Natural Beeswax",

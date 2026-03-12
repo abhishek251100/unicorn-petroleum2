@@ -7,22 +7,22 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
 export default function QualityStandardsSection({ title, subtitle, showLink = false }) {
-  // Order chosen so ISO round logos sit centrally, with all items on one row in desktop
+  
   const certifications = [
     {
       code: "",
       full: "",
-      logo: "/assets/Quality Standards Certificates/Frame 449.png", // FDA
+      logo: "/assets/Quality Standards Certificates/Frame 449.png", 
     },
     {
       code: "",
       full: "",
-      logo: "/assets/Quality Standards Certificates/Frame 450.png", // WHO‑GMP
+      logo: "/assets/Quality Standards Certificates/Frame 450.png", 
     },
     {
       code: "",
       full: "",
-      logo: "/assets/Quality Standards Certificates/Frame 451.png", // ISO 9001:2015
+      logo: "/assets/Quality Standards Certificates/Frame 451.png", 
     },
     {
       code: "",
@@ -37,22 +37,22 @@ export default function QualityStandardsSection({ title, subtitle, showLink = fa
     {
       code: "",
       full: "",
-      logo: "/assets/Quality Standards Certificates/Frame 452.png", // HALAL
+      logo: "/assets/Quality Standards Certificates/Frame 452.png", 
     },
     {
       code: "",
       full: "",
-      logo: "/assets/Quality Standards Certificates/Frame 453.png", // REACH
+      logo: "/assets/Quality Standards Certificates/Frame 453.png", 
     },
     {
       code: "",
       full: "",
-      logo: "/assets/Quality Standards Certificates/Frame 454.png", // PHARMEXCIL
+      logo: "/assets/Quality Standards Certificates/Frame 454.png", 
     },
     {
       code: "",
       full: "",
-      logo: "/assets/Quality Standards Certificates/Frame 455.png", // Pollution Control Board
+      logo: "/assets/Quality Standards Certificates/Frame 455.png", 
     },
   ];
 
@@ -68,7 +68,7 @@ export default function QualityStandardsSection({ title, subtitle, showLink = fa
           )}
         </div>
 
-        {/* Mobile Swiper Carousel */}
+        {}
         <div className="block md:hidden">
           <style jsx>{`
             .certifications-swiper .swiper-pagination {
@@ -133,26 +133,22 @@ export default function QualityStandardsSection({ title, subtitle, showLink = fa
           </Swiper>
         </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-5 lg:grid-cols-10 gap-3 sm:gap-4 md:gap-6 mb-6 md:mb-8 w-fit mx-auto">
+        {}
+        <div className="hidden md:grid md:grid-cols-4 lg:grid-cols-9 gap-4 md:gap-6 mb-6 md:mb-8 w-fit mx-auto justify-items-center">
           {certifications.map((cert, idx) => (
             <div 
               key={idx} 
               className="text-center"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-24 md:h-24 mx-auto mb-2 sm:mb-3 flex items-center justify-center">
+              <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-28 md:h-28 mx-auto mb-2 sm:mb-3 flex items-center justify-center">
                 <img
                   src={cert.logo}
                   alt={cert.code}
-                  className={`object-contain ${
-                    cert.logo.includes('ISO') || cert.logo.includes('14001')
-                      ? 'w-[74%] h-[74%]'
-                      : 'w-full h-full'
-                  }`}
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="space-y-1">
-                {/* Hide labels for all logos (including the two new ISO ones) as requested */}
+                {}
                 {cert.code && (
                   <p className="text-xs sm:text-sm text-gray-800 font-semibold leading-tight">{cert.code}</p>
                 )}

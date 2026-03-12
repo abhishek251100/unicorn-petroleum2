@@ -1,8 +1,8 @@
-// Central registry for product hover images
-// Key by stable product name or slug used across cards
-// Using existing RELATED PROD IMG images as hover images
 
-// Universal hover image - use this same image for all products
+
+
+
+
 const UNIVERSAL_HOVER_IMAGE = "/assets/RELATED PROD IMG/Petroleum jelly.png";
 
 export const productHoverImages = {
@@ -23,14 +23,14 @@ export const productHoverImages = {
   "Mineral Oil": "/assets/RELATED PROD IMG/Mineral Oil.png",
 };
 
-// Always return a valid hover image - use universal fallback if product-specific image doesn't exist
+
 export const getProductHoverImage = (name) => {
   const specificImage = productHoverImages[name];
-  // Return specific image if it exists, otherwise use universal hover image
+  
   return specificImage || UNIVERSAL_HOVER_IMAGE;
 };
 
-// Export universal hover image for direct use
+
 export { UNIVERSAL_HOVER_IMAGE };
 
 

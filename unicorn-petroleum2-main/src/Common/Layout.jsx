@@ -12,7 +12,7 @@ function Layout() {
 
   const isHomePage = pathname === "/"; 
 
-  // Scroll to top on every route change
+  
  useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pathname]);

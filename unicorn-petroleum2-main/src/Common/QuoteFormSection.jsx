@@ -15,6 +15,7 @@ export default function QuoteFormSection({ mode = "quote", title }) {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -27,50 +28,41 @@ export default function QuoteFormSection({ mode = "quote", title }) {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
+    setErrorMessage("");
 
     try {
-      // Create email content
-      const emailContent = `
-New ${mode === "contact" ? "Contact" : "Quote"} Request from Unicorn Petroleum Website
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:3001";
 
-Contact Details:
-- Name: ${formData.fullName}
-- Company: ${formData.companyName || 'Not provided'}
-- Email: ${formData.email}
-- Mobile: ${formData.mobileNumber || 'Not provided'}
-- Country: ${formData.countryName || 'Not provided'}
-${mode === "quote" ? `- Grade/Quality: ${formData.gradeQuality || 'Not specified'}` : ''}
-- Subject: ${formData.subject || 'Not provided'}
-
-Message:
-${formData.message}
-
----
-This email was sent from the Unicorn Petroleum website contact form.
-Sender's email: ${formData.email}
-Timestamp: ${new Date().toLocaleString()}
-      `;
-
-      // For production, you would integrate with an email service like:
-      // - EmailJS
-      // - Formspree
-      // - Netlify Forms
-      // - Custom backend API
-      
-      // For now, we'll simulate the email sending process
-      await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate API call
-      
-      // In production, replace this with actual email service integration
-      console.log("Email would be sent to:", {
-        to: "info@unicornpetro.co.in, manan@unicornpetro.co.in",
-        from: formData.email,
-        subject: `${mode === "contact" ? "Contact" : "Quote"} Request from ${formData.fullName}`,
-        content: emailContent
+      const response = await fetch(`${backendUrl}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          companyName: formData.companyName,
+          email: formData.email,
+          mobileNumber: formData.mobileNumber,
+          countryName: formData.countryName,
+          gradeQuality: mode === "quote" ? formData.gradeQuality : "",
+          subject:
+            mode === "contact"
+              ? formData.subject || "General enquiry"
+              : formData.subject || "Quote enquiry",
+          message: formData.message,
+          formType: mode === "contact" ? "contact" : "quote"
+        })
       });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || "Failed to send message from server.");
+      }
 
       setSubmitStatus('success');
       
-      // Reset form after successful submission
+      
       setFormData({
         fullName: "",
         companyName: "",
@@ -83,8 +75,12 @@ Timestamp: ${new Date().toLocaleString()}
       });
 
     } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus('error');
+      console.error("Error submitting form via backend:", error);
+      setSubmitStatus("error");
+      const friendlyError =
+        (error && (error.text || error.message)) ||
+        "Unexpected error from email service. Please try again later.";
+      setErrorMessage(friendlyError);
     } finally {
       setIsSubmitting(false);
     }
@@ -99,7 +95,7 @@ Timestamp: ${new Date().toLocaleString()}
           </h2>
         </div>
 
-        {/* Status Messages */}
+        {}
         {submitStatus === 'success' && (
           <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center">
             <p className="font-semibold">Thank you! Your message has been sent successfully.</p>
@@ -110,13 +106,17 @@ Timestamp: ${new Date().toLocaleString()}
         {submitStatus === 'error' && (
           <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg text-center">
             <p className="font-semibold">Sorry, there was an error sending your message.</p>
-            <p className="text-sm">Please try again or contact us directly.</p>
+            <p className="text-sm">
+              {errorMessage
+                ? errorMessage
+                : "Please try again or contact us directly."}
+            </p>
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            {/* Full Name */}
+            {}
             <div>
               <input
                 type="text"
@@ -130,7 +130,7 @@ Timestamp: ${new Date().toLocaleString()}
               />
             </div>
 
-            {/* Company Name */}
+            {}
             <div>
               <input
                 type="text"
@@ -144,7 +144,7 @@ Timestamp: ${new Date().toLocaleString()}
               />
             </div>
 
-            {/* Email */}
+            {}
             <div>
               <input
                 type="email"
@@ -158,7 +158,7 @@ Timestamp: ${new Date().toLocaleString()}
               />
             </div>
 
-            {/* Mobile Number */}
+            {}
             <div>
               <input
                 type="tel"
@@ -172,7 +172,7 @@ Timestamp: ${new Date().toLocaleString()}
               />
             </div>
 
-            {/* Country Name */}
+            {}
             <div>
               <input
                 type="text"
@@ -186,7 +186,7 @@ Timestamp: ${new Date().toLocaleString()}
               />
             </div>
 
-            {/* Grade/Quality or Subject depending on mode */}
+            {}
             {mode === "contact" ? (
               <div>
                 <select
@@ -221,7 +221,7 @@ Timestamp: ${new Date().toLocaleString()}
             )}
           </div>
 
-          {/* Message */}
+          {}
           <div className="mb-8">
             <textarea
               name="message"
@@ -235,7 +235,7 @@ Timestamp: ${new Date().toLocaleString()}
             />
           </div>
 
-          {/* Submit Button */}
+          {}
           <div className="text-center">
             <button
               type="submit"

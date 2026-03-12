@@ -7,7 +7,7 @@ const HeroSection = ({ data }) => {
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center md:-mt-16 pt-4 md:pt-8">
-      {/* Background Image */}
+      {}
       <div className="absolute inset-0 z-0">
         <img
           src={data.backgroundImage}
@@ -20,7 +20,7 @@ const HeroSection = ({ data }) => {
         />
       </div>
 
-      {/* Content Overlay */}
+      {}
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-xl border-[1.5px] border-[#EDA94E] animate-fade-in-scale">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-6 leading-tight text-left">

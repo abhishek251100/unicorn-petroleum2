@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-/**
- * Enhanced scroll animation hook with better performance
- * Uses IntersectionObserver API for efficient scroll detection
- */
+
 export const useScrollAnimation = (options = {}) => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -17,7 +14,7 @@ export const useScrollAnimation = (options = {}) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            // Only observe once for better performance
+            
             if (options.once !== false) {
               observer.unobserve(entry.target);
             }
@@ -44,9 +41,7 @@ export const useScrollAnimation = (options = {}) => {
   return { ref, isVisible };
 };
 
-/**
- * Hook for staggered animations (for lists/grids)
- */
+
 export const useStaggeredAnimation = (itemCount, options = {}) => {
   const containerRef = useRef(null);
   const [visibleItems, setVisibleItems] = useState(new Set());

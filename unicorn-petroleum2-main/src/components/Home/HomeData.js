@@ -1,5 +1,5 @@
 export const homeData = {
-  // Icon Road Hero (new)
+  
   iconRoadHero: {
     heading: "Our strengths",
     subheading: "Excellence built on six decades of expertise and trust",
@@ -29,7 +29,7 @@ export const homeData = {
       }
     ]
   },
-  // Hero
+  
   hero: {
     title: "Pioneering Excellence in Petroleum Specialties for 6+ Decades",
     subtitle: "",
@@ -40,7 +40,7 @@ export const homeData = {
     backgroundImage: "/assets/hero-bg-home.jpg",
     primaryButtonColor: "#E99322",
     secondaryButtonColor: "#E99322",
-    // Slider configuration for multiple banners
+    
     slider: [
       {
         title: "Pioneering Excellence in Petroleum Specialties for 6+ Decades",
@@ -54,19 +54,19 @@ export const homeData = {
         image: "/assets/BannerImages/HomeBannerDesktop2.jpg",
         mobileImage: "/assets/BannerImages/HomeBannerMobile2.jpg"
       },
-      // {
-      //   // ChemExpo banner: image-only slide (no title/subtitle)
-      //   title: "",
-      //   subtitle: "",
-      //   // Use URL-encoded path so spaces don't break background-image
-      //   image: "/assets/BannerImages/Chem%20Expo%20Exhibition.jpeg",
-      //   mobileImage: "/assets/BannerImages/Chem%20Expo%20Exhibition.jpeg"
-      // }
+      
+      
+      
+      
+      
+      
+      
+      
     
     ]
   },
 
-  // Our strengths
+  
   strengths: {
     heading: "Our Strengths",
     subheading: "Excellence built on six decades of expertise and trust",
@@ -76,28 +76,28 @@ export const homeData = {
         title: "Six Decades Expertise and trust",
         description:
           "Pioneering quality ingredients for the cosmetic and pharmaceutical world since 1964",
-        link: "/about", // Internal link
+        link: "/about", 
       },
       {
         icon: "/assets/Icons/Property 1=Flask.png",
         title: "Custom tailored formulationsEXACT KNOWLEDGE",
         description:
           "Innovating raw materials that power global cosmetic & pharma brands",
-        link: "/quality", // Internal link
+        link: "/quality", 
       },
       {
         icon: "/assets/Icons/Property 1=Handshake.png",
         title: "Customer-Centric Approach",
         description:
           "Seamless procurement, personalized support delivering quality raw materials from India to the world",
-        link: "/contact", // Internal link
+        link: "/contact", 
       },
     ],
     buttonText: "View All Strengths →",
-    buttonLink: "/about", // Internal link
+    buttonLink: "/about", 
   },
 
-  // Product portfolio
+  
   products: {
     heading: "Our core product portfolio",
     subheading: "Where Innovation Meets Quality - Since 1964",
@@ -110,7 +110,7 @@ export const homeData = {
         description:
           "A highly refined semi-solid hydrocarbon base offering excellent stability and superior oil retention, with a controlled melting range and no decolourization to ensure consistent purity and performance.",
         buttonText: "View Details →",
-        link: "/products/petroleum-jelly", // Internal link
+        link: "/products/petroleum-jelly", 
       },
       {
         image:
@@ -120,7 +120,7 @@ export const homeData = {
         description:
           "A highly refined, clear and odourless liquid hydrocarbon with low PAH content offering excellent lubricity and formulation flexibility across multiple viscosity grades, featuring a high viscosity index and very low PAH content for consistent, reliable performance.",
         buttonText: "View Details →",
-        link: "/products/white-mineral-oils", // Internal link
+        link: "/products/white-mineral-oils", 
       },
       {
         image: "/assets/RELATED PROD IMG/Lanolin.jpg",
@@ -129,7 +129,7 @@ export const homeData = {
         description:
           "Highly refined, high-purity wool wax alcohol complex with controlled odor and color offering excellent emolliency and water-binding capacity for dermatological and topical formulations.",
         buttonText: "View Details →",
-        link: "/products/lanolin", // Internal link
+        link: "/products/lanolin", 
       },
       {
         image: "/assets/RELATED PROD IMG/NEW IMAGES/microcrystalline wax.jpg",
@@ -184,7 +184,7 @@ export const homeData = {
         description:
           "Engineered surface-active compounds in powder and liquid form that deliver efficient emulsification, wetting, and detergency in home and personal care formulations, while offering optimised foaming and dispersing performance through controlled HLB values ensuring effective cleaning.",
         buttonText: "View Details →",
-        link: "/products/surfactants", // Internal link
+        link: "/products/surfactants", 
       },
       {
         image:
@@ -194,7 +194,7 @@ export const homeData = {
         description:
           "Broad-spectrum antimicrobial preservation systems formulated to maintain microbiological stability and extend shelf life in regulated applications, carefully engineered for seamless compatibility across both aqueous and emulsion-based formulations.",
         buttonText: "View Details →",
-        link: "/products/preservatives", // Internal link
+        link: "/products/preservatives", 
       },
       {
         image: "/assets/RELATED PROD IMG/NEW IMAGES/uvfilters.jpg",
@@ -207,16 +207,16 @@ export const homeData = {
       },
     ],
     buttonText: "View All Products →",
-    buttonLink: "/products", // Internal link
+    buttonLink: "/products", 
   },
 
-  // Industries
+  
   industries: {
     heading: "Catering to diverse industries worldwide",
     subheading: "Shaping the future of cosmetic & pharmaceutical ingredients",
     mobileTwoCols: true,
     desktopCols: 3,
-    // Disable sub text under cards for this section
+    
     showDescriptions: false,
     cards: [
       {
@@ -241,7 +241,7 @@ export const homeData = {
         icon: "/assets/Icons/Bulk.png",
         label: "Home Care",
         hoverDescription: "Oils, waxes, preservatives and specialty chemicals",
-        link: "/applications/home-care", // Internal link to home care application page
+        link: "/applications/home-care", 
       },
       {
         icon: "/assets/Icons/Property 1=petro.png",
@@ -255,17 +255,17 @@ export const homeData = {
         hoverDescription: "Oils, waxes and protective coatings",
         link: "/applications/lubricants",
       },
-      // {
-      //   icon: "/assets/Icons/Property 1=agro.png",
-      //   label: "Agrochemical",
-      //   hoverDescription: "Carrier oils, coating and formulation agents",
-      //   link: "/applications/agrochemical", // Internal link to agrochemical application page
-      // },
+      
+      
+      
+      
+      
+      
     ],
     centerLastRow: true,
   },
 
-  // Quality standards
+  
   qualityStandards: {
     heading: "Globally Recognized Quality & Safety Standards",
     subheading: "Driven by quality, trusted for generations.",
@@ -279,10 +279,10 @@ export const homeData = {
       { name: "POLLUTION CONTROL BOARD", fullName: "POLLUTION CONTROL BOARD" },
     ],
     linkText: "View All Certifications →",
-    linkUrl: "/about", // Internal link
+    linkUrl: "/about", 
   },
 
-  // News
+  
   news: {
     heading: "Latest News & Company Updates",
     cards: [
@@ -294,7 +294,7 @@ export const homeData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         linkText: "Read More →",
-        linkUrl: "/news/chemexpo-2025", // Internal link
+        linkUrl: "/news/chemexpo-2025", 
       },
       {
         date: "20/06/25",
@@ -304,53 +304,53 @@ export const homeData = {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         linkText: "Read More →",
-        linkUrl: "/news/ophthalmic-jelly-launch", // Internal link
+        linkUrl: "/news/ophthalmic-jelly-launch", 
       },
-      // {
-      //   date: "20/06/25",
-      //   image:
-      //     "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=300&fit=crop",
-      //   title:
-      //     "Inside Our Labs: Innovations in High-Purity Petroleum Jelly Grades",
-      //   description:
-      //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      //   linkText: "Read More →",
-      //   linkUrl: "/news/lab-innovations", // Internal link
-      // },
-      // {
-      //   date: "20/06/25",
-      //   image:
-      //     "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-      //   title:
-      //     "Sustainability in Petrochemicals: Our Roadmap to Greener Practices",
-      //   description:
-      //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      //   linkText: "Read More →",
-      //   linkUrl: "/news/sustainability-roadmap", // Internal link
-      // },
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     ],
     buttonText: "View All News →",
-    buttonLink: "/news", // Internal link
+    buttonLink: "/news", 
   },
 
-  // Company statement
+  
   statement: {
     heading: "Unicorn Petroleum Industries Pvt. Ltd.",
     subheading: "60+ Years of Excellence, Innovation, and Trust",
     text: "Global Ingredients. Indian Expertise. Trusted Worldwide",
     linkText: "Learn More About Us →",
-    linkUrl: "/about", // Internal link
+    linkUrl: "/about", 
   },
 
-  // Call to action
+  
   cta: {
     heading: "Ready to Partner with Unicorn Petroleum?",
     subtitle:
       "Contact us today for custom formulations, bulk orders, or technical inquiries.",
     primaryButton: "Contact Sales",
-    primaryButtonLink: "/contact", // Internal link
+    primaryButtonLink: "/contact", 
     secondaryButton: "Request Sample",
-    secondaryButtonLink: "/contact#quote-form-section", // Internal link with anchor
+    secondaryButtonLink: "/contact#quote-form-section", 
   },
 };
 

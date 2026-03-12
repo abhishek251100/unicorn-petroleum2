@@ -1,8 +1,8 @@
 export const uvFiltersData = {
   name: "UV Filters",
   description: "Organic and inorganic UV filters for broad-spectrum protection",
-  bannerImage: "/assets/BannerImages/productsPage/uv%202-1.jpg", // Fallback for single banner
-  // Slider configuration - Desktop banners only
+  bannerImage: "/assets/BannerImages/productsPage/uv%202-1.jpg", 
+  
   slider: [
     {
       title: "UV Filters",

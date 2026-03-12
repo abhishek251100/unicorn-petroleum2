@@ -24,7 +24,7 @@ const ApplicationsSection = ({ data }) => {
     const sectionEl = sectionRef.current;
     if (!el || !sectionEl) return;
 
-    // Check if scrolling is needed (content width > container width)
+    
     const canScroll = () => {
       if (!el) return false;
       return el.scrollWidth > el.clientWidth;
@@ -42,7 +42,7 @@ const ApplicationsSection = ({ data }) => {
 
     const startInterval = () => {
       if (autoRef.current || !canScroll()) return;
-      // Do the first move immediately after the delay
+      
       advance();
       autoRef.current = setInterval(() => {
         if (!canScroll()) {
@@ -81,7 +81,7 @@ const ApplicationsSection = ({ data }) => {
       if (ratio >= 0.4) startAutoDelayed();
     };
 
-    // Initialize after a short delay to ensure DOM is ready
+    
     let observer;
     const onEnter = () => stopAuto();
     const onLeave = () => {
@@ -105,17 +105,17 @@ const ApplicationsSection = ({ data }) => {
           { threshold: 0.4 }
         );
         observer.observe(sectionEl);
-        // If already visible on mount, kick it off immediately
+        
         maybeStartIfVisible();
       } else {
-        // Fallback: start after delay on mount
+        
         startAutoDelayed();
       }
 
       if (el) {
         el.addEventListener('mouseenter', onEnter);
         el.addEventListener('mouseleave', onLeave);
-        // Mobile touch: pause on touch and resume after release
+        
         el.addEventListener('touchstart', onEnter, { passive: true });
         el.addEventListener('touchend', onLeave, { passive: true });
         el.addEventListener('touchcancel', onLeave, { passive: true });

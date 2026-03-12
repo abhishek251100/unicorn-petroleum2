@@ -12,12 +12,12 @@ import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import homeData from "./HomeData";
 
 const HomeIndex = () => {
-  // Only animate the first section after banner
+  
   const firstSectionRef = useScrollAnimation();
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Slider */}
+      {}
       <SliderHero
         title={homeData.hero.title}
         subtitle={homeData.hero.subtitle}
@@ -34,27 +34,27 @@ const HomeIndex = () => {
         paddingTopClass="pt-0 md:pt-[68px]"
       />
 
-      {/* Icon Road Hero (first section) - Only this has animation */}
+      {}
       <div ref={firstSectionRef.ref} className={`scroll-animate ${firstSectionRef.isVisible ? 'visible' : ''}`}>
         <IconRoadHero data={homeData.iconRoadHero} />
       </div>
 
-      {/* Product Portfolio Section - No animation */}
+      {}
       <ProductPortfolioSection data={homeData.products} />
 
-      {/* Industries Section - No animation */}
+      {}
       <CardsSection data={{ ...homeData.industries, centerLastRow: true }} />
 
-      {/* Quality Standards Section - No animation */}
+      {}
       <QualityStandardsSection />
 
-      {/* News Section - No animation */}
+      {}
       <NewsSection data={homeData.news} />
 
-      {/* Company Statement */}
-      {/* <CompanyStatement data={homeData.statement} /> */}
+      {}
+      {}
 
-      {/* Call to Action Section - No animation */}
+      {}
       <CallToAction data={homeData.cta} />
     </div>
   );

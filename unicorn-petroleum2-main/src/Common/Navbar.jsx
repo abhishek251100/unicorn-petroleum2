@@ -145,7 +145,7 @@ export default function Navbar() {
         { name: "Home Care", link: "/applications/home-care" },
         { name: "Textile", link: "/applications/textile" },
         { name: "Lubricants", link: "/applications/lubricants" },
-        // { name: "Agrochemical", link: "/applications/agrochemical" }
+        
       ]
     },
     { name: "Global reach", link: "/reach", hasDropdown: false },
@@ -154,27 +154,13 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Top Contact Bar */}
-      {/* <div className="bg-[#F5CD99] py-2 px-4 relative z-30">
-        <div className="max-w-7xl mx-auto px-4 text-xs sm:text-sm">
-          <div className="w-full flex items-center justify-between sm:justify-end sm:gap-4">
-            <span className="text-black font-bold hidden sm:inline">Contact us on :</span>
-            <div className="flex items-center space-x-2"> 
-              <FiPhone className="text-black text-sm" />
-              <span className="text-black text-xs sm:text-sm">+91 22 4232 4121</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <FiMail className="text-black text-sm" />
-              <h3 className="text-black text-xs sm:text-sm">info@unicornpetro.co.in</h3>
-            </div>
-          </div>
-        </div>
-      </div> */}
+      {}
+      {}
 
       <nav className="py-2 border-b border-white/20 shadow-lg relative z-30 bg-white/60 backdrop-blur-lg">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-full">
-            {/* Logo */}
+            {}
             <div className="flex items-center space-x-4">
               <Link
                 to="/"
@@ -190,7 +176,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Desktop Menu */}
+            {}
             <div className="hidden md:flex items-center space-x-8">
               {menuItems.map((item, index) => (
                 <div key={index} className="relative dropdown-container" onMouseEnter={() => openDropdown(index)} onMouseLeave={closeDropdownWithDelay}>
@@ -291,7 +277,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Search Icon and WhatsApp Button */}
+            {}
             <div className="hidden md:flex items-center space-x-4">
               <FiSearch className="text-gray-800 text-xl cursor-pointer hover:text-[#E99322] transition-colors" />
               <button className="bg-[#E99322] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#E99322]/90 transition-all duration-300">
@@ -299,7 +285,7 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Mobile Menu Button */}
+            {}
             <div className="md:hidden">
               <button onClick={toggleMenu} className="text-gray-800">
                 {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
@@ -307,7 +293,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Menu */}
+          {}
           {isOpen && (
             <div className="md:hidden py-4 border-t border-gray-300/30 rounded-b-lg bg-white/10 backdrop-blur-lg">
               {menuItems.map((item, index) => (

@@ -7,7 +7,7 @@ const ReachPageIndex = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Empty hero banner with only image and breadcrumbs */}
+      {}
       <BannerWithNavigation
         title={null}
         subtitle={null}
@@ -15,7 +15,7 @@ const ReachPageIndex = () => {
         breadcrumbs={breadcrumbs}
       />
 
-      {/* Page title and intro below banner for uniform spacing */}
+      {}
       <section className="py-10 md:py-12">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-2">Global Reach</h1>

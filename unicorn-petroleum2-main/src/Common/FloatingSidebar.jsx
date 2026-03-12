@@ -63,7 +63,7 @@ export default function FloatingSidebar({ navigationData }) {
                   </div>
                 </Link>
                 
-                {/* Sub-items */}
+                {}
                 {hasSubItems && isExpanded && (
                   <div>
                     {item.subItems.map((subItem, subIndex) => (

@@ -8,30 +8,30 @@ const PageTransition = ({ children }) => {
   const isFirstRender = useRef(true);
 
   useEffect(() => {
-    // Skip transition on initial render
+    
     if (isFirstRender.current) {
       isFirstRender.current = false;
       prevPathnameRef.current = location.pathname;
       return;
     }
 
-    // Don't show transition for product pages or application pages
+    
     const isProductPage = location.pathname.startsWith('/products/');
     const isApplicationPage = location.pathname.startsWith('/applications/');
     const prevIsProductPage = prevPathnameRef.current.startsWith('/products/');
     const prevIsApplicationPage = prevPathnameRef.current.startsWith('/applications/');
     
-    // Skip transition if navigating between products or applications
+    
     if ((isProductPage && prevIsProductPage) || (isApplicationPage && prevIsApplicationPage)) {
       prevPathnameRef.current = location.pathname;
       return;
     }
 
-    // Only show transition if pathname actually changed
+    
     if (location.pathname !== prevPathnameRef.current) {
       setIsTransitioning(true);
       
-      // Short delay to show transition
+      
       const timer = setTimeout(() => {
         setIsTransitioning(false);
         prevPathnameRef.current = location.pathname;
@@ -43,11 +43,11 @@ const PageTransition = ({ children }) => {
 
   return (
     <div className="relative">
-      {/* Transition overlay */}
+      {}
       {isTransitioning && (
         <div className="fixed inset-0 bg-white z-[9998] flex items-center justify-center">
           <div className="flex flex-col items-center gap-4">
-            {/* Spinner */}
+            {}
             <div className="relative w-16 h-16">
               <div className="absolute inset-0 border-4 border-[#E99322]/20 rounded-full"></div>
               <div className="absolute inset-0 border-4 border-transparent border-t-[#E99322] rounded-full animate-spin"></div>
@@ -63,7 +63,7 @@ const PageTransition = ({ children }) => {
         </div>
       )}
       
-      {/* Page content */}
+      {}
       <div 
         className={`transition-opacity duration-300 ${
           isTransitioning ? 'opacity-0' : 'opacity-100'

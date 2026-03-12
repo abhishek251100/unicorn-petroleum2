@@ -1,5 +1,5 @@
 export const contactData = {
-  // Hero Section
+  
   hero: {
     title: "Contact Us",
     subtitle: "Get in Touch with Our Team",
@@ -7,7 +7,7 @@ export const contactData = {
     description: "We're here to help you with all your petroleum specialties needs. Reach out to us for inquiries, quotes, or technical support."
   },
 
-  // Contact Information
+  
   contactInfo: {
     heading: "Contact Information",
     description: "Multiple ways to reach our team",
@@ -33,7 +33,7 @@ export const contactData = {
     ]
   },
 
-  // Office Locations
+  
   officeLocations: {
     heading: "Our Office Locations",
     description: "Visit us at our offices worldwide",
@@ -65,7 +65,7 @@ export const contactData = {
     ]
   },
 
-  // Contact Form
+  
   contactForm: {
     heading: "Send Us a Message",
     description: "Fill out the form below and we'll get back to you within 24 hours",
@@ -133,7 +133,7 @@ export const contactData = {
     ]
   },
 
-  // FAQ Section
+  
   faq: {
     heading: "Frequently Asked Questions",
     description: "Quick answers to common questions",
@@ -165,7 +165,7 @@ export const contactData = {
     ]
   },
 
-  // Business Hours
+  
   businessHours: {
     heading: "Business Hours",
     description: "Our customer service team is available during these hours",
